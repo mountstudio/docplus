@@ -14,3 +14,13 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('options', 'AdminController@options')->name('options');
+Route::get('datatable/getDoctors', 'AdminController@getdoctors')->name('datatable.getdoctors');
+Route::resource('doctor', 'DoctorController')->except([
+    'show'
+]);
