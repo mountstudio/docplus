@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Doctor;
 use Illuminate\Http\Request;
 
 class DoctorController extends Controller
@@ -14,7 +15,17 @@ class DoctorController extends Controller
     public function create()
     {
         return view('doctor.create', [
-            'categories' => Category::all()->where('parent_id', '=', null),
+            'doctors' => Doctor::all(),
         ]);
+    }
+    public function store(Request $request)
+    {
+        $doctor = new Doctor();
+        $doctor->address = $request->address;
+        $doctor->price = $request->price;
+        $doctor->discount = $request->discount;
+        $doctor->save();
+
+        return redirect()->route('doctor.index');
     }
 }

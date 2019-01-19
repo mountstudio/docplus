@@ -32,14 +32,14 @@ class AdminController extends Controller
 //            })
 //            ->make(true);
 //    }
-    public function getdoctors()
+    public function getDoctors()
     {
         $doctors = Doctor::query();
 
         return Datatables::eloquent($doctors)
             ->addColumn('action', function ($model) {
-                return '<a href="'.route('doctor.edit', $model->id).'" class="btn btn-sm btn-primary"><i class="far fa-edit"></i> Edit</a>
-                        <a href="'.route('doctor.destroy', $model->id).'" data-id="'.$model->id.'" onclick="event.preventDefault();" data-toggle="modal" data-target="#delete-confirmation" class="btn btn-sm btn-danger"><i class="far fa-trash-alt"></i> Delete</a>';
+//                return '<a href="'.route('doctor.edit', $model->id).'" class="btn btn-sm btn-primary"><i class="far fa-edit"></i> Edit</a>
+//                        <a href="'.route('doctor.destroy', $model->id).'" data-id="'.$model->id.'" onclick="event.preventDefault();" data-toggle="modal" data-target="#delete-confirmation" class="btn btn-sm btn-danger"><i class="far fa-trash-alt"></i> Delete</a>';
             })
             ->make(true);
     }

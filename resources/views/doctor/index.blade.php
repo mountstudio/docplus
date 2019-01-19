@@ -14,7 +14,7 @@
                 <thead>
                 <tr>
                     <th>Id</th>
-                    <th>Образование</th>
+                    <th>Адресс</th>
                     <th>Цена</th>
                     <th>Скидка</th>
                 </tr>
@@ -37,10 +37,10 @@
             $('#types-table').DataTable({
                 processing: true,
                 serverSide: true,
-                ajax: '{!! route('datatable.getdoctor') !!}',
+                ajax: '{!! route('datatable.getdoctors') !!}',
                 columns: [
                     { data: 'id', name: 'id' },
-                    { data: 'educations', name: 'educations' },
+                    { data: 'address', name: 'address' },
                     { data: 'price', name: 'price' },
                     { data: 'discount', name: 'discount'}
                 ]
