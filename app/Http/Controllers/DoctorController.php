@@ -28,4 +28,17 @@ class DoctorController extends Controller
 
         return redirect()->route('doctor.index');
     }
+    public function edit(Doctor $doctor)
+    {
+        return view('doctor.edit', [
+            'doctor' => $doctor,
+            'doctors' => Doctor::all(),
+        ]);
+    }
+    public function destroy(Doctor $doctor)
+    {
+        $doctor->delete();
+
+        return redirect()->back();
+    }
 }

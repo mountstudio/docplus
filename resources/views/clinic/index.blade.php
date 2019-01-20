@@ -4,19 +4,19 @@
 
     <div class="row mb-3 justify-content-end">
         <div class="col-auto">
-            <a href="{{ route('doctor.create') }}" class="btn btn-success">Новый</a>
+            <a href="{{ route('clinic.create') }}" class="btn btn-success">Новый</a>
         </div>
     </div>
 
     <div class="row">
         <div class="col-12">
-            <table class="table table-bordered" id="doctor-table">
+            <table class="table table-bordered" id="clinic-table">
                 <thead>
                 <tr>
                     <th>Id</th>
+                    <th>Название</th>
                     <th>Адресс</th>
-                    <th>Цена</th>
-                    <th>Скидка</th>
+                    <th>Номер телефона</th>
                 </tr>
                 </thead>
             </table>
@@ -34,15 +34,15 @@
 @push('scripts')
     <script>
         $(function() {
-            $('#doctor-table').DataTable({
+            $('#clinic-table').DataTable({
                 processing: true,
                 serverSide: true,
-                ajax: '{!! route('datatable.getdoctors') !!}',
+                ajax: '{!! route('datatable.getclinics') !!}',
                 columns: [
                     { data: 'id', name: 'id' },
+                    { data: 'name', name: 'name' },
                     { data: 'address', name: 'address' },
-                    { data: 'price', name: 'price' },
-                    { data: 'discount', name: 'discount'}
+                    { data: 'phones', name: 'phones'}
                 ]
             });
         });
