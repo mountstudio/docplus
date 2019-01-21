@@ -21,6 +21,15 @@ Route::get('/contacts', function () {
     return view('contacts');
 });
 
+Route::get('/getdoctors', function () {
+    return view('doctor.list');
+});
+Route::get('/getdoctor/{id}', function ($id) {
+    return view('doctor.show', [
+        'id' => $id,
+    ]);
+});
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
