@@ -5,15 +5,15 @@
     <li class="nav-item py-1 border-bottom {{ Request::is('admin/doctor') ? 'bg-secondary' : '' }}">
         <a class="nav-link {{ Request::is('admin/doctor') ? 'text-light' : 'text-dark' }}" href="{{ route('doctor.index') }}">Доктора</a>
     </li>
-    {{--<li class="nav-item py-1 border-bottom {{ Request::is('admin/property') ? 'bg-secondary' : '' }}">--}}
-        {{--<a class="nav-link {{ Request::is('admin/property') ? 'text-light' : 'text-dark' }}" href="{{ route('property.index') }}">Свойства</a>--}}
-    {{--</li>--}}
-    {{--<li class="nav-item py-1 border-bottom {{ Request::is('admin/product') ? 'bg-secondary' : '' }}">--}}
-        {{--<a class="nav-link {{ Request::is('admin/product') ? 'text-light' : 'text-dark' }}" href="{{ route('product.index') }}">Продукты</a>--}}
-    {{--</li>--}}
-    {{--<li class="nav-item py-1 border-bottom {{ Request::is('admin/stock') ? 'bg-secondary' : '' }}">--}}
-        {{--<a class="nav-link {{ Request::is('admin/stock') ? 'text-light' : 'text-dark' }}" href="{{ route('stock.index') }}">Акции</a>--}}
-    {{--</li>--}}
+    <li class="nav-item py-1 border-bottom {{ Request::is('admin/clinic') ? 'bg-secondary' : '' }}">
+        <a class="nav-link {{ Request::is('admin/clinic') ? 'text-light' : 'text-dark' }}" href="{{ route('clinic.index') }}">Клиника</a>
+    </li>
+    <li class="nav-item py-1 border-bottom {{ Request::is('admin/service') ? 'bg-secondary' : '' }}">
+        <a class="nav-link {{ Request::is('admin/service') ? 'text-light' : 'text-dark' }}" href="{{ route('service.index') }}">Сервис</a>
+    </li>
+    <li class="nav-item py-1 border-bottom {{ Request::is('admin/category') ? 'bg-secondary' : '' }}">
+        <a class="nav-link {{ Request::is('admin/category') ? 'text-light' : 'text-dark' }}" href="{{ route('category.index') }}">Категории</a>
+    </li>
     {{--<li class="nav-item py-1 border-bottom {{ Request::is('admin/basket') ? 'bg-secondary' : '' }}">--}}
         {{--<a class="nav-link {{ Request::is('admin/basket') ? 'text-light' : 'text-dark' }}" href="{{ route('basket.index') }}">Заказы</a>--}}
     {{--</li>--}}

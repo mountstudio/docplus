@@ -26,7 +26,19 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('options', 'AdminController@options')->name('options');
-Route::get('datatable/getDoctors', 'AdminController@getdoctors')->name('datatable.getdoctors');
+Route::get('datatable/getdoctors', 'AdminController@getDoctors')->name('datatable.getdoctors');
+Route::get('datatable/getclinics', 'AdminController@getClinics')->name('datatable.getclinics');
+Route::get('datatable/getservices', 'AdminController@getServices')->name('datatable.getservices');
+Route::get('datatable/getcategories', 'AdminController@getCategories')->name('datatable.getcategories');
 Route::resource('doctor', 'DoctorController')->except([
+    'show'
+]);
+Route::resource('clinic', 'ClinicController')->except([
+    'show'
+]);
+Route::resource('service', 'ServiceController')->except([
+    'show'
+]);
+Route::resource('category', 'CategoryController')->except([
     'show'
 ]);
