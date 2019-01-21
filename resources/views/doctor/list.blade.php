@@ -16,10 +16,4 @@
 
 @endsection
 
-@push('styles')
-    <style>
-        .cards {
-            margin: 20px 0px;
-        }
-        </style>
-@endpush
+
