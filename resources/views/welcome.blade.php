@@ -2,6 +2,6 @@
 
 @section('content')
 
-    <h1>Tilya chto eto @?</h1>
+    <h1>asdawdasdwaasd</h1>
 
 @endsection

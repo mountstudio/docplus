@@ -1,0 +1,13 @@
+.border-top-10 {
+    border-top: 10px solid rgb(197, 44, 75);
+}
+.star{
+    border-style: solid;
+    border-width: 2px;
+    border-color: rgb(226, 0, 15);
+    background-color: rgb(255, 255, 255);
+    position: absolute;
+    width: 45px;
+    height: 42px;
+
+}

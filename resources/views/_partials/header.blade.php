@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-md navbar-light navbar-laravel">
+<nav class="navbar navbar-expand-md navbar-dark navbar-laravel bg-primary">
     <div class="container">
         <a class="navbar-brand" href="{{ url('/') }}">
             {{ config('app.name', 'Laravel') }}
@@ -11,7 +11,7 @@
             <!-- Left Side Of Navbar -->
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item">
-                    <a href="/about" class="nav-link">GOGOGOGO</a>
+                    <a href="/doctor" class="nav-link">GOGOGOGO</a>
                 </li>
                 <li class="nav-item">
                     <a href="/contacts" class="nav-link">awdqwwdq</a>
