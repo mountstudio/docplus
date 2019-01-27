@@ -1,23 +1,11 @@
 <nav class="navbar navbar-expand-md navbar-dark navbar-laravelv bg-primary">
     <div class="container">
-        <a class="navbar-brand" href="{{ url('/') }}">
-            {{ config('app.name', 'Laravel') }}
-        </a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
-            <span class="navbar-toggler-icon"></span>
-        </button>
+        <div class="col-3">
+            <a class="navbar-brand" href="{{ url('/') }}">
+                <img class="w-50" src={{asset('img/logo.png')}} alt="">
+            </a>
 
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <!-- Left Side Of Navbar -->
-            <ul class="navbar-nav mr-auto">
-                <li class="nav-item">
-                    <a href="/about" class="nav-link">GOGOGOGO</a>
-                </li>
-                <li class="nav-item">
-                    <a href="/contacts" class="nav-link">awdqwwdq</a>
-                </li>
-            </ul>
-
+        </div>
             <!-- Right Side Of Navbar -->
             <ul class="navbar-nav ml-auto">
                 <!-- Authentication Links -->
