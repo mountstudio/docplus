@@ -1,6 +1,6 @@
-<nav class="navbar navbar-expand-md navbar-dark navbar-laravelv bg-primary">
-    <div class="container">
-        <div class="col-3">
+<nav class="navbar navbar-expand-md navbar-dark navbar-laravelv bg-primary py-0 pl-0 shadow-lg border-bottom sticky-top">
+    <div class="container-fluid pl-0">
+        <div class="col-3 bg-light py-2 text-center pl-0 shadow">
             <a class="navbar-brand" href="{{ url('/') }}">
                 <img class="w-50" src={{asset('img/logo.png')}} alt="">
             </a>

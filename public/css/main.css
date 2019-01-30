@@ -1,3 +1,26 @@
+@font-face {
+    font-family: "Acrom";
+    src: url("/acrom-medium.ttf") format("truetype");
+    font-style: normal;
+    font-weight: normal;
+}
 .border-10{
     border-top: 10px solid rgb(197,44,75);
 }
+
+.star {
+    width: 20px;
+    height: auto;
+}
+.like {
+    width: 50px;
+    height: auto;
+
+}
+
+p {
+    font-family: 'Open Sans', sans-serif;
+}
+
+
+
