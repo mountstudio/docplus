@@ -22,5 +22,13 @@ p {
     font-family: 'Open Sans', sans-serif;
 }
 
+.dropdown-btn{
+    width: 500px !important;
+    text-align: left;
+}
+.size-toggle{
+    width: 30px;
+    height: auto;
+}
 
 
