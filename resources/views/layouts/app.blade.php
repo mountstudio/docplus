@@ -34,8 +34,9 @@
 
         @include('_partials.footer')
 
-        <script src="{{ asset('js/app.js') }}"></script>
-        @stack('scripts')
+
     </div>
+    <script src="{{ asset('js/app.js') }}"></script>
+    @stack('scripts')
 </body>
 </html>
