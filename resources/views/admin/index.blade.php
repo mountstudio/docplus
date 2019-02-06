@@ -19,3 +19,15 @@
     @include('_partials._delete_modal')
 
 @endsection
+
+@push('scripts')
+    <script>
+        $(function () {
+            $('#delete-confirmation').on('show.bs.modal', function (e) {
+                let id = $(e.relatedTarget).attr('data-id');
+                let model = $(e.relatedTarget).attr('data-model');
+                $(this).find('form#delete-form').attr('action', '/admin/' + model + '/' + id);
+            })
+        });
+    </script>
+@endpush

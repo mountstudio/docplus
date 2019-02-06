@@ -10,4 +10,9 @@ class Clinic extends Model
     protected $casts = [
       'phones' => 'array',
     ];
+
+    public function Doctors()
+    {
+        return $this->hasMany('App/Doctors');
+    }
 }

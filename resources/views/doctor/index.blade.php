@@ -14,9 +14,12 @@
                 <thead>
                 <tr>
                     <th>Id</th>
+                    <th>Имя</th>
+                    <th>Фамилия</th>
                     <th>Адресс</th>
                     <th>Цена</th>
                     <th>Скидка</th>
+                    <th>Действия</th>
                 </tr>
                 </thead>
             </table>
@@ -40,12 +43,14 @@
                 ajax: '{!! route('datatable.getdoctors') !!}',
                 columns: [
                     { data: 'id', name: 'id' },
+                    { data: 'user.name', name: 'user.name' },
+                    { data: 'user.lastName', name: 'user.lastName' },
                     { data: 'address', name: 'address' },
                     { data: 'price', name: 'price' },
-                    { data: 'discount', name: 'discount'}
+                    { data: 'discount', name: 'discount'},
+                    { data: 'action', name: 'action', orderable: false, searchable: false }
                 ]
             });
         });
     </script>
-
 @endpush

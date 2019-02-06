@@ -2,16 +2,16 @@
     <li class="nav-item py-1 border-bottom {{ Request::is('admin/options') ? 'bg-secondary' : '' }}">
         <a class="nav-link {{ Request::is('admin/options') ? 'text-light' : 'text-dark' }}" href="{{ route('options') }}">Настройки</a>
     </li>
-    <li class="nav-item py-1 border-bottom {{ Request::is('admin/doctor') ? 'bg-secondary' : '' }}">
+    <li class="nav-item py-1 border-bottom {{ Request::is('*doctor*') ? 'bg-secondary' : '' }}">
         <a class="nav-link {{ Request::is('admin/doctor') ? 'text-light' : 'text-dark' }}" href="{{ route('doctor.index') }}">Доктора</a>
     </li>
-    <li class="nav-item py-1 border-bottom {{ Request::is('admin/clinic') ? 'bg-secondary' : '' }}">
+    <li class="nav-item py-1 border-bottom {{ Request::is('*clinic*') ? 'bg-secondary' : '' }}">
         <a class="nav-link {{ Request::is('admin/clinic') ? 'text-light' : 'text-dark' }}" href="{{ route('clinic.index') }}">Клиника</a>
     </li>
-    <li class="nav-item py-1 border-bottom {{ Request::is('admin/service') ? 'bg-secondary' : '' }}">
+    <li class="nav-item py-1 border-bottom {{ Request::is('*service*') ? 'bg-secondary' : '' }}">
         <a class="nav-link {{ Request::is('admin/service') ? 'text-light' : 'text-dark' }}" href="{{ route('service.index') }}">Сервис</a>
     </li>
-    <li class="nav-item py-1 border-bottom {{ Request::is('admin/category') ? 'bg-secondary' : '' }}">
+    <li class="nav-item py-1 border-bottom {{ Request::is('*category*') ? 'bg-secondary' : '' }}">
         <a class="nav-link {{ Request::is('admin/category') ? 'text-light' : 'text-dark' }}" href="{{ route('category.index') }}">Категории</a>
     </li>
     {{--<li class="nav-item py-1 border-bottom {{ Request::is('admin/basket') ? 'bg-secondary' : '' }}">--}}

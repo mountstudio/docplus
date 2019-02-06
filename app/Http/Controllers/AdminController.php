@@ -33,9 +33,13 @@ class AdminController extends Controller
     }
     public function getDoctors()
     {
-        $doctors = Doctor::query();
+        $doctors = Doctor::query()->with(['user:id,name,lastName']);
 
-        return Datatables::of($doctors)
+        return DataTables::of($doctors)
+            ->addColumn('action', function ($model) {
+                return '<a href="'.route('doctor.edit', $model->id).'" class="btn btn-sm btn-primary"><i class="far fa-edit"></i> Edit</a>
+                        <a href="'.route('doctor.destroy', $model->id).'" data-model="doctor" data-id="'.$model->id.'" onclick="event.preventDefault();" data-toggle="modal" data-target="#delete-confirmation" class="btn btn-sm btn-danger"><i class="far fa-trash-alt"></i> Delete</a>';
+            })
             ->make(true);
     }
 

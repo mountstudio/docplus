@@ -13,4 +13,13 @@ class Doctor extends Model
         'specializations' => 'array',
     ];
 
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
+
+    public function clinic()
+    {
+        return $this->hasOne('App/Clinic');
+    }
 }

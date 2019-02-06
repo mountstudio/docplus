@@ -5,6 +5,7 @@ namespace App;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Support\Facades\Hash;
 
 class User extends Authenticatable
 {
@@ -16,7 +17,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'name', 'lastName', 'email', 'password', 'isDoctor',
     ];
 
     /**
@@ -27,4 +28,20 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    public function doctor()
+    {
+        return $this->hasOne(Doctor::class);
+    }
+
+    public static function registerUser($data, $isDoctor = false)
+    {
+        return User::create([
+            'name' => $data['name'],
+            'lastName' => $data['last_name'],
+            'email' => $data['email'],
+            'password' => Hash::make($data['password']),
+            'isDoctor' => $isDoctor,
+        ]);
+    }
 }

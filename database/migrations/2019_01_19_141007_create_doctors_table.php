@@ -21,6 +21,7 @@ class CreateDoctorsTable extends Migration
             $table->text('specializations')->nullable();
             $table->integer('price');
             $table->integer('discount');
+            $table->integer('user_id');
             $table->timestamps();
         });
     }
