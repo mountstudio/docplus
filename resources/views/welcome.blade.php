@@ -105,7 +105,7 @@
                 <h3 class="text-secondary text-center font-weight-bold">СПЕЦИАЛЬНОСТИ ВРАЧЕЙ</h3>
                 <br>
 
-                
+
 
                 <div class="row">
                     <div class="col-3">
@@ -212,40 +212,47 @@
                                     <a class="nav-link" href="#">Диетолог</a>
                                 </nav>
                             </div>
+                            <div class="col-2">
+                                <h3 class="text-primary">Р</h3>
+                            </div>
+                            <div class="col-10">
+                                <nav class="nav flex-column border-left pb-2 text-secondary">
+                                    <a class="nav-link" href="#">Ревматолог</a>
+                                    <a class="nav-link" href="#">Рефлексотерапефт(иглотерапефт)</a>
+                                </nav>
+                            </div>
                         </div>
                     </div>
+
+
+
+
                     <div class="col-3">
                         <div class="row">
+
                             <div class="col-2">
-                                <h3 class="text-primary">А</h3>
+                                <h3 class="text-primary">О</h3>
                             </div>
                             <div class="col-10">
                                 <nav class="nav flex-column border-left pb-2 text-secondary">
-                                    <a class="nav-link" href="#">Аллерголог</a>
-                                    <a class="nav-link" href="#">Аллерголог</a>
-                                    <a class="nav-link" href="#">Аллерголог</a>
+                                    <a class="nav-link" href="#">Офтальмолог(Окулист)</a>
+                                    <a class="nav-link" href="#">Онколог</a>
+                                    <a class="nav-link" href="#">Ортапед</a>
                                 </nav>
                             </div>
                             <div class="col-2">
-                                <h3 class="text-primary">В</h3>
-                            </div>
-                            <div class="col-10">
-                                <nav class="nav flex-column border-left pb-2 text-secondary">
-                                    <a class="nav-link" href="#">Венеролог</a>
-                                    <a class="nav-link" href="#">Вертебролог</a>
-                                </nav>
-                            </div>
-                            <div class="col-2">
-                                <h3 class="text-primary">Г</h3>
+                                <h3 class="text-primary">П</h3>
                             </div>
                             <div class="col-10">
                                 <nav class="nav flex-column border-left text-secondary">
-                                    <a class="nav-link" href="#">Гастроэнтеролог</a>
-                                    <a class="nav-link" href="#">Гематолог</a>
-                                    <a class="nav-link" href="#">Генетик</a>
-                                    <a class="nav-link" href="#">Гепатолог</a>
-                                    <a class="nav-link" href="#">Гинеколог</a>
-                                    <a class="nav-link" href="#">Гирудотерапефт</a>
+                                    <a class="nav-link" href="#">Педиатр</a>
+                                    <a class="nav-link" href="#">Проктолог</a>
+                                    <a class="nav-link" href="#">Педиатр</a>
+                                    <a class="nav-link" href="#">Проктолог</a>
+                                    <a class="nav-link" href="#">Педиатр</a>
+                                    <a class="nav-link" href="#">Проктолог</a>
+                                    <a class="nav-link" href="#">Педиатр</a>
+                                    <a class="nav-link" href="#">Проктолог</a>
                                 </nav>
 
                             </div>
@@ -254,18 +261,74 @@
                             </div>
                             <div class="col-10">
                                 <nav class="nav flex-column border-left pb-2 text-secondary">
-                                    <a class="nav-link" href="#">Дерматовенеролог</a>
-                                    <a class="nav-link" href="#">Дерматолог</a>
-                                    <a class="nav-link" href="#">Диетолог</a>
+                                    <a class="nav-link" href="#">Ревматолог</a>
+                                    <a class="nav-link" href="#">Рефлексотерапевт(иглотерапевт)</a>
                                 </nav>
                             </div>
                         </div>
                     </div>
 
 
+
+
                     <div class="col-3">
                         <div class="row">
+                            <div class="col-2">
+                                <h3 class="text-primary">С</h3>
+                            </div>
+                            <div class="col-10">
+                                <nav class="nav flex-column border-left pb-2 text-secondary">
+                                    <a class="nav-link" href="#">Сексапотолог</a>
+                                    <a class="nav-link" href="#">Стомаолог</a>
+                                </nav>
+                            </div>
+                            <div class="col-2">
+                                <h3 class="text-primary">Т</h3>
+                            </div>
+                            <div class="col-10">
+                                <nav class="nav flex-column border-left pb-2 text-secondary">
+                                    <a class="nav-link" href="#">Терапевт</a>
+                                    <a class="nav-link" href="#">Травматолог</a>
+                                    <a class="nav-link" href="#">Трихолог</a>
+                                </nav>
+                            </div>
+                            <div class="col-2">
+                                <h3 class="text-primary">У</h3>
+                            </div>
+                            <div class="col-10">
+                                <nav class="nav flex-column border-left text-secondary">                                    <a class="nav-link" href="#">Гепатолог</a>
+                                    <a class="nav-link" href="#">УЗИ-специалист</a>
+                                    <a class="nav-link" href="#">Уролог</a>
+                                </nav>
 
+                            </div>
+                            <div class="col-2">
+                                <h3 class="text-primary">Ф</h3>
+                            </div>
+                            <div class="col-10">
+                                <nav class="nav flex-column border-left pb-2 text-secondary">
+                                    <a class="nav-link" href="#">Дерматовенеролог</a>
+                                    <a class="nav-link" href="#">Дерматолог</a>
+                                    <a class="nav-link" href="#">Физиотерапевт</a>
+                                </nav>
+                            </div>
+                            <div class="col-2">
+                                <h3 class="text-primary">Х</h3>
+                            </div>
+                            <div class="col-10">
+                                <nav class="nav flex-column border-left pb-2 text-secondary">
+                                    <a class="nav-link" href="#">Хирург</a>
+                                </nav>
+                            </div>
+                            <div class="col-2">
+                                <h3 class="text-primary">Э</h3>
+                            </div>
+                            <div class="col-10">
+                                <nav class="nav flex-column border-left pb-2 text-secondary">
+                                    <a class="nav-link" href="#">Эндокринолог</a>
+                                    <a class="nav-link" href="#">Эндоскопист</a>
+                                </nav>
+                            </div>
                         </div>
                     </div>
                 </div>
