@@ -18,6 +18,7 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="{{ asset('css/Acrom/stylesheet.css') }}">
     <link href="{{ asset('css/main.css') }}" rel="stylesheet">
     @stack('styles')
 </head>
@@ -27,7 +28,7 @@
 
 
 
-        <main class="py-4">
+        <main>
             @yield('content')
         </main>
 

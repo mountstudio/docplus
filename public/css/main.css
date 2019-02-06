@@ -35,9 +35,20 @@ p {
     border-radius: 50px !important;
 }
 
+.backdrop {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    background-color: #00000090;
+}
 
+.bg-doc {
+    background-color: #29afd5 !important;
+}
 
-
-
-
-
+* {
+    font-family: Acrom;
+    font-weight: normal;
+}
