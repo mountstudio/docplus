@@ -31,7 +31,42 @@
         </div>
     </div>
     <div class="container">
-        <div class="row justify-content-around py-5">
+        <div class="row justify-content-center py-5">
+
+
+
+            <div class="card-deck col-8">
+                <div class="card border-0">
+                    <img src="{{ asset('img/teeth-care.png') }}" alt="" class="card-img-top">
+                    <div class="card-body">
+                        <p class="text-primary  font-weight-bold pt-3 text-uppercase">Lorem ipsum dolor sit amet.</p>
+                    </div>
+                    <div class="card-footer border-0 text-center">
+                        <a href="" class="btn btn-primary btn-radius shadow text-uppercase">Записаться</a>
+                    </div>
+                </div>
+                <div class="card border-0">
+                    <img src="{{ asset('img/classes.png') }}" alt="" class="card-img-top">
+                    <div class="card-body">
+                        <p class="text-primary  font-weight-bold pt-3 text-uppercase">Expedita facilis minus praesentium quis?</p>
+                    </div>
+                    <div class="card-footer border-0 text-center">
+                        <a href="" class="btn btn-primary btn-radius shadow text-uppercase">Записаться</a>
+                    </div>
+                </div>
+                <div class="card border-0">
+                    <img src="{{ asset('img/doctor-instr.png') }}" alt="" class="card-img-top">
+                    <div class="card-body">
+                        <p class="text-primary  font-weight-bold pt-3 text-uppercase">Aliquam dignissimos doloremque facilis possimus?</p>
+                    </div>
+                    <div class="card-footer border-0 text-center">
+                        <a href="" class="btn btn-primary btn-radius shadow text-uppercase">Записаться</a>
+                    </div>
+                </div>
+            </div>
+
+
+<!--
             <div class="col-3 text-center">
                 <img class="img-fluid" src="{{ asset('img/teeth-care.png') }}" alt="">
                 <p class="text-primary  font-weight-bold pt-3 text-uppercase">
@@ -53,6 +88,7 @@
                 </p>
                 <a class="btn btn-primary btn-radius shadow text-uppercase" href="#" role="button">Записаться на прием</a>
             </div>
+-->
         </div>
 
         <div class="row">
