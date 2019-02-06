@@ -4,27 +4,20 @@
 
     <div class="container-fluid py-5 position-relative" style="background-image: url('{{ asset('img/welcome-doctor.png') }}'); background-size: cover; background-position: center center">
         <div class="backdrop"></div>
-        <div class="row py-5">
+        <div class="row py-5 justify-content-center">
             <div class="col-12 py-5">
                 <h1 class="text-uppercase text-white text-center">Найдите проверинного специалиста <br> и запишитесь к нему на прием</h1>
             </div>
-        </div>
-    </div>
-
-    <div class="container">
-        <div class="row">
-
-
-            <div class="col-12 py-5">
-                <form class="form-inline my-2 my-lg-0 ">
-                    <input class="form-control mr-sm-2 shadow-sm btn-radius" style="background-color: #ededed;" type="search" placeholder="Search" aria-label="Search">
-                    <button class="btn btn-info text-light shadow-sm my-2 my-sm-0 btn-radius text-uppercase" type="submit"><h5 class="m-0">Найти</h5></button>
-                </form>
+            <div class="col-6">
+                @include('_partials.search')
             </div>
-
         </div>
-
     </div>
+
+
+
+
+
     <div class="container-fluid bg-primary">
         <div class="container py-5">
             <div class="row py-3 text-uppercase text-white text-center">
@@ -113,3 +106,8 @@
     @include('_partials.faq')
 
 @endsection
+@push('styles')
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+
+@endpush
