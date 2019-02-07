@@ -18,9 +18,13 @@
 
 }
 
-p {
+.style-text {
     font-family: 'Open Sans', sans-serif;
+    font-size: 0.6rem !important
 }
+
+
+
 
 .dropdown-btn{
     width: 500px !important;
