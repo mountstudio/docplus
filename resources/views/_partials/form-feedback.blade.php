@@ -1,6 +1,6 @@
 <div class="container">
     <div class="row justify-content-center">
-        <div class="col-3 px-6">
+        <div class="col-3 px-6 my-5">
             <button type="button" class="btn btn-outline-info" data-toggle="modal" data-target="#exampleModal" >
                 Оставить Отзыв
             </button>

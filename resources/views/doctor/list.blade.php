@@ -3,43 +3,7 @@
 @section('content')
 
     <div class="container border-bottom border-secondary">
-        <div class="row">
-            <div class="col-4">
-                <div class="row">
-                    <div class="col-3">
-                        <img class="img-fluid" src="{{asset('img/plus.png')}}" alt="">
-                    </div>
-                    <div class="col-9">
-                        <h4 class="font-weight-bold mb-0">Моментальная запись к врачу</h4>
-                        <p class="text-secondary">Записывайтесь онлайн с помощью актуального расписания</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-4">
-                <div class="row">
-                    <div class="col-3">
-                        <img class="img-fluid" src="{{asset('img/plus.png')}}" alt="">
-                    </div>
-                    <div class="col-9">
-                        <h4 class="font-weight-bold mb-0">Моментальная запись к врачу</h4>
-                        <p class="text-secondary">Записывайтесь онлайн с помощью актуального расписания</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-4">
-                <div class="row">
-                    <div class="col-3">
-                        <img class="img-fluid" src="{{asset('img/plus.png')}}" alt="">
-                    </div>
-                    <div class="col-9">
-                        <h4 class="font-weight-bold mb-0">Моментальная запись к врачу</h4>
-                        <p class="text-secondary">Записывайтесь онлайн с помощью актуального расписания</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-4"></div>
-            <div class="col-4"></div>
-        </div>
+        @include('_partials._head_rec')
     </div>
     <div class="container">
         <div class="d-flex justify-content-center">
@@ -70,6 +34,18 @@
         <label class="form-check-label mr-5" for="exampleCheck1">Детский врач</label>
         <input class="ml-5" type="checkbox" id="exampleCheck1">
         <label class="form-check-label" for="exampleCheck1">Выезд на дом</label>
+    </div>
+    <div class="row justify-content-center my-5">
+        <div class="col-auto">
+            <p class="pt-3 m-0">СОРТИРОВАТЬ</p>
+            <div class="btn-group" role="group" aria-label="Basic example">
+                <button type="button" class="btn btn-primary">Популярные</button>
+                <button type="button" class="btn btn-primary">Рейтинг</button>
+                <button type="button" class="btn btn-primary">Стоимость</button>
+                <button type="button" class="btn btn-primary">Отзывы</button>
+
+            </div>
+        </div>
     </div>
     <div class="container my-5">
         <div class="row">

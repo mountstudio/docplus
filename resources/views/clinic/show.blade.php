@@ -81,15 +81,23 @@
 
                                                     <img class="star" src="{{ asset('img/star.png') }}" alt="">
 
-                                                @endfor
-                                                <p class="text-secondary mt-3">Превосходный врач<br>на основе 171 отзыв</p>
-                                            </div>
-                                            <div class="col-6">
-                                                <span class="text-secondary h3 mt-5 mb-2">Бобров Василий Елисеевич</span>
-                                                <span class="text-secondary font-weight-light h6 my-3"><em>Гастроэнтеролог, Терапевт <br> Стаж 19 лет</em></span>
-                                                <span class="text-secondary font-weight-light mt-2 mb-5">Приём от <span class="text-primary font-weight-bold">1400 руб.</span><i class="fas fa-exclamation-circle"></i></span>
-                                                <p class="text-secondary font-weight-light mt-2 mb-5">Телефон для записи <br> +996(777) 312-312</p>
-                                                <span class="text-secondary font-weight-light mt-2 mb-5">На прошлой неделе записалось два человека</span>
+                                   @endfor
+                                   <p class="text-secondary mt-3">Превосходный врач<br>на основе 171 отзыв</p>
+                               </div>
+                               <p>
+                               <div class="col-6">
+
+                                   <span class="text-secondary h3 mt-5 mb-2">Бобров Василий Елисеевич</span>
+                                   <span class="text-secondary font-weight-light h6 my-3"><em>Гастроэнтеролог, Терапевт <br> Стаж 19 лет</em></span>
+                                   <p class="text-secondary font-weight-light mt-2 mb-5">Приём от <span class="text-primary font-weight-bold">1400 руб.</span> <i class="fas fa-exclamation-circle"></i></p>
+                                   <p class="text-secondary font-weight-light mt-2 mb-5">
+                                       Телефон для записи <br>
+                                       +996(777)777-777
+                                   </p>
+                                   <span class="text-secondary font-weight-light mt-2 mb-5" style="font-size: 0.7rem;"> На прошлой неделе записалось два человека</span>
+
+                               </div>
+                               <div class="col-3">
 
                                             </div>
                                         </div>

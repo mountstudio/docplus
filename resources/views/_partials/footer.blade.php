@@ -3,7 +3,7 @@
         <div class="row">
             <div class="col-3">
                 <nav class="nav flex-column">
-                    <a class="nav-link text-secondary" href="#">О НАС</a>
+                    <a class="nav-link text-secondary" href="/about_us">О НАС</a>
                     <a class="nav-link text-secondary" href="#">КОНТАКТЫ</a>
                     <a class="nav-link text-secondary" href="#">FAQ</a>
                     <a class="nav-link text-secondary" href="#">ОТЗЫВЫ О СЕРВЕСЕ</a>
@@ -18,7 +18,7 @@
                     <h4 class="text-primary">ПАЦИЕНТУ</h4>
                     <a class="nav-link text-secondary" href="/getdoctors">ВРАЧИ</a>
                     <a class="nav-link text-secondary" href="/">УСЛУГИ ВРАЧЕЙ</a>
-                    <a class="nav-link text-secondary" href="/">КЛИНИКИ</a>
+                    <a class="nav-link text-secondary" href="/getclinics">КЛИНИКИ</a>
                     <a class="nav-link text-secondary" href="/">ДИАГНОСТИКА</a>
                     <a class="nav-link text-secondary" href="/">БЛОГ</a>
                 </nav>

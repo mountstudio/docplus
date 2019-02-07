@@ -18,9 +18,7 @@ Route::get('/question', function () {
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('/about', function () {
-    return view('about');
-});
+
 Route::get('/contacts', function () {
     return view('contacts');
 });
@@ -28,8 +26,16 @@ Route::get('/contacts', function () {
 Route::get('/getdoctors', function () {
     return view('doctor.list');
 });
+Route::get('/getclinics', function () {
+    return view('clinic.list');
+});
 Route::get('/getdoctor/{id}', function ($id) {
     return view('doctor.show', [
+        'id' => $id,
+    ]);
+});
+Route::get('/getclinic/{id}', function ($id) {
+    return view('clinic.show', [
         'id' => $id,
     ]);
 });
@@ -44,6 +50,7 @@ Route::get('/info-clinic', function (){
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/about_us', 'HomeController@about_us')->name('about_us');
 
 Route::get('options', 'AdminController@options')->name('options');
 Route::get('datatable/getdoctors', 'AdminController@getDoctors')->name('datatable.getdoctors');
