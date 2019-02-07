@@ -18,7 +18,9 @@ Route::get('/question', function () {
 Route::get('/', function () {
     return view('welcome');
 });
-
+Route::get('/about', function () {
+    return view('about');
+});
 Route::get('/contacts', function () {
     return view('contacts');
 });
@@ -42,10 +44,6 @@ Route::get('/getclinic/{id}', function ($id) {
 Route::get('/clinic', function (){
     return view('clinic.list-clinics');
 });
-Route::get('/info-clinic', function (){
-    return view('info-clinic');
-});
-
 
 Auth::routes();
 
