@@ -41,9 +41,6 @@ Route::get('/getclinic/{id}', function ($id) {
         'id' => $id,
     ]);
 });
-Route::get('/clinic', function (){
-    return view('clinic.list-clinics');
-});
 
 Auth::routes();
 

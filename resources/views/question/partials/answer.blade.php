@@ -13,7 +13,7 @@
             <div class="border border-danger rounded p-3">
                 Конечно можно
             </div>
-            <p><small>{{ \Carbon\Carbon::now()->format('d.m.Y H:m') }}</small></p>
+            <p><small>{{ \Carbon\Carbon::now()->format('d.m.Y H:i') }}</small></p>
         </div>
     </div>
 </div>

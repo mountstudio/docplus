@@ -4,7 +4,7 @@
             <div class="border border-primary rounded p-3">
                 Конечно можно
             </div>
-            <p><small>{{ \Carbon\Carbon::now()->format('d.m.Y H:m') }}</small></p>
+            <p><small>{{ \Carbon\Carbon::now()->format('d.m.Y H:i') }}</small></p>
         </div>
         <div class="col-3 row justify-content-center">
             <div class="col-8">
