@@ -16,7 +16,7 @@
             <div class="col-3">
                 <nav class="nav flex-column">
                     <h4 class="text-primary">ПАЦИЕНТУ</h4>
-                    <a class="nav-link text-secondary" href="/">ВРАЧИ</a>
+                    <a class="nav-link text-secondary" href="/getdoctors">ВРАЧИ</a>
                     <a class="nav-link text-secondary" href="/">УСЛУГИ ВРАЧЕЙ</a>
                     <a class="nav-link text-secondary" href="/">КЛИНИКИ</a>
                     <a class="nav-link text-secondary" href="/">ДИАГНОСТИКА</a>
