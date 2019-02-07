@@ -36,6 +36,9 @@ Route::get('/getdoctor/{id}', function ($id) {
 Route::get('/clinic', function (){
     return view('clinic.list-clinics');
 });
+Route::get('/chat', function (){
+    return view('question.index');
+});
 
 Auth::routes();
 
