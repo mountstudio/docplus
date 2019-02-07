@@ -4,7 +4,7 @@
             <div class="col-3">
                 <nav class="nav flex-column">
                     <a class="nav-link text-secondary" href="/about_us">О НАС</a>
-                    <a class="nav-link text-secondary" href="#">КОНТАКТЫ</a>
+                    <a class="nav-link text-secondary" href="/contacts">КОНТАКТЫ</a>
                     <a class="nav-link text-secondary" href="#">FAQ</a>
                     <a class="nav-link text-secondary" href="#">ОТЗЫВЫ О СЕРВЕСЕ</a>
 

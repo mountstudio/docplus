@@ -4,7 +4,9 @@
     <div class="col-8 border-top border-bottom bg-white">
         <div class="row">
             <div class="col-5 img-fluid text-center">
-                <img class="rounded w-100 pt-3" src="{{ asset('img/doctor.png') }}" alt="">
+                <a href="/getdoctor/1">
+                    <img class="rounded w-100 pt-3" src="{{ asset('img/doctor.png') }}" alt="">
+                </a>
 
                 <div class="row justify-content-center mt-3">
                     @for($j = 0; $j < 5; $j++)
