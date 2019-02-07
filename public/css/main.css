@@ -5,7 +5,7 @@
     font-weight: normal;
 }
 .border-10{
-    border-top: 10px solid rgb(197,44,75);
+    border-width: 10px!important;
 }
 
 .star {

@@ -1,5 +1,5 @@
-<footer class="bg-light border-10">
-    <div class="container pt-5">
+<footer class="bg-light border-top border-danger border-10">
+    <div class="container py-5">
         <div class="row">
             <div class="col-3">
                 <nav class="nav flex-column">
