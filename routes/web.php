@@ -11,6 +11,10 @@
 |
 */
 
+Route::get('/question', function () {
+    return view('question.index');
+});
+
 Route::get('/', function () {
     return view('welcome');
 });

@@ -18,10 +18,6 @@
 
 }
 
-p {
-    font-family: 'Open Sans', sans-serif;
-}
-
 .dropdown-btn{
     width: 500px !important;
     text-align: left;
@@ -51,4 +47,11 @@ p {
 * {
     font-family: Acrom;
     font-weight: normal;
+}
+
+.index-1 {
+    z-index: 1;
+}
+.index-5 {
+    z-index: 5;
 }
