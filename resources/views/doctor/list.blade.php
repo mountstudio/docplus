@@ -35,28 +35,25 @@
         <input class="ml-5" type="checkbox" id="exampleCheck1">
         <label class="form-check-label" for="exampleCheck1">Выезд на дом</label>
     </div>
-    <div class="row justify-content-center my-5">
-        <div class="col-auto">
-            <p class="pt-3 m-0">СОРТИРОВАТЬ</p>
-            <div class="btn-group" role="group" aria-label="Basic example">
-                <button type="button" class="btn btn-primary">Популярные</button>
-                <button type="button" class="btn btn-primary">Рейтинг</button>
-                <button type="button" class="btn btn-primary">Стоимость</button>
-                <button type="button" class="btn btn-primary">Отзывы</button>
+    <div class="container">
+        <div class="row justify-content-center my-5">
+            <div class="col-auto">
+                <p class="pt-3 m-0">СОРТИРОВАТЬ</p>
+                <div class="btn-group" role="group" aria-label="Basic example">
+                    <button type="button" class="btn btn-primary">Популярные</button>
+                    <button type="button" class="btn btn-primary">Рейтинг</button>
+                    <button type="button" class="btn btn-primary">Стоимость</button>
+                    <button type="button" class="btn btn-primary">Отзывы</button>
 
+                </div>
             </div>
         </div>
     </div>
     <div class="container my-5">
+        @for($i = 0; $i < 5; $i++)
+            @include('doctor.card')
+        @endfor
         <div class="row">
-            <div class="col-10" id="table-clinic" style="background-color: #eae6e7;">
-                @for($i = 0; $i < 5; $i++)
-                    @include('doctor.single')
-                @endfor
-            </div>
-            <div class="col-2">
-
-            </div>
             <div class="col-4 pt-3">
                 <nav aria-label="...">
                     <ul class="pagination pagination">

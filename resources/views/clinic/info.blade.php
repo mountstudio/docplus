@@ -6,11 +6,7 @@
             <div class="row">
                 <div class="col-4 text-center">
                     <img class="img-fluid" src="{{ asset('img/mobile-doctor.png') }}" alt="">
-                    @for($i = 0; $i < 5; $i++)
-
-                        <img class="star pt-2" src="{{ asset('img/star.png') }}" alt="">
-
-                    @endfor
+                    @include('_partials.stars')
                     <p class="text-secondary text-uppercase py-2">60 отзывов</p>
                 </div>
 

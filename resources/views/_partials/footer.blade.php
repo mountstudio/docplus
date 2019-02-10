@@ -5,7 +5,7 @@
                 <nav class="nav flex-column">
                     <a class="nav-link text-secondary" href="/about_us">О НАС</a>
                     <a class="nav-link text-secondary" href="/contacts">КОНТАКТЫ</a>
-                    <a class="nav-link text-secondary" href="#">FAQ</a>
+                    <a class="nav-link text-secondary" href="/question">FAQ</a>
                     <a class="nav-link text-secondary" href="#">ОТЗЫВЫ О СЕРВЕСЕ</a>
 
                     <h4 class="mt-4 text-primary">Врачам и клинике</h4>

@@ -9,13 +9,7 @@
                 </a>
 
                 <div class="row justify-content-center mt-3">
-                    @for($j = 0; $j < 5; $j++)
-
-                        <div class="col-2 px-0">
-                            <img class="img-fluid p-2" src="{{ asset('img/star.png') }}" alt="">
-                        </div>
-
-                    @endfor
+                    @include('_partials.stars')
                 </div>
             </div>
             <div class="col-7 text-secondary py-2">
