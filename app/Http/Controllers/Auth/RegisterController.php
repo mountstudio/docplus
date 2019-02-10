@@ -63,6 +63,6 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        User::registerUser($data);
+        return User::registerUser($data);
     }
 }
