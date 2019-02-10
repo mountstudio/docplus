@@ -6,7 +6,7 @@
                 <div class="row">
                     <div class="col-6 text-center">
                         <div class="position-relative">
-                            <img class="img-fluid rounded-circle mb-2 img-thumbnail" src="{{ asset('img/doctor.png') }}" alt="">
+                            <img class="img-fluid rounded-circle mb-2 img-thumbnail" src="{{ asset('img/doctor_assistant.png') }}" alt="">
                         </div>
 
                         @include('_partials.stars')

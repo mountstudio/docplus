@@ -14,10 +14,10 @@
 Route::get('/question', function () {
     return view('question.index');
 });
-
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'MainController@index');
+//Route::get('/', function () {
+////    return view('welcome');
+////});
 Route::get('/about_us', function () {
     return view('about_us');
 });
