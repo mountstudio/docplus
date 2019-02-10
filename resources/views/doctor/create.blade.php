@@ -12,6 +12,9 @@
                 <a class="nav-link" id="educations-tab" data-toggle="tab" href="#educations" role="tab" aria-controls="educations" aria-selected="false">Educations</a>
             </li>
             <li class="nav-item">
+                <a class="nav-link" id="specs-tab" data-toggle="tab" href="#specs" role="tab" aria-controls="specs" aria-selected="false">Specializations</a>
+            </li>
+            <li class="nav-item">
                 <a class="nav-link" id="save-tab" data-toggle="tab" href="#save" role="tab" aria-controls="save" aria-selected="false">Save</a>
             </li>
         </ul>
@@ -21,6 +24,9 @@
             </div>
             <div class="tab-pane fade" id="educations" role="tabpanel" aria-labelledby="educations-tab">
                 @include('doctor.tabs.educations')
+            </div>
+            <div class="tab-pane fade" id="specs" role="tabpanel" aria-labelledby="specs-tab">
+                @include('doctor.tabs.specs')
             </div>
             <div class="tab-pane fade" id="save" role="tabpanel" aria-labelledby="save-tab">
                 @include('doctor.tabs.save')
@@ -32,4 +38,20 @@
 
 @push('scripts')
     <script src="{{ asset('js/form-fields.js') }}"></script>
+    <script src="{{ asset('js/select2.js') }}"></script>
+    <script>
+        $('#specializations').select2({
+            maximumInputLength: 2,
+            width: 'resolve'
+        });
+    </script>
+@endpush
+
+@push('stylesheets')
+    <link rel="stylesheet" href="{{ asset('css/select2.css') }}">
+    <style>
+        .select2-container {
+            width: 100%!important;
+        }
+    </style>
 @endpush

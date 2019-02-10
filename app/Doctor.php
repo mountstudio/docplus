@@ -2,6 +2,8 @@
 
 namespace App;
 
+use App\Spec;
+use App\Clinic;
 use Illuminate\Database\Eloquent\Model;
 
 class Doctor extends Model
@@ -24,6 +26,11 @@ class Doctor extends Model
 
     public function clinic()
     {
-        return $this->hasOne('App/Clinic');
+        return $this->belongsTo(Clinic::class);
+    }
+
+    public function specs()
+    {
+        return $this->belongsToMany(Spec::class);
     }
 }

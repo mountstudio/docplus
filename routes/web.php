@@ -51,11 +51,15 @@ Route::get('datatable/getdoctors', 'AdminController@getDoctors')->name('datatabl
 Route::get('datatable/getclinics', 'AdminController@getClinics')->name('datatable.getclinics');
 Route::get('datatable/getservices', 'AdminController@getServices')->name('datatable.getservices');
 Route::get('datatable/getcategories', 'AdminController@getCategories')->name('datatable.getcategories');
+Route::get('datatable/getspecs', 'AdminController@getSpecs')->name('datatable.getspecs');
 Route::resource('doctor', 'DoctorController');
 Route::resource('clinic', 'ClinicController')->except([
     'show'
 ]);
 Route::resource('service', 'ServiceController')->except([
+    'show'
+]);
+Route::resource('spec', 'SpecController')->except([
     'show'
 ]);
 Route::resource('category', 'CategoryController')->except([

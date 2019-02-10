@@ -2,17 +2,23 @@
 
 namespace App;
 
+use App\Doctor;
 use App\Category;
 use Illuminate\Database\Eloquent\Model;
 
-class Service extends Model
+class Spec extends Model
 {
     protected $fillable = [
-    	'name', 'category_id'
+    	'name', 'category_id',
     ];
 
     public function category()
     {
     	return $this->belongsTo(Category::class);
+    }
+
+    public function doctors()
+    {
+    	return $this->belongsToMany(Doctor::class);
     }
 }

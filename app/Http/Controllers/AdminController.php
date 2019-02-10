@@ -7,6 +7,7 @@ use App\Clinic;
 use App\Doctor;
 use App\Service;
 use App\User;
+use App\Spec;
 use Illuminate\Http\Request;
 use Yajra\DataTables\DataTables;
 
@@ -56,6 +57,14 @@ class AdminController extends Controller
         $services = Service::query();
 
         return Datatables::of($services)
+            ->make(true);
+    }
+
+    public function getSpecs()
+    {
+        $specs = Spec::query();
+
+        return Datatables::of($specs)
             ->make(true);
     }
 

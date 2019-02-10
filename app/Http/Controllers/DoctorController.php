@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Spec;
 use App\Doctor;
 use App\User;
 use Illuminate\Http\Request;
@@ -17,7 +18,7 @@ class DoctorController extends Controller
     public function create()
     {
         return view('doctor.create', [
-            'doctors' => Doctor::all(),
+            'specs' => Spec::all(),
         ]);
     }
     public function store(Request $request)
