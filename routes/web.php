@@ -11,14 +11,35 @@
 |
 */
 
+Route::get('/question', function () {
+    return view('question.index');
+});
+
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('/about', function () {
-    return view('about');
+Route::get('/about_us', function () {
+    return view('about_us');
 });
 Route::get('/contacts', function () {
     return view('contacts');
+});
+
+Route::get('/getdoctors', function () {
+    return view('doctor.list');
+});
+Route::get('/getclinics', function () {
+    return view('clinic.list');
+});
+Route::get('/getdoctor/{id}', function ($id) {
+    return view('doctor.show', [
+        'id' => $id,
+    ]);
+});
+Route::get('/getclinic/{id}', function ($id) {
+    return view('clinic.show', [
+        'id' => $id,
+    ]);
 });
 
 Auth::routes();

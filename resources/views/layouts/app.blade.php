@@ -10,7 +10,6 @@
     <title>{{ config('app.name', 'Laravel') }}</title>
 
     <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}" defer></script>
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
@@ -18,19 +17,24 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="{{ asset('css/Acrom/stylesheet.css') }}">
     <link href="{{ asset('css/main.css') }}" rel="stylesheet">
+    @stack('styles')
 </head>
 <body>
+    @include('_partials.header')
     <div id="app">
-        @include('_partials.header')
 
 
-        <main class="py-4">
+
+        <main>
             @yield('content')
         </main>
 
 
         @include('_partials.footer')
     </div>
+    <script src="{{ asset('js/app.js') }}"></script>
+    @stack('scripts')
 </body>
 </html>
