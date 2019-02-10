@@ -9,14 +9,13 @@ use Illuminate\Database\Eloquent\Model;
 class Doctor extends Model
 {
     protected $fillable = [
-        'address', 'educations', 'experiences', 'specializations', 'price', 'discount', 'user_id'
+        'address', 'educations', 'experiences', 'price', 'discount', 'user_id'
     ];
 
 
     protected $casts = [
         'educations' => 'array',
         'experiences' => 'array',
-        'specializations' => 'array',
     ];
 
     public function user()

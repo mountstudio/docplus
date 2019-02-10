@@ -28,6 +28,10 @@ class DoctorController extends Controller
         $doctor->user_id = $user->id;
         $doctor->save();
 
+        foreach ($request->specializations as $spec) {
+            $doctor->specs()->attach($spec);
+        }
+
         return redirect()->route('doctor.index');
     }
 
