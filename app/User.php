@@ -17,7 +17,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'lastName', 'email', 'password', 'isDoctor',
+        'name', 'last_name', 'email', 'password', 'is_doctor',
     ];
 
     /**
@@ -38,10 +38,10 @@ class User extends Authenticatable
     {
         return User::create([
             'name' => $data['name'],
-            'lastName' => $data['last_name'],
+            'last_name' => $data['last_name'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
-            'isDoctor' => $isDoctor,
+            'is_doctor' => $isDoctor,
         ]);
     }
 }

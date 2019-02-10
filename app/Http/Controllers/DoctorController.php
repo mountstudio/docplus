@@ -22,17 +22,19 @@ class DoctorController extends Controller
     }
     public function store(Request $request)
     {
-        $doctor = new Doctor();
+        $doctor = new Doctor($request->all());
         $user = User::registerUser($request, 1);
-        $doctor->address = $request->address;
-        $doctor->price = $request->price;
-        $doctor->discount = $request->discount;
-
         $doctor->user_id = $user->id;
         $doctor->save();
 
         return redirect()->route('doctor.index');
     }
+
+    public function show(Doctor $doctor)
+    {
+        dd($doctor->educations);
+    }
+
     public function edit(Doctor $doctor)
     {
         $user = $doctor->user;

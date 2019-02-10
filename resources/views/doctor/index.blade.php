@@ -44,7 +44,7 @@
                 columns: [
                     { data: 'id', name: 'id' },
                     { data: 'user.name', name: 'user.name' },
-                    { data: 'user.lastName', name: 'user.lastName' },
+                    { data: 'user.last_name', name: 'user.last_name' },
                     { data: 'address', name: 'address' },
                     { data: 'price', name: 'price' },
                     { data: 'discount', name: 'discount'},

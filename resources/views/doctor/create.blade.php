@@ -4,75 +4,32 @@
 
     <form action="{{ route('doctor.store') }}" method="POST">
         @csrf
-        <div class="form-group">
-            <label for="name_of_doctor"></label>
-            <input name="name" type="text" class="form-control {{ $errors->has('name') ? 'is-invalid' : '' }}" id="name_of_doctor" placeholder="Имя Доктора" value="{{ old('name') }}">
-            @if($errors->has('name'))
-                <span class="invalid-feedback" role="alert">
-					<strong>{{ $errors->first('name') }}</strong>
-				</span>
-            @endif
+        <ul class="nav nav-tabs" id="myTab" role="tablist">
+            <li class="nav-item">
+                <a class="nav-link active" id="main-tab" data-toggle="tab" href="#main" role="tab" aria-controls="main" aria-selected="true">Main</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" id="educations-tab" data-toggle="tab" href="#educations" role="tab" aria-controls="educations" aria-selected="false">Educations</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" id="save-tab" data-toggle="tab" href="#save" role="tab" aria-controls="save" aria-selected="false">Save</a>
+            </li>
+        </ul>
+        <div class="tab-content" id="myTabContent">
+            <div class="tab-pane fade show active" id="main" role="tabpanel" aria-labelledby="main-tab">
+                @include('doctor.tabs.main')
+            </div>
+            <div class="tab-pane fade" id="educations" role="tabpanel" aria-labelledby="educations-tab">
+                @include('doctor.tabs.educations')
+            </div>
+            <div class="tab-pane fade" id="save" role="tabpanel" aria-labelledby="save-tab">
+                @include('doctor.tabs.save')
+            </div>
         </div>
-        <div class="form-group">
-            <label for="last_name_of_doctor"></label>
-            <input name="last_name" type="text" class="form-control {{ $errors->has('last_name') ? 'is-invalid' : '' }}" id="last_name_of_doctor" placeholder="Фамилия Доктора" value="{{ old('last_name') }}">
-            @if($errors->has('last_name'))
-                <span class="invalid-feedback" role="alert">
-					<strong>{{ $errors->first('last_name') }}</strong>
-				</span>
-            @endif
-        </div>
-        <div class="form-group">
-            <label for="email_of_doctor"></label>
-            <input name="email" type="text" class="form-control {{ $errors->has('email') ? 'is-invalid' : '' }}" id="email_of_doctor" placeholder="Email Доктора" value="{{ old('email') }}">
-            @if($errors->has('email'))
-                <span class="invalid-feedback" role="alert">
-					<strong>{{ $errors->first('email') }}</strong>
-				</span>
-            @endif
-        </div>
-        <div class="form-group">
-            <label for="address_of_doctor"></label>
-            <input name="address" type="text" class="form-control {{ $errors->has('address') ? 'is-invalid' : '' }}" id="address_of_doctor" placeholder="Адрес Доктора" value="{{ old('address') }}">
-            @if($errors->has('address'))
-                <span class="invalid-feedback" role="alert">
-					<strong>{{ $errors->first('address') }}</strong>
-				</span>
-            @endif
-        </div>
-        <div class="form-group">
-            <label for="price_of_doctor"></label>
-            <input name="price" type="text" class="form-control {{ $errors->has('price') ? 'is-invalid' : '' }}" id="price_of_doctor" placeholder="Цена Доктора" value="{{ old('price') }}">
-            @if($errors->has('price'))
-                <span class="invalid-feedback" role="alert">
-					<strong>{{ $errors->first('price') }}</strong>
-				</span>
-            @endif
-        </div>
-        <div class="form-group">
-            <label for="discount_of_doctor"></label>
-            <input name="discount" type="text" class="form-control {{ $errors->has('discount') ? 'is-invalid' : '' }}" id="discount_of_doctor" placeholder="Скидка Доктора" value="{{ old('price') }}">
-            @if($errors->has('discount'))
-                <span class="invalid-feedback" role="alert">
-					<strong>{{ $errors->first('discount') }}</strong>
-				</span>
-            @endif
-        </div>
-        <div class="form-group">
-            <label for="password_of_doctor"></label>
-            <input name="password" type="password" class="form-control {{ $errors->has('password') ? 'is-invalid' : '' }}" id="password_of_doctor" placeholder="Пароль доктора" value="{{ old('password') }}">
-            @if($errors->has('password'))
-                <span class="invalid-feedback" role="alert">
-					<strong>{{ $errors->first('password') }}</strong>
-				</span>
-            @endif
-        </div>
-        <div class="form-group">
-            <label for="password-confirm"></label>
-
-                <input id="password-confirm" type="password" class="form-control" name="password_confirmation" placeholder="Подтвердите пароль" required>
-        </div>
-        <button type="submit" class="btn btn-primary">Создать</button>
     </form>
 
 @endsection
+
+@push('scripts')
+    <script src="{{ asset('js/form-fields.js') }}"></script>
+@endpush

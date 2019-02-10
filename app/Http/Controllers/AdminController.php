@@ -33,7 +33,7 @@ class AdminController extends Controller
     }
     public function getDoctors()
     {
-        $doctors = Doctor::query()->with(['user:id,name,lastName']);
+        $doctors = Doctor::query()->with(['user:id,name,last_name']);
 
         return DataTables::of($doctors)
             ->addColumn('action', function ($model) {
