@@ -37,7 +37,7 @@ class DoctorController extends Controller
 
     public function show(Doctor $doctor)
     {
-        dd($doctor->educations);
+        dd($doctor->specs);
     }
 
     public function edit(Doctor $doctor)
