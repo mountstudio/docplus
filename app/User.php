@@ -44,4 +44,9 @@ class User extends Authenticatable
             'is_doctor' => $isDoctor,
         ]);
     }
+
+    public function getFullNameAttribute()
+    {
+        return ucfirst($this->name) . ' ' . ucfirst($this->last_name);
+    }
 }

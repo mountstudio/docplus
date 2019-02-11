@@ -62,6 +62,4 @@ Route::resource('service', 'ServiceController')->except([
 Route::resource('spec', 'SpecController')->except([
     'show'
 ]);
-Route::resource('category', 'CategoryController')->except([
-    'show'
-]);
+Route::resource('category', 'CategoryController');
