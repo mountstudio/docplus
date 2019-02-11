@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Category;
+use App\Doctor;
+use App\Spec;
+use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Http\Request;
 
 class CategoryController extends Controller
@@ -38,5 +41,20 @@ class CategoryController extends Controller
         $category->delete();
 
         return redirect()->back();
+    }
+    public function show(Category $category)
+    {
+        /**
+         * @var Collection $specs
+         */
+        $specs = Spec::with(['doctors'])->where('category_id', $category->id)->get();
+
+        $doctors = $specs->map(function ($item, $key) {
+            return $item->doctors;
+        })->flatten()->uniqueStrict('email');
+
+        return view('category.show',[
+            'doctors' => $doctors,
+        ]);
     }
 }

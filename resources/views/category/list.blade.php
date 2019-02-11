@@ -15,7 +15,7 @@
                     <div class="col-10">
                         <nav class="nav flex-column border-left pb-2 text-secondary">
                             @foreach($category as $item)
-                                <a class="nav-link" href="#">{{ $item->name }}</a>
+                                <a class="nav-link" href="{{ route('category.show', $item) }}">{{ $item->name }}</a>
                             @endforeach
                         </nav>
                     </div>
