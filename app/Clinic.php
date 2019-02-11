@@ -11,8 +11,13 @@ class Clinic extends Model
       'phones' => 'array',
     ];
 
-    public function Doctors()
+    public function doctors()
     {
         return $this->hasMany('App/Doctors');
+    }
+
+    public function pics()
+    {
+        return $this->belongsToMany(Pic::class);
     }
 }

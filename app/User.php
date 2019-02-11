@@ -34,6 +34,11 @@ class User extends Authenticatable
         return $this->hasOne(Doctor::class);
     }
 
+    public function pic()
+    {
+        return $this->hasOne(Pic::class);
+    }
+
     public static function registerUser($data, $isDoctor = false)
     {
         return User::create([
