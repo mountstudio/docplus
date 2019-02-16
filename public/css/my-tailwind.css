@@ -139,7 +139,6 @@
 .bg-purple-darkest {background: #21183C !important;} .text-purple-darkest {color: #21183C !important;}
 
 .bg-purple-darker {background: #382B5F !important;} .text-purple-darker {color: #382B5F !important;}
-
 .bg-purple-dark {background: #794ACF !important;} .text-purple-dark {color: #794ACF !important;}
 
 .bg-purple-light {background: #A779E9 !important;} .text-purple-light {color: #A779E9 !important;}
@@ -171,7 +170,7 @@
 .border-1 {
     border-width: 1px!important;
 }
-.border-2 {
+.border-2{
     border-width: 2px!important;
 }
 .border-3 {
@@ -189,7 +188,7 @@
 .border-7 {
     border-width: 7px!important;
 }
-.border-8 {
+border-8 {
     border-width: 8px!important;
 }
 .border-9 {
@@ -217,158 +216,176 @@
 .border-pink-lightest {border-color: #FFEBEF !important;}
 
 /* border grey*/
-.border-text-grey {border-color: #B8C2CC !important;}
+.border-grey {border-color: #B8C2CC !important;}
 
-.border-text-black {border-color: #22292F !important;}
+.border-black {border-color: #22292F !important;}
 
-.border-text-grey-darkest {border-color: #3D4852 !important;}
+.border-grey-darkest {border-color: #3D4852 !important;}
 
-.border-text-grey-darker {border-color: #606F7B !important;}
+.border-grey-darker {border-color: #606F7B !important;}
 
-.border-text-grey-dark {border-color: #8795A1 !important;}
+.border-grey-dark {border-color: #8795A1 !important;}
 
-.border-text-grey-light {border-color: #DAE1E7 !important;}
+.border-grey-light {border-color: #DAE1E7 !important;}
 
-.border-text-grey-lighter {border-color: #F1F5F8 !important;}
+.border-grey-lighter {border-color: #F1F5F8 !important;}
 
-.border-text-grey-lightest{border-color: #F8FAFC !important;}
+.border-grey-lightest{border-color: #F8FAFC !important;}
 
 /* border red */
 
-.border-text-red {border-color: #E3342F !important;}
+.border-red {border-color: #E3342F !important;}
 
-.border-text-red-darkest {border-color: #3B0D0C !important;}
+.border-red-darkest {border-color: #3B0D0C !important;}
 
-.border-text-red-darker {border-color: #621B18 !important;}
+.border-red-darker {border-color: #621B18 !important;}
 
-.border-text-red-dark {border-color: #CC1F1A !important;}
+.border-red-dark {border-color: #CC1F1A !important;}
 
-.border-text-red-light {border-color: #EF5753 !important;}
+.border-red-light {border-color: #EF5753 !important;}
 
-.border-text-red-lighter {border-color: #F9ACAA !important;}
+.border-red-lighter {border-color: #F9ACAA !important;}
 
-.border-text-red-lightest {border-color: #FCEBEA !important;}
+.border-red-lightest {border-color: #FCEBEA !important;}
 
 /* border orange*/
 
-.border-text-orange {border-color: #F6993F !important;}
+.border-orange {border-color: #F6993F !important;}
 
-.text-orange-darkest {border-color: #462A16 !important;}
+.text-o-darkest {border-color: #462A16 !important;}
 
-.border-text-orange-darker {border-color: #613B1F !important;}
+.border-orange-darker {border-color: #613B1F !important;}
 
-.border-text-orange-dark {border-color: #DE751F !important;}
+.border-orange-dark {border-color: #DE751F !important;}
 
-.border-text-orange-light {border-color: #FAAD63 !important;}
+.border-orange-light {border-color: #FAAD63 !important;}
 
-.border-text-orange-lighter {border-color: #FCD9B6 !important;}
+.border-orange-lighter {border-color: #FCD9B6 !important;}
 
-.border-text-orange-lightest {border-color: #FFF5EB !important;}
+.border-orange-lightest {border-color: #FFF5EB !important;}
 
 /* border yellow */
 
-.border-text-yellow {border-color: #FFED4A !important;}
+.border-yellow {border-color: #FFED4A !important;}
 
-.border-text-yellow-darkest {border-color: #453411 !important;}
+.border-yellow-darkest {border-color: #453411 !important;}
 
-.border-text-yellow-darker {border-color: #684F1D !important;}
+.border-yellow-darker {border-color: #684F1D !important;}
 
-.border-text-yellow-dark {border-color: #F2D024 !important;}
+.border-yellow-dark {border-color: #F2D024 !important;}
 
-.border-text-yellow-light {border-color: #FFF382 !important;}
+.border-yellow-light {border-color: #FFF382 !important;}
 
-.border-text-yellow-lighter {border-color: #FFF9C2 !important;}
+.border-yellow-lighter {border-color: #FFF9C2 !important;}
 
-.border-text-yellow-lightest {border-color: #FCFBEB !important;}
+.border-yellow-lightest {border-color: #FCFBEB !important;}
 
 /* border green */
 
-.border-text-green {border-color: #38C172 !important;}
+.border-green {border-color: #38C172 !important;}
 
-.border-text-green-darkest {border-color: #0F2F21 !important;}
+.border-green-darkest {border-color: #0F2F21 !important;}
 
-.border-text-green-darker {border-color: #1A4731 !important;}
+.border-green-darker {border-color: #1A4731 !important;}
 
-.border-text-green-dark {border-color: #1F9D55 !important;}
+.border-green-dark {border-color: #1F9D55 !important;}
 
-.border-text-green-light {border-color: #51D88A !important;}
+.border-green-light {border-color: #51D88A !important;}
 
-.border-text-green-lighter {border-color: #A2F5BF !important;}
+.border-green-lighter {border-color: #A2F5BF !important;}
 
-.border-text-green-lightest {border-color: #E3FCEC !important;}
+.border-green-lightest {border-color: #E3FCEC !important;}
 
 /* border teal */
 
-.border-text-teal {border-color: #4DC0B5 !important;}
+.border-teal {border-color: #4DC0B5 !important;}
 
-.border-text-teal-darkest {border-color: #0D3331 !important;}
+.border-teal-darkest {border-color: #0D3331 !important;}
 
-.border-text-teal-darker {border-color: #20504F !important;}
+.border-teal-darker {border-color: #20504F !important;}
 
-.border-text-teal-dark {border-color: #38A89D !important;}
+.border-teal-dark {border-color: #38A89D !important;}
 
-.border-text-teal-light {border-color: #64D5CA !important;}
+.border-teal-light {border-color: #64D5CA !important;}
 
-.border-text-teal-lighter {border-color: #A0F0ED !important;}
+.border-teal-lighter {border-color: #A0F0ED !important;}
 
-.border-text-teal-lightest {border-color: #E8FFFE !important;}
+.border-teal-lightest {border-color: #E8FFFE !important;}
 
 
 /* border blue */
 
-.border-text-blue {border-color: #3490DC !important;}
+.border-blue {border-color: #3490DC !important;}
 
-.border-text-blue-darkest {border-color: #12283A !important;}
+.border-blue-darkest {border-color: #12283A !important;}
 
-.border-text-blue-darker {border-color: #1C3D5A !important;}
+.border-blue-darker {border-color: #1C3D5A !important;}
 
-.border-text-blue-dark {border-color: #2779BD !important;}
+.border-blue-dark {border-color: #2779BD !important;}
 
-.border-text-blue-light {border-color: #6CB2EB !important;}
+.border-blue-light {border-color: #6CB2EB !important;}
 
-.border-text-blue-lighter {border-color: #BCDEFA !important;}
+.border-blue-lighter {border-color: #BCDEFA !important;}
 
-.border-text-blue-lightest {border-color: #EFF8FF !important;}
+.border-blue-lightest {border-color: #EFF8FF !important;}
 
 /* border indigo */
 
-.border-text-indigo {border-color: #6574CD !important;}
+.border-indigo {border-color: #6574CD !important;}
 
-.border-text-indigo-darkest {border-color: #191E38 !important;}
+.border-indigo-darkest {border-color: #191E38 !important;}
 
-.border-text-indigo-darker {border-color: #2F365F !important;}
+.border-indigo-darker {border-color: #2F365F !important;}
 
-.border-text-indigo-dark {border-color: #5661B3 !important;}
+.border-indigo-dark {border-color: #5661B3 !important;}
 
-.border-text-indigo-light {border-color: #7886D7 !important;}
+.border-indigo-light {border-color: #7886D7 !important;}
 
-.border-text-indigo-lighter {border-color: #B2B7FF !important;}
+.border-indigo-lighter {border-color: #B2B7FF !important;}
 
-.border-text-indigo-lightest {border-color: #E6E8FF !important;}
+.border-indigo-lightest {border-color: #E6E8FF !important;}
 
 /* border purple */
 
-.border-text-purple {border-color: #9561E2 !important;}
+.border-purple {border-color: #9561E2 !important;}
 
-.border-text-purple-darkest {border-color: #21183C !important;}
+.border-purple-darkest {border-color: #21183C !important;}
 
-.border-text-purple-darker {border-color: #382B5F !important;}
+.border-purple-darker {border-color: #382B5F !important;}
 
-.border-text-purple-dark {border-color: #794ACF !important;}
+.border-purple-dark {border-color: #794ACF !important;}
 
-.border-text-purple-light {border-color: #A779E9 !important;}
+.border-purple-light {border-color: #A779E9 !important;}
 
-.border-text-purple-lighter {border-color: #D6BBFC !important;}
+.border-purple-lighter {border-color: #D6BBFC !important;}
 
-.border-text-purple-lightest {border-color: #F3EBFF !important;}
+.border-purple-lightest {border-color: #F3EBFF !important;}
 
 /* End Borders */
 
 
+/* for bootstrap <a> */
+
+.text-green-lighter>a {
+    color: #51D88A !important;
+}
+.text-green-lighter>a:hover {
+    color: #1F9D55 !important;
+}
 
 
 
 
 
 
+/* text size */
 
+.text-xs{
+    font-size: .78rem!important;
+}
+.text-sm{
+    font-size: .875rem!important;
+}
+.text-base{
+    font-size: 1rem!important;
+}
