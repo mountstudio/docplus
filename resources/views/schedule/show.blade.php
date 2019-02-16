@@ -1,11 +1,15 @@
 <div class="container">
     <div class="row">
 
-        @for($i = 10; $i <= 60; $i+=10)
+        @foreach($schedules as $schedule)
             <div class="col-auto p-3">
+                @if($schedule->active == 1)
+                    <a style="background-color: red;" href="/record/{{$schedule->id}}" class="btn btn-primary">{{$schedule->time_of_record}}</a>
+                @else
+                    <a href="/record/{{$schedule->id}}" class="btn btn-primary">{{$schedule->time_of_record}}</a>
 
-                <a href="" class="btn btn-primary">13:00</a>
+                @endif
             </div>
-        @endfor
+        @endforeach
     </div>
 </div>

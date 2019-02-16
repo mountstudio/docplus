@@ -37,4 +37,8 @@ class Doctor extends Model
     {
         return $this->belongsToMany(Pic::class);
     }
+    public function schedules()
+    {
+        return $this->belongsToMany(Schedule::class);
+    }
 }

@@ -45,6 +45,8 @@ Route::get('/getclinic/{id}', function ($id) {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/test', 'HomeController@test')->name('test');
+Route::get('/record/{id}', 'HomeController@record');
 
 Route::get('options', 'AdminController@options')->name('options');
 Route::get('datatable/getdoctors', 'AdminController@getDoctors')->name('datatable.getdoctors');
@@ -63,3 +65,4 @@ Route::resource('spec', 'SpecController')->except([
     'show'
 ]);
 Route::resource('category', 'CategoryController');
+Route::resource('schedule', 'ScheduleController');
