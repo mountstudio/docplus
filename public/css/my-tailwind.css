@@ -366,11 +366,11 @@ border-8 {
 
 /* for bootstrap <a> */
 
-.text-green-lighter>a {
-    color: #51D88A !important;
+.color-text>a {
+    color: #6CB2EB !important;
 }
-.text-green-lighter>a:hover {
-    color: #1F9D55 !important;
+.color-text>a:hover {
+    color: #2779BD !important;
 }
 
 

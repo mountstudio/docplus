@@ -2,112 +2,34 @@
 
 @section('content')
 
-
-    <div class="container">
-        <div class="row">
-            <div class="col-2 my-5">
-                <ul class="nav flex-column">
-                    <li class="nav-item text-green-lighter ">
-                        <a class="nav-link h5 font-weight-bold " href="#">УЗИ</a>
-                    </li>
-                    <li class="nav-item h6 my-0 text-green-lighter ">
-                        <a class="nav-link py-1" href="#">-при беременности</a>
-                        <a class="nav-link py-1" href="#">-брюшного полости</a>
-
-                    </li>
-                    <li class="nav-item h6 my-0 text-green-lighter ">
-                        <a class="nav-link py-1" href="#">-малого таза</a>
-                        <a class="nav-link py-1" href="#">-почек</a>
-                    </li>
-                    <li class="nav-item h6 my-0 text-green-lighter ">
-                        <a class="nav-link py-1" href="#">-сердца (ЭХОКГ)</a>
-                        <a class="nav-link py-1" href="#">-3D УЗИ</a>
-                    </li>
-                </ul>
+    <div class="container-fluid py-5 position-relative" style="background-image: url('{{ asset('img/service.png') }}'); background-size: cover; background-position: center center">
+        <div class="backdrop"></div>
+        <div class="row py-5 justify-content-center">
+            <div class="col-12 py-5">
+                <h1 class="text-uppercase text-white text-center">Найдите нужную вам Услугу</h1>
             </div>
-            <div class="col-2 my-5">
-                <ul class="nav flex-column">
-                    <li class="nav-item text-green-lighter ">
-                        <a class="nav-link h5 font-weight-bold " href="#">УЗИ</a>
-                    </li>
-                    <li class="nav-item text-sm text-green-lighter ">
-                        <a class="nav-link py-0" href="#">-при беременности</a>
-                        <a class="nav-link py-0" href="#">-брюшной полости</a>
-
-                    </li>
-                    <li class="nav-item text-sm text-green-lighter ">
-                        <a class="nav-link py-0" href="#">-малого таза</a>
-                        <a class="nav-link py-0" href="#">-почек</a>
-                    </li>
-                    <li class="nav-item text-sm text-green-lighter ">
-                        <a class="nav-link py-0" href="#">-сердца (ЭХОКГ)</a>
-                        <a class="nav-link py-0" href="#">-3D УЗИ</a>
-                    </li>
-                </ul>
-            </div>
-            <div class="col-2 my-5">
-                <ul class="nav flex-column">
-                    <li class="nav-item text-green-lighter ">
-                        <a class="nav-link h5 font-weight-bold " href="#">УЗИ</a>
-                    </li>
-                    <li class="nav-item h6 my-0 text-green-lighter ">
-                        <a class="nav-link py-1" href="#">-при беременности</a>
-                        <a class="nav-link py-1" href="#">-брюшного полости</a>
-
-                    </li>
-                    <li class="nav-item h6 my-0 text-green-lighter ">
-                        <a class="nav-link py-1" href="#">-малого таза</a>
-                        <a class="nav-link py-1" href="#">-почек</a>
-                    </li>
-                    <li class="nav-item h6 my-0 text-green-lighter ">
-                        <a class="nav-link py-1" href="#">-сердца (ЭХОКГ)</a>
-                        <a class="nav-link py-1" href="#">-3D УЗИ</a>
-                    </li>
-                </ul>
-            </div>
-            <div class="col-3 my-5">
-                <ul class="nav flex-column">
-                    <li class="nav-item text-green-lighter ">
-                        <a class="nav-link h5 font-weight-bold " href="#">УЗИ</a>
-                    </li>
-                    <li class="nav-item h6 my-0 text-green-lighter ">
-                        <a class="nav-link py-1" href="#">-при беременности</a>
-                        <a class="nav-link py-1" href="#">-брюшного полости</a>
-
-                    </li>
-                    <li class="nav-item h6 my-0 text-green-lighter ">
-                        <a class="nav-link py-1" href="#">-малого таза</a>
-                        <a class="nav-link py-1" href="#">-почек</a>
-                    </li>
-                    <li class="nav-item h6 my-0 text-green-lighter ">
-                        <a class="nav-link py-1" href="#">-сердца (ЭХОКГ)</a>
-                        <a class="nav-link py-1" href="#">-3D УЗИ</a>
-                    </li>
-                </ul>
-            </div>
-            <div class="col-3 my-5">
-                <ul class="nav flex-column">
-                    <li class="nav-item text-green-lighter ">
-                        <a class="nav-link h5 font-weight-bold " href="#">УЗИ</a>
-                    </li>
-                    <li class="nav-item h6 my-0 text-green-lighter ">
-                        <a class="nav-link py-1" href="#">-при беременности</a>
-                        <a class="nav-link py-1" href="#">-брюшного полости</a>
-
-                    </li>
-                    <li class="nav-item h6 my-0 text-green-lighter ">
-                        <a class="nav-link py-1" href="#">-малого таза</a>
-                        <a class="nav-link py-1" href="#">-почек</a>
-                    </li>
-                    <li class="nav-item h6 my-0 text-green-lighter ">
-                        <a class="nav-link py-1" href="#">-сердца (ЭХОКГ)</a>
-                        <a class="nav-link py-1" href="#">-3D УЗИ</a>
-                    </li>
-                </ul>
+            <div class="col-6">
+                @include('_partials.search')
             </div>
         </div>
     </div>
 
 
+    <div class="container">
+
+       @include('_partials.service-clinic')
+
+    </div>
+
+    <div class="row">
+        <div class="col-12">
+            @include('_partials.slider')
+        </div>
+    </div>
 
 @endsection
+
+
+@push('styles')
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+@endpush
