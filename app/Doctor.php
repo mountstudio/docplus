@@ -5,6 +5,7 @@ namespace App;
 use App\Spec;
 use App\Clinic;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Collection;
 
 class Doctor extends Model
 {
@@ -41,4 +42,10 @@ class Doctor extends Model
     {
         return $this->belongsToMany(Schedule::class);
     }
+
+    public function feedbacks()
+    {
+        return $this->hasMany(Feedback::class);
+    }
+
 }
