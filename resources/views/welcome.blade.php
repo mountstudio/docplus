@@ -90,12 +90,14 @@
             </div>
 -->
         </div>
-
+        <div class="row">
+            <div class="col-12">
+                @include('_partials.slider')
+            </div>
+        </div>
         <div class="row">
 
-            <div class="col-12 py-5 bg-danger">
-                <p class="text-white text-center text-monospace p-5 h3"> Рекламный банер</p>
-            </div>
+
 
             <div class="col-12 py-4">
 
@@ -145,5 +147,24 @@
 @push('styles')
 
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{ asset('css/owl.carousel.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/owl.theme.default.min.css') }}">
+@endpush
+@push('scripts')
+    <script src="{{ asset('js/owl.carousel.min.js') }}"></script>
+
+    <script>
+        $('.owl-carousel').owlCarousel({
+            loop:true,
+            margin:10,
+            nav:true,
+            items: 1,
+            autoplay:true,
+            autoplayTimeout:3000,
+            autoplayHoverPause:false
+        })
+    </script>
+
+
 
 @endpush

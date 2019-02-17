@@ -37,6 +37,9 @@ Route::get('/getclinic/{id}', function ($id) {
         'id' => $id,
     ]);
 });
+Route::get('/diagnostica', function () {
+    return view('service.services');
+});
 
 
 Auth::routes();
