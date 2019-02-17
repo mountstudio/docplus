@@ -4,8 +4,13 @@
             <div class="col-9">
                 <div class="row">
                     <div class="col-6 text-center">
-                        <div class="position-relative">
-                            <img class="img-fluid rounded-circle mb-2 img-thumbnail" src="{{ asset('img/doctor_assistant.png') }}" alt="">
+                        <div class="row justify-content-center">
+                            <div class="col-8">
+                                @auth
+                                    <img class="position-absolute rounded-circle img-thumbnail like m-2" src="{{ asset('img/heart-0.png') }}" alt="">
+                                @endauth
+                                <img class="img-fluid rounded-circle mb-2 img-thumbnail" src="{{ $doctor->pics->first() ? asset('uploads/'.$doctor->pics->first()->image) : asset('img/doctor.jpg') }}" alt="">
+                            </div>
                         </div>
 
                         @include('_partials.stars')

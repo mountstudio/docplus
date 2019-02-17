@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Helpers\ImageSaver;
+use App\Pic;
 use App\Schedule;
 use App\Spec;
 use App\Doctor;
@@ -49,12 +51,25 @@ class DoctorController extends Controller
         $doctor->user_id = $user->id;
         $doctor->save();
 
-        if ($request->files) {
-            # code...
+        if ($request->allFiles()) {
+            foreach ($request->allFiles() as $input) {
+                foreach ($input as $file) {
+                    $fileName = ImageSaver::save($file, 'uploads', 'doctor');
+
+                    $pic = new Pic([
+                        'image' => $fileName,
+                    ]);
+                    $pic->save();
+
+                    $doctor->pics()->attach($pic->id);
+                }
+            }
         }
 
-        foreach ($request->specializations as $spec) {
-            $doctor->specs()->attach($spec);
+        if ($request->specializations) {
+            foreach ($request->specializations as $spec) {
+                $doctor->specs()->attach($spec);
+            }
         }
 
         return redirect()->route('doctor.index');

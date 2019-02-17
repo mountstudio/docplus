@@ -10,11 +10,13 @@
         <div class="row">
             <div class="col-8">
                 <div class="row">
-                    <div class="col-4 text-center">
+                    <div class="col-5 text-center">
 
                         <div class="position-relative">
-                            <img class="position-absolute rounded-circle img-thumbnail like m-2" src="{{ asset('img/heart-0.png') }}" alt="">
-                            <img class="img-fluid rounded-circle mb-2 img-thumbnail " src="{{ asset('img/doctor.png') }}" alt="">
+                            @auth
+                                <img class="position-absolute rounded-circle img-thumbnail like m-2" src="{{ asset('img/heart-0.png') }}" alt="">
+                            @endauth
+                            <img class="img-fluid rounded-circle mb-2 img-thumbnail " src="{{ asset('img/doctor.jpg') }}" alt="">
                         </div>
 
                         @for($i = 0; $i < 5; $i++)
@@ -25,7 +27,7 @@
                         <p class="text-secondary mt-3">Превосходный врач<br>на основе 171 отзыв</p>
                     </div>
 
-                    <div class="col-8">
+                    <div class="col">
                         <p class="text-secondary h3 mt-5 mb-2">Бобров Василий Елисеевич</p>
                         <p class="text-secondary font-weight-light h6 my-3"><em>Гастроэнтеролог, Терапевт <br> Стаж 19 лет</em></p>
                         <p class="text-secondary font-weight-light mt-2 mb-5">Приём от <del>1400</del> руб.  <span class="text-primary font-weight-bold">1000 руб.</span></p>
