@@ -18,12 +18,7 @@
 
     @include('_partials.sort')
 
-    <div class="form-check text-center">
-        <input type="checkbox" id="exampleCheck1">
-        <label class="form-check-label mr-5" for="exampleCheck1">Детский врач</label>
-        <input class="ml-5" type="checkbox" id="exampleCheck2">
-        <label class="form-check-label" for="exampleCheck2">Выезд на дом</label>
-    </div>
+    @include('_partials._filter')
 
     <div class="container my-5">
 
