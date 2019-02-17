@@ -3,7 +3,7 @@
         <a class="nav-link {{ Request::is('*options*') ? 'text-light' : 'text-dark' }}" href="{{ route('options') }}">Настройки</a>
     </li>
     <li class="nav-item py-1 border-bottom {{ Request::is('*doctor*') ? 'bg-secondary' : '' }}">
-        <a class="nav-link {{ Request::is('*doctor*') ? 'text-light' : 'text-dark' }}" href="{{ route('doctor.index') }}">Доктора</a>
+        <a class="nav-link {{ Request::is('*doctor*') ? 'text-light' : 'text-dark' }}" href="{{ route('doctor.admin') }}">Доктора</a>
     </li>
     <li class="nav-item py-1 border-bottom {{ Request::is('*clinic*') ? 'bg-secondary' : '' }}">
         <a class="nav-link {{ Request::is('*clinic*') ? 'text-light' : 'text-dark' }}" href="{{ route('clinic.index') }}">Клиника</a>

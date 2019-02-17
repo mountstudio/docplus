@@ -10,15 +10,18 @@ use Illuminate\Support\Facades\Auth;
 class RecordController extends Controller
 {
     //
-    public function store($id)
+    public function store(Request $request)
     {
-        $record = new Record();
-        $schedule = Schedule::find($id);
-        $record->schedule_id = $schedule->id;
-        $record->user_id = Auth::id();
-        $record->save();
+        $schedule = Schedule::find($request->schedule_id);
+
+        $record = Record::create([
+            'schedule_id' => $schedule->id,
+            'user_id' => Auth::id(),
+        ]);
+
         $schedule->active = 1;
         $schedule->save();
+
         return back();
     }
 }

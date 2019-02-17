@@ -52,7 +52,7 @@
     <div class="container my-5">
 
             @include('doctor.card')
-   
+
         <div class="row">
             <div class="col-4 pt-3">
                 <nav aria-label="...">

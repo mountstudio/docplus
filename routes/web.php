@@ -27,7 +27,7 @@ Route::get('/contacts', function () {
 
 Route::get('/getdoctors', function () {
     return view('doctor.index');
-});
+})->name('doctor.admin');
 Route::get('/getclinics', function () {
     return view('clinic.list');
 });
@@ -63,4 +63,4 @@ Route::resource('spec', 'SpecController')->except([
 ]);
 Route::resource('category', 'CategoryController');
 Route::resource('schedule', 'ScheduleController');
-Route::get('/record/{id}', 'RecordController@store');
+Route::resource('record', 'RecordController');
