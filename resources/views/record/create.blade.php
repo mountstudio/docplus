@@ -7,10 +7,10 @@
         <div class="form-row">
         <div class="form-group col-6">
                 <label for="name_of_stock">Врач</label>
-                <select id="id" class="form-control {{ $errors->has('doctor_id') ? 'is-invalid' : '' }}">
+                <select id="id" name="doctor_id" class="form-control {{ $errors->has('doctor_id') ? 'is-invalid' : '' }}">
                     <option value="{{ null }}" {{ old('doctor_id') ? '' : 'selected' }} disabled>Выберите врача...</option>
                     @foreach($doctors as $doctor)
-                        <option value="{{ $doctor->id }}" {{ old('doctor_id') == $doctor->id ? 'selected' : '' }}>{{ $doctor->name }} {{$doctor->last_name}}</option>
+                        <option value="{{ $doctor->id }}" {{ old('doctor_id') == $doctor->id ? 'selected' : '' }}>{{ $doctor->user->fullName }}</option>
                     @endforeach
                 </select>
             </div>
@@ -18,7 +18,7 @@
 
             <div class="form-group col-6">
                 <label for="start_date">Дата расписания</label>
-                <input class="form-control" type="date" id="schedule_date" name="schedule_date" required>
+                <input class="form-control" type="date" id="date_of_record" name="schedule_date" required>
             </div>
 
         </div>
@@ -61,41 +61,16 @@
             let formRow = '<div class="form-row position-relative" id="new-row-' + selectId + '"></div>';
             let formGroupSelect = '<div class="form-group" id="new-select-group-' + selectId + '"></div>';
             let formGroupInput = '<div class="form-group col-6" id="new-input-group-' + selectId + '"></div>';
-            let input = '<label for="new-input-\' + selectId + \'">Время записи</label><input name="times[]" type="time" id="new-input-' + selectId + '" class="form-control" required>';
+            let input = '<label for="new-input-\' + selectId + \'">Время записи</label><input name="time_of_records[]" type="time" id="new-input-' + selectId + '" class="form-control" required>';
             const removeBtn = $('<div class="btn btn-danger position-absolute" data-id="' + selectId + '" style="right: -40px; bottom: 22px;"><i class="fas fa-times"></i></div>');
 
             $('#selects').append(formRow);
             $('#new-row-'+selectId).append(formGroupSelect).append(formGroupInput).append(removeBtn);
             removeSelect(removeBtn);
             $('#new-input-group-'+selectId).append(input);
-            appendOptions();
             selectId++;
         }
 
-        function appendOptions() {
-            let select = $('#new-select-'+selectId);
-            select.append(option);
-            select.selectize();
-
-            updateOption();
-            initProducts();
-        }
-
-        function registerSelect(item) {
-            item.change(function (e) {
-                updateOption();
-                initProducts();
-            });
-        }
-
-        function updateOption() {
-            option = [];
-            arrayProductIds = [];
-            $('select.new-select').each(function () {
-                arrayProductIds.push($(this).val());
-            });
-            console.log(arrayProductIds);
-        }
 
         function removeSelect(item) {
             item.click(function (e) {

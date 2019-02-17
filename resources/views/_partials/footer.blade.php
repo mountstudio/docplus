@@ -9,14 +9,14 @@
                     <a class="nav-link text-secondary" href="#">ОТЗЫВЫ О СЕРВЕСЕ</a>
 
                     <h4 class="mt-4 text-primary">Врачам и клинике</h4>
-                    <a class="nav-link text-secondary" href="/getdoctor/1 ">ЛИЧНЫЙ КАБИНЕТ</a>
+                    <a class="nav-link text-secondary" href="/doctor/1 ">ЛИЧНЫЙ КАБИНЕТ</a>
                 </nav>
             </div>
 
             <div class="col-3">
                 <nav class="nav flex-column">
                     <h4 class="text-primary">ПАЦИЕНТУ</h4>
-                    <a class="nav-link text-secondary" href="/getdoctors">ВРАЧИ</a>
+                    <a class="nav-link text-secondary" href="{{ route('doctor.index') }}">ВРАЧИ</a>
                     <a class="nav-link text-secondary" href="/">УСЛУГИ ВРАЧЕЙ</a>
                     <a class="nav-link text-secondary" href="/getclinics">КЛИНИКИ</a>
                     <a class="nav-link text-secondary" href="/">ДИАГНОСТИКА</a>

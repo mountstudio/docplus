@@ -50,9 +50,9 @@
         </div>
     </div>
     <div class="container my-5">
-        @for($i = 0; $i < 5; $i++)
+
             @include('doctor.card')
-        @endfor
+   
         <div class="row">
             <div class="col-4 pt-3">
                 <nav aria-label="...">

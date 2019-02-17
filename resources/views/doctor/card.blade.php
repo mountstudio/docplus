@@ -1,7 +1,7 @@
 <div class="row justify-content-center my-4">
     <div class="col-12 py-4 shadow-sm">
         <div class="row">
-
+@foreach($doctors as $doctor)
             <div class="col-9">
                 <div class="row">
                     <div class="col-6 text-center">
@@ -13,7 +13,9 @@
                         <p class="text-muted font-weight-light mt-3 small">Превосходный врач на основе 171 отзыв</p>
                     </div>
                     <div class="col-6">
-                        <span class="text-secondary h3 mt-5 mb-2">{{ $doctor->user->fullName ?? 'Бобров Василий Елисеевич' }}</span>
+                        <a href="{{ route('doctor.show', $doctor->id) }}">
+                            <span class="text-secondary h3 mt-5 mb-2">{{ $doctor->user->fullName ?? 'Бобров Василий Елисеевич' }}</span>
+                        </a>
                         <p class="text-secondary font-weight-light h6 my-3"><em>
                                 @if(isset($doctor))
                                     {{ $doctor->specs->implode('name', ', ') }}
@@ -35,6 +37,7 @@
                     </div>
                 </div>
             </div>
+            @endforeach
 
             <div class="col-3">
                 <p class="text-secondary" style="font-size: 0.6rem;">

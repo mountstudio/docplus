@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Schedule;
 use App\Spec;
 use App\Doctor;
 use App\User;
@@ -13,7 +14,10 @@ class DoctorController extends Controller
     //
     public function index()
     {
-        return view('doctor.index');
+        $doctors = Doctor::all();
+        return view('doctor.list', [
+            'doctors' => $doctors,
+        ]);
     }
     public function create()
     {
@@ -37,7 +41,12 @@ class DoctorController extends Controller
 
     public function show(Doctor $doctor)
     {
-        dd($doctor->specs);
+        $schedules = Schedule::all()->where('doctor_id', $doctor->id)->groupBy('date_of_record');
+
+        return view('doctor.show', [
+            'schedules' => $schedules,
+            'doctor' => $doctor,
+        ]);
     }
 
     public function edit(Doctor $doctor)

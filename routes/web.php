@@ -26,27 +26,24 @@ Route::get('/contacts', function () {
 });
 
 Route::get('/getdoctors', function () {
-    return view('doctor.list');
+    return view('doctor.index');
 });
 Route::get('/getclinics', function () {
     return view('clinic.list');
 });
-Route::get('/getdoctor/{id}', function ($id) {
-    return view('doctor.show', [
-        'id' => $id,
-    ]);
-});
+
 Route::get('/getclinic/{id}', function ($id) {
     return view('clinic.show', [
         'id' => $id,
     ]);
 });
 
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/test', 'HomeController@test')->name('test');
-Route::get('/record/{id}', 'HomeController@record');
+
 
 Route::get('options', 'AdminController@options')->name('options');
 Route::get('datatable/getdoctors', 'AdminController@getDoctors')->name('datatable.getdoctors');
@@ -66,3 +63,4 @@ Route::resource('spec', 'SpecController')->except([
 ]);
 Route::resource('category', 'CategoryController');
 Route::resource('schedule', 'ScheduleController');
+Route::get('/record/{id}', 'RecordController@store');

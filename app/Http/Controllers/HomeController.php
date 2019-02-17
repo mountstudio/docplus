@@ -38,16 +38,5 @@ class HomeController extends Controller
         $schedules = Schedule::all()->where('doctor_id','=',1);
         return view('test',['schedules' => $schedules]);
     }
-    public function record($id)
-    {
-        $record = new Record();
-        $schedule = Schedule::find($id);
-        $record->record_time = $schedule->time_of_record;
-        $record->doctor_id = $schedule->doctor_id;
-        $record->user_id = Auth::id();
-        $record->save();
-        $schedule->active = 1;
-        $schedule->save();
-        return back();
-    }
+
 }
