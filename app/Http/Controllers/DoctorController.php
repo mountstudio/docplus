@@ -32,6 +32,10 @@ class DoctorController extends Controller
         $doctor->user_id = $user->id;
         $doctor->save();
 
+        if ($request->files) {
+            # code...
+        }
+
         foreach ($request->specializations as $spec) {
             $doctor->specs()->attach($spec);
         }

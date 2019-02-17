@@ -2,11 +2,14 @@
 
 @section('admin_content')
 
-    <form action="{{ route('doctor.store') }}" method="POST">
+    <form action="{{ route('doctor.store') }}" method="POST" enctype="multipart/form-data">
         @csrf
         <ul class="nav nav-tabs" id="myTab" role="tablist">
             <li class="nav-item">
                 <a class="nav-link active" id="main-tab" data-toggle="tab" href="#main" role="tab" aria-controls="main" aria-selected="true">Main</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" id="images-tab" data-toggle="tab" href="#images" role="tab" aria-controls="images" aria-selected="true">Images</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" id="educations-tab" data-toggle="tab" href="#educations" role="tab" aria-controls="educations" aria-selected="false">Educations</a>
@@ -21,6 +24,9 @@
         <div class="tab-content" id="myTabContent">
             <div class="tab-pane fade show active" id="main" role="tabpanel" aria-labelledby="main-tab">
                 @include('doctor.tabs.main')
+            </div>
+            <div class="tab-pane fade" id="images" role="tabpanel" aria-labelledby="images-tab">
+                @include('doctor.tabs.images')
             </div>
             <div class="tab-pane fade" id="educations" role="tabpanel" aria-labelledby="educations-tab">
                 @include('doctor.tabs.educations')
@@ -45,6 +51,10 @@
             width: 'resolve'
         });
     </script>
+    <script src="{{ asset('js/file-upload-with-preview.js') }}"></script>
+    <script>
+        var upload = new FileUploadWithPreview('myUniqueUploadId')
+    </script>
 @endpush
 
 @push('stylesheets')
@@ -54,4 +64,5 @@
             width: 100%!important;
         }
     </style>
+    <link rel="stylesheet" href="{{ asset('css/file-upload-with-preview.css') }}">
 @endpush
