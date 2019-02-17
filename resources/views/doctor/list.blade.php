@@ -5,53 +5,31 @@
     <div class="container border-bottom border-secondary">
         @include('_partials._head_rec')
     </div>
-    <div class="container">
-        <div class="d-flex justify-content-center">
-              <div class="col-8 text-right">
-                <div class="btn-group ">
-                    <button type="button" class="btn shadow my-5 bg-light rounded dropdown-btn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Action
-                    </button>
-                    <div class="dropdown-menu">
-                        <a class="dropdown-item" href="#">Action</a>
-                        <a class="dropdown-item" href="#">Another action</a>
-                        <a class="dropdown-item" href="#">Something else here</a>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="#">Separated link</a>
-                    </div>
 
-                </div>
-
+    <div class="container mt-4">
+        <div class="row justify-content-center">
+            <div class="col-8">
+                @include('_partials.search')
             </div>
-            <div class="col-4">
-                <button type="button"   class="btn btn-primary h3 position-relative my-5">Найти</button>
-            </div>
-
         </div>
     </div>
+
+
+
+    @include('_partials.sort')
+
     <div class="form-check text-center">
         <input type="checkbox" id="exampleCheck1">
         <label class="form-check-label mr-5" for="exampleCheck1">Детский врач</label>
-        <input class="ml-5" type="checkbox" id="exampleCheck1">
-        <label class="form-check-label" for="exampleCheck1">Выезд на дом</label>
+        <input class="ml-5" type="checkbox" id="exampleCheck2">
+        <label class="form-check-label" for="exampleCheck2">Выезд на дом</label>
     </div>
-    <div class="container">
-        <div class="row justify-content-center my-5">
-            <div class="col-auto">
-                <p class="pt-3 m-0">СОРТИРОВАТЬ</p>
-                <div class="btn-group" role="group" aria-label="Basic example">
-                    <button type="button" class="btn btn-primary">Популярные</button>
-                    <button type="button" class="btn btn-primary">Рейтинг</button>
-                    <button type="button" class="btn btn-primary">Стоимость</button>
-                    <button type="button" class="btn btn-primary">Отзывы</button>
 
-                </div>
-            </div>
-        </div>
-    </div>
     <div class="container my-5">
 
+        @foreach($doctors as $doctor)
             @include('doctor.card')
+        @endforeach
 
         <div class="row">
             <div class="col-4 pt-3">
@@ -103,31 +81,24 @@
     <div class="container">
         <div class="row justify-content-center">
             @for($i=0;$i<4;$i++)
-            <div class="col-6">
-                {{--<img class="rounded pt-3" src="{{ asset('img/doctor.png') }}" style="width:55px;" alt="">--}}
-                <div ><p class="m-0"><strong>Бобров Василий Елисеевич</strong></p>
-                    <span>5 отзывов</span><br></div>
+                <div class="col-6">
+                    {{--<img class="rounded pt-3" src="{{ asset('img/doctor.png') }}" style="width:55px;" alt="">--}}
+                    <div><p class="m-0"><strong>Бобров Василий Елисеевич</strong></p>
+                        <span>5 отзывов</span><br></div>
 
-                <span style="overflow: hidden; text-overflow: clip; ">Бобров Василий Елисеевич - врач окулист(офтальмолог), стаж 24 года.
+                    <span style="overflow: hidden; text-overflow: clip;">Бобров Василий Елисеевич - врач окулист(офтальмолог), стаж 24 года.
                     Скидка на прием врача! Все отзывы о враче. Запись онлайн или по телефону.
-                Бобров Василий Елисеевич - врач окулист(офтальмолог), стаж 24 года.
+                    Бобров Василий Елисеевич - врач окулист(офтальмолог), стаж 24 года.
                     Скидка на прием врача! Все отзывы о враче. Запись онлайн или по телефону.
-                </span>
-                <p class="mt-3 mb-5">На модерации, 13 января 2019</p>
-            </div>
-                @endfor
+                    </span>
+                    <p class="mt-3 mb-5">На модерации, 13 января 2019</p>
+                </div>
+            @endfor
         </div>
     </div>
 
-
-
-
-
-
-
-
-
-
 @endsection
 
-
+@push('styles')
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+@endpush

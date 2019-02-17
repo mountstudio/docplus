@@ -7,18 +7,35 @@ use App\Spec;
 use App\Doctor;
 use App\User;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Hash;
 
 class DoctorController extends Controller
 {
-    //
-    public function index()
+    public function index(Request $request)
     {
-        $doctors = Doctor::all();
+        $doctors = Doctor::with('feedbacks')->get();
+
+        if ($request->price) {
+            $doctors = $doctors->sortBy('price');
+        } else {
+            $doctors = $doctors->sortByDesc('price');
+        }
+        if ($request->feeds) {
+            $doctors = $doctors->sortBy(function ($doc) {
+                return $doc->feedbacks->count();
+            });
+        } else {
+            $doctors = $doctors->sortByDesc(function ($doc) {
+                return $doc->feedbacks->count();
+            });
+        }
+
         return view('doctor.list', [
             'doctors' => $doctors,
+            'price' => $request->price ? 0 : 1,
+            'feeds' => $request->feeds ? 0 : 1,
         ]);
     }
+
     public function create()
     {
         return view('doctor.create', [
@@ -84,5 +101,12 @@ class DoctorController extends Controller
         $doctor->delete();
 
         return redirect()->back();
+    }
+
+    public function filter(Request $request)
+    {
+
+
+        return view('doctor.list');
     }
 }

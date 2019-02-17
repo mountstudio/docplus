@@ -1,7 +1,6 @@
-<div class="row justify-content-center my-4">
-    <div class="col-12 py-4 shadow-sm">
+<div class="row justify-content-center my-4 border">
+    <div class="col-12 py-4 shadow">
         <div class="row">
-@foreach($doctors as $doctor)
             <div class="col-9">
                 <div class="row">
                     <div class="col-6 text-center">
@@ -37,16 +36,13 @@
                     </div>
                 </div>
             </div>
-            @endforeach
 
             <div class="col-3">
                 <p class="text-secondary" style="font-size: 0.6rem;">
                     Сервис DOCPlus поможет вам выбрать необходимую медицинскую услугу из широкого спектра
                     предоставленных а сайте и записаться в клинику.
                 </p>
-                <button type="button"
-                        class="btn btn-lg btn-info text-light font-weight-bold my-4 shadow text-uppercase h4 py-1 border-bottom"
-                        style="border-radius: 50px;">
+                <button type="button" class="btn btn-lg btn-info text-light font-weight-bold my-4 shadow text-uppercase h4 py-1 border-bottom" style="border-radius: 50px;">
                     Записаться
                 </button>
                 <p class="text-secondary text-left" style="font-size: 0.6rem;">
