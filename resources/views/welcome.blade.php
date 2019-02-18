@@ -5,10 +5,10 @@
     <div class="container-fluid py-5 position-relative" style="background-image: url('{{ asset('img/welcome-doctor.png') }}'); background-size: cover; background-position: center center">
         <div class="backdrop"></div>
         <div class="row py-5 justify-content-center">
-            <div class="col-12 py-5">
-                <h1 class="text-uppercase text-white text-center">Найдите проверинного специалиста <br> и запишитесь к нему на прием</h1>
+            <div class="col-12 col-sm-12 col-md-12 col-lg-12 py-5 d-none d-md-block">
+                <h1 class="text-uppercase text-white text-center">Найдите проверенного специалиста <br> и запишитесь к нему на прием</h1>
             </div>
-            <div class="col-6">
+            <div class="col-10 col-sm-10 col-md-8 col-lg-6">
                 @include('_partials.search')
             </div>
         </div>
@@ -18,10 +18,10 @@
 
 
 
-    <div class="container-fluid bg-primary">
+    <div class="container-fluid bg-primary d-none d-md-block">
         <div class="container py-5">
             <div class="row py-3 text-uppercase text-white text-center">
-                <div class="col-12">
+                <div class="col-md-12">
                     <h1 class="display-2 font-weight-bold">Всё просто</h1>
                 </div>
                 <div class="col h4 font-weight-light"><span class="display-2 font-weight-bold">1</span> <br> поиск врача</div>
@@ -35,11 +35,11 @@
 
 
 
-            <div class="card-deck col-8">
+            <div class="card-deck col-11 col-md-10 col-lg-8">
                 <div class="card border-0">
-                    <img src="{{ asset('img/teeth-care.png') }}" alt="" class="card-img-top">
+                    <img src="{{ asset('img/teeth-care.png') }}" alt="" class="card-img-top" >
                     <div class="card-body">
-                        <p class="text-primary  font-weight-bold pt-3 text-uppercase">Lorem ipsum dolor sit amet.</p>
+                        <p class="text-primary  font-weight-bold pt-3 text-uppercase">Профилактический осмотр</p>
                     </div>
                     <div class="card-footer border-0 text-center">
                         <a href="" class="btn btn-primary btn-radius shadow text-uppercase">Записаться</a>
@@ -48,7 +48,7 @@
                 <div class="card border-0">
                     <img src="{{ asset('img/classes.png') }}" alt="" class="card-img-top">
                     <div class="card-body">
-                        <p class="text-primary  font-weight-bold pt-3 text-uppercase">Expedita facilis minus praesentium quis?</p>
+                        <p class="text-primary  font-weight-bold pt-3 text-uppercase">Проверка зрения</p>
                     </div>
                     <div class="card-footer border-0 text-center">
                         <a href="" class="btn btn-primary btn-radius shadow text-uppercase">Записаться</a>
@@ -57,7 +57,7 @@
                 <div class="card border-0">
                     <img src="{{ asset('img/doctor-instr.png') }}" alt="" class="card-img-top">
                     <div class="card-body">
-                        <p class="text-primary  font-weight-bold pt-3 text-uppercase">Aliquam dignissimos doloremque facilis possimus?</p>
+                        <p class="text-primary  font-weight-bold pt-3 text-uppercase">Плановое посещение педиатра</p>
                     </div>
                     <div class="card-footer border-0 text-center">
                         <a href="" class="btn btn-primary btn-radius shadow text-uppercase">Записаться</a>
@@ -90,12 +90,12 @@
             </div>
 -->
         </div>
-        <div class="row">
+        <div class="row d-none d-md-block">
             <div class="col-12">
                 @include('_partials.slider')
             </div>
         </div>
-        <div class="row">
+        <div class="row d-none d-md-block">
 
 
 
@@ -139,9 +139,26 @@
         </div>
     </div>
 
-    @include('_partials.partners')
+    <div class=" d-md-none d-lg-none d-xl-none pb-5 ">
+        <div class="container">
+            <div class="row">
 
+                @include('_partials.mobile-menu')
+            </div>
+        </div>
+    </div>
+
+
+    <div class="d-none d-md-block">
+
+    @include('_partials.partners')
     @include('_partials.faq')
+
+    </div>
+
+
+
+
 
 @endsection
 @push('styles')
@@ -168,3 +185,4 @@
 
 
 @endpush
+
