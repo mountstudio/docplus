@@ -1,16 +1,19 @@
-<nav class="navbar navbar-expand-md navbar-dark navbar-laravelv bg-primary py-0 pl-0 shadow-lg border-bottom sticky-top">
-    <div class="container-fluid pl-0">
-        <div class="col-3 bg-light py-2 text-center pl-0 shadow">
+
+<nav class="navbar navbar-expand-md navbar-dark navbar-laravel  py-0 pl-0 shadow-lg border-bottom sticky-top px-0">
+    <div class="container-fluid pl-0  bg-primary">
+        <div class="col-12 col-sm-12 col-md-3 col-lg-4 bg-light py-2 text-center pl-0 shadow">
             <a class="navbar-brand" href="{{ url('/') }}">
                 <img class="w-50" src={{asset('img/logo.png')}} alt="">
             </a>
-
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-
         </div>
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+
             <!-- Right Side Of Navbar -->
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav ml-auto">
                 <!-- Authentication Links -->
                 @guest
@@ -46,3 +49,4 @@
         </div>
     </div>
 </nav>
+

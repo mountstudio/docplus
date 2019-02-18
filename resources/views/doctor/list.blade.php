@@ -3,7 +3,9 @@
 @section('content')
 
     <div class="container border-bottom border-secondary">
+
         @include('_partials._head_rec')
+
     </div>
     <div class="container">
         <div class="d-flex justify-content-center">
@@ -29,12 +31,13 @@
 
         </div>
     </div>
-    <div class="form-check text-center">
-        <input type="checkbox" id="exampleCheck1">
-        <label class="form-check-label mr-5" for="exampleCheck1">Детский врач</label>
-        <input class="ml-5" type="checkbox" id="exampleCheck1">
-        <label class="form-check-label" for="exampleCheck1">Выезд на дом</label>
+
+
+    <div class="container">
+        @include('_partials._filter')
     </div>
+
+
     <div class="container">
         <div class="row justify-content-center my-5">
             <div class="col-auto">
@@ -50,9 +53,14 @@
         </div>
     </div>
     <div class="container my-5">
+
         @for($i = 0; $i < 5; $i++)
+
             @include('doctor.card')
+
         @endfor
+
+
         <div class="row">
             <div class="col-4 pt-3">
                 <nav aria-label="...">
@@ -80,8 +88,13 @@
                 </nav>
             </div>
         </div>
+
+
     </div>
+
+
     <div class="container">
+
         <p><strong>Где найти хорошего окулиста?</strong></p>
         <span>    Хорошего врача вы можете найти на DocDoc.ru. Здесь вы сможете выбрать адрес ближайшего приема специалиста, исходя из важных для вас критериев, а также осуществить запись к окулисту через интернет.
         </span>
@@ -100,34 +113,34 @@
         <p class="my-5"><strong>ОБРАТИТЕ ВНИМАНИЕ!</strong> Информация на странице представлена для ознакомления.
             Для назначения лечения обратитесь к врачу.</p>
     </div>
+
+
     <div class="container">
         <div class="row justify-content-center">
-            @for($i=0;$i<4;$i++)
-            <div class="col-6">
-                {{--<img class="rounded pt-3" src="{{ asset('img/doctor.png') }}" style="width:55px;" alt="">--}}
-                <div ><p class="m-0"><strong>Бобров Василий Елисеевич</strong></p>
-                    <span>5 отзывов</span><br></div>
 
-                <span style="overflow: hidden; text-overflow: clip; ">Бобров Василий Елисеевич - врач окулист(офтальмолог), стаж 24 года.
-                    Скидка на прием врача! Все отзывы о враче. Запись онлайн или по телефону.
-                Бобров Василий Елисеевич - врач окулист(офтальмолог), стаж 24 года.
-                    Скидка на прием врача! Все отзывы о враче. Запись онлайн или по телефону.
-                </span>
-                <p class="mt-3 mb-5">На модерации, 13 января 2019</p>
-            </div>
-                @endfor
+            @for($i=0;$i<4;$i++)
+
+                <div class="col-6">
+                    {{--<img class="rounded pt-3" src="{{ asset('img/doctor.png') }}" style="width:55px;" alt="">--}}
+                    <div ><p class="m-0"><strong>Бобров Василий Елисеевич</strong></p>
+                        <span>5 отзывов</span><br></div>
+
+                    <span style="overflow: hidden; text-overflow: clip; ">Бобров Василий Елисеевич - врач окулист(офтальмолог), стаж 24 года.
+                        Скидка на прием врача! Все отзывы о враче. Запись онлайн или по телефону.
+                    Бобров Василий Елисеевич - врач окулист(офтальмолог), стаж 24 года.
+                        Скидка на прием врача! Все отзывы о враче. Запись онлайн или по телефону.
+                    </span>
+                    <p class="mt-3 mb-5">На модерации, 13 января 2019</p>
+                </div>
+
+            @endfor
+
         </div>
     </div>
-
-
-
-
-
-
-
-
-
-
 @endsection
 
 
+@push('styles')
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+@endpush

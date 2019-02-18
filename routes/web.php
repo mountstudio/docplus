@@ -10,7 +10,15 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+Route::get('/registration', function () {
+    return view('auth.register');
+});
+Route::get('/login', function () {
+    return view('auth.login');
+});
+Route::get('/registration-patient', function () {
+    return view('auth.register-patient');
+});
 Route::get('/question', function () {
     return view('question.index');
 });
@@ -41,9 +49,15 @@ Route::get('/getclinic/{id}', function ($id) {
         'id' => $id,
     ]);
 });
-Route::get('/diagnostica', function () {
-    return view('service.services');
+Route::get('/services', function () {
+    return view('service.list');
 });
+Route::get('/getservice/{id}', function ($id){
+    return view('service.show', [
+        'id' => $id,
+    ]);
+});
+
 
 Auth::routes();
 

@@ -12,6 +12,10 @@
     width: 20px;
     height: auto;
 }
+.star-mobile {
+    width: 10px;
+    height: auto;
+}
 .like {
     width: 50px;
     height: auto;
@@ -62,4 +66,23 @@
 }
 .index-5 {
     z-index: 5;
+}
+
+table.specs td.name span:after{
+    content: "........................................................................................................"
+}
+table.specs td.name {
+    overflow: hidden;
+    white-space: nowrap;
+}
+table.specs td.amt {
+     overflow: hidden;
+}
+
+
+@media screen and (max-device-width: 600px) {
+    .star {
+        width: 10px;
+        height: auto;
+    }
 }
