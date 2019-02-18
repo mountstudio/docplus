@@ -2,23 +2,37 @@
 
 @section('content')
 
-    <div class="container border-bottom border-secondary">
+    <div class="container border-bottom border-secondary d-none d-lg-block">
         @include('_partials._head_rec')
     </div>
 
     <div class="container mt-4">
         <div class="row justify-content-center">
-            <div class="col-8">
+            <div class="col-12 col-md-10 col-lg-8">
                 @include('_partials.search')
             </div>
         </div>
     </div>
 
 
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-6 my-2 col-md-12">
+                @include('_partials.sort')
+            </div>
+            <div class="col-6 my-2 col-md-12">
+                @include('_partials._filter')
+            </div>
+        </div>
+    </div>
 
-    @include('_partials.sort')
-
-    @include('_partials._filter')
+    <div class="container d-lg-none p-5 ">
+        <div class="row justify-content-center">
+            <div class="col-12 text-center">
+                @include('_partials.mobile-question')
+            </div>
+        </div>
+    </div>
 
     <div class="container my-5">
 
@@ -54,7 +68,7 @@
             </div>
         </div>
     </div>
-    <div class="container">
+    <div class="container d-none d-lg-block">
         <p><strong>Где найти хорошего окулиста?</strong></p>
         <span>    Хорошего врача вы можете найти на DocDoc.ru. Здесь вы сможете выбрать адрес ближайшего приема специалиста, исходя из важных для вас критериев, а также осуществить запись к окулисту через интернет.
         </span>
@@ -73,7 +87,7 @@
         <p class="my-5"><strong>ОБРАТИТЕ ВНИМАНИЕ!</strong> Информация на странице представлена для ознакомления.
             Для назначения лечения обратитесь к врачу.</p>
     </div>
-    <div class="container">
+    <div class="container d-none d-lg-block">
         <div class="row justify-content-center">
             @for($i=0;$i<4;$i++)
                 <div class="col-6">
@@ -96,4 +110,18 @@
 
 @push('styles')
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{ asset('css/rateyo.css') }}">
+@endpush
+
+@push('scripts')
+    <script src="{{ asset('js/rateyo.js') }}"></script>
+    <script>
+        $(".rateYo").rateYo({
+            rating: 4,
+            readOnly: true,
+            ratedFill: "red",
+            starWidth: "20px",
+            spacing: "5px"
+        });
+    </script>
 @endpush

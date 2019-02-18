@@ -1,7 +1,7 @@
 <footer class="bg-light border-top border-danger border-10">
-    <div class="container py-5 d-none d-md-block">
+    <div class="container py-5">
         <div class="row">
-            <div class="col-md-3 col-lg-3 col-6 pt-2">
+            <div class="col-md-3 col-lg-3 col-12 pt-2">
                 <nav class="nav flex-column">
                     <a class="nav-link text-secondary" href="/about_us">О НАС</a>
                     <a class="nav-link text-secondary" href="/contacts">КОНТАКТЫ</a>
@@ -13,7 +13,7 @@
                 </nav>
             </div>
 
-            <div class="col-md-3 col-lg-3 col-6 pt-md-5 pt-0">
+            <div class="col-md-3 col-lg-3 col-12 pt-md-5 pt-0">
                 <nav class="nav flex-column">
                     <h4 class="text-primary">ПАЦИЕНТУ</h4>
                     <a class="nav-link text-secondary" href="{{ route('doctor.index') }}">ВРАЧИ</a>
@@ -33,21 +33,6 @@
         </div>
     </div>
 
-    <!-- Mobile Version-->
-
-    <div class="container py-5 d-md-none d-lg-none">
-        <div class="row">
-            <div class="col-6 pt-2">
-                <nav class="nav flex-column">
-                    <a class="nav-link text-secondary py-0" href="/about_us">О нас</a>
-                    <a class="nav-link text-secondary py-0" href="/contacts">Отзывы о Сервисе</a>
-                    <a class="nav-link text-secondary py-0" href="/question">Пользовательское соглашение</a>
-                    <a class="nav-link text-secondary py-0" href="#">Полная версия</a>
-                    <a class="nav-link text-secondary py-0" href="/getdoctor/1 ">Условия Использования</a>
-                </nav>
-            </div>
-        </div>
-    </div>
 
 
 </footer>
