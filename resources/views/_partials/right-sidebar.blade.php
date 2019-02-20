@@ -1,7 +1,4 @@
 <div class="row shadow">
-    <div class="col-12">
-
-    </div>
     <div class="col-12  border border-bottom-0 bg-danger">
         <div class="text-center text-light">
             <br>
@@ -29,7 +26,7 @@
         <!-- It's a button -->
 
         <div class="text-center">
-            <button type="button" class="btn btn-lg btn-primary font-weight-bold mb-4 shadow" style="border-radius: 50px;"><h3>Вызвать врача на дом</h3></button>
+            <button type="button" class="btn btn-danger text-white font-weight-bold mb-4 shadow" style="border-radius: 50px;">Вызвать врача на дом</button>
 
         </div>
 
