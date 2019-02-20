@@ -43,11 +43,10 @@
 @endsection
 
 @push('scripts')
-    <script src="{{ asset('js/form-fields.js') }}"></script>
+
     <script src="{{ asset('js/select2.js') }}"></script>
     <script>
         $('#specializations').select2({
-            maximumInputLength: 2,
             width: 'resolve'
         });
     </script>

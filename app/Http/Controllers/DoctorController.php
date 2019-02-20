@@ -34,33 +34,13 @@ class DoctorController extends Controller
     }
     public function store(Request $request)
     {
-        $doctor = new Doctor($request->all());
         $user = User::registerUser($request, 1);
-        $doctor->user_id = $user->id;
-        $doctor->save();
 
-        if ($request->allFiles()) {
-            foreach ($request->allFiles() as $input) {
-                foreach ($input as $file) {
-                    $fileName = ImageSaver::save($file, 'uploads', 'doctor');
+        $request->merge(['user_id' => $user->id]);
 
-                    $pic = new Pic([
-                        'image' => $fileName,
-                    ]);
-                    $pic->save();
+        $doctor = Doctor::create($request->all());
 
-                    $doctor->pics()->attach($pic->id);
-                }
-            }
-        }
-
-        if ($request->specializations) {
-            foreach ($request->specializations as $spec) {
-                $doctor->specs()->attach($spec);
-            }
-        }
-
-        return redirect()->route('doctor.index');
+        return redirect()->route('doctor.admin');
     }
 
     public function show(Doctor $doctor)

@@ -1,6 +1,3 @@
-<div id="edu">
-	
-</div>
 <div class="form-row justify-content-center my-5">
 	<div class="form-group col">
 		<div class="custom-file-container" data-upload-id="myUniqueUploadId">
