@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateRecordsTable extends Migration
+class ChangeTypeOnRecordsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,8 @@ class CreateRecordsTable extends Migration
      */
     public function up()
     {
-        Schema::create('records', function (Blueprint $table) {
-            $table->increments('id');
-            $table->integer('schedule_id');
-            $table->string('name');
-            $table->integer('phone_number');
-            $table->timestamps();
+        Schema::table('records', function (Blueprint $table) {
+            $table->string('phone_number')->change();
         });
     }
 
@@ -29,6 +25,8 @@ class CreateRecordsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('records');
+        Schema::table('records', function (Blueprint $table) {
+            $table->integer('phone_number')->change();
+        });
     }
 }

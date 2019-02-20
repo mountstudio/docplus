@@ -17,6 +17,8 @@ class RecordController extends Controller
         $record = Record::create([
             'schedule_id' => $schedule->id,
             'user_id' => Auth::id(),
+            'name' => $request->name,
+            'phone_number' => $request->phone_number,
         ]);
 
         $schedule->active = 1;

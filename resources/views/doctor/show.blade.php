@@ -76,14 +76,14 @@
 
 @push('scripts')
     <script src="{{ asset('js/imask.js') }}"></script>
-    <script>
+    {{--<script>--}}
 
-        var regExpMask = new IMask(
-            document.getElementById('regexp-mask'),
-            {
-                mask: /^\+996\s\(\d{3}\)\s\d{3}\-\d{3}$/
-            });
+        {{--var regExpMask = new IMask(--}}
+            {{--document.getElementById('regexp-mask'),--}}
+            {{--{--}}
+                {{--mask: /^\+996\s\(\d{3}\)\s\d{3}\-\d{3}$/--}}
+            {{--});--}}
 
-    </script>
+    {{--</script>--}}
 
 @endpush
