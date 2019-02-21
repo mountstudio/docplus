@@ -8,6 +8,7 @@ use App\Schedule;
 use App\Spec;
 use App\Doctor;
 use App\User;
+use App\Clinic;
 use Illuminate\Http\Request;
 
 class DoctorController extends Controller
@@ -30,6 +31,7 @@ class DoctorController extends Controller
     {
         return view('doctor.create', [
             'specs' => Spec::all(),
+            'clinics' => Clinic::all(),
         ]);
     }
     public function store(Request $request)

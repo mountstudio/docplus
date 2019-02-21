@@ -15,7 +15,6 @@ class Doctor extends Model
         'address', 'educations', 'experiences', 'price', 'discount', 'user_id'
     ];
 
-
     protected $casts = [
         'educations' => 'array',
         'experiences' => 'array',
