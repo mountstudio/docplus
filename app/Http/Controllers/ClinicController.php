@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Clinic;
+use App\Service;
 use Illuminate\Http\Request;
 
 class ClinicController extends Controller
@@ -15,7 +16,7 @@ class ClinicController extends Controller
     public function create()
     {
         return view('clinic.create', [
-            'clinics' => Clinic::all(),
+            'services' => Service::all(),
         ]);
     }
     public function store(Request $request)

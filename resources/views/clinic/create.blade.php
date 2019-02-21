@@ -31,7 +31,32 @@
 				</span>
             @endif
         </div>
+
+        @include('clinic.tabs.services')
+
         <button type="submit" class="btn btn-primary">Создать</button>
     </form>
-
 @endsection
+
+@push('scripts')
+
+    <script src="{{ asset('js/select2.js') }}"></script>
+    <script>
+        $('#services').select2({
+            width: 'resolve'
+        });
+    </script>
+    <script src="{{ asset('js/file-upload-with-preview.js') }}"></script>
+    <script>
+        var upload = new FileUploadWithPreview('myUniqueUploadId')
+    </script>
+@endpush
+@push('stylesheets')
+    <link rel="stylesheet" href="{{ asset('css/select2.css') }}">
+    <style>
+        .select2-container {
+            width: 100%!important;
+        }
+    </style>
+    <link rel="stylesheet" href="{{ asset('css/file-upload-with-preview.css') }}">
+@endpush

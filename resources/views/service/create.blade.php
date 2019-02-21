@@ -25,6 +25,12 @@
 
             </select>
         </div>
+
+        <div class="form-check">
+            <input type="checkbox" class="form-check-input"  name="is_diagnostic" id="exampleCheck2">
+            <label class="form-check-label" for="exampleCheck2">Диагностика</label>
+        </div>
+
         <button type="submit" class="btn btn-primary">Создать</button>
     </form>
 
