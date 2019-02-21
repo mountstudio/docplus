@@ -29,8 +29,7 @@ class ServiceController extends Controller
 
     public function store(Request $request)
     {
-        if($request->is_diagnostic)
-        {
+        if($request->is_diagnostic) {
             $request->merge(['is_diagnostic' => true]);
         }
         $service = Service::create($request->all());
