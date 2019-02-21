@@ -67,16 +67,17 @@
     z-index: 5;
 }
 
-table.specs td.name span:after{
-    content: "........................................................................................................"
-}
 table.specs td.name {
     overflow: hidden;
     white-space: nowrap;
 }
 table.specs td.amt {
-     overflow: hidden;
+    overflow: hidden;
 }
+table.specs td.name span:after{
+    content: "........................................................................................................"
+}
+
 
 
 @media screen and (max-device-width: 600px) {

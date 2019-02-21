@@ -2,7 +2,7 @@
 
 @section('content')
 
-    <div class="container-fluid py-5 position-relative" style="background-image: url('{{ asset('img/welcome-doctor.png') }}'); background-size: cover; background-position: center center">
+    <div class="container-fluid py-5 position-relative" style="background-image: url('{{ asset('img/welcome-doctor.png') }}'); background-size: cover; background-position: center right">
         <div class="backdrop"></div>
         <div class="row py-5 justify-content-center">
             <div class="col-12 col-sm-12 col-md-12 col-lg-12 py-5 d-none d-md-block">

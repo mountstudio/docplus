@@ -7,7 +7,7 @@
     <div class="container">
         <div class="row justify-content-center">
 
-            <div class="col-6 py-5">
+            <div class="col-12 col-md-6 py-5">
                 @include('_partials.search')
             </div>
 
@@ -55,12 +55,12 @@
     </div>
     <div class="container my-5">
         <div class="row">
-            <div class="col-10" id="table-clinic" style="background-color: #eae6e7;">
+            <div class="col-12 col-md-10" id="table-clinic" style="background-color: #eae6e7;">
                 @for($i = 0; $i < 5; $i++)
                     <div class="row m-2">
-                        <div class="col-8 border-top border-bottom bg-white">
+                        <div class="col-12 col-lg-8 border-top border-bottom bg-white">
                             <div class="row">
-                                <div class="col-5 img-fluid text-center">
+                                <div class="col-12 col-md-5 img-fluid text-center">
                                     <a href="/getclinic/1">
                                         <img class="rounded w-100 pt-3" src="{{ asset('img/teeth.png') }}" alt="">
                                     </a>
@@ -70,7 +70,7 @@
 
                                     @endfor
                                 </div>
-                                <div class="col-7 text-secondary ">
+                                <div class="col-12 col-md-7 text-secondary ">
                                     <h1><strong>Он клиник</strong></h1>
                                     <p class="text-uppercase font-weight-bold">Мединцинский центр <br> <span class="h5">Первичная стоимость приёма - низкая</span></p>
                                     <p class="pt-2">
@@ -82,10 +82,10 @@
 
 
 
-                                    <table class="col-sm-12 specs">
+                                    <table class="col-12">
                                         <tr>
-                                            <td class="name w-75 float-left"><span>Drug 1</span></td>
-                                            <td class="amt w-25 float-left">10mL</td>
+                                            <td class="w-75 text-left"><span>Drug 1</span></td>
+                                            <td class="w-25 text-right">10mL</td>
                                         </tr>
                                     </table>
 
@@ -94,30 +94,29 @@
                                     <div class="accordion text-secondary " id="accordionExample">
                                         <div class="card border-0">
                                             <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
-                                                <div class="card-body">
+                                                <div class="card-body px-0">
 
-                                                    <div class="col-12">
-                                                        <table class="w-100 specs">
-                                                            <tr>
-                                                                <td class="name"><span>Drug 1</span></td>
-                                                                <td class="amt"><span>10mL</span></td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td class="name"><span>Another drug</span></td>
-                                                                <td class="amt"><span>50mL</span></td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td class="name"><span>Third</span></td>
-                                                                <td class="amt"><span>100mL</span></td>
-                                                            </tr>
-                                                        </table>
-                                                    </div>
+                                                    <table class="col-12">
+                                                        <tr>
+                                                            <td class="text-left"><span>Drug 1</span></td>
+                                                            <td class="text-right"><span>10mL</span></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td class="text-left"><span>Another drug</span></td>
+                                                            <td class="text-right"><span>50mL</span></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td class="text-left"><span>Third</span></td>
+                                                            <td class="text-right"><span>100mL</span></td>
+                                                        </tr>
+                                                    </table>
+
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="card-header py-0 bg-transparent border-0" id="headingOne">
+                                        <div class="card-header py-0 pl-0 bg-transparent border-0" id="headingOne">
                                             <h2 class="mb-0" >
-                                                <button class="btn btn-link text-secondary" type="button" data-toggle="collapse" data-target="#collapseOne"  aria-expanded="true" aria-controls="collapseOne">
+                                                <button class="btn btn-link text-secondary pl-0" type="button" data-toggle="collapse" data-target="#collapseOne"  aria-expanded="true" aria-controls="collapseOne">
                                                     <span class="">дальше</span>
                                                 </button>
                                             </h2>
@@ -127,10 +126,10 @@
 
                             </div>
                         </div>
-                        <div class="col-4 border-top border-bottom border-left bg-white">
+                        <div class="col-12 col-lg-4 border-top border-bottom border-left bg-white">
                             <div class="row">
                                 <div class="col-2 py-3">
-                                    <img src="{{ asset('img/marker.png') }}" alt="">
+                                    <img class="w-50" src="{{ asset('img/marker.png') }}" alt="">
                                 </div>
                                 <div class="col-10 text-secondary  py-3">
                                     <p class="h6">
@@ -138,7 +137,7 @@
                                     </p>
                                 </div>
                                 <div class="col-2 py-3">
-                                    <img src="{{ asset('img/clock.png') }}" alt="">
+                                    <img class="w-50" src="{{ asset('img/clock.png') }}" alt="">
                                 </div>
                                 <div class="col-10 text-secondary  py-3">
                                     <p class="h6">
@@ -148,7 +147,7 @@
                                     </p>
                                 </div>
                                 <div class="col-2 py-3">
-                                    <img src="{{ asset('img/phone.png') }}" alt="">
+                                    <img class="w-50" src="{{ asset('img/phone.png') }}" alt="">
                                 </div>
                                 <div class="col-10 text-dark  py-4">
                                     <p class="font-weight-bold h5">
@@ -169,10 +168,10 @@
                     </div>
                 @endfor
             </div>
-            <div class="col-2">
+            <div class="col-2 d-none d-md-block">
 
             </div>
-            <div class="col-4 pt-3">
+            <div class="col-12 col-md-4 pt-3">
                 <nav aria-label="...">
                     <ul class="pagination pagination">
                         <li class="page-item">
@@ -216,7 +215,7 @@
         dt { float: left; overflow: hidden; white-space: nowrap }
         dd { float: left; overflow: hidden }
 
-        dt span:after { content: " .................................................................................." }
+        dt span:before { content: " .................................................................................." }
     </style>
 
 

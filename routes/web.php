@@ -43,6 +43,8 @@ Route::get('/getclinics', function () {
 Route::get('/getclinic/{id}', function ($id) {
     return view('clinic.show', [
         'id' => $id,
+        'doctors' => App\Doctor::all(),
+        'doctor' => App\Doctor::find(1),
     ]);
 });
 Route::get('/services', function () {

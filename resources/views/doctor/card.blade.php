@@ -1,5 +1,5 @@
-<div class="row justify-content-center my-4 border">
-    <div class="col-12 py-4 shadow">
+<div class="row justify-content-center my-4 border shadow">
+    <div class="col-12 my-4">
         <div class="row">
             <div class="col-12 col-lg-9">
                 <div class="row">
@@ -7,7 +7,7 @@
                         <div class="row justify-content-center">
                             <div class="col-12">
                                 @auth
-                                    <img class="position-absolute rounded-circle img-thumbnail like m-2 d-none d-lg-block" src="{{ asset('img/heart-0.png') }}" alt="">
+                                    <img class="position-absolute rounded-circle img-thumbnail like m-2 d-none d-lg-block w-50" src="{{ asset('img/heart-0.png') }}" alt="">
                                 @endauth
                                 <img class="img-fluid rounded-circle mb-2 img-thumbnail" src="{{ $doctor->pics->first() ? asset('uploads/'.$doctor->pics->first()->image) : asset('img/doctor.jpg') }}" alt="">
                             </div>
