@@ -5,6 +5,7 @@ namespace App\Observers;
 use App\Doctor;
 use App\Helpers\ImageSaver;
 use App\Pic;
+use App\Clinic;
 use Illuminate\Http\Request;
 
 class DoctorObserver
@@ -36,6 +37,11 @@ class DoctorObserver
             foreach (request()->specializations as $spec) {
                 $doctor->specs()->attach($spec);
             }
+        }
+
+        if (request()->clinic) {
+            $doctor->clinic()->associate(Clinic::find(request()->clinic));
+            $doctor->save();
         }
     }
 
