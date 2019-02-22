@@ -11,7 +11,13 @@ class ServiceController extends Controller
     //
     public function index()
     {
-        return view('service.index');
+        $services = Service::all()
+            ->where('is_diagnostic', true)
+            ->groupBy(function ($item, $key) {
+                return $item->category->name;
+            });
+
+        return view('service.list',['services' => $services]);
     }
 
     public function create()
@@ -23,6 +29,9 @@ class ServiceController extends Controller
 
     public function store(Request $request)
     {
+        if($request->is_diagnostic) {
+            $request->merge(['is_diagnostic' => true]);
+        }
         $service = Service::create($request->all());
 
         return redirect()->route('service.index');

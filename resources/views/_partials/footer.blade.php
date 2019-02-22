@@ -19,7 +19,7 @@
                     <a class="nav-link text-secondary" href="{{ route('doctor.index') }}">ВРАЧИ</a>
                     <a class="nav-link text-secondary" href="/">УСЛУГИ ВРАЧЕЙ</a>
                     <a class="nav-link text-secondary" href="/getclinics">КЛИНИКИ</a>
-                    <a class="nav-link text-secondary" href="/">ДИАГНОСТИКА</a>
+                    <a class="nav-link text-secondary" href="{{ route('service.index') }}">ДИАГНОСТИКА</a>
                     <a class="nav-link text-secondary" href="/">БЛОГ</a>
                 </nav>
             </div>

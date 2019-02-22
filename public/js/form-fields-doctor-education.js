@@ -1,23 +1,23 @@
-let form = [];
-
 let count = 0;
+let formField = [];
+let container = $('#edu');
 
 $('#add-form-field').click(e => {
     e.preventDefault();
 
-    form = $('<div class="form-row align-items-center my-2" id="form-row-'+ count +'">\n' +
+    formField = $('<div class="form-row align-items-center my-2" id="form-row-' + count + '">\n' +
         '                        <div class="form-group m-0 col">\n' +
         '                            <input type="text" name="educations[]" class="form-control" required>\n' +
         '                        </div>\n' +
         '                        <div class="col-1 d-flex" style="height: min-content;">\n' +
-        '                            <a href="#" id="remove-form-field" data-id="'+ count +'" class="btn btn-sm btn-danger"><i class="fas fa-minus"></i></a>\n' +
+        '                            <a href="#" id="remove-form-field" data-id="' + count + '" class="btn btn-sm btn-danger"><i class="fas fa-minus"></i></a>\n' +
         '                        </div>\n' +
         '                    </div>');
-    let container = $('#edu');
-    count++;
-    container.append(form);
+    container.append(formField);
 
-    let btn = form.find('#remove-form-field');
+    count++;
+
+    let btn = formField.find('#remove-form-field');
 
     registerToRemove(btn);
 });

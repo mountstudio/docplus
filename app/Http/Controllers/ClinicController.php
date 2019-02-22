@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Clinic;
+use App\Service;
+use App\Doctor;
+use App\Category;
 use Illuminate\Http\Request;
 
 class ClinicController extends Controller
@@ -12,22 +15,24 @@ class ClinicController extends Controller
     {
         return view('clinic.index');
     }
+
     public function create()
     {
         return view('clinic.create', [
             'clinics' => Clinic::all(),
+            'categories' => Category::all(),
+            'doctors' => Doctor::all(),
+            'services' => Service::all(),
         ]);
     }
+
     public function store(Request $request)
     {
-        $clinic = new Clinic();
-        $clinic->address = $request->address;
-        $clinic->name = $request->name;
-        $clinic->phones = $request->phones;
-        $clinic->save();
+        $clinic = Clinic::create($request->all());
 
         return redirect()->route('clinic.index');
     }
+
     public function edit(Clinic $clinic)
     {
         return view('clinic.edit', [
@@ -35,6 +40,7 @@ class ClinicController extends Controller
             'clinics' => Clinic::all(),
         ]);
     }
+
     public function destroy(Clinic $clinic)
     {
         $clinic->delete();

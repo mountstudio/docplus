@@ -1,24 +1,17 @@
 <div class="row">
+
+    @foreach($services->keys() as $key)
     <div class="col-2 my-5">
         <ul class="nav flex-column">
             <li class="nav-item color-text ">
-                <a class="nav-link pb-0 h5 font-weight-bold  " href="#">УЗИ</a>
+                <a class="nav-link pb-0 h5 font-weight-bold  " href="#">{{$key}}</a>
             </li>
-            <li class="nav-item h6 my-0 color-text ">
-                <a class="nav-link py-1" href="#">-при беременности</a>
-                <a class="nav-link py-1" href="#">-брюшного полости</a>
-
-            </li>
-            <li class="nav-item h6 my-0 color-text ">
-                <a class="nav-link py-1" href="#">-малого таза</a>
-                <a class="nav-link py-1" href="#">-почек</a>
-            </li>
-            <li class="nav-item h6 my-0 color-text ">
-                <a class="nav-link py-1" href="#">-сердца (ЭХОКГ)</a>
-                <a class="nav-link py-1" href="#">-3D УЗИ</a>
-            </li>
+            @include('_partials.services',['services' => $services[$key]])
         </ul>
     </div>
+    @endforeach
+
+
     <div class="col-2 my-5">
         <ul class="nav flex-column">
             <li class="nav-item color-text ">

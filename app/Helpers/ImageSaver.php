@@ -13,7 +13,7 @@ class ImageSaver
      * @param $prefix
      * @return string
      */
-    public static function save($file, $dir, $prefix)
+    public static function save(UploadedFile $file, $dir, $prefix)
     {
         $filename = uniqid($prefix . '_') . '.' . mb_strtolower($file->getClientOriginalExtension());
 
