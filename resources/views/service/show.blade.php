@@ -68,16 +68,16 @@
                     <div class="row m-2">
                         <div class="col-12 col-lg-8 border-top border-bottom bg-white">
                             <div class="row">
-                                <div class="col-12 col-md-5 img-fluid text-center">
-                                    <a href="/getclinic/1">
-                                        <img class="rounded w-100 pt-3" src="{{ asset('img/teeth.png') }}" alt="">
+                                <div class="col-5 position-relative">
+                                    <a href="/getservices/1">
+                                        <img class="img-fluid rounded my-2 " src="{{ asset('img/teeth.png') }}" alt="">
                                     </a>
                                         <div class="row justify-content-center">
                                             @include('_partials.stars')
                                         </div>
 
                                 </div>
-                                <div class="col-12 col-md-7 text-secondary ">
+                                <div class="col-7 text-secondary ">
                                     <h1><strong>Он клиник</strong></h1>
                                     <p class="text-uppercase font-weight-bold">Мединцинский центр <br> <span class="h5">Первичная стоимость приёма - низкая</span>
                                     </p>
