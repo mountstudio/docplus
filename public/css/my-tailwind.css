@@ -366,10 +366,7 @@ border-8 {
 
 /* for bootstrap <a> */
 
-.color-text>a {
-    color: #6CB2EB !important;
-}
-.color-text>a:hover {
+a.text-blue-light:hover {
     color: #2779BD !important;
 }
 

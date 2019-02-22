@@ -55,6 +55,11 @@ Route::get('/getservice/{id}', function ($id){
         'id' => $id,
     ]);
 });
+Route::get('/getservices/{id}', function ($id){
+    return view('service.show-list', [
+        'id' => $id,
+    ]);
+});
 
 
 

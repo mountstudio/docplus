@@ -56,9 +56,7 @@
             </div>
         </div>
 
-        <div class="row">
-
-        </div>
+        @include('service.category-service')
 
     </div>
     <div class="container my-5">
@@ -72,10 +70,9 @@
                                     <a href="/getclinic/1">
                                         <img class="rounded w-100 pt-3" src="{{ asset('img/teeth.png') }}" alt="">
                                     </a>
-                                        <div class="row justify-content-center">
-                                            @include('_partials.stars')
-                                        </div>
-
+                                    <div class="row justify-content-center">
+                                        @include('_partials.stars')
+                                    </div>
                                 </div>
                                 <div class="col-12 col-md-7 text-secondary ">
                                     <h1><strong>Он клиник</strong></h1>
