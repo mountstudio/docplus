@@ -68,7 +68,7 @@
                             <div class="row">
                                 <div class="col-5 position-relative">
                                     <a href="/getclinic/1">
-                                        <img class="img-fluid rounded my-2" src="{{ asset('img/teeth.png') }}" alt="">
+                                        <img class="img-fluid rounded-circle img-thumbnail mb-2 w-50" src="{{ asset('img/teeth.png') }}" alt="">
                                     </a>
                                     <div class="row justify-content-center">
                                         @include('_partials.stars')
