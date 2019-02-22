@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Category;
+use App\Spec;
 use Illuminate\Http\Request;
 
 class MainController extends Controller
@@ -10,7 +11,7 @@ class MainController extends Controller
     //
     public function index()
     {
-        $categories = Category::all()
+        $specs = Spec::all()
             ->groupBy(function($item,$key) {
                 return mb_substr($item->name,0,1);
             })
@@ -18,6 +19,6 @@ class MainController extends Controller
                 return $key;
             });
 
-        return view('welcome',['categories' => $categories]);
+        return view('welcome',['specs' => $specs]);
     }
 }

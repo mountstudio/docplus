@@ -45,21 +45,18 @@ Route::get('/getclinic/{id}', function ($id) {
         'id' => $id,
     ]);
 });
-Route::get('/services', function () {
-    return view('service.list');
-});
 Route::get('/getservice/{id}', function ($id){
     return view('service.show', [
         'id' => $id,
     ]);
 });
-
+Route::get('/diagnostic', 'ServiceController@show_diagnostic');
+Route::get('/services', 'ServiceController@show');
 
 
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
-Route::get('/test', 'HomeController@test')->name('test');
 
 
 Route::get('options', 'AdminController@options')->name('options');
@@ -72,12 +69,9 @@ Route::resource('doctor', 'DoctorController');
 Route::resource('clinic', 'ClinicController')->except([
     'show'
 ]);
-Route::resource('service', 'ServiceController')->except([
-    'show'
-]);
-Route::resource('spec', 'SpecController')->except([
-    'show'
-]);
+Route::resource('service', 'ServiceController');
+Route::get('objects/{id}', 'ServiceController@objects');
+Route::resource('spec', 'SpecController');
 Route::resource('category', 'CategoryController');
 Route::resource('schedule', 'ScheduleController');
 Route::resource('record', 'RecordController');

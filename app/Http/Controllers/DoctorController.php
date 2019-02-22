@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Helpers\ImageSaver;
 use App\Pic;
 use App\Schedule;
+use App\Service;
 use App\Spec;
 use App\Doctor;
 use App\User;
@@ -32,6 +33,7 @@ class DoctorController extends Controller
         return view('doctor.create', [
             'specs' => Spec::all(),
             'clinics' => Clinic::all(),
+            'services' => Service::all()->where('is_diagnostic', false)
         ]);
     }
     public function store(Request $request)

@@ -14,10 +14,9 @@
         </div>
     </div>
 
-
     <div class="container">
 
-       @include('_partials.service-clinic')
+       @include('_partials.service-tabs')
 
     </div>
 

@@ -34,6 +34,10 @@ class Doctor extends Model
     {
         return $this->belongsToMany(Spec::class);
     }
+    public function services()
+    {
+        return $this->belongsToMany(Service::class);
+    }
 
     public function pics()
     {

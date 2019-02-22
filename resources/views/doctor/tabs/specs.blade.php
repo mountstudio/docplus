@@ -21,6 +21,8 @@
 	</div>
 </div>
 
+@include('doctor.tabs.services')
+
 @push('scripts')
 	<script src="{{ asset('js/select2.js') }}"></script>
     <script>
@@ -28,6 +30,9 @@
             width: 'resolve'
         });
         $('#specializations').select2({
+            width: 'resolve'
+        });
+        $('#services').select2({
             width: 'resolve'
         });
     </script>

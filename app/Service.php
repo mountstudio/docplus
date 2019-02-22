@@ -15,4 +15,13 @@ class Service extends Model
     {
     	return $this->belongsTo(Category::class);
     }
+
+    public function doctors()
+    {
+        return $this->belongsToMany(Doctor::class);
+    }
+    public function clinics()
+    {
+        return $this->belongsToMany(Clinic::class);
+    }
 }

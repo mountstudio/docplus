@@ -17,9 +17,9 @@
                 <nav class="nav flex-column">
                     <h4 class="text-primary">ПАЦИЕНТУ</h4>
                     <a class="nav-link text-secondary" href="{{ route('doctor.index') }}">ВРАЧИ</a>
-                    <a class="nav-link text-secondary" href="/">УСЛУГИ ВРАЧЕЙ</a>
+                    <a class="nav-link text-secondary" href="/services">УСЛУГИ</a>
                     <a class="nav-link text-secondary" href="/getclinics">КЛИНИКИ</a>
-                    <a class="nav-link text-secondary" href="{{ route('service.index') }}">ДИАГНОСТИКА</a>
+                    <a class="nav-link text-secondary" href="/diagnostic">ДИАГНОСТИКА</a>
                     <a class="nav-link text-secondary" href="/">БЛОГ</a>
                 </nav>
             </div>

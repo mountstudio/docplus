@@ -3,8 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Category;
+use App\Doctor;
 use App\Spec;
 use Illuminate\Http\Request;
+use PhpParser\Comment\Doc;
 
 class SpecController extends Controller
 {
@@ -49,9 +51,19 @@ class SpecController extends Controller
      * @param  \App\Spec  $spec
      * @return \Illuminate\Http\Response
      */
-    public function show(Spec $spec)
+    public function show($id)
     {
-        //
+        $specs = Spec::with(['doctors'])->where('category_id',$id)->get();
+
+        $doctors = $specs->map(function ($item, $key) {
+            return $item->doctors;
+        })->flatten()->unique('id');
+
+        return view('category.show',[
+            'doctors' => $doctors,
+        ]);
+
+
     }
 
     /**

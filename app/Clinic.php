@@ -26,7 +26,10 @@ class Clinic extends Model
     {
         return $this->belongsToMany(Category::class);
     }
-
+    public function services()
+    {
+        return $this->belongsToMany(Service::class);
+    }
     public function pics()
     {
         return $this->belongsToMany(Pic::class);

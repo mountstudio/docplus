@@ -131,7 +131,7 @@
                 </div>
             </div>
 
-            @include('category.list')
+            @include('spec.list')
 
 
 

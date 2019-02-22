@@ -6,7 +6,7 @@
 
     <div class="row">
 
-        @foreach($categories as $key => $category)
+        @foreach($specs as $key => $spec)
             <div class="col-3">
                 <div class="row">
                     <div class="col-2">
@@ -14,8 +14,8 @@
                     </div>
                     <div class="col-10">
                         <nav class="nav flex-column border-left pb-2 text-secondary">
-                            @foreach($category as $item)
-                                <a class="nav-link" href="{{ route('category.show', $item) }}">{{ $item->name }}</a>
+                            @foreach($spec as $item)
+                                <a class="nav-link" href="{{ route('spec.show', $item->category_id) }}">{{ $item->name }}</a>
                             @endforeach
                         </nav>
                     </div>

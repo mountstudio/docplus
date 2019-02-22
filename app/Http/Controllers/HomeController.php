@@ -33,10 +33,6 @@ class HomeController extends Controller
     {
         return view('about_us');
     }
-    public function test()
-    {
-        $schedules = Schedule::all()->where('doctor_id','=',1);
-        return view('test',['schedules' => $schedules]);
-    }
+
 
 }
