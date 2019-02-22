@@ -14,8 +14,7 @@ class MainController extends Controller
             ->groupBy(function($item,$key) {
                 return mb_substr($item->name,0,1);
             })
-            ->sortBy(function($item,$key)
-            {
+            ->sortBy(function($item,$key) {
                 return $key;
             });
 

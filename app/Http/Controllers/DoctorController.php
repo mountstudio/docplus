@@ -8,6 +8,7 @@ use App\Schedule;
 use App\Spec;
 use App\Doctor;
 use App\User;
+use App\Clinic;
 use Illuminate\Http\Request;
 
 class DoctorController extends Controller
@@ -30,42 +31,25 @@ class DoctorController extends Controller
     {
         return view('doctor.create', [
             'specs' => Spec::all(),
+            'clinics' => Clinic::all(),
         ]);
     }
     public function store(Request $request)
     {
-        $doctor = new Doctor($request->all());
         $user = User::registerUser($request, 1);
-        $doctor->user_id = $user->id;
-        $doctor->save();
 
-        if ($request->allFiles()) {
-            foreach ($request->allFiles() as $input) {
-                foreach ($input as $file) {
-                    $fileName = ImageSaver::save($file, 'uploads', 'doctor');
+        $request->merge(['user_id' => $user->id]);
 
-                    $pic = new Pic([
-                        'image' => $fileName,
-                    ]);
-                    $pic->save();
+        $doctor = Doctor::create($request->all());
 
-                    $doctor->pics()->attach($pic->id);
-                }
-            }
-        }
-
-        if ($request->specializations) {
-            foreach ($request->specializations as $spec) {
-                $doctor->specs()->attach($spec);
-            }
-        }
-
-        return redirect()->route('doctor.index');
+        return redirect()->route('doctor.admin');
     }
 
     public function show(Doctor $doctor)
     {
-        $schedules = Schedule::all()->where('doctor_id', $doctor->id)->groupBy('date_of_record');
+        $schedules = Schedule::all()
+            ->where('doctor_id', $doctor->id)
+            ->groupBy('date_of_record');
 
         return view('doctor.show', [
             'schedules' => $schedules,

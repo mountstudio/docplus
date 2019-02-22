@@ -1,7 +1,6 @@
 @extends('admin.index')
 
 @section('admin_content')
-
     <form action="{{ route('doctor.store') }}" method="POST" enctype="multipart/form-data">
         @csrf
         <ul class="nav nav-tabs" id="myTab" role="tablist">
@@ -39,18 +38,9 @@
             </div>
         </div>
     </form>
-
 @endsection
 
 @push('scripts')
-    <script src="{{ asset('js/form-fields.js') }}"></script>
-    <script src="{{ asset('js/select2.js') }}"></script>
-    <script>
-        $('#specializations').select2({
-            maximumInputLength: 2,
-            width: 'resolve'
-        });
-    </script>
     <script src="{{ asset('js/file-upload-with-preview.js') }}"></script>
     <script>
         var upload = new FileUploadWithPreview('myUniqueUploadId')
@@ -58,11 +48,5 @@
 @endpush
 
 @push('stylesheets')
-    <link rel="stylesheet" href="{{ asset('css/select2.css') }}">
-    <style>
-        .select2-container {
-            width: 100%!important;
-        }
-    </style>
     <link rel="stylesheet" href="{{ asset('css/file-upload-with-preview.css') }}">
 @endpush
