@@ -37,7 +37,9 @@ Route::get('/getdoctors', function () {
     return view('doctor.index');
 })->name('doctor.admin');
 Route::get('/getclinics', function () {
-    return view('clinic.list');
+    return view('clinic.list', [
+        'clinics' => App\Clinic::all(),
+    ]);
 });
 
 Route::get('/getclinic/{id}', function ($id) {
@@ -77,9 +79,7 @@ Route::get('datatable/getservices', 'AdminController@getServices')->name('datata
 Route::get('datatable/getcategories', 'AdminController@getCategories')->name('datatable.getcategories');
 Route::get('datatable/getspecs', 'AdminController@getSpecs')->name('datatable.getspecs');
 Route::resource('doctor', 'DoctorController');
-Route::resource('clinic', 'ClinicController')->except([
-    'show'
-]);
+Route::resource('clinic', 'ClinicController');
 Route::resource('service', 'ServiceController')->except([
     'show'
 ]);

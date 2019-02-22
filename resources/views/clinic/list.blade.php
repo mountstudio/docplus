@@ -42,10 +42,12 @@
 
         <!-- Create table clinics and map -->
         <div class="container my-5">
+
+            @foreach($clinics as $clinic)
+                @include('clinic.card')
+            @endforeach
+
             <div class="row">
-                <div class="col-12 col-md-10" id="table-clinic" style="background-color: #eae6e7;">
-                    @include('clinic.tabs.card')
-                </div>
 
                 <!--for map-->
                 <div class="col-2 d-none d-md-block">
@@ -79,9 +81,6 @@
                     </nav>
                 </div>
             </div>
-        </div>
-        <div class="container">
-            @include('clinic.tabs.card')
         </div>
         <div class="container">
             <div class="row">
