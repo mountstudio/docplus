@@ -65,6 +65,7 @@
             </div>
         </div>
 
+
     </div>
     @for($i = 0; $i < 5; $i++)
         @include('doctor.feedback')

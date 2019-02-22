@@ -2,7 +2,7 @@
 
 @section('content')
 
-    <div class="container-fluid py-5 position-relative" style="background-image: url('{{ asset('img/welcome-doctor.png') }}'); background-size: cover; background-position: center center">
+    <div class="container-fluid py-5 position-relative" style="background-image: url('{{ asset('img/welcome-doctor.png') }}'); background-size: cover; background-position: center right">
         <div class="backdrop"></div>
         <div class="row py-5 justify-content-center">
             <div class="col-12 col-sm-12 col-md-12 col-lg-12 py-5 d-none d-md-block">
@@ -22,7 +22,7 @@
         <div class="container py-5">
             <div class="row py-3 text-uppercase text-white text-center">
                 <div class="col-md-12">
-                    <h1 class="display-2 font-weight-bold">Всё просто</h1>
+                    <p class="display-2 font-weight-bold">Всё просто</p>
                 </div>
                 <div class="col h4 font-weight-light"><span class="display-2 font-weight-bold">1</span> <br> поиск врача</div>
                 <div class="col h4 font-weight-light"><span class="display-2 font-weight-bold">2</span> <br> запись на прием</div>
@@ -111,7 +111,7 @@
                 </div>
 
                 <div class="row py-2 justify-content-center">
-                    <div class="col-2">
+                    <div class="col-3">
                         <p class="text-secondary font-weight-bold text-uppercase  text-right">
                             <span class="h1">232</span>ОТЗЫВОВ
                         </p>
@@ -123,7 +123,7 @@
                         </p>
                     </div>
 
-                    <div class="col-2">
+                    <div class="col-3">
                         <p class="text-secondary font-weight-bold text-uppercase  text-left">
                             <span class="h1">750</span>КЛИНИК
                         </p>
@@ -172,13 +172,14 @@
 
     <script>
         $('.owl-carousel').owlCarousel({
-            loop:true,
-            margin:10,
-            nav:true,
             items: 1,
-            autoplay:true,
-            autoplayTimeout:3000,
-            autoplayHoverPause:false
+            loop: true,
+            autoplay: true,
+            autoplayTimeout: 1500,
+            margin: 10,
+            nav: true,
+            dots: false,
+            navText: ['<span class="fas fa-chevron-left fa-2x"></span>','<span class="fas fa-chevron-right fa-2x"></span>'],
         })
     </script>
 

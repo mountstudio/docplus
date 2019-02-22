@@ -7,7 +7,7 @@
     <div class="container">
         <div class="row justify-content-center">
 
-            <div class="col-6 py-5">
+            <div class="col-12 col-md-6 py-5">
                 @include('_partials.search')
             </div>
 
@@ -20,24 +20,27 @@
                     <b>УЗИ (ультразвуковое исследование) :<br>цены, адреса и запись онлайн</b>
                 </p>
                 <p class="pt-3 pb-0">
-                    ✚ Лучшие центры УЗИ в Бишкеке представлены здесь - адреса и цены, рейтинг клиник, отзывы пациентов; запишитесь онлайн или по телефону <b>со скидкой до 50%</b>.
+                    ✚ Лучшие центры УЗИ в Бишкеке представлены здесь - адреса и цены, рейтинг клиник, отзывы пациентов;
+                    запишитесь онлайн или по телефону <b>со скидкой до 50%</b>.
                 </p>
                 <p class="py-3 border-bottom border-3 border-grey">
-                    Ультразвуковое исследование (УЗИ) - неинвазивное исследование человеческого организма благодаря воздействию ультразвуковых волн. Способы проведения УЗИ: через переднюю брюшную стенку, трансвагинально и через прямую кишку.
+                    Ультразвуковое исследование (УЗИ) - неинвазивное исследование человеческого организма благодаря
+                    воздействию ультразвуковых волн. Способы проведения УЗИ: через переднюю брюшную стенку,
+                    трансвагинально и через прямую кишку.
                 </p>
 
 
                 <div class="accordion text-secondary " id="accordionExample">
                     <div class="card bg-transparent border-0">
                         <div class="card-header py-0 bg-transparent border-0" id="headingOne">
-                            <h2 class="mb-0" >
-                                <button class="btn btn-link text-secondary" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                    <span class="">дальше</span>
-                                </button>
-                            </h2>
+                            <button class="btn btn-link text-secondary h2" type="button" data-toggle="collapse"
+                                    data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                <span class="">дальше</span>
+                            </button>
                         </div>
 
-                        <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
+                        <div id="collapseOne" class="collapse" aria-labelledby="headingOne"
+                             data-parent="#accordionExample">
                             <div class="card-body pt-0">
                                 Зачем делают УЗИ? Ультразвуковое исследование позволяет получить достоверную информацию о форме, размерах, положении и состоянии внутренних органов. Ультразвук безвреден, практически не имеет ограничений и противопоказаний, исключение составляет только внутриректальное обследования при заболеваниях прямой кишки. Используется для выявления заболеваний на ранних стадиях, уточнения диагноза или оценки результатов лечения.
 
@@ -83,7 +86,6 @@
         </div>
 
     </div>
-
 
 
 

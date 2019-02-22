@@ -4,6 +4,12 @@
     font-style: normal;
     font-weight: normal;
 }
+
+.img-size{
+    width: 20px;
+    height: auto;
+}
+
 .border-10{
     border-width: 10px!important;
 }
@@ -29,10 +35,8 @@
 
 
 
-.dropdown-btn{
-    width: 500px !important;
-    text-align: left;
-}
+
+
 .size-toggle{
     width: 30px;
     height: auto;
@@ -67,16 +71,17 @@
     z-index: 5;
 }
 
-table.specs td.name span:after{
-    content: "........................................................................................................"
-}
 table.specs td.name {
     overflow: hidden;
     white-space: nowrap;
 }
 table.specs td.amt {
-     overflow: hidden;
+    overflow: hidden;
 }
+table.specs td.name span:after{
+    content: "........................................................................................................"
+}
+
 
 
 @media screen and (max-device-width: 600px) {
@@ -151,3 +156,41 @@ table.specs td.amt {
     border-radius: 0;
     border: none;
 }
+
+
+
+/* carousel*/
+.col-carousel {
+    margin: 70px 0;
+}
+
+/* owl nav */
+.owl-prev span, .owl-next span {
+    color: #FFF;
+}
+
+.owl-prev span:hover,
+.owl-next span:hover {
+    color: #8199A3;
+}
+
+.owl-prev, .owl-next {
+    position: absolute;
+    top: 0;
+    height: 100%;
+}
+
+.owl-prev {
+    left: 7px;
+}
+
+.owl-next {
+    right: 7px;
+}
+
+/* removing blue outline from buttons */
+button:focus, button:active {
+    outline: none;
+}
+
+
