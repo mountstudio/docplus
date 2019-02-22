@@ -34,4 +34,8 @@ class Clinic extends Model
     {
         return $this->belongsToMany(Pic::class);
     }
+    public function feedbacks()
+    {
+        return $this->belongsToMany(Feedback::class);
+    }
 }

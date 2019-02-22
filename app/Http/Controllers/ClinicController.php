@@ -46,6 +46,12 @@ class ClinicController extends Controller
             'clinics' => Clinic::all(),
         ]);
     }
+    public function show($id)
+    {
+        $clinic = Clinic::find($id);
+
+        return view('clinic.show',['clinic' => $clinic]);
+    }
 
     public function destroy(Clinic $clinic)
     {

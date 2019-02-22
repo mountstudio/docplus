@@ -66,12 +66,11 @@ Route::get('datatable/getservices', 'AdminController@getServices')->name('datata
 Route::get('datatable/getcategories', 'AdminController@getCategories')->name('datatable.getcategories');
 Route::get('datatable/getspecs', 'AdminController@getSpecs')->name('datatable.getspecs');
 Route::resource('doctor', 'DoctorController');
-Route::resource('clinic', 'ClinicController')->except([
-    'show'
-]);
+Route::resource('clinic', 'ClinicController');
 Route::resource('service', 'ServiceController');
 Route::get('objects/{id}', 'ServiceController@objects');
 Route::resource('spec', 'SpecController');
 Route::resource('category', 'CategoryController');
 Route::resource('schedule', 'ScheduleController');
 Route::resource('record', 'RecordController');
+Route::resource('feedback', 'FeedbackController');

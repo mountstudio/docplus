@@ -14,24 +14,18 @@
                         </div>
 
                         <div class="row justify-content-center">
-                            @include('_partials.stars')
+                            @include('_partials.stars', ['id' => $clinic->id])
                         </div>
                         <p class="text-muted font-weight-light mt-3 small">Превосходный врач на основе 171 отзыв</p>
                     </div>
                     <div class="col-7">
                         <a href="{{ route('clinic.show', $clinic->id) }}">
-                            <span class="text-secondary h3 mt-5 mb-2">{{ $clinic->user->fullName ?? 'Бобров Василий Елисеевич' }}</span>
+                            <span class="text-secondary h3 mt-5 mb-2">{{ $clinic->name ?? 'Бобров Василий Елисеевич' }}</span>
                         </a>
                         <p class="text-secondary font-weight-light h6 my-3"><em>
-                                @if(isset($clinic))
-                                    {{ $clinic->specs->implode('name', ', ') }}
-                                @else
-                                    Гастроэнтеролог, Терапевт
-                                @endif
+
                                 <br> Стаж 19 лет</em></p>
                         <p class="text-secondary font-weight-light m-0 mt-md-2 mb-md-5">
-                            Приём от
-                            <span class="text-primary font-weight-bold">{{ $clinic->price ?? '1400' }} руб.</span>
                             <i class="fas fa-exclamation-circle"></i>
                         </p>
                         <p class="text-secondary font-weight-light m-0 mt-md-2 mb-md-5">
@@ -69,3 +63,24 @@
 
     </div>
 </div>
+@push('styles')
+
+    <link rel="stylesheet" href="{{ asset('css/rateyo.css') }}">
+
+@endpush
+@push('scripts')
+    <script src="{{ asset('js/rateyo.js') }}"></script>
+    @foreach($clinics as $clinic)
+    <script>
+        $("#rateYo-{{ $clinic->id }}").rateYo({
+            rating: "{{ $clinic->rating }}",
+            readOnly: true,
+            ratedFill: "red",
+            starWidth: "20px",
+            spacing: "5px"
+        });
+    </script>
+    @endforeach
+@endpush
+
+

@@ -45,8 +45,70 @@
     <script>
         var upload = new FileUploadWithPreview('myUniqueUploadId')
     </script>
+    <script src="{{ asset('js/rateyo.js') }}"></script>
+    <script>
+        let rating_end = $("#rating_end").rateYo({
+            readOnly: true,
+            ratedFill: "red",
+            starWidth: "20px",
+            spacing: "5px",
+        });
+
+        $("#clinic").rateYo({
+            fullStar: true,
+            numStars: 5,
+            ratedFill: "red",
+            starWidth: "20px",
+            spacing: "5px",
+            onSet: function(rating, rateYoInstance) {
+                $('#clinic_input').val(rating);
+                let comfort = $('#comfort_input').val();
+                let discipline = $('#discipline_input').val();
+
+                let rating_this = ((parseInt(comfort, 10) + parseInt(discipline, 10) + parseInt(rating, 10)) / 3).toFixed(1);
+
+                $('#rating_end_input').val(rating_this);
+                rating_end.rateYo("rating", rating_this);
+            }
+        });
+        $("#comfort").rateYo({
+            fullStar: true,
+            numStars: 5,
+            ratedFill: "red",
+            starWidth: "20px",
+            spacing: "5px",
+            onSet: function(rating, rateYoInstance) {
+                $('#comfort_input').val(rating);
+                let clinic = $('#clinic_input').val();
+                let discipline = $('#discipline_input').val();
+
+                let rating_this = ((parseInt(clinic, 10) + parseInt(discipline, 10) + parseInt(rating, 10)) / 3).toFixed(1);
+
+                $('#rating_end_input').val(rating_this);
+                rating_end.rateYo("rating", rating_this);
+            }
+        });
+        $("#discipline").rateYo({
+            fullStar: true,
+            numStars: 5,
+            ratedFill: "red",
+            starWidth: "20px",
+            spacing: "5px",
+            onSet: function(rating, rateYoInstance) {
+                $('#discipline_input').val(rating);
+                let comfort = $('#comfort_input').val();
+                let clinic = $('#clinic_input').val();
+
+                let rating_this = ((parseInt(comfort, 10) + parseInt(clinic, 10) + parseInt(rating, 10)) / 3).toFixed(1);
+
+                $('#rating_end_input').val(rating_this);
+                rating_end.rateYo("rating", rating_this);
+            }
+        });
+    </script>
 @endpush
 
 @push('stylesheets')
+    <link rel="stylesheet" href="{{ asset('css/rateyo.css') }}">
     <link rel="stylesheet" href="{{ asset('css/file-upload-with-preview.css') }}">
 @endpush

@@ -74,7 +74,9 @@
     </div>
 
     <div class="container">
-        @include('doctor.card')
+        @foreach($clinic->doctors as $doctor)
+            @include('doctor.card')
+        @endforeach
     </div>
 @endsection
 

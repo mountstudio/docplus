@@ -50,7 +50,7 @@ class Doctor extends Model
 
     public function feedbacks()
     {
-        return $this->hasMany(Feedback::class);
+        return $this->belongsToMany(Feedback::class);
     }
 
     public function newCollection(array $models = [])

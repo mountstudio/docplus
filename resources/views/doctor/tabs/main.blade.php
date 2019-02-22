@@ -29,7 +29,31 @@
 		<input id="discount" name="discount" type="text" class="form-control">
 	</div>
 </div>
+<div class="form-row py-4">
+	<div class="form-group col">
+		<label for="clinic">Внимание</label>
+		<div id="clinic" class="rateYo"></div>
+		<input type="hidden" id="clinic_input" name="clinic_rating">
+	</div>
 
+	<div class="form-group col">
+		<label for="comfort">Манеры</label>
+		<div id="comfort" class="rateYo"></div>
+		<input type="hidden" id="comfort_input" name="comfort_rating">
+	</div>
+
+	<div class="form-group col">
+		<label for="discipline">Время ожидания</label>
+		<div id="discipline" class="rateYo"></div>
+		<input type="hidden" id="discipline_input" name="discipline_rating">
+	</div>
+
+	<div class="form-group col">
+		<label for="rating_end">Итоговый рейтинг</label>
+		<div id="rating_end" class="rateYo"></div>
+		<input type="hidden" id="rating_end_input" name="rating">
+	</div>
+</div>
 
 <div class="form-group row">
     <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>

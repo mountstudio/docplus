@@ -76,7 +76,7 @@
 
                     <div class="tab-pane fade" id="clinic" role="tabpanel" aria-labelledby="clinic-tab">
                         @foreach($clinics as $clinic)
-                            @include('doctor.card')
+                            @include('clinic.card')
                         @endforeach
                     </div>
             </div>
@@ -94,18 +94,10 @@
 
 
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-    <style>
-        dt { float: left; overflow: hidden; white-space: nowrap }
-        dd { float: left; overflow: hidden }
 
-        dt span:after { content: " .................................................................................." }
-    </style>
-
+    <link rel="stylesheet" href="{{ asset('css/rateyo.css') }}">
 
 @endpush
-
 @push('scripts')
-
-
-
+    <script src="{{ asset('js/rateyo.js') }}"></script>
 @endpush
