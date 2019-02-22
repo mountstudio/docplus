@@ -1,7 +1,7 @@
 <footer class="bg-light border-top border-danger border-10">
     <div class="container py-5">
         <div class="row">
-            <div class="col-md-3 col-lg-3 col-12 pt-2">
+            <div class="col-md-3 col-lg-3 col-12 pt-2 pt-md-5">
                 <nav class="nav flex-column">
                     <a class="nav-link text-secondary" href="/about_us">О НАС</a>
                     <a class="nav-link text-secondary" href="/contacts">КОНТАКТЫ</a>
@@ -25,14 +25,13 @@
             </div>
             <div class="col-md-3 col-lg-3 col-12 pt-5">
                 <nav class="nav flex-column">
-                    <a href="/"><img class="w-75" src={{asset('img/logo.png')}} alt=""></a>
+                    <a href="/"><img class="w-75" src={{asset('img/Logo.png')}} alt=""></a>
                     <p class="pt-4 mb-0 text-secondary">Наши Контакты: </p>
                     <p class="text-secondary">Наши Телефоны: </p>
                 </nav>
             </div>
         </div>
     </div>
-
 
 
 </footer>

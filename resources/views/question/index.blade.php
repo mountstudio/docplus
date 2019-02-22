@@ -14,7 +14,7 @@
                     <div class="backdrop index-1"></div>
                     <form action="" class="position-relative index-5">
                         <div class="form-group">
-                            <select name="" class="form-control col-12 col-md-6 col-lg-4" id="">
+                            <select name="" class="form-control col-12 col-md-8 col-lg-4" id="">
                                 <option value="">Выберите категорию</option>
                                 @for($i = 0; $i < 5; $i++)
                                     <option value="">Выбор №{{ $i }}</option>
@@ -34,7 +34,7 @@
                             </div>
                         </div>
                         <div class="form-group">
-                            <input type="email" placeholder="Электронная почта" class="form-control col-12 col-md-6 col-lg-4">
+                            <input type="email" placeholder="Электронная почта" class="form-control col-12 col-md-8 col-lg-4">
                         </div>
 
 
@@ -71,7 +71,7 @@
                         </div>
 
                         <div class="form-group">
-                            <input type="file" class="form-control col-12 col-md-6 col-lg-4">
+                            <input type="file" class="form-control col-12 col-md-8 col-lg-4">
                             <small>Прикреплено изображений 0/5</small>
                         </div>
 

@@ -3,7 +3,7 @@
     <div class="container-fluid pl-0  bg-primary">
         <div class="col-12 col-sm-12 col-md-3 col-lg-4 bg-light py-2 text-center pl-0 shadow">
             <a class="navbar-brand" href="{{ url('/') }}">
-                <img class="w-50" src={{asset('img/logo.png')}} alt="">
+                <img class="w-50" src={{asset('img/Logo.png')}} alt="">
             </a>
         </div>
 
