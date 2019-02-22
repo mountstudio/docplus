@@ -29,7 +29,7 @@ class ClinicObserver
                  * @var Doctor $doctor
                  */
                 $doctor = Doctor::find($doctor);
-                $doctor->clinic()->associate($doctor);
+                $doctor->clinic()->associate($clinic);
                 $doctor->save();
             }
         }
