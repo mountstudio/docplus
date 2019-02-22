@@ -18,16 +18,22 @@ class ClinicController extends Controller
 
     public function create()
     {
+        $doctors = Doctor::all()
+            ->where('clinic_id', 'IS NULL', null);
+
         return view('clinic.create', [
             'clinics' => Clinic::all(),
             'categories' => Category::all(),
-            'doctors' => Doctor::all(),
+            'doctors' => $doctors,
             'services' => Service::all(),
         ]);
     }
 
     public function store(Request $request)
     {
+        /**
+         * @var Clinic $clinic
+         */
         $clinic = Clinic::create($request->all());
 
         return redirect()->route('clinic.index');

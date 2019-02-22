@@ -4,6 +4,8 @@ namespace App\Observers;
 
 use App\Clinic;
 use App\Doctor;
+use App\Helpers\ImageSaver;
+use App\Pic;
 
 class ClinicObserver
 {
@@ -23,6 +25,9 @@ class ClinicObserver
 
         if (request()->doctors) {
             foreach (request()->doctors as $doctor) {
+                /**
+                 * @var Doctor $doctor
+                 */
                 $doctor = Doctor::find($doctor);
                 $doctor->clinic()->associate($doctor);
                 $doctor->save();
@@ -40,6 +45,12 @@ class ClinicObserver
 
                     $clinic->pics()->attach($pic->id);
                 }
+            }
+        }
+
+        if (request()->services) {
+            foreach (request()->services as $service) {
+                $clinic->services()->attach($service);
             }
         }
     }
