@@ -58,6 +58,7 @@ Route::get('/getservice/{id}', function ($id){
 
 
 
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');

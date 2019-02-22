@@ -46,17 +46,15 @@
                 <div class="col-12 col-md-10" id="table-clinic" style="background-color: #eae6e7;">
                     @for($i = 0; $i < 5; $i++)
                         <div class="row m-2">
-                            <div class="col-12 col-md-9 border-top border-bottom bg-white">
+                            <div class="col-12 col-lg-9 border-top border-bottom bg-white">
                                 <div class="row">
-                                    <div class="col-12 col-md-2 col-lg-4 img-fluid text-center">
+                                    <div class="col-12 col-md-5 col-lg-4 img-fluid text-center">
                                         <a href="/getclinic/1">
                                             <img class="rounded w-100 pt-3" src="{{ asset('img/teeth.png') }}" alt="">
                                         </a>
-                                        @for($j = 0; $j < 5; $j++)
-
-                                            <img class="rounded py-3 pr-1" src="{{ asset('img/star.png') }}" alt="">
-
-                                        @endfor
+                                        <div class="row justify-content-center">
+                                            @include('_partials.stars')
+                                        </div>
                                     </div>
                                     <div class="col-12 col-md-7 text-secondary ">
                                         <h1><strong>Он клиник</strong></h1>
@@ -76,31 +74,31 @@
 
                                 </div>
                             </div>
-                            <div class="col-12 col-md-3 border-top border-bottom border-left bg-white">
+                            <div class="col-12 col-lg-3 border-top border-bottom border-left bg-white">
                                 <div class="row">
-                                    <div class="col-2 py-3 ">
-                                        <img class="img-width" src="{{ asset('img/marker.png') }}" alt="">
+                                    <div class="col-2 py-lg-3 py-2">
+                                        <img class="img-size" src="{{ asset('img/marker.png') }}" alt="">
                                     </div>
-                                    <div class="col-10 text-secondary  py-3 ">
+                                    <div class="col-10 text-secondary py-2  py-lg-3 ">
                                         <p class="h6">
                                             г. Москва, Цветной б-р, д. 30, корп. 2 Цветной бульвар (390 м),
                                             Трубная(540м), Сухаревская(920м)
                                         </p>
                                     </div>
-                                    <div class="col-2 py-3 ">
-                                        <img class="img-width" src="{{ asset('img/clock.png') }}" alt="">
+                                    <div class="col-2 py-3 py-2">
+                                        <img class="img-size" src="{{ asset('img/clock.png') }}" alt="">
                                     </div>
-                                    <div class="col-10 text-secondary  py-3">
+                                    <div class="col-10 text-secondary py-2  py-lg-3">
                                         <p class="h6">
                                             <span>пн-пт:     08:00-21:00</span><br>
                                             <span>сб:     08:00-21:00</span><br>
                                             <span>вс:     08:00-21:00</span>
                                         </p>
                                     </div>
-                                    <div class="col-2 py-3 ">
-                                        <img class="img-width" src="{{ asset('img/phone.png') }}" alt="">
+                                    <div class="col-2 py-lg-3 py-2">
+                                        <img class="img-size" src="{{ asset('img/phone.png') }}" alt="">
                                     </div>
-                                    <div class="col-10 text-dark  py-4">
+                                    <div class="col-10 text-dark py-2  py-lg-4">
                                         <p class="font-weight-bold h5">
 
                                             +996 (708) 75-75-75
@@ -169,6 +167,24 @@
     </div>
 @endsection
 
+
+@push('styles')
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{ asset('css/rateyo.css') }}">
+@endpush
+
+@push('scripts')
+    <script src="{{ asset('js/rateyo.js') }}"></script>
+    <script>
+        $(".rateYo").rateYo({
+            rating: 4,
+            readOnly: true,
+            ratedFill: "red",
+            starWidth: "20px",
+            spacing: "5px"
+        });
+    </script>
+@endpush
 
 
 
