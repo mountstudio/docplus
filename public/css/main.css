@@ -4,6 +4,12 @@
     font-style: normal;
     font-weight: normal;
 }
+
+.img-width{
+    width: 20px;
+    height: auto;
+}
+
 .border-10{
     border-width: 10px!important;
 }
@@ -29,10 +35,8 @@
 
 
 
-.dropdown-btn{
-    width: 500px !important;
-    text-align: left;
-}
+
+
 .size-toggle{
     width: 30px;
     height: auto;
@@ -188,3 +192,5 @@ table.specs td.name span:after{
 button:focus, button:active {
     outline: none;
 }
+
+
