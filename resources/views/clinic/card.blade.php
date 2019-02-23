@@ -3,7 +3,7 @@
         <div class="row">
             <div class="col-5 text-center">
                 <div class="row justify-content-center">
-                    <div class="col-12 col-md-10 col-lg-8">
+                    <div class="col-12 col-md-8">
                         @auth
                             <img class="position-absolute rounded-circle img-thumbnail like" src="{{ asset('img/heart-0.png') }}" alt="">
                         @endauth
