@@ -65,7 +65,7 @@ class DoctorController extends Controller
         } elseif ($doctor->rating > 2 && $doctor->rating < 3) {
             $status = 'Хороший';
         } else {
-            $status = 'Херовый';
+            $status = 'Посредственный';
         }
 
         return view('doctor.show', [
