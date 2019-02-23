@@ -9,7 +9,11 @@ class Feedback extends Model
     protected $table = 'feedbacks';
 
     protected $fillable = [
-        'comment', 'attent_rating', 'manner_rating', 'time_rating','rating', 'name', 'phone_number','user_id'
+        'comment', 'ratings', 'rating', 'name', 'phone_number','user_id'
+    ];
+
+    protected $casts = [
+        'ratings' => 'array',
     ];
 
     public function doctors()

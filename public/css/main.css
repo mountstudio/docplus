@@ -27,6 +27,11 @@
     height: auto;
 }
 
+.img-card-doctors_clinics {
+    width: 142px;
+    height: 142px;
+}
+
 .style-text {
     font-family: 'Open Sans', sans-serif;
     font-size: 0.6rem !important

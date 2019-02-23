@@ -39,9 +39,11 @@ Route::get('/getdoctors', function () {
 Route::get('/getclinics', function () {
     return view('clinic.index');
 })->name('clinic.admin');
+Route::get('/getservices', function () {
+    return view('service.index');
+})->name('service.admin');
 
 Route::get('/diagnostic', 'ServiceController@show_diagnostic');
-
 
 Auth::routes();
 

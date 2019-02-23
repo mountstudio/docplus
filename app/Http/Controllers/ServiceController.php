@@ -11,9 +11,15 @@ class ServiceController extends Controller
     //
     public function index()
     {
-        $services = Service::all();
+        $services = Service::all()
+            ->where('is_diagnostic', false)
+            ->groupBy(function ($item, $key) {
+                return $item->category->name;
+            });
 
-        return view('service.index');
+        return view('service.list',[
+            'services' => $services
+        ]);
     }
     public function show_diagnostic()
     {
@@ -28,7 +34,7 @@ class ServiceController extends Controller
         ]);
     }
 
-    public function show()
+    public function show_services()
     {
         $services = Service::all()
             ->where('is_diagnostic', false)

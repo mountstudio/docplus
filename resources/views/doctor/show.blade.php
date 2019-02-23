@@ -18,12 +18,10 @@
                             <img class="img-fluid rounded-circle mb-2 img-thumbnail " src="{{ $doctor->pics->first() ? asset('uploads/'.$doctor->pics->first()->image) : asset('img/doctor.jpg') }}" alt="">
                         </div>
 
-                        @for($i = 0; $i < 5; $i++)
-
-                            <img class="star" src="{{ asset('img/star.png') }}" alt="">
-
-                        @endfor
-                        <p class="text-secondary mt-3">Превосходный врач<br>на основе 171 отзыв</p>
+                        <div class="row justify-content-center">
+                            @include('_partials.stars', ['id' => 'doctor-show'])
+                        </div>
+                        <p class="text-secondary mt-3">{{ $status }} врач<br>на основе {{ $feedbacks->count() }} отзыв</p>
                     </div>
 
                     <div class="col">
@@ -35,7 +33,7 @@
                                     Гастроэнтеролог, Терапевт
                                 @endif <br> Стаж 19 лет</em></p>
                         <p class="text-secondary font-weight-light mt-2 mb-5">Приём от <del>1400</del> руб.  <span class="text-primary font-weight-bold">1000 руб.</span></p>
-                        <p class="text-secondary pt-md-5"><u>Отзывы о враче</u></p>
+                        <a href="#feedbacks" class="text-secondary pt-md-5"><u>Отзывы о враче</u></a>
 
                     </div>
                 </div>
@@ -55,10 +53,18 @@
 
                 <p class="text-secondary">Отзывы о врачах могут оставлять пациенты записавшиеся через сервис DOC+.
                     Каждый отзыв проходит тщательную проверку, что позволяет избежать заказныъ и рекламных отзывов.</p>
-                @for($i = 0; $i < 3; $i++)
-                    @include('doctor.starfeed')
-                @endfor
-
+                <div class="row">
+                    <div class="col-5">
+                <p class="text-secondary font-weight-bold ml-1">ВНИМАТЕЛЬНОСТЬ</p>
+                <p class="text-secondary font-weight-bold ml-1">МАНЕРЫ</p>
+                <p class="text-secondary font-weight-bold ml-1">ВРЕМЯ ОЖИДАНИЯ</p>
+                </div>
+                    <div class="col-4">
+                        @include('_partials.stars', ['id' => 'doctor-attent'])<br>
+                        @include('_partials.stars', ['id' => 'doctor-manner'])<br>
+                        @include('_partials.stars', ['id' => 'doctor-time'])
+                    </div>
+                </div>
         </div>
             <div class="col">
                 @include('_partials.right-sidebar')
@@ -67,26 +73,53 @@
 
 
     </div>
-    @for($i = 0; $i < 5; $i++)
-        @include('doctor.feedback')
-    @endfor
+
+    @include('doctor.feedback')
+
 
     @include('_partials.form-feedback')
 
 
 @endsection
 
+@push('styles')
+    <link rel="stylesheet" href="{{ asset('css/rateyo.css') }}">
+@endpush
 
 @push('scripts')
     <script src="{{ asset('js/imask.js') }}"></script>
-    {{--<script>--}}
+    <script src="{{ asset('js/rateyo.js') }}"></script>
+    <script>
+        $('#rateYo-doctor-show').rateYo({
+            rating: "{!! $doctor->rating !!}",
+            readOnly: true,
+            ratedFill: "red",
+            starWidth: "20px",
+            spacing: "5px",
+        });
 
-        {{--var regExpMask = new IMask(--}}
-            {{--document.getElementById('regexp-mask'),--}}
-            {{--{--}}
-                {{--mask: /^\+996\s\(\d{3}\)\s\d{3}\-\d{3}$/--}}
-            {{--});--}}
+        $('#rateYo-doctor-attent').rateYo({
+            rating: "{!! $doctor->attent_rating !!}",
+            readOnly: true,
+            ratedFill: "red",
+            starWidth: "20px",
+            spacing: "5px",
+        });
 
-    {{--</script>--}}
+        $('#rateYo-doctor-manner').rateYo({
+            rating: "{!! $doctor->manner_rating !!}",
+            readOnly: true,
+            ratedFill: "red",
+            starWidth: "20px",
+            spacing: "5px",
+        });
 
+        $('#rateYo-doctor-time').rateYo({
+            rating: "{!! $doctor->time_rating !!}",
+            readOnly: true,
+            ratedFill: "red",
+            starWidth: "20px",
+            spacing: "5px",
+        });
+    </script>
 @endpush
