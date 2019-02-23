@@ -5,14 +5,20 @@
                 <div class="row justify-content-center">
                     <div class="col-12 col-md-10 col-lg-8">
                         @auth
-                            <img class="position-absolute rounded-circle img-thumbnail like" src="{{ asset('img/heart-0.png') }}" alt="">
+                            <a href="#">
+                                <img class="position-absolute rounded-circle img-thumbnail like" src="{{ asset('img/heart-0.png') }}" alt="">
+                            </a>
+                        @elseauth
+                            <a href="{{ route('login') }}">
+                                <img class="position-absolute rounded-circle img-thumbnail like" src="{{ asset('img/heart-0.png') }}" alt="">
+                            </a>
                         @endauth
-                        <img class="img-fluid rounded-circle mb-2 img-thumbnail" src="{{ $clinic->pics->first() ? asset('uploads/'.$clinic->pics->first()->image) : asset('img/doctor.jpg') }}" alt="">
+                        <img class="img-card-doctors_clinics img-fluid rounded-circle mb-2 img-thumbnail" src="{{ $clinic->pics->first() ? asset('uploads/'.$clinic->pics->first()->image) : asset('img/doctor.jpg') }}" alt="">
                     </div>
                 </div>
 
                 <div class="row justify-content-center">
-                    @include('_partials.stars', ['id' => $clinic->id])
+                    @include('_partials.stars', ['id' => $clinic->id.'-clinic'])
                 </div>
                 <p class="text-muted font-weight-light mt-3 mb-0 small">Превосходный клиника на основе 171 отзыв</p>
             </div>
@@ -105,7 +111,7 @@
     <script src="{{ asset('js/rateyo.js') }}"></script>
     @foreach($clinics as $clinic)
         <script>
-            $("#rateYo-{{ $clinic->id }}").rateYo({
+            $("#rateYo-{{ $clinic->id }}-clinic").rateYo({
                 rating: "{{ $clinic->rating }}",
                 readOnly: true,
                 ratedFill: "red",

@@ -19,26 +19,51 @@ class FeedbackObserver
     {
         if ($doctor_id = request()->doctor_id) {
             $feedback->doctors()->attach($doctor_id);
+            $doctor = Doctor::find($doctor_id);
             if ($rating = request('rating')) {
-                $this->addRating($rating, Doctor::find($doctor_id));
+                $this->addRating($rating, $doctor, 'rating');
             }
+            if (request('rating') != "NaN" && request('rating') != null) {
+                if ($attent_rating = request('attent_rating')) {
+                    $this->addRating($attent_rating, $doctor, 'attent_rating');
+                }
+                if ($manner_rating = request('manner_rating')) {
+                    $this->addRating($manner_rating, $doctor, 'manner_rating');
+                }
+                if ($time_rating = request('time_rating')) {
+                    $this->addRating($time_rating, $doctor, 'time_rating');
+                }
+            }
+
         }
 
         if ($clinic_id = request()->clinic_id) {
             $feedback->clinics()->attach($clinic_id);
+            $clinic = Clinic::find($clinic_id);
             if ($rating = request('rating')) {
-                $this->addRating($rating, Clinic::find($clinic_id));
+                $this->addRating($rating, $clinic, 'rating');
+            }
+            if (request('rating') != "NaN" && request('rating') != null) {
+                if ($clinic_rating = request('clinic_rating')) {
+                    $this->addRating($clinic_rating, $clinic, 'clinic_rating');
+                }
+                if ($comfort_rating = request('comfort_rating')) {
+                    $this->addRating($comfort_rating, $clinic, 'comfort_rating');
+                }
+                if ($discipline_rating = request('discipline_rating')) {
+                    $this->addRating($discipline_rating, $clinic, 'discipline_rating');
+                }
             }
         }
 
     }
 
-    private function addRating($rating, $model)
+    private function addRating($rating, $model, $type)
     {
         /**
          * @var Model $model
          */
-        $model->rating = ($model->rating + $rating) / 2;
+        $model->$type = ($model->$type + $rating) / 2;
         $model->save();
     }
 

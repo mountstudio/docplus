@@ -31,21 +31,21 @@
 </div>
 <div class="form-row py-4">
 	<div class="form-group col">
-		<label for="clinic">Внимание</label>
-		<div id="clinic" class="rateYo"></div>
-		<input type="hidden" id="clinic_input" name="clinic_rating">
+		<label for="attent">Внимание</label>
+		<div id="attent" class="rateYo"></div>
+		<input type="hidden" id="attent_input" name="attent_rating">
 	</div>
 
 	<div class="form-group col">
-		<label for="comfort">Манеры</label>
-		<div id="comfort" class="rateYo"></div>
-		<input type="hidden" id="comfort_input" name="comfort_rating">
+		<label for="manner">Манеры</label>
+		<div id="manner" class="rateYo"></div>
+		<input type="hidden" id="manner_input" name="manner_rating">
 	</div>
 
 	<div class="form-group col">
-		<label for="discipline">Время ожидания</label>
-		<div id="discipline" class="rateYo"></div>
-		<input type="hidden" id="discipline_input" name="discipline_rating">
+		<label for="time">Время ожидания</label>
+		<div id="time" class="rateYo"></div>
+		<input type="hidden" id="time_input" name="time_rating">
 	</div>
 
 	<div class="form-group col">

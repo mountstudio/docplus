@@ -27,26 +27,22 @@
                                 <div class="form-group col-12 col-md">
                                     <label class="label-feed-rate" for="attent">Внимательность врача:</label>
                                     <div id="attent" class=""></div>
-                                    <input type="hidden" id="attent_input" name="attent_rating">
+                                    <input type="hidden" id="attent_input" name="attent_rating" required>
                                 </div>
 
                                 <div class="form-group col-12 col-md">
                                     <label class="label-feed-rate" for="manner">Маннеры врача:</label>
                                     <div id="manner" class=""></div>
-                                    <input type="hidden" id="manner_input" name="manner_rating">
+                                    <input type="hidden" id="manner_input" name="manner_rating" required>
                                 </div>
 
                                 <div class="form-group col-12 col-md">
                                     <label class="label-feed-rate" for="time">Время ожидания врача:</label>
                                     <div id="time" class=""></div>
-                                    <input type="hidden" id="time_input" name="time_rating">
+                                    <input type="hidden" id="time_input" name="time_rating" required>
                                 </div>
 
-                                <div class="form-group col-12 col-md">
-                                    <label class="label-feed-rate" for="rating_end">Итоговый рейтинг</label>
-                                    <div id="rating_end" class=""></div>
-                                    <input type="hidden" id="rating_end_input" name="rating">
-                                </div>
+                                <input type="hidden" id="rating_end_input" name="rating" required>
                             </div>
                             <p class="mt-3">
                                 Отзыв о враче:
@@ -84,13 +80,6 @@
 @push('scripts')
     <script src="{{ asset('js/rateyo.js') }}"></script>
     <script>
-        let rating_end = $("#rating_end").rateYo({
-            readOnly: true,
-            ratedFill: "red",
-            starWidth: "20px",
-            spacing: "5px",
-        });
-
         $("#attent").rateYo({
             fullStar: true,
             numStars: 5,
@@ -105,7 +94,6 @@
                 let rating_this = ((parseInt(time, 10) + parseInt(manner, 10) + parseInt(rating, 10)) / 3).toFixed(1);
 
                 $('#rating_end_input').val(rating_this);
-                rating_end.rateYo("rating", rating_this);
             }
         });
         $("#manner").rateYo({
@@ -122,7 +110,6 @@
                 let rating_this = ((parseInt(attent, 10) + parseInt(time, 10) + parseInt(rating, 10)) / 3).toFixed(1);
 
                 $('#rating_end_input').val(rating_this);
-                rating_end.rateYo("rating", rating_this);
             }
         });
         $("#time").rateYo({
@@ -139,7 +126,6 @@
                 let rating_this = ((parseInt(manner, 10) + parseInt(attent, 10) + parseInt(rating, 10)) / 3).toFixed(1);
 
                 $('#rating_end_input').val(rating_this);
-                rating_end.rateYo("rating", rating_this);
             }
         });
     </script>

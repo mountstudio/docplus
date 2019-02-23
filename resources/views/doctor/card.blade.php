@@ -5,14 +5,20 @@
                 <div class="row justify-content-center">
                     <div class="col-12 col-md-8">
                         @auth
-                            <img class="position-absolute rounded-circle img-thumbnail like m-2 d-none d-lg-block" src="{{ asset('img/heart-0.png') }}" alt="">
+                            <a href="#">
+                                <img class="position-absolute rounded-circle img-thumbnail like " src="{{ asset('img/heart-0.png') }}" alt="">
+                            </a>
+                        @elseauth
+                            <a href="{{ route('login') }}">
+                                <img class="position-absolute rounded-circle img-thumbnail like " src="{{ asset('img/heart-0.png') }}" alt="">
+                            </a>
                         @endauth
-                        <img class="img-fluid rounded-circle mb-2 img-thumbnail" src="{{ $doctor->pics->first() ? asset('uploads/'.$doctor->pics->first()->image) : asset('img/doctor.jpg') }}" alt="">
+                        <img class="img-card-doctors_clinics img-fluid rounded-circle mb-2 img-thumbnail" src="{{ $doctor->pics->first() ? asset('uploads/'.$doctor->pics->first()->image) : asset('img/doctor.jpg') }}" alt="">
                     </div>
                 </div>
 
                 <div class="row justify-content-center">
-                    @include('_partials.stars')
+                    @include('_partials.stars', ['id' => $doctor->id.'-doctor'])
                 </div>
                 <p class="text-muted font-weight-light mt-3 mb-0 small">Превосходный врач на основе 171 отзыв</p>
             </div>
@@ -66,5 +72,24 @@
 
 </div>
 
+@push('styles')
+
+    <link rel="stylesheet" href="{{ asset('css/rateyo.css') }}">
+
+@endpush
+@push('scripts')
+    <script src="{{ asset('js/rateyo.js') }}"></script>
+    @foreach($doctors as $doctor)
+        <script>
+            $("#rateYo-{{ $doctor->id }}-doctor").rateYo({
+                rating: "{{ $doctor->rating }}",
+                readOnly: true,
+                ratedFill: "red",
+                starWidth: "20px",
+                spacing: "5px"
+            });
+        </script>
+    @endforeach
+@endpush
 
 

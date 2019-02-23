@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Feedback;
 use App\Helpers\ImageSaver;
 use App\Pic;
 use App\Schedule;
@@ -53,9 +54,25 @@ class DoctorController extends Controller
             ->where('doctor_id', $doctor->id)
             ->groupBy('date_of_record');
 
+        $feedbacks = $doctor->feedbacks;
+
+        if ($doctor->rating == 5) {
+            $status = 'God of Doctors';
+        } elseif ($doctor->rating > 4 && $doctor->rating < 5) {
+            $status = 'Превосходный';
+        } elseif ($doctor->rating > 3 && $doctor->rating < 4) {
+            $status = 'Отличный';
+        } elseif ($doctor->rating > 2 && $doctor->rating < 3) {
+            $status = 'Хороший';
+        } else {
+            $status = 'Херовый';
+        }
+
         return view('doctor.show', [
             'schedules' => $schedules,
             'doctor' => $doctor,
+            'feedbacks' => $feedbacks,
+            'status' => $status,
         ]);
     }
 
