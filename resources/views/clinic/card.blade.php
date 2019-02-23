@@ -55,17 +55,21 @@
                 </p>
             </div>
         </div>
-        <div class="row">
+        <div class="row mb-3">
             <div class="col-auto">
                 <p class="text-secondary small">
                     <i class="far fa-clock fa-2x"></i>
                 </p>
             </div>
             <div class="col">
-                <p class="text-secondary small">
-                    пн-пт:         08:00 - 21:00 <br>
-                    сб:            08:00 - 21:00 <br>
-                    вс:            08:00 - 21:00
+                <p class="text-secondary small w-50 m-0">
+                    пн-пт:         <span class="float-right">08:00 - 21:00</span>
+                </p>
+                <p class="text-secondary small w-50 m-0">
+                    сб:            <span class="float-right">08:00 - 21:00</span>
+                </p>
+                <p class="text-secondary small w-50 m-0">
+                    вс:            <span class="float-right">08:00 - 21:00</span>
                 </p>
             </div>
         </div>

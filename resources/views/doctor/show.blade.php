@@ -18,11 +18,9 @@
                             <img class="img-fluid rounded-circle mb-2 img-thumbnail " src="{{ $doctor->pics->first() ? asset('uploads/'.$doctor->pics->first()->image) : asset('img/doctor.jpg') }}" alt="">
                         </div>
 
-                        @for($i = 0; $i < 5; $i++)
-
-                            <img class="star" src="{{ asset('img/star.png') }}" alt="">
-
-                        @endfor
+                        <div class="row justify-content-center">
+                            @include('_partials.stars', ['id' => 'doctor-show'])
+                        </div>
                         <p class="text-secondary mt-3">Превосходный врач<br>на основе 171 отзыв</p>
                     </div>
 
@@ -76,17 +74,20 @@
 
 @endsection
 
+@push('styles')
+    <link rel="stylesheet" href="{{ asset('css/rateyo.css') }}">
+@endpush
 
 @push('scripts')
     <script src="{{ asset('js/imask.js') }}"></script>
-    {{--<script>--}}
-
-        {{--var regExpMask = new IMask(--}}
-            {{--document.getElementById('regexp-mask'),--}}
-            {{--{--}}
-                {{--mask: /^\+996\s\(\d{3}\)\s\d{3}\-\d{3}$/--}}
-            {{--});--}}
-
-    {{--</script>--}}
-
+    <script src="{{ asset('js/rateyo.js') }}"></script>
+    <script>
+        $('#rateYo-doctor-show').rateYo({
+            rating: "{!! $doctor->rating !!}",
+            readOnly: true,
+            ratedFill: "red",
+            starWidth: "20px",
+            spacing: "5px",
+        })
+    </script>
 @endpush
