@@ -40,18 +40,7 @@ Route::get('/getclinics', function () {
     return view('clinic.index');
 })->name('clinic.admin');
 
-Route::get('/getclinic/{id}', function ($id) {
-    return view('clinic.show', [
-        'id' => $id,
-    ]);
-});
-Route::get('/getservice/{id}', function ($id){
-    return view('service.show', [
-        'id' => $id,
-    ]);
-});
 Route::get('/diagnostic', 'ServiceController@show_diagnostic');
-Route::get('/services', 'ServiceController@show');
 
 
 Auth::routes();

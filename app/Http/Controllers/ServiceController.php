@@ -23,7 +23,9 @@ class ServiceController extends Controller
                 return $item->category->name;
             });
 
-        return view('service.list',['services' => $services]);
+        return view('service.list',[
+            'services' => $services
+        ]);
     }
 
     public function show()
@@ -34,7 +36,9 @@ class ServiceController extends Controller
                 return $item->category->name;
             });
 
-        return view('service.list',['services' => $services]);
+        return view('service.list',[
+            'services' => $services
+        ]);
     }
 
     public function create()
@@ -73,19 +77,19 @@ class ServiceController extends Controller
     {
         $service = Service::find($id);
 
-            $services = Service::with(['doctors'])->where('category_id',$service->id)->get();
+        $services = Service::with(['doctors'])->where('category_id',$service->id)->get();
 
-            $doctors = $services->map(function ($item, $key) {
-                return $item->doctors;
-            })->flatten()->unique('id');
+        $doctors = $services->map(function ($item, $key) {
+            return $item->doctors;
+        })->flatten()->unique('id');
 
-            $clinics = $services->map(function ($item, $key) {
-                return $item->clinics;
-            })->flatten()->unique('id');
+        $clinics = $services->map(function ($item, $key) {
+            return $item->clinics;
+        })->flatten()->unique('id');
 
-            return view('service.show',[
-                'doctors' => $doctors,
-                'clinics' => $clinics
-            ]);
+        return view('service.show',[
+            'doctors' => $doctors,
+            'clinics' => $clinics
+        ]);
     }
 }
