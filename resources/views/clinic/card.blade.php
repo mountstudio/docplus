@@ -1,11 +1,11 @@
 <div class="row justify-content-center my-4 border shadow p-md-4 py-3">
-    <div class="col-12 col-lg-9">
+    <div class="col-12 col-md-7">
         <div class="row">
             <div class="col-5 text-center">
                 <div class="row justify-content-center">
-                    <div class="col-12 col-md-8">
+                    <div class="col-12 col-md-10 col-lg-8">
                         @auth
-                            <img class="position-absolute rounded-circle img-thumbnail like m-2 d-none d-lg-block" src="{{ asset('img/heart-0.png') }}" alt="">
+                            <img class="position-absolute rounded-circle img-thumbnail like" src="{{ asset('img/heart-0.png') }}" alt="">
                         @endauth
                         <img class="img-fluid rounded-circle mb-2 img-thumbnail" src="{{ $clinic->pics->first() ? asset('uploads/'.$clinic->pics->first()->image) : asset('img/doctor.jpg') }}" alt="">
                     </div>
@@ -36,13 +36,13 @@
                     Телефон для записи: <br>
                     +996(777)777-777
                 </p>
-                <p class="text-secondary font-weight-light small pt-3">На прошлой неделе записалось два человека</span>
+                <p class="text-secondary font-weight-light small pt-3">На прошлой неделе записалось два человека</p>
 
             </div>
         </div>
     </div>
 
-    <div class="col-12 col-lg-3">
+    <div class="col-12 col-md">
         <div class="row">
             <div class="col-auto">
                 <p class="text-secondary small">
