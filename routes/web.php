@@ -37,8 +37,8 @@ Route::get('/getdoctors', function () {
     return view('doctor.index');
 })->name('doctor.admin');
 Route::get('/getclinics', function () {
-    return view('clinic.list');
-});
+    return view('clinic.index');
+})->name('clinic.admin');
 
 Route::get('/getclinic/{id}', function ($id) {
     return view('clinic.show', [

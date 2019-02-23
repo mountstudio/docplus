@@ -44,9 +44,11 @@
 
     <div class="col-12 col-lg-3">
         <div class="row">
-            <p class="text-secondary small">
-                <i class="fas fa-map-marker-alt fa-2x"></i>
-            </p>
+            <div class="col-auto">
+                <p class="text-secondary small">
+                    <i class="fas fa-map-marker-alt fa-2x"></i>
+                </p>
+            </div>
             <div class="col">
                 <p class="text-secondary small">
                     г. Москва, Цветной б-р, д. 30, корп 2 Цветной бульвар, Трубная, Сухаревская
@@ -54,9 +56,11 @@
             </div>
         </div>
         <div class="row">
-            <p class="text-secondary small">
-                <i class="far fa-clock fa-2x"></i>
-            </p>
+            <div class="col-auto">
+                <p class="text-secondary small">
+                    <i class="far fa-clock fa-2x"></i>
+                </p>
+            </div>
             <div class="col">
                 <p class="text-secondary small">
                     пн-пт:         08:00 - 21:00 <br>
@@ -66,9 +70,11 @@
             </div>
         </div>
         <div class="row">
-            <p class="text-secondary small">
-                <i class="fas fa-phone fa-2x"></i>
-            </p>
+            <div class="col-auto">
+                <p class="text-secondary small">
+                    <i class="fas fa-phone fa-2x"></i>
+                </p>
+            </div>
             <div class="col">
                 <p class="font-weight-bold">+996 (700) 700 - 700</p>
             </div>

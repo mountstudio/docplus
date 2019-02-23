@@ -13,7 +13,9 @@ class ClinicController extends Controller
     //
     public function index()
     {
-        return view('clinic.index');
+        return view('clinic.list', [
+            'clinics' => Clinic::all(),
+        ]);
     }
 
     public function create()
@@ -36,7 +38,7 @@ class ClinicController extends Controller
          */
         $clinic = Clinic::create($request->all());
 
-        return redirect()->route('clinic.index');
+        return redirect()->route('clinic.admin');
     }
 
     public function edit(Clinic $clinic)
