@@ -21,7 +21,14 @@
                 <li class="nav-item">
                     <a href="{{ route('clinic.index') }}" class="nav-link text-light">Клиники ({{ \App\Clinic::all()->count() }})</a>
                 </li>
+                <li class="nav-item">
+                    <a href="{{ route('service.index') }}" class="nav-link text-light">Услуги ({{ \App\Service::all()->where('is_diagnostic',false)->count() }})</a>
+                </li>
             </ul>
+                <ul class="m-auto list-unstyled">
+                <li href="" class="text-light font-weight-normal" >+996 (000) 000 000</li>
+                <li href="" class="text-light font-weight-normal">+996 (000) 000 000</li>
+                </ul>
             <ul class="navbar-nav ml-auto">
                 <!-- Authentication Links -->
                 @guest
