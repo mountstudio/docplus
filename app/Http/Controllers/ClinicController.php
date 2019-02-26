@@ -34,10 +34,7 @@ class ClinicController extends Controller
 
     public function store(Request $request)
     {
-        /**
-         * @var Clinic $clinic
-         */
-        $user = User::registerUser($request, 1);
+        $user = User::registerUser($request, 'ROLE_CLINIC');
 
         $request->merge(['user_id' => $user->id]);
 
