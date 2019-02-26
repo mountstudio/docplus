@@ -39,7 +39,7 @@ class DoctorController extends Controller
     }
     public function store(Request $request)
     {
-        $user = User::registerUser($request, 1);
+        $user = User::registerUser($request, 'ROLE_DOCTOR');
 
         $request->merge(['user_id' => $user->id]);
 

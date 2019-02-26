@@ -39,14 +39,14 @@ class User extends Authenticatable
         return $this->hasOne(Pic::class);
     }
 
-    public static function registerUser($data, $isDoctor = false)
+    public static function registerUser($data, $role = 'ROLE_USER')
     {
         return User::create([
             'name' => $data['name'],
             'last_name' => $data['last_name'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
-            'is_doctor' => $isDoctor,
+            'role' => $role,
         ]);
     }
 
