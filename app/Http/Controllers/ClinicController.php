@@ -6,6 +6,7 @@ use App\Clinic;
 use App\Service;
 use App\Doctor;
 use App\Category;
+use App\User;
 use Illuminate\Http\Request;
 
 class ClinicController extends Controller
@@ -33,9 +34,10 @@ class ClinicController extends Controller
 
     public function store(Request $request)
     {
-        /**
-         * @var Clinic $clinic
-         */
+        $user = User::registerUser($request, 'ROLE_CLINIC');
+
+        $request->merge(['user_id' => $user->id]);
+
         $clinic = Clinic::create($request->all());
 
         return redirect()->route('clinic.admin');
