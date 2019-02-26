@@ -21,7 +21,7 @@
                         <div class="row justify-content-center">
                             @include('_partials.stars', ['id' => 'doctor-show'])
                         </div>
-                        <p class="text-secondary mt-3">{{ $status }} врач<br>на основе {{ $feedbacks->count() }} отзыв</p>
+                        <p class="text-secondary mt-3">Рейтинг врача<br>на основе {{ $feedbacks->count() }} отзывов-(ва)</p>
                     </div>
 
                     <div class="col">

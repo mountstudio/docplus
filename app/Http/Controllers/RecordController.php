@@ -25,7 +25,6 @@ class RecordController extends Controller
                 'user_id' => Auth::id(),
                 'name' => $request->name,
                 'phone_number' => $request->phone_number,
-                'doctor_id' => $request->doctor_id,
             ]);
             $schedule->active = 1;
             $schedule->save();

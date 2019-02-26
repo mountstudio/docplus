@@ -56,23 +56,10 @@ class DoctorController extends Controller
 
         $feedbacks = $doctor->feedbacks;
 
-        if ($doctor->rating == 5) {
-            $status = 'God of Doctors';
-        } elseif ($doctor->rating > 4 && $doctor->rating < 5) {
-            $status = 'Превосходный';
-        } elseif ($doctor->rating > 3 && $doctor->rating < 4) {
-            $status = 'Отличный';
-        } elseif ($doctor->rating > 2 && $doctor->rating < 3) {
-            $status = 'Хороший';
-        } else {
-            $status = 'Посредственный';
-        }
-
         return view('doctor.show', [
             'schedules' => $schedules,
             'doctor' => $doctor,
             'feedbacks' => $feedbacks,
-            'status' => $status,
         ]);
     }
 

@@ -20,7 +20,7 @@
                 <div class="row justify-content-center">
                     @include('_partials.stars', ['id' => $doctor->id.'-doctor'])
                 </div>
-                <p class="text-muted font-weight-light mt-3 mb-0 small">Превосходный врач на основе 171 отзыв</p>
+                <p class="text-muted font-weight-light mt-3 mb-0 small">Рейтинг врача на основе {{count($doctor->feedbacks)}} отзывов-(ва)</p>
             </div>
             <div class="col-7">
                 <a href="{{ route('doctor.show', $doctor->id) }}">
@@ -104,10 +104,7 @@
 
 
         <p class="text-secondary text-md-left text-center small">
-            Медицинский центр Иван(MCI)
-            Бишкек, ул. Бакча-Ата, д. 45
-            Звенигородская (400м)
-            Лиговский проспект(300м)
+            {{ $doctor->address }}
         </p>
 
 
