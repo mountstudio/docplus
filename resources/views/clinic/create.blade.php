@@ -34,6 +34,7 @@
             </div>
         </div>
 
+        @include('clinic.tabs.main')
         @include('clinic.tabs.services')
 
 

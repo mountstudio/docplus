@@ -2,11 +2,20 @@
 
 namespace App\Http\Controllers;
 
+use App\Clinic;
+use App\Doctor;
 use App\User;
+use Illuminate\Auth\Middleware\Authenticate;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class UserController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -81,5 +90,20 @@ class UserController extends Controller
     public function destroy(User $user)
     {
         //
+    }
+
+    public function profile()
+    {
+        if (Auth::user()->role === 'ROLE_OPERATOR')
+        {
+            $doctors = Doctor::all();
+            $clinics = Clinic::all();
+            $users = User::all();
+
+
+            return view('profile',['doctors' => $doctors, 'clinics' => $clinics, 'users' => $users, 'user' => Auth::user()]);
+        }
+
+        return view('profile',['user' => Auth::user()]);
     }
 }

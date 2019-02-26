@@ -6,7 +6,7 @@
         <a class="nav-link {{ Request::is('*doctor*') ? 'text-light' : 'text-dark' }}" href="{{ route('doctor.admin') }}">Доктора</a>
     </li>
     <li class="nav-item py-1 border-bottom {{ Request::is('*clinic*') ? 'bg-secondary' : '' }}">
-        <a class="nav-link {{ Request::is('*clinic*') ? 'text-light' : 'text-dark' }}" href="{{ route('clinic.index') }}">Клиника</a>
+        <a class="nav-link {{ Request::is('*clinic*') ? 'text-light' : 'text-dark' }}" href="{{ route('clinic.admin') }}">Клиника</a>
     </li>
     <li class="nav-item py-1 border-bottom {{ Request::is('*category*') ? 'bg-secondary' : '' }}">
         <a class="nav-link {{ Request::is('*category*') ? 'text-light' : 'text-dark' }}" href="{{ route('category.index') }}">Категории</a>

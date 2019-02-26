@@ -17,6 +17,11 @@ class Clinic extends Model
       'phones' => 'array',
     ];
 
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
+
     public function doctors()
     {
         return $this->hasMany(Doctor::class);

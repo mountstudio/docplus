@@ -9,7 +9,7 @@
                     <a class="nav-link text-secondary" href="#">ОТЗЫВЫ О СЕРВЕСЕ</a>
 
                     <h4 class="mt-4 text-primary">Врачам и клинике</h4>
-                    <a class="nav-link text-secondary" href="/doctor/1 ">ЛИЧНЫЙ КАБИНЕТ</a>
+                    <a class="nav-link text-secondary" href="/profile">ЛИЧНЫЙ КАБИНЕТ</a>
                 </nav>
             </div>
 

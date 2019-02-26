@@ -23,9 +23,8 @@ Route::get('/question', function () {
     return view('question.index');
 });
 Route::get('/', 'MainController@index');
-//Route::get('/', function () {
-////    return view('welcome');
-////});
+
+
 Route::get('/about_us', function () {
     return view('about_us');
 });
@@ -65,3 +64,4 @@ Route::resource('category', 'CategoryController');
 Route::resource('schedule', 'ScheduleController');
 Route::resource('record', 'RecordController');
 Route::resource('feedback', 'FeedbackController');
+Route::get('/profile', 'UserController@profile');
