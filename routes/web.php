@@ -51,6 +51,8 @@ Route::get('/schedule/{schedule}/accept','RecordController@index')->name('schedu
 
 
 Route::get('/notifications', 'UserController@notifications')->name('user.notifications');
+Route::get('/notifications/{notification}/read', 'UserController@markAsRead')->name('notification.read');
+
 Route::get('options', 'AdminController@options')->name('options');
 Route::get('datatable/getdoctors', 'AdminController@getDoctors')->name('datatable.getdoctors');
 Route::get('datatable/getclinics', 'AdminController@getClinics')->name('datatable.getclinics');

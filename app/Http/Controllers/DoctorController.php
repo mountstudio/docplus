@@ -17,15 +17,16 @@ class DoctorController extends Controller
 {
     public function index(Request $request)
     {
-        $doctors = Doctor::with('feedbacks')->get()
-            ->sortByPrice($request->price)->sortByFeeds($request->feeds);
+        $doctors = Doctor::with('feedbacks')->get()->sortingAndFilter($request);
 
         return view('doctor.list', [
             'doctors' => $doctors,
+            'popular' => $request->popular ? 0 : 1,
+            'rating' => $request->rating ? 0 : 1,
             'price' => $request->price ? 0 : 1,
             'feeds' => $request->feeds ? 0 : 1,
-            'child' => $request->child ? 0 : 1,
-            'home' => $request->home ? 0 : 1,
+            'child' => $request->child ? null : 1,
+            'home' => $request->home ? null : 1,
         ]);
     }
 

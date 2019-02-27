@@ -1,7 +1,7 @@
 
 <nav class="navbar navbar-expand-md navbar-dark navbar-laravel  py-0 pl-0 shadow-lg border-bottom sticky-top px-0">
     <div class="container-fluid pl-0  bg-primary">
-        <div class="col-12 col-sm-12 col-md-3 col-lg-4 bg-light py-2 text-center pl-0 shadow">
+        <div class="col-12 col-sm-12 col-md-3 col-lg-3 bg-light py-2 text-center pl-0 shadow">
             <a class="navbar-brand" href="{{ url('/') }}">
                 <img class="w-50" src={{asset('img/Logo.png')}} alt="">
             </a>

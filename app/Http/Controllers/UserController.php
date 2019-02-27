@@ -110,10 +110,15 @@ class UserController extends Controller
     {
         $notifications = Auth::user()->unreadNotifications;
 
-        Auth::user()->unreadNotifications->markAsRead();
-
         return view('notifications', [
             'notifications' => $notifications,
         ]);
+    }
+
+    public function markAsRead($notification)
+    {
+        Auth::user()->unreadNotifications->where('id', $notification)->markAsRead();
+
+        return back();
     }
 }
