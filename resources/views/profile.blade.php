@@ -9,11 +9,18 @@
 
 
                     <div class="col">
-                        <p class="text-secondary h3 m-0 mt-md-5 mb-md-2">{{ $user->name ?? 'Бобров Василий Елисеевич' }}</p>
+                        <p class="text-secondary h3 m-0 mt-md-5 mb-md-2">{{ $user->fullName ?? 'Бобров Василий Елисеевич' }}</p>
 
                     </div>
                 </div>
             </div>
+            <div class="col-4">
+                @includeWhen($user->role === "ROLE_DOCTOR", 'schedule.index',[
+                    'schedules' => \App\Doctor::getScheduleActivated($user->doctor),
+                    'profile' => true,
+                ])
+            </div>
         </div>
     </div>
+
 @endsection

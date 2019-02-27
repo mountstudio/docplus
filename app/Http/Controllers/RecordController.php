@@ -10,8 +10,12 @@ use Illuminate\Support\Facades\Auth;
 class RecordController extends Controller
 {
     //
-    public function index()
+    public function index(Schedule $schedule)
     {
+        $schedule->accepted = true;
+        $schedule->save();
+
+        return back();
     }
 
 

@@ -50,9 +50,7 @@ class DoctorController extends Controller
 
     public function show(Doctor $doctor)
     {
-        $schedules = Schedule::all()
-            ->where('doctor_id', $doctor->id)
-            ->groupBy('date_of_record');
+        $schedules = Doctor::getSchedule($doctor);
 
         $feedbacks = $doctor->feedbacks;
 
