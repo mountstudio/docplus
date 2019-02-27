@@ -13,7 +13,7 @@
                                 <img class="position-absolute rounded-circle img-thumbnail like " src="{{ asset('img/heart-0.png') }}" alt="">
                             </a>
                         @endauth
-                        <img class="img-card-doctors_clinics img-fluid rounded-circle mb-2 img-thumbnail" src="{{ $doctor->pics->first() ? asset('uploads/'.$doctor->pics->first()->image) : asset('img/doctor.jpg') }}" alt="">
+                        <img class="img-card-doctors_clinics rounded-circle mb-2 img-thumbnail" src="{{ $doctor->pics->first() ? asset('uploads/'.$doctor->pics->first()->image) : asset('img/doctor.jpg') }}" alt="">
                     </div>
                 </div>
 
