@@ -47,6 +47,8 @@ Route::get('/diagnostic', 'ServiceController@show_diagnostic');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/schedule/{schedule}/accept','RecordController@index')->name('schedule.accept');
+
 
 Route::get('/notifications', 'UserController@notifications')->name('user.notifications');
 Route::get('options', 'AdminController@options')->name('options');

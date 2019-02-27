@@ -98,9 +98,9 @@ class UserController extends Controller
         {
             $doctors = Doctor::all();
             $clinics = Clinic::all();
-            $users = User::all();
 
-            return view('profile',['doctors' => $doctors, 'clinics' => $clinics, 'users' => $users, 'user' => Auth::user()]);
+
+            return view('profile',['doctors' => $doctors, 'clinics' => $clinics, 'user' => Auth::user()]);
         }
 
         return view('profile',['user' => Auth::user()]);
