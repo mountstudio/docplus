@@ -41,6 +41,16 @@
                         </li>
                     @endif
                 @else
+                    @if (Auth::user()->unreadNotifications->count())
+                        <li class="nav-item">
+                            <a href="{{ route('user.notifications') }}" class="nav-link text-light position-relative">
+                                <i class="fas fa-bell shadow"></i>
+                                <span class="badge badge-info shadow-sm text-light font-weight-light position-absolute rounded-circle" style="right: 0; top: 0;">
+                                    {{ Auth::user()->unreadNotifications->count() }}
+                                </span>
+                            </a>
+                        </li>
+                    @endif
                     <li class="nav-item dropdown">
                         <a id="navbarDropdown" class="nav-link dropdown-toggle text-light" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                             {{ Auth::user()->name }} <span class="caret"></span>
@@ -64,4 +74,3 @@
         </div>
     </div>
 </nav>
-

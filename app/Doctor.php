@@ -45,7 +45,7 @@ class Doctor extends Model
     }
     public function schedules()
     {
-        return $this->belongsToMany(Schedule::class);
+        return $this->hasMany(Schedule::class);
     }
 
     public function feedbacks()

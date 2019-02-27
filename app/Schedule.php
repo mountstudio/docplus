@@ -8,8 +8,8 @@ class Schedule extends Model
 {
     //
     protected $fillable = ['doctor_id', 'date_of_record', 'time_of_record'];
-    public function doctors()
+    public function doctor()
     {
-        return $this->belongsToMany(Doctor::class);
+        return $this->belongsTo(Doctor::class);
     }
 }

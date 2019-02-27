@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Doctor;
+use App\Notifications\NewRecordNotification;
 use App\Record;
 use App\Schedule;
 use Illuminate\Http\Request;
@@ -28,6 +30,10 @@ class RecordController extends Controller
             ]);
             $schedule->active = 1;
             $schedule->save();
+
+            $doctor = $schedule->doctor;
+
+            $doctor->user->notify(new NewRecordNotification($record));
         }
         else
         {
@@ -38,6 +44,9 @@ class RecordController extends Controller
                 'phone_number' => $request->phone_number,
                 'doctor_id' => $request->doctor_id,
             ]);
+
+            $doctor = Doctor::find($request->doctor_id);
+            $doctor->user->notify(new NewRecordNotification($record));
         }
 
 

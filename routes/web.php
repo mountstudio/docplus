@@ -48,7 +48,7 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-
+Route::get('/notifications', 'UserController@notifications')->name('user.notifications');
 Route::get('options', 'AdminController@options')->name('options');
 Route::get('datatable/getdoctors', 'AdminController@getDoctors')->name('datatable.getdoctors');
 Route::get('datatable/getclinics', 'AdminController@getClinics')->name('datatable.getclinics');

@@ -16,4 +16,9 @@
             </div>
         </div>
     </div>
+
+    @includeWhen($user->role === "ROLE_OPERATOR", 'operator', [
+        'doctors' => $doctors,
+        'clinics' => $clinics,
+    ])
 @endsection

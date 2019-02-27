@@ -100,10 +100,20 @@ class UserController extends Controller
             $clinics = Clinic::all();
             $users = User::all();
 
-
             return view('profile',['doctors' => $doctors, 'clinics' => $clinics, 'users' => $users, 'user' => Auth::user()]);
         }
 
         return view('profile',['user' => Auth::user()]);
+    }
+
+    public function notifications()
+    {
+        $notifications = Auth::user()->unreadNotifications;
+
+        Auth::user()->unreadNotifications->markAsRead();
+
+        return view('notifications', [
+            'notifications' => $notifications,
+        ]);
     }
 }
