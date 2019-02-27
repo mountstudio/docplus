@@ -16,25 +16,7 @@
 
 
                     </div>
-                    <div class="form-group pt-4 my-4">
-                        <p class="font-weight-bold ">
-                            Кого вы представляете
-                        </p>
-                        <div class="form-check">
-                            <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1"
-                                   value="option1" checked>
-                            <label class="form-check-label" for="exampleRadios1">
-                                Клинику
-                            </label>
-                        </div>
-                        <div class="form-check">
-                            <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2"
-                                   value="option2">
-                            <label class="form-check-label" for="exampleRadios2">
-                                Врача
-                            </label>
-                        </div>
-                    </div>
+
                     <div class="form-group my-4">
 
                         <div class="input-group mb-3">
@@ -58,7 +40,7 @@
 
                         <div class="form-group mt-5 ">
 
-                            {{--<div class="g-recaptcha" data-sitekey="0000000000000000000000"></div>--}}
+
                             <input type="submit" value="Отправить" class="rss-button btn btn-outline-dark mt-4"/>
 
                         </div>
@@ -68,55 +50,7 @@
         </div>
     </div>
 
-    <!--    --><?php
-    ///*    if(isset($_POST['g-recaptcha-response']) && $_POST['g-recaptcha-response']) {
-    //        $secret = '0000000000000000000000';
-    //        $ip = $_SERVER['REMOTE_ADDR'];
-    //        $response = $_POST['g-recaptcha-response'];
-    //        $rsp = file_get_contents("https://www.google.com/recaptcha/api/siteverify?secret=$secret&response=$response&remoteip=$ip");
-    //        //var_dump($rsp);
-    //        $arr = json_decode($rsp, TRUE);
-    //        if($arr['success']){
-    //            if (isset($_POST['name'])) {$name = $_POST['name'];}
-    //            if (isset($_POST['email'])) {$email = $_POST['email'];}
-    //            if (isset($_POST['tel'])) {$tel = $_POST['tel'];}
-    //            if (isset($_POST['comment'])) {$comment = $_POST['comment'];}
-    //            $mail_header = "MIME-Version: 1.0\r\n";
-    //            $mail_header.= "Content-type: text/html; charset=UTF-8\r\n";
-    //            $mail_header.= "From: Any people \r\n";
-    //            $mail_header.= "Reply-to: Reply to Name \r\n";
-    //
-    //            $recipient= 'адрес, кому отправлять';
-    //            $subject = 'Тема письма';
-    //            $message = 'Поступила заявка на звонок
-    //';
-    //            if (isset($_POST['name'])){
-    //                $message.= '
-    // Имя:' . htmlspecialchars($name) . '<br />';
-    //            }
-    //            if (isset($_POST['email'])){
-    //                $message.= '
-    // Почта:' . htmlspecialchars($email) . '<br />';
-    //            }
-    //            if (isset($_POST['tel'])){
-    //                $message.= '
-    // Телефон:' . htmlspecialchars($tel) . '<br />';
-    //            }
-    //            if (isset($_POST['comment'])){
-    //                $message.= '
-    // О проекте: ' . htmlspecialchars($comment) . '<br />';
-    //            }
-    //
-    //
-    //            if (mail($recipient, $subject, $message, $mail_header))
-    //                echo 'Письмо отправлено';
-    //            else echo 'Письмо не отправлено';
-    //        }
-    //        else {
-    //            echo 'Нет';
-    //        }
-    //    }
-    //    */?>
+
 
 
 
