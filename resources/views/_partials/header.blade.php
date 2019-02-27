@@ -14,15 +14,15 @@
 
             <!-- Right Side Of Navbar -->
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav ml-5">
+            <ul class="navbar-nav text-center">
                 <li class="nav-item">
                     <a href="{{ route('doctor.index') }}" class="nav-link text-light">Врачи ({{ \App\Doctor::all()->count() }})</a>
                 </li>
                 <li class="nav-item">
                     <a href="{{ route('clinic.index') }}" class="nav-link text-light">Клиники ({{ \App\Clinic::all()->count() }})</a>
                 </li>
-            </ul>
-            <ul class="navbar-nav ml-auto">
+
+
                 <!-- Authentication Links -->
                 @guest
                     <li class="nav-item">
