@@ -12,10 +12,17 @@ use Illuminate\Http\Request;
 class ClinicController extends Controller
 {
     //
-    public function index()
+    public function index(Request $request)
     {
+        $clinics = Clinic::all()->sortingAndFilter($request);
+
         return view('clinic.list', [
-            'clinics' => Clinic::all(),
+            'clinics' => $clinics,
+            'popular' => $request->popular ? 0 : 1,
+            'rating' => $request->rating ? 0 : 1,
+            'feeds' => $request->feeds ? 0 : 1,
+            'child' => $request->child ? null : 1,
+            'fullDay' => $request->fullDay ? null : 1,
         ]);
     }
 

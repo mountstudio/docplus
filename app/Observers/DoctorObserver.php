@@ -18,6 +18,15 @@ class DoctorObserver
      */
     public function created(Doctor $doctor)
     {
+        if (request('home')) {
+            $doctor->home = true;
+            $doctor->save();
+        }
+        if (\request('child')) {
+            $doctor->child = true;
+            $doctor->save();
+        }
+
         if (request()->allFiles()) {
             foreach (request()->allFiles() as $input) {
                 foreach ($input as $file) {

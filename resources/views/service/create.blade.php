@@ -4,6 +4,7 @@
 
     <form action="{{ route('service.store') }}" method="POST">
         @csrf
+        @include('seo')
         <div class="form-group">
             <label for="name_of_service"></label>
             <input name="name" type="text" class="form-control {{ $errors->has('name') ? 'is-invalid' : '' }}" id="name_of_service" placeholder="Название Сервиса" value="{{ old('name') }}">

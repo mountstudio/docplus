@@ -4,6 +4,8 @@
 
     <form action="{{ route('clinic.store') }}" method="POST">
         @csrf
+        @include('seo')
+        @include('user.register', ['withOutName' => true])
         <div class="form-row">
             <div class="form-group col">
                 <label for="name_of_clinic"></label>
@@ -34,7 +36,6 @@
             </div>
         </div>
 
-        @include('clinic.tabs.main')
         @include('clinic.tabs.services')
 
 

@@ -14,7 +14,7 @@ class Doctor extends Model
     protected $fillable = [
         'address', 'educations', 'experiences', 'price', 'discount',
         'attent_rating', 'manner_rating', 'time_rating', 'rating' ,'user_id',
-        'home', 'child',
+        'home', 'child', 'title', 'description', 'keywords',
     ];
 
     protected $casts = [
