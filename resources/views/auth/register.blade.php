@@ -165,9 +165,9 @@ if(isset($_POST['g-recaptcha-response']) && $_POST['g-recaptcha-response']) {
                         <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Имя') }}</label>
 
                         <div class="col-md-6 ">
-                            <div class="input-group-prepend">
+                            {{--<div class="input-group-prepend">
                                 <span class="input-group-text bg-white text-muted" id="basic-addon1"><i class="fas fa-hospital-alt"></i></span>
-                            </div>
+                            </div>--}}
                             <input id="name" type="text" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" name="last_name" value="{{ old('name') }}" required autofocus>
 
                             @if ($errors->has('name'))

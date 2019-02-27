@@ -16,23 +16,7 @@
 
 
                     </div>
-                    <div class="form-group pt-4 my-4">
-                        <p class="font-weight-bold ">
-                            Кого вы представляете
-                        </p>
-                        <div class="form-check">
-                            <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked>
-                            <label class="form-check-label" for="exampleRadios1">
-                                Клинику
-                            </label>
-                        </div>
-                        <div class="form-check">
-                            <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">
-                            <label class="form-check-label" for="exampleRadios2">
-                                Врача
-                            </label>
-                        </div>
-                    </div>
+                    
                     <div class="form-group my-4">
 
                         <div class="input-group mb-3">
