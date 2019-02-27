@@ -18,24 +18,23 @@
                     СТОМАТОЛОГИ БИШКЕКА
                     <span class="text-secondary font-weight-light">17</span>
                 </p>
-                <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
-                    <label class="form-check-label mr-4" for="defaultCheck1">
-                        Default checkbox
-                    </label>
-                    <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
-                    <label class="form-check-label" for="defaultCheck1">
-                        Default checkbox
-                    </label>
-                </div>
-
             </div>
 
 
         </div>
         <div class="row">
             <div class="col-6 my-2 col-md-12">
-                @include('_partials.sort-clinic')
+
+            </div>
+        </div>
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-6 my-2 col-md-12">
+                    @include('_partials.sort-clinic')
+                </div>
+                <div class="col-6 my-2 col-md-12">
+                    @include('_partials.filter-clinic')
+                </div>
             </div>
         </div>
     </div>
@@ -43,7 +42,7 @@
 
     <!-- Create table clinics and map -->
     <div class="container my-5">
-
+        W
         @foreach($clinics as $clinic)
             @include('clinic.card')
         @endforeach
@@ -90,7 +89,6 @@
             </div>
 
 
-
             @include('clinic.reviews')
 
         </div>
@@ -99,7 +97,8 @@
 
 
 @push('styles')
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css"
+          integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
     <link rel="stylesheet" href="{{ asset('css/rateyo.css') }}">
 @endpush
 
