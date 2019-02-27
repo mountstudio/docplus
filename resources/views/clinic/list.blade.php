@@ -42,7 +42,6 @@
 
     <!-- Create table clinics and map -->
     <div class="container my-5">
-        W
         @foreach($clinics as $clinic)
             @include('clinic.card')
         @endforeach
