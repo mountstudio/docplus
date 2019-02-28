@@ -50,4 +50,8 @@ class Clinic extends Model
     {
         return $this->belongsToMany(Feedback::class);
     }
+    public static function getRecord(Clinic $clinic)
+    {
+//        return Record::all()->where('clinic_id', $clinic->id);
+    }
 }

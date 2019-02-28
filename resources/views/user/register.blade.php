@@ -1,5 +1,4 @@
-@isset($withOutName)
-    @if(!$withOutName)
+@if(!isset($withOutName))
         <div class="form-row">
             <div class="col-6 form-group">
                 <label for="name">Name</label>
@@ -10,8 +9,7 @@
                 <input id="last_name" name="last_name" type="text" class="form-control">
             </div>
         </div>
-    @endif
-@endisset
+@endif
 
 <div class="form-group">
     <label for="email">E-mail</label>

@@ -75,4 +75,12 @@ class Doctor extends Model
             ->where('accepted', false)
             ->groupBy('date_of_record');
     }
+
+
+    public static function getRecord(Doctor $doctor)
+    {
+        return Record::all()->where('doctor_id', $doctor->id);
+    }
+
+
 }
