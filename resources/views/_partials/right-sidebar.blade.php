@@ -12,9 +12,8 @@
 
             @include('schedule.index')
 
-            <p class="text-secondary mb-0">Принимает взрослых в «Медицинский центр  Трастмед на Таганке»</p>
-            <p class="text-secondary">Бишкек, ул Тоголока Молдо, д.50 стр.1 Таганская (490м) Киевская (308м)</p>
-            <p class="font-weight-bold text-primary pt-3 pb-3 h5">Стоимость приёма: 1440 сом</p>
+            <p class="mt-3 text-secondary">{{$doctor->address}}</p>
+            <p class="font-weight-bold text-primary pt-3 pb-3 h5">{{$doctor->price}} сом</p>
             <p class="text-secondary">996-707-85-85-00</p>
         </div>
     </div>
@@ -27,7 +26,6 @@
 
         <div class="text-center">
             <button type="button" class="btn btn-danger text-white font-weight-bold mb-4 shadow" style="border-radius: 50px;">Вызвать врача на дом</button>
-
         </div>
 
     </div>

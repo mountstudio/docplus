@@ -4,7 +4,7 @@
 
     <div class="container">
         <div class="row justify-content-center py-5">
-            <div class="col-5 border border-5 bg-light border-primary">
+            <div class="col-10 col-md-5 border border-5 bg-light border-primary">
 
                 <form action="{{ route('login') }}" method="post">
                     @csrf
@@ -21,23 +21,28 @@
 
                         <div class="input-group mb-3">
                             <div class="input-group-prepend">
-                                <span class="input-group-text bg-white text-muted" id="basic-addon1"><i class="fas fa-envelope"></i></span>
+                                <span class="input-group-text bg-white text-muted" id="basic-addon1"><i
+                                        class="fas fa-envelope"></i></span>
                             </div>
-                            <input type="text" name="email" class="form-control" placeholder="Электронная почта" aria-label="Username" aria-describedby="basic-addon1">
+                            <input type="text" name="email" class="form-control" placeholder="Электронная почта"
+                                   aria-label="Username" aria-describedby="basic-addon1">
 
                         </div>
 
                         <div class="input-group mb-3">
                             <div class="input-group-prepend">
-                                <span class="input-group-text bg-white text-muted" id="basic-addon4"><i class="fas fa-key"></i></span>
+                                <span class="input-group-text bg-white text-muted" id="basic-addon4"><i
+                                        class="fas fa-key"></i></span>
                             </div>
-                            <input type="password" name="password" class="form-control" placeholder="Пароль" area-label="Password" area-describedby="basic-addon5">
+                            <input type="password" name="password" class="form-control" placeholder="Пароль"
+                                   area-label="Password" area-describedby="basic-addon5">
                         </div>
 
                         <div class="form-group mt-5 ">
 
 
                             <input type="submit" value="Отправить" class="rss-button btn btn-outline-dark mt-4"/>
+
                         </div>
                     </div>
                 </form>
@@ -127,7 +132,8 @@
 
 @push('styles')
 
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css"
+          integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 
 @endpush
 
