@@ -13,14 +13,14 @@
                                 <img class="position-absolute rounded-circle img-thumbnail like " src="{{ asset('img/heart-0.png') }}" alt="">
                             </a>
                         @endauth
-                        <img class="img-card-doctors_clinics img-fluid rounded-circle mb-2 img-thumbnail" src="{{ $doctor->pics->first() ? asset('uploads/'.$doctor->pics->first()->image) : asset('img/doctor.jpg') }}" alt="">
+                        <img class="img-card-doctors_clinics rounded-circle mb-2 img-thumbnail" src="{{ $doctor->pics->first() ? asset('uploads/'.$doctor->pics->first()->image) : asset('img/doctor.jpg') }}" alt="">
                     </div>
                 </div>
 
                 <div class="row justify-content-center">
                     @include('_partials.stars', ['id' => $doctor->id.'-doctor'])
                 </div>
-                <p class="text-muted font-weight-light mt-3 mb-0 small">Превосходный врач на основе 171 отзыв</p>
+                <p class="text-muted font-weight-light mt-3 mb-0 small">Рейтинг врача на основе {{count($doctor->feedbacks)}} отзывов-(ва)</p>
             </div>
             <div class="col-7">
                 <a href="{{ route('doctor.show', $doctor->id) }}">
@@ -56,15 +56,55 @@
 
 
         <div class="row justify-content-center">
-            <button type="button" class="btn btn-lg btn-info text-light font-weight-bold my-2 shadow text-uppercase h4 py-1 border-bottom" style="border-radius: 50px;">
+            <button data-toggle="modal" data-target="#recModal" class="btn btn-lg btn-info text-light font-weight-bold my-2 shadow text-uppercase h4 py-1 border-bottom" style="border-radius: 50px;">
                 Записаться
             </button>
         </div>
+
+        <div class="modal fade" id="recModal" tabindex="-1" role="form" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title text-secondary" id="exampleModalLabel">Введите свои данные</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div>
+                        <div class="modal-body">
+                            <form class="text-secondary" action="{{ route('record.store') }}" method="POST">
+                                @csrf
+                                <div class="form-group">
+                                    <label for="recipient-name" class="col-form-label">Введите ваше имя:</label>
+                                    <input type="text" name="name" class="form-control" id="recipient-name" placeholder="Ваше имя" value="{{ Auth::check() ? Auth::user()->name : '' }}" required {{ Auth::check() ? 'disabled' : '' }}>
+                                    @auth
+                                        <input type="hidden" name="name" class="form-control" value="{{ Auth::user()->name }}" required>
+                                    @endauth
+                                </div>
+                                <input type="hidden" name="doctor_id" id="doctor_id" value="{{ $doctor->id }}">
+
+                                <div class="form-group">
+                                    <label for="recipient-name" class="col-form-label">Введите ваш телефон:</label>
+                                    <input type="tel" name="phone_number" class="form-control" placeholder="Номер телефона">
+                                </div>
+                                <p class=" h6">*на указанный вами номер будет отправлено SMS с кодом подтверждения</p>
+                                <div class="row">
+                                    <div class="col-4">
+                                        <button type="submit" class="btn btn-outline-success my-4">Отправить</button>
+                                    </div>
+                                </div>
+
+                            </form>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
         <p class="text-secondary text-md-left text-center small">
-            Медицинский центр Иван(MCI)
-            Бишкек, ул. Бакча-Ата, д. 45
-            Звенигородская (400м)
-            Лиговский проспект(300м)
+            {{ $doctor->address }}
         </p>
 
 

@@ -113,15 +113,3 @@
     <link rel="stylesheet" href="{{ asset('css/rateyo.css') }}">
 @endpush
 
-@push('scripts')
-    <script src="{{ asset('js/rateyo.js') }}"></script>
-    <script>
-        $(".rateYo").rateYo({
-            rating: 4,
-            readOnly: true,
-            ratedFill: "red",
-            starWidth: "20px",
-            spacing: "5px"
-        });
-    </script>
-@endpush

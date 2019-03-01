@@ -23,9 +23,8 @@ Route::get('/question', function () {
     return view('question.index');
 });
 Route::get('/', 'MainController@index');
-//Route::get('/', function () {
-////    return view('welcome');
-////});
+
+
 Route::get('/about_us', function () {
     return view('about_us');
 });
@@ -48,7 +47,11 @@ Route::get('/diagnostic', 'ServiceController@show_diagnostic');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/schedule/{schedule}/accept','RecordController@index')->name('schedule.accept');
 
+
+Route::get('/notifications', 'UserController@notifications')->name('user.notifications');
+Route::get('/notifications/{notification}/read', 'UserController@markAsRead')->name('notification.read');
 
 Route::get('options', 'AdminController@options')->name('options');
 Route::get('datatable/getdoctors', 'AdminController@getDoctors')->name('datatable.getdoctors');
@@ -65,3 +68,4 @@ Route::resource('category', 'CategoryController');
 Route::resource('schedule', 'ScheduleController');
 Route::resource('record', 'RecordController');
 Route::resource('feedback', 'FeedbackController');
+Route::get('/profile', 'UserController@profile');

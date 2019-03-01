@@ -42,9 +42,20 @@
                         <div id="collapseOne" class="collapse" aria-labelledby="headingOne"
                              data-parent="#accordionExample">
                             <div class="card-body pt-0">
-                                Зачем делают УЗИ? Ультразвуковое исследование позволяет получить достоверную информацию о форме, размерах, положении и состоянии внутренних органов. Ультразвук безвреден, практически не имеет ограничений и противопоказаний, исключение составляет только внутриректальное обследования при заболеваниях прямой кишки. Используется для выявления заболеваний на ранних стадиях, уточнения диагноза или оценки результатов лечения.
+                                Зачем делают УЗИ? Ультразвуковое исследование позволяет получить достоверную информацию
+                                о форме, размерах, положении и состоянии внутренних органов. Ультразвук безвреден,
+                                практически не имеет ограничений и противопоказаний, исключение составляет только
+                                внутриректальное обследования при заболеваниях прямой кишки. Используется для выявления
+                                заболеваний на ранних стадиях, уточнения диагноза или оценки результатов лечения.
 
-                                Подготовка к УЗИ. За 3 дня до процедуры рекомендуется исключить из рациона продукты, которые способствуют вздутию живота и газообразованию. Для лучшей визуализации за пару дней до исследования необходимо принимать ферментные препараты, которые улучшают пищеварение. Запрещается проводить УЗИ после рентгенконтрастных исследований, колоноскопии и ФГДС. Исследования проводят натощак, а если процедура запланирована на вторую половину дня, нельзя есть за 6 часов до процедуры и пить за 2 часа до ее начала. Достоверное снятие данных УЗИ и консультацию может обеспечить только грамотный врач УЗИ в медицинском центре.
+                                Подготовка к УЗИ. За 3 дня до процедуры рекомендуется исключить из рациона продукты,
+                                которые способствуют вздутию живота и газообразованию. Для лучшей визуализации за пару
+                                дней до исследования необходимо принимать ферментные препараты, которые улучшают
+                                пищеварение. Запрещается проводить УЗИ после рентгенконтрастных исследований,
+                                колоноскопии и ФГДС. Исследования проводят натощак, а если процедура запланирована на
+                                вторую половину дня, нельзя есть за 6 часов до процедуры и пить за 2 часа до ее начала.
+                                Достоверное снятие данных УЗИ и консультацию может обеспечить только грамотный врач УЗИ
+                                в медицинском центре.
 
                                 Здесь представлены клиники и медцентры в которых можно сделать лучшее УЗИ в Москве.
 
@@ -60,17 +71,20 @@
 
     <div class="container">
         <div class="row justify-content-center">
-        <ul class="nav nav-tabs" id="myTab" role="tablist">
-            <li class="nav-item">
-                <a class="nav-link active" id="doctor-tab" data-toggle="tab" href="#doctor" role="tab" aria-controls="doctor" aria-selected="true">Доктора</a>
-            </li>
+            <ul class="nav nav-tabs" id="myTab" role="tablist">
+                <li class="nav-item">
+                    <a class="nav-link active" id="doctor-tab" data-toggle="tab" href="#doctor" role="tab"
+                       aria-controls="doctor" aria-selected="true">Доктора</a>
+                </li>
 
-            <li class="nav-item">
-                <a class="nav-link" id="clinic-tab" data-toggle="tab" href="#clinic" role="tab" aria-controls="clinic" aria-selected="true">Клиники</a>
-            </li>
-        </ul>
+                <li class="nav-item">
+                    <a class="nav-link" id="clinic-tab" data-toggle="tab" href="#clinic" role="tab"
+                       aria-controls="clinic" aria-selected="true">Клиники</a>
+                </li>
+            </ul>
+            <div class="col-12">
 
-            <div class="tab-content" id="myTabContent">
+                <div class="tab-content" id="myTabContent">
                     <div class="tab-pane fade active show" id="doctor" role="tabpanel" aria-labelledby="doctor-tab">
                         @foreach($doctors as $doctor)
                             @include('doctor.card')
@@ -82,6 +96,7 @@
                             @include('clinic.card')
                         @endforeach
                     </div>
+                </div>
             </div>
         </div>
 
@@ -95,7 +110,8 @@
 @push('styles')
 
 
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css"
+          integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 
     <link rel="stylesheet" href="{{ asset('css/rateyo.css') }}">
 

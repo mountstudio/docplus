@@ -17,15 +17,16 @@ class DoctorController extends Controller
 {
     public function index(Request $request)
     {
-        $doctors = Doctor::with('feedbacks')->get()
-            ->sortByPrice($request->price)->sortByFeeds($request->feeds);
+        $doctors = Doctor::with('feedbacks')->get()->sortingAndFilter($request);
 
         return view('doctor.list', [
             'doctors' => $doctors,
+            'popular' => $request->popular ? 0 : 1,
+            'rating' => $request->rating ? 0 : 1,
             'price' => $request->price ? 0 : 1,
             'feeds' => $request->feeds ? 0 : 1,
-            'child' => $request->child ? 0 : 1,
-            'home' => $request->home ? 0 : 1,
+            'child' => $request->child ? null : 1,
+            'home' => $request->home ? null : 1,
         ]);
     }
 
@@ -50,29 +51,14 @@ class DoctorController extends Controller
 
     public function show(Doctor $doctor)
     {
-        $schedules = Schedule::all()
-            ->where('doctor_id', $doctor->id)
-            ->groupBy('date_of_record');
+        $schedules = Doctor::getSchedule($doctor);
 
         $feedbacks = $doctor->feedbacks;
-
-        if ($doctor->rating == 5) {
-            $status = 'God of Doctors';
-        } elseif ($doctor->rating > 4 && $doctor->rating < 5) {
-            $status = 'Превосходный';
-        } elseif ($doctor->rating > 3 && $doctor->rating < 4) {
-            $status = 'Отличный';
-        } elseif ($doctor->rating > 2 && $doctor->rating < 3) {
-            $status = 'Хороший';
-        } else {
-            $status = 'Херовый';
-        }
 
         return view('doctor.show', [
             'schedules' => $schedules,
             'doctor' => $doctor,
             'feedbacks' => $feedbacks,
-            'status' => $status,
         ]);
     }
 

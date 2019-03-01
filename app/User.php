@@ -34,6 +34,11 @@ class User extends Authenticatable
         return $this->hasOne(Doctor::class);
     }
 
+    public function clinic()
+    {
+        return $this->hasOne(Clinic::class);
+    }
+
     public function pic()
     {
         return $this->hasOne(Pic::class);
@@ -53,5 +58,16 @@ class User extends Authenticatable
     public function getFullNameAttribute()
     {
         return ucfirst($this->name) . ' ' . ucfirst($this->last_name);
+    }
+
+    public static function getRecord(User $user)
+    {
+        return Record::all()->where('user_id', $user->id);
+    }
+
+    public static function getDoctorName($id)
+    {
+        $doctor = Doctor::find($id);
+        return $doctor->user->fullName;
     }
 }

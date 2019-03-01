@@ -3,7 +3,7 @@
         <div class="col-4">
             <div class="row">
                 <div class="col-3">
-                    <img class="img-fluid" src="{{asset('img/plus.png')}}" alt="">
+                    <i class="fas fa-stopwatch fa-5x text-info"></i>
                 </div>
                 <div class="col-9">
                     <h4 class="font-weight-bold mb-0">Моментальная запись к врачу</h4>
@@ -14,7 +14,7 @@
         <div class="col-4">
             <div class="row">
                 <div class="col-3">
-                    <img class="img-fluid" src="{{asset('img/plus.png')}}" alt="">
+                    <i class="fas fa-dollar-sign fa-5x text-info"></i>
                 </div>
                 <div class="col-9">
                     <h4 class="font-weight-bold mb-0">Без комиссии и оплаты за запись</h4>
@@ -25,7 +25,7 @@
         <div class="col-4">
             <div class="row">
                 <div class="col-3">
-                    <img class="img-fluid" src="{{asset('img/plus.png')}}" alt="">
+                    <i class="fas fa-user-md fa-5x text-info"></i>
                 </div>
                 <div class="col-9">
                     <h4 class="font-weight-bold mb-0">Врач проверенный пользователями</h4>

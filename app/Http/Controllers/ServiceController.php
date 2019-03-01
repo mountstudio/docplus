@@ -61,7 +61,7 @@ class ServiceController extends Controller
         }
         $service = Service::create($request->all());
 
-        return redirect()->route('service.index');
+        return redirect()->route('service.admin');
     }
 
     public function edit(Service $service)
