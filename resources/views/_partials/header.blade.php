@@ -1,9 +1,9 @@
 
 <nav class="navbar navbar-expand-md navbar-dark navbar-laravel  py-0 pl-0 shadow-lg border-bottom sticky-top px-0">
     <div class="container-fluid pl-0  bg-primary">
-        <div class="col-12 col-sm-12 col-md-3 col-lg-4 bg-light py-2 pl-0 shadow">
+        <div class="col-12 col-sm-12 col-md-3 col-lg-4 bg-light py-2 pl-0 shadow d-flex">
 
-          <div class="row">
+          {{--<div class="row">--}}
 
               <div class="col-auto my-auto">
                   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
@@ -14,7 +14,7 @@
 
               <div class="col text-center">
                   <a class="navbar-brand m-0" href="{{ url('/') }}">
-                      <img class="img-fluid w-50 mx-auto" src={{asset('img/Logo.png')}} alt="">
+                      <img class="w-50 mx-auto" src={{asset('img/Logo.png')}} alt="">
                   </a>
               </div>
 
@@ -24,7 +24,7 @@
                   </button>
               </div>
 
-          </div>
+          {{--</div>--}}
 
 
         </div>
@@ -48,7 +48,7 @@
                         ({{ \App\Service::all()->where('is_diagnostic',false)->count() }})</a>
                 </li>
             </ul>
-            <ul class="navbar-nav mx-auto text-center">
+            <ul class="navbar-nav mx-auto text-center d-none d-md-block">
                 <li class="nav-item">
                     <a href="" class="nav-link text-light">+996(777)312-312</a>
                 </li>
@@ -103,8 +103,8 @@
             </ul>
 
         </div>
-        <div class="collapse navbar-collapse navbar-expand-md text-center" id="navbarContactPhone">
-            <ul class="navbar-nav text-center d-md-none">
+        <div class="collapse navbar-collapse text-center" id="navbarContactPhone">
+            <ul class="navbar-nav text-center mx-auto d-block d-md-none">
                 <li class="nav-item">
                     <a href="" class="nav-link text-light">+996(777)312-312</a>
                 </li>
