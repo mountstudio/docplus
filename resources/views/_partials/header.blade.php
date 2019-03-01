@@ -42,10 +42,6 @@
                         ({{ \App\Service::all()->where('is_diagnostic',false)->count() }})</a>
                 </li>
             </ul>
-            <ul class="m-auto list-unstyled text-center">
-                <li class="text-light font-weight-normal">+996 (000) 000 000</li>
-                <li class="text-light font-weight-normal">+996 (000) 000 000</li>
-            </ul>
             <ul class="navbar-nav ml-auto text-center">
                 <!-- Authentication Links -->
                 @guest
