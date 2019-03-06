@@ -50,10 +50,10 @@
             </ul>
             <ul class="navbar-nav mx-auto text-center d-none d-md-block">
                 <li class="nav-item">
-                    <a href="" class="nav-link text-light">+996(777)312-312</a>
+                    <a href="" class="nav-link text-light p-0">+996(777)312-312</a>
                 </li>
                 <li class="nav-item">
-                    <a href="" class="nav-link text-light">+996(700)312-312</a>
+                    <a href="" class="nav-link text-light p-0">+996(700)312-312</a>
                 </li>
             </ul>
             <ul class="navbar-nav text-center ml-auto">
@@ -109,6 +109,9 @@
                     <a href="" class="nav-link text-light">+996(777)312-312</a>
                 </li>
                 <li class="nav-item">
+                    <a href="" class="nav-link text-light">+996(700)312-312</a>
+                </li>
+                <li class="nav-item d-block d-md-none">
                     <a href="" class="nav-link text-light">+996(700)312-312</a>
                 </li>
             </ul>
