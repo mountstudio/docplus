@@ -5,7 +5,7 @@
 
           {{--<div class="row">--}}
 
-              <div class="col-auto my-auto">
+              <div class="col-auto my-auto d-md-none">
                   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                       <i class="fas fa-bars fa-lg text-primary "></i>
                   </button>
@@ -18,7 +18,7 @@
                   </a>
               </div>
 
-              <div class="col-auto my-auto">
+              <div class="col-auto my-auto d-md-none">
                   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarContactPhone" aria-controls="navbarContactPhone" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                       <span class="fas fa-phone-square fa-lg text-primary text-right"></span>
                   </button>
@@ -110,18 +110,20 @@
             </ul>
 
         </div>
-        <div class="collapse navbar-collapse text-center" id="navbarContactPhone">
-            <ul class="navbar-nav text-center mx-auto d-block d-md-none">
-                <li class="nav-item">
-                    <a href="" class="nav-link text-light">+996(777)312-312</a>
-                </li>
-                <li class="nav-item">
-                    <a href="" class="nav-link text-light">+996(700)312-312</a>
-                </li>
-                <li class="nav-item">
-                    <a href="" class="nav-link text-light">+996(700)312-312</a>
-                </li>
-            </ul>
+        <div class="row d-block d-md-none mx-auto">
+            <div class="collapse navbar-collapse text-center" id="navbarContactPhone">
+                <ul class="navbar-nav text-center  ">
+                    <li class="nav-item">
+                        <a href="" class="nav-link text-light">+996(777)312-312</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="" class="nav-link text-light">+996(700)312-312</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="" class="nav-link text-light">+996(700)312-312</a>
+                    </li>
+                </ul>
+            </div>
         </div>
     </div>
 </nav>

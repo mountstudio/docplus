@@ -18,10 +18,10 @@
     <div class="container">
         <div class="row align-items-center">
             <div class="col-6 my-2 col-md-12">
-                @include('_partials.sort')
-            </div>
-            <div class="col-6 my-2 col-md-12">
                 @include('_partials._filter')
+            </div>
+            <div class="col-12 my-2 d-none d-md-block">
+                @include('_partials.sort')
             </div>
         </div>
     </div>

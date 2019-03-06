@@ -13,6 +13,14 @@
     </div>
     <div class="container">
         <div class="row">
+            <div class="col-12 my-2">
+                @include('_partials.filter-clinic')
+            </div>
+            <div class="col-12 my-2 d-none d-md-block">
+                @include('_partials.sort-clinic')
+            </div>
+        </div>
+        <div class="row">
             <div class="col-12">
                 <p class="text-primary font-weight-bold mt-3 h3">
                     СТОМАТОЛОГИ БИШКЕКА
@@ -27,16 +35,7 @@
 
             </div>
         </div>
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-6 my-2 col-md-12">
-                    @include('_partials.sort-clinic')
-                </div>
-                <div class="col-6 my-2 col-md-12">
-                    @include('_partials.filter-clinic')
-                </div>
-            </div>
-        </div>
+
     </div>
 
 
