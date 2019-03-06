@@ -35,7 +35,7 @@
     </div>
 
     <div class="container my-5">
-
+    <p>Показано врачей ({{$doctors->count()}})</p>
         @foreach($doctors as $doctor)
             @include('doctor.card')
         @endforeach

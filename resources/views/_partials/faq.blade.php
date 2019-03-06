@@ -1,81 +1,82 @@
 <div class="container-fluid p-5 bg-doc d-none d-lg-block">
     <div class="row px-5">
         <div class="col-2 col-lg-3">
-            <img src="{{ asset('img/heart.png') }}" class="img-fluid" alt="">
+            <img src="{{ asset('img/plus2.png') }}" class="img-fluid" alt="">
         </div>
         <div class="col-8 col-lg">
             <div class="accordion text-white text-uppercase bg-transparent" id="accordionExample">
                 <div class="card bg-transparent border-0 ">
                     <div class="card-header bg-transparent border-0" id="headingOne">
-                        <button class="btn btn-link text-white text-uppercase" type="button" data-toggle="collapse"
+                        <button class="btn btn-link text-white font-weight-bold text-uppercase" type="button" data-toggle="collapse"
                                 data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                            DocPlus - клиника?
+                            <i class="fas fa-angle-down mr-2"></i>Что такое Doc+
+
                         </button>
                     </div>
 
-                    <div id="collapseOne" class="collapse show" aria-labelledby="headingOne"
+                    <div id="collapseOne" class="collapse" aria-labelledby="headingOne"
                          data-parent="#accordionExample">
                         <div class="card-body">
-                            Нет, DOCPLUS.kG - сервис по поиску врача, с помощью  которого вы запишитесь в клинику.
+                            Docplus - это сервис, который помогает Вам найти хорошего специалиста и без проблем записаться на приём.
                         </div>
                     </div>
                 </div>
                 <div class="card bg-transparent border-0">
                     <div class="card-header bg-transparent border-0" id="headingTwo">
-                        <button class="btn btn-link  text-white text-uppercase collapsed" type="button"
+                        <button class="btn btn-link  text-white font-weight-bold text-uppercase collapsed" type="button"
                                 data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false"
                                 aria-controls="collapseTwo">
-                            Как записаться на прием?
+                            <i class="fas fa-angle-down mr-2"></i>Как мне записаться на приём?
                         </button>
                     </div>
                     <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
                         <div class="card-body">
-                            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                            Выбрав нужного специалиста и заполнив форму записи с Вами свяжутся в течении 10 минут. Если запись займет больше 10 минут, то приём оплачиваем мы (DOC+).
                         </div>
                     </div>
                 </div>
                 <div class="card bg-transparent border-0">
                     <div class="card-header bg-transparent border-0" id="headingThree">
-                        <button class="btn btn-link collapsed  text-white text-uppercase" type="button"
+                        <button class="btn btn-link collapsed text-white font-weight-bold text-uppercase" type="button"
                                 data-toggle="collapse" data-target="#collapseThree" aria-expanded="false"
                                 aria-controls="collapseThree">
-                            Какова стоимость услуг сервиса?
+                            <i class="fas fa-angle-down mr-2"></i>На что мне ориентироваться при выборе специалиста?
                         </button>
                     </div>
                     <div id="collapseThree" class="collapse" aria-labelledby="headingThree"
                          data-parent="#accordionExample">
                         <div class="card-body">
-                            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                            DOC+ советует в первую очередь ориентироваться на личные достижения специалиста и на отзывы уже побывавших на приёме специалистов.
                         </div>
                     </div>
                 </div>
                 <div class="card bg-transparent border-0">
-                    <div class="card-header bg-transparent border-0" id="headingThree">
-                        <button class="btn btn-link collapsed  text-white text-uppercase" type="button"
-                                data-toggle="collapse" data-target="#collapseThree" aria-expanded="false"
-                                aria-controls="collapseThree">
-                            Через ваш сервис можно записаться во все медицинские учреждения города?
+                    <div class="card-header bg-transparent border-0" id="headingFour">
+                        <button class="btn btn-link collapsed text-white font-weight-bold text-uppercase" type="button"
+                                data-toggle="collapse" data-target="#collapseFour" aria-expanded="false"
+                                aria-controls="collapseFour">
+                            <i class="fas fa-angle-down mr-2"></i>Сколько стоят услуги DOCPLUS?
                         </button>
                     </div>
-                    <div id="collapseThree" class="collapse" aria-labelledby="headingThree"
+                    <div id="collapseFour" class="collapse" aria-labelledby="headingFour"
                          data-parent="#accordionExample">
                         <div class="card-body">
-                            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                            Наш сервис  бесплатный. Вы оплачиваете только стоимость приёма или диагностики в клиники.
                         </div>
                     </div>
                 </div>
                 <div class="card bg-transparent border-0">
-                    <div class="card-header bg-transparent border-0" id="headingThree">
-                        <button class="btn btn-link collapsed  text-white text-uppercase" type="button"
-                                data-toggle="collapse" data-target="#collapseThree" aria-expanded="false"
-                                aria-controls="collapseThree">
-                            В чем разница между записью через DOQ.kz и напрямую в клинику?
+                    <div class="card-header bg-transparent border-0" id="headingFive">
+                        <button class="btn btn-link collapsed  text-white font-weight-bold text-uppercase" type="button"
+                                data-toggle="collapse" data-target="#collapseFive" aria-expanded="false"
+                                aria-controls="collapseFive">
+                            <i class="fas fa-angle-down mr-2"></i>Что значит: "мы делаем медицину доступнее"?
                         </button>
                     </div>
-                    <div id="collapseThree" class="collapse" aria-labelledby="headingThree"
+                    <div id="collapseFive" class="collapse" aria-labelledby="headingFive"
                          data-parent="#accordionExample">
                         <div class="card-body">
-                            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                            Наш сервис устроен так, что во многие клиники через DOC+ будет записаться дешевле, чем напрямую в клинику.
                         </div>
                     </div>
                 </div>

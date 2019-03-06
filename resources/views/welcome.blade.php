@@ -106,26 +106,26 @@
                         <img class="img-fluid" src="{{ asset('img/logo.png') }}" alt="">
                     </div>
                     <div class="div-3">
-                        <p class="text-center bg-primary text-white font-weight-bold text-uppercase h4 px-2 m-4">Доверяют</p>
+                        <p class="text-center text-primary font-weight-bold text-uppercase h4 px-2 m-4">Доверяют</p>
                     </div>
                 </div>
 
                 <div class="row py-2 justify-content-center">
                     <div class="col-3">
                         <p class="text-secondary font-weight-bold text-uppercase  text-right">
-                            <span class="h1">232</span>ОТЗЫВОВ
+                            <span class="h1">{{\App\Feedback::all()->count()}}</span> ОТЗЫВОВ
                         </p>
                     </div>
 
                     <div class="col-3">
                         <p class="text-secondary font-weight-bold text-uppercase  text-center">
-                            <span class="h1">338</span>ВРАЧЕЙ
+                            <span class="h1">{{\App\Doctor::all()->count()}}</span> ВРАЧЕЙ
                         </p>
                     </div>
 
                     <div class="col-3">
                         <p class="text-secondary font-weight-bold text-uppercase  text-left">
-                            <span class="h1">750</span>КЛИНИК
+                            <span class="h1">{{\App\Clinic::all()->count()}}</span> КЛИНИК
                         </p>
                     </div>
                 </div>

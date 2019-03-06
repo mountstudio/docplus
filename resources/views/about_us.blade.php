@@ -7,16 +7,16 @@
 
         <div class="row justify-content-center my-5">
             <div class="col-12 col-md-auto text-light text-center">
-                <h2>Doc+ для пациентов</h2>
-                <p>Наш проект - это ответ на извечный вопрос: "где найти хорошего врача?"</p>
-                <p>Основные задачи нашего проекта - делать медицину более качественной,</p>
-                <p>более доступной и более прозрачной</p>
+                <h2>Doc+ для пациентов</h2><br>
+                <p class="h5">Наш проект - это ответ на извечный вопрос: "где найти хорошего врача?"</p>
+                <p class="h5">Основные задачи нашего проекта - делать медицину более качественной,</p>
+                <p class="h5">более доступной и более прозрачной</p>
             </div>
         </div>
 
     </div>
 
-
+<div class="container">
     <div class="row col-12 justify-content-center text-center my-5 py-5 border-bottom">
         <div class="col-12 col-md-4">
             <img class="img-fluid" src="{{ asset('img/chat.png') }}" alt="">
@@ -49,5 +49,6 @@
 
 
     </div>
+</div>
 
 @endsection

@@ -1,7 +1,7 @@
 
 <nav class="navbar navbar-expand-md navbar-dark navbar-laravel  py-0 pl-0 shadow-lg border-bottom sticky-top px-0">
     <div class="container-fluid pl-0  bg-primary">
-        <div class="col-12 col-sm-12 col-md-3 col-lg-4 bg-light py-2 pl-0 shadow d-flex">
+        <div class="col-12 col-sm-12 col-md-3 bg-light py-2 pl-0 shadow d-flex">
 
           {{--<div class="row">--}}
 
@@ -40,14 +40,19 @@
                         ({{ \App\Doctor::all()->count() }})</a>
                 </li>
                 <li class="nav-item">
-                    <a href="{{ route('clinic.index') }}" class="nav-link text-light">Клиники
+                    <a href="{{ route('clinic.index') }}" class="nav-link text-light    ">Клиники
                         ({{ \App\Clinic::all()->count() }})</a>
                 </li>
                 <li class="nav-item">
                     <a href="{{ route('service.index') }}" class="nav-link text-light">Услуги
                         ({{ \App\Service::all()->where('is_diagnostic',false)->count() }})</a>
                 </li>
+                <li class="nav-item">
+                    <a href="/diagnostic'" class="nav-link text-light">Диагностики
+                        ({{ \App\Service::all()->where('is_diagnostic',true)->count() }})</a>
+                </li>
             </ul>
+
             <ul class="navbar-nav mx-auto text-center d-none d-md-block">
                 <li class="nav-item">
                     <a href="" class="nav-link text-light p-0">+996(777)312-312</a>
@@ -56,6 +61,7 @@
                     <a href="" class="nav-link text-light p-0">+996(700)312-312</a>
                 </li>
             </ul>
+
             <ul class="navbar-nav text-center ml-auto">
 
                 <!-- Authentication Links -->
@@ -88,6 +94,7 @@
 
                         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                             <a class="dropdown-item text-dark" href="{{ route('options') }}">Админка</a>
+                            <a class="dropdown-item text-dark" href="/profile">Личный кабинет</a>
                             <a class="dropdown-item text-dark" href="{{ route('logout') }}"
                                onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
@@ -111,7 +118,7 @@
                 <li class="nav-item">
                     <a href="" class="nav-link text-light">+996(700)312-312</a>
                 </li>
-                <li class="nav-item d-block d-md-none">
+                <li class="nav-item">
                     <a href="" class="nav-link text-light">+996(700)312-312</a>
                 </li>
             </ul>
