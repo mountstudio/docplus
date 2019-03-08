@@ -18,87 +18,64 @@ class DoctorCollection extends Collection
     public function sortingAndFilter($request)
     {
         $model = $this;
-        if ($request->feeds != null) {
-            $model = $this->sortByFeeds($request->feeds);
+        if ($request->filter != null && $request->filter == 'feeds') {
+            $model = $this->sortByFeeds();
         }
-        if ($request->popular != null) {
-            $model = $this->sortByPopular($request->popular);
+        if ($request->filter != null && $request->filter == 'popularity') {
+            $model = $this->sortByPopular();
         }
-        if ($request->rating != null) {
-            $model = $this->sortByRating($request->rating);
+        if ($request->filter != null && $request->filter == 'rating') {
+            $model = $this->sortByRating();
         }
-        if ($request->price != null) {
-            $model = $this->sortByPrice($request->price);
+        if ($request->filter != null && $request->filter == 'price') {
+            $model = $this->sortByPrice();
         }
 
         if ($request->home) {
-            $model = $this->filterByHome($request->home);
+            $model = $this->filterByHome();
         }
         if ($request->child) {
-            $model = $this->filterByChild($request->child);
+            $model = $this->filterByChild();
         }
 
         return $model;
     }
 
-    public function sortByPopular($popular)
+    public function sortByPopular()
     {
-        if ($popular) {
-            return $this->sortBy(function ($doc) {
-                /**
-                 * @var Doctor $doc
-                 */
-                return $doc->getScheduleActivated($doc)->count();
-            });
-        } else {
-            return $this->sortByDesc(function ($doc) {
-                /**
-                 * @var Doctor $doc
-                 */
-                return $doc->getScheduleActivated($doc)->count();
-            });
-        }
+        return $this->sortByDesc(function ($doc) {
+            /**
+             * @var Doctor $doc
+             */
+            return $doc->getScheduleActivated($doc)->count();
+        });
     }
 
-    public function sortByRating($rating)
+    public function sortByRating()
     {
-        if ($rating) {
-            return $this->sortBy('rating');
-        } else {
-            return $this->sortByDesc('rating');
-        }
+        return $this->sortByDesc('rating');
     }
 
-    public function sortByPrice($price)
+    public function sortByPrice()
     {
-        if ($price) {
-            return $this->sortBy('price');
-        } else {
-            return $this->sortByDesc('price');
-        }
+        return $this->sortByDesc('price');
     }
 
-    public function sortByFeeds($feeds)
+    public function sortByFeeds()
     {
-        if ($feeds) {
-            return $this->sortBy(function ($doc) {
-                return $doc->feedbacks->count();
-            });
-        } else {
-            return $this->sortByDesc(function ($doc) {
-                return $doc->feedbacks->count();
-            });
-        }
+        return $this->sortByDesc(function ($doc) {
+            return $doc->feedbacks->count();
+        });
     }
 
-    public function filterByHome($home)
+    public function filterByHome()
     {
-        return $this->where('home', $home);
+        return $this->where('home', 1);
     }
 
-    public function filterByChild($child)
+    public function filterByChild()
     {
-        return $this->where('child', $child);
+        return $this->where('child', 1);
     }
 
     public function getByUserId($id)

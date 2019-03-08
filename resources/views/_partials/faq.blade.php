@@ -14,9 +14,9 @@
                         </button>
                     </div>
 
-                    <div id="collapseOne" class="collapse" aria-labelledby="headingOne"
+                    <div id="collapseOne" class="collapse px-5" aria-labelledby="headingOne"
                          data-parent="#accordionExample">
-                        <div class="card-body">
+                        <div class="card-body small font-weight-light pt-0">
                             Docplus - это сервис, который помогает Вам найти хорошего специалиста и без проблем записаться на приём.
                         </div>
                     </div>
@@ -29,8 +29,8 @@
                             <i class="fas fa-angle-down mr-2"></i>Как мне записаться на приём?
                         </button>
                     </div>
-                    <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
-                        <div class="card-body">
+                    <div id="collapseTwo" class="collapse px-5" aria-labelledby="headingTwo" data-parent="#accordionExample">
+                        <div class="card-body small font-weight-light pt-0">
                             Выбрав нужного специалиста и заполнив форму записи с Вами свяжутся в течении 10 минут. Если запись займет больше 10 минут, то приём оплачиваем мы (DOC+).
                         </div>
                     </div>
@@ -43,9 +43,9 @@
                             <i class="fas fa-angle-down mr-2"></i>На что мне ориентироваться при выборе специалиста?
                         </button>
                     </div>
-                    <div id="collapseThree" class="collapse" aria-labelledby="headingThree"
+                    <div id="collapseThree" class="collapse px-5" aria-labelledby="headingThree"
                          data-parent="#accordionExample">
-                        <div class="card-body">
+                        <div class="card-body small font-weight-light pt-0">
                             DOC+ советует в первую очередь ориентироваться на личные достижения специалиста и на отзывы уже побывавших на приёме специалистов.
                         </div>
                     </div>
@@ -58,9 +58,9 @@
                             <i class="fas fa-angle-down mr-2"></i>Сколько стоят услуги DOCPLUS?
                         </button>
                     </div>
-                    <div id="collapseFour" class="collapse" aria-labelledby="headingFour"
+                    <div id="collapseFour" class="collapse px-5" aria-labelledby="headingFour"
                          data-parent="#accordionExample">
-                        <div class="card-body">
+                        <div class="card-body small font-weight-light pt-0">
                             Наш сервис  бесплатный. Вы оплачиваете только стоимость приёма или диагностики в клиники.
                         </div>
                     </div>
@@ -73,9 +73,9 @@
                             <i class="fas fa-angle-down mr-2"></i>Что значит: "мы делаем медицину доступнее"?
                         </button>
                     </div>
-                    <div id="collapseFive" class="collapse" aria-labelledby="headingFive"
+                    <div id="collapseFive" class="collapse px-5" aria-labelledby="headingFive"
                          data-parent="#accordionExample">
-                        <div class="card-body">
+                        <div class="card-body small font-weight-light pt-0">
                             Наш сервис устроен так, что во многие клиники через DOC+ будет записаться дешевле, чем напрямую в клинику.
                         </div>
                     </div>

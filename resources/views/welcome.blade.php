@@ -36,30 +36,30 @@
 
 
             <div class="card-deck col-11 col-md-10 col-lg-8">
-                <div class="card border-0">
+                <div class="card shadow-sm border-0">
                     <img src="{{ asset('img/teeth-care.png') }}" alt="" class="card-img-top" >
-                    <div class="card-body">
-                        <p class="text-primary  font-weight-bold pt-3 text-uppercase">Профилактический осмотр</p>
+                    <div class="card-body p-0 px-1">
+                        <p class="text-primary mb-2 font-weight-bold pt-3 text-uppercase">Профилактический осмотр</p>
                     </div>
-                    <div class="card-footer border-0 text-center">
+                    <div class="card-footer border-0 text-center bg-white">
                         <a href="" class="btn btn-primary btn-radius shadow text-uppercase">Записаться</a>
                     </div>
                 </div>
-                <div class="card border-0">
+                <div class="card shadow-sm border-0">
                     <img src="{{ asset('img/classes.png') }}" alt="" class="card-img-top">
-                    <div class="card-body">
-                        <p class="text-primary  font-weight-bold pt-3 text-uppercase">Проверка зрения</p>
+                    <div class="card-body p-0 px-1">
+                        <p class="text-primary mb-2 font-weight-bold pt-3 text-uppercase">Проверка зрения</p>
                     </div>
-                    <div class="card-footer border-0 text-center">
+                    <div class="card-footer border-0 text-center bg-white">
                         <a href="" class="btn btn-primary btn-radius shadow text-uppercase">Записаться</a>
                     </div>
                 </div>
-                <div class="card border-0">
+                <div class="card shadow-sm border-0">
                     <img src="{{ asset('img/doctor-instr.png') }}" alt="" class="card-img-top">
-                    <div class="card-body">
-                        <p class="text-primary  font-weight-bold pt-3 text-uppercase">Плановое посещение педиатра</p>
+                    <div class="card-body p-0 px-1">
+                        <p class="text-primary mb-2 font-weight-bold pt-3 text-uppercase">Плановое посещение педиатра</p>
                     </div>
-                    <div class="card-footer border-0 text-center">
+                    <div class="card-footer border-0 text-center bg-white">
                         <a href="" class="btn btn-primary btn-radius shadow text-uppercase">Записаться</a>
                     </div>
                 </div>

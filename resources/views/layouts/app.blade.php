@@ -24,7 +24,7 @@
     <link href="{{ asset('css/main.css') }}" rel="stylesheet">
     @stack('styles')
 </head>
-<body>
+<body class="bg-white">
     @include('_partials.header')
     <div id="app">
 
