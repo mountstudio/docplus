@@ -27,11 +27,6 @@
                     <span class="text-secondary h3 mt-5 mb-2">{{ $clinic->name ?? 'Бобров Василий Елисеевич' }}</span>
                 </a>
                 <p class="text-secondary font-weight-light h6 my-3"><em>
-                        @if(isset($doctor))
-                            {{ $doctor->specs->implode('name', ', ') }}
-                        @else
-                            Гастроэнтеролог, Терапевт
-                        @endif
                         <br> Стаж 19 лет</em></p>
                 <p class="text-secondary font-weight-light m-0 mt-md-2 mb-lg-3">
                     Приём от
@@ -57,7 +52,7 @@
             </div>
             <div class="col">
                 <p class="text-secondary small">
-                    г. Москва, Цветной б-р, д. 30, корп 2 Цветной бульвар, Трубная, Сухаревская
+                    {{$clinic->address}}
                 </p>
             </div>
         </div>
@@ -86,7 +81,7 @@
                 </p>
             </div>
             <div class="col">
-                <p class="font-weight-bold">+996 (700) 700 - 700</p>
+                <p class="font-weight-bold">{{$clinic->phones}}</p>
             </div>
         </div>
 

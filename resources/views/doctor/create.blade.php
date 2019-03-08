@@ -54,52 +54,52 @@
             spacing: "5px",
         });
 
-        $("#attent").rateYo({
+        $("#first").rateYo({
             fullStar: true,
             numStars: 5,
             ratedFill: "red",
             starWidth: "20px",
             spacing: "5px",
             onSet: function(rating, rateYoInstance) {
-                $('#attent_input').val(rating);
-                let manner = $('#manner_input').val();
-                let time = $('#time_input').val();
+                $('#first_input').val(rating);
+                let second = $('#second_input').val();
+                let third = $('#third_input').val();
 
-                let rating_this = ((parseInt(manner, 10) + parseInt(time, 10) + parseInt(rating, 10)) / 3).toFixed(1);
+                let rating_this = ((parseInt(second, 10) + parseInt(third, 10) + parseInt(rating, 10)) / 3).toFixed(1);
 
                 $('#rating_end_input').val(rating_this);
                 rating_end.rateYo("rating", rating_this);
             }
         });
-        $("#manner").rateYo({
+        $("#second").rateYo({
             fullStar: true,
             numStars: 5,
             ratedFill: "red",
             starWidth: "20px",
             spacing: "5px",
             onSet: function(rating, rateYoInstance) {
-                $('#manner_input').val(rating);
-                let attent = $('#attent_input').val();
-                let time = $('#time_input').val();
+                $('#second_input').val(rating);
+                let first = $('#first_input').val();
+                let third = $('#third_input').val();
 
-                let rating_this = ((parseInt(attent, 10) + parseInt(time, 10) + parseInt(rating, 10)) / 3).toFixed(1);
+                let rating_this = ((parseInt(first, 10) + parseInt(third, 10) + parseInt(rating, 10)) / 3).toFixed(1);
 
                 $('#rating_end_input').val(rating_this);
                 rating_end.rateYo("rating", rating_this);
             }
         });
-        $("#time").rateYo({
+        $("#third").rateYo({
             fullStar: true,
             numStars: 5,
             ratedFill: "red",
             starWidth: "20px",
             spacing: "5px",
             onSet: function(rating, rateYoInstance) {
-                $('#time_input').val(rating);
-                let manner = $('#manner_input').val();
-                let attent = $('#attent_input').val();
+                $('#third_input').val(rating);
+                let second = $('#second_input').val();
+                let first = $('#first_input').val();
 
-                let rating_this = ((parseInt(manner, 10) + parseInt(attent, 10) + parseInt(rating, 10)) / 3).toFixed(1);
+                let rating_this = ((parseInt(second, 10) + parseInt(first, 10) + parseInt(rating, 10)) / 3).toFixed(1);
 
                 $('#rating_end_input').val(rating_this);
                 rating_end.rateYo("rating", rating_this);

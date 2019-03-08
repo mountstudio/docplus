@@ -32,9 +32,28 @@
                                 @else
                                     Гастроэнтеролог, Терапевт
                                 @endif <br> Стаж 19 лет</em></p>
-                        <p class="text-secondary font-weight-light mt-2 mb-5">Приём от <del>1400</del> руб.  <span class="text-primary font-weight-bold">1000 руб.</span></p>
+                        <span class="text-secondary">Проф. рейтинг - <strong>{{$doctor->prof_rating}}</strong></span>
+                        <p class="text-secondary font-weight-light mt-2 mb-5">Приём от <del>1400</del> руб. <br>
+                            <span class="text-primary font-weight-bold">1000 руб.</span></p>
                         <a href="#feedbacks" class="text-secondary pt-md-5"><u>Отзывы о враче</u></a>
 
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-4 d-md-block d-none">
+                <div class="row">
+                    <div class="col-6">
+                        <p class="mb-0">Степень </p>
+                        <p class="mb-0">Категория </p>
+                        <p class="mb-0">Стаж </p>
+                        <p class="mb-0">Проф.рейтинг</p>
+                    </div>
+                    <div class="col-6">
+                        <div class="mb-1">@include('_partials.stars', ['id' => 'first'])</div>
+                        <div class="mb-1">@include('_partials.stars', ['id' => 'second'])</div>
+                        <div class="mb-1">@include('_partials.stars', ['id' => 'third'])</div>
+                        <div class="mb-1">@include('_partials.stars', ['id' => 'prof_rating'])</div>
                     </div>
                 </div>
             </div>
@@ -66,9 +85,13 @@
                     </div>
                 </div>
         </div>
+
             <div class="col">
+
                 @include('_partials.right-sidebar')
+
             </div>
+
         </div>
 
 
@@ -116,6 +139,37 @@
 
         $('#rateYo-doctor-time').rateYo({
             rating: "{!! $doctor->time_rating !!}",
+            readOnly: true,
+            ratedFill: "red",
+            starWidth: "20px",
+            spacing: "5px",
+        });
+        $('#rateYo-first').rateYo({
+            rating: "{!! $doctor->first !!}",
+            readOnly: true,
+            ratedFill: "red",
+            starWidth: "20px",
+            spacing: "5px",
+        });
+
+        $('#rateYo-second').rateYo({
+            rating: "{!! $doctor->second !!}",
+            readOnly: true,
+            ratedFill: "red",
+            starWidth: "20px",
+            spacing: "5px",
+        });
+
+        $('#rateYo-third').rateYo({
+            rating: "{!! $doctor->third !!}",
+            readOnly: true,
+            ratedFill: "red",
+            starWidth: "20px",
+            spacing: "5px",
+        });
+
+        $('#rateYo-prof_rating').rateYo({
+            rating: "{!! $doctor->prof_rating !!}",
             readOnly: true,
             ratedFill: "red",
             starWidth: "20px",

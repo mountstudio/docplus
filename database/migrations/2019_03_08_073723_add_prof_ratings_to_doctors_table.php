@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class AddRatingsToDoctorsTable extends Migration
+class AddProfRatingsToDoctorsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -14,10 +14,10 @@ class AddRatingsToDoctorsTable extends Migration
     public function up()
     {
         Schema::table('doctors', function (Blueprint $table) {
-            $table->double('attent_rating')->nullable()->after('discount');
-            $table->double('manner_rating')->nullable()->after('attent_rating');
-            $table->double('time_rating')->nullable()->after('manner_rating');
-            $table->double('rating')->nullable()->after('time_rating');
+            $table->double('first')->after('rating');
+            $table->double('second')->after('first');
+            $table->double('third')->after('second');
+            $table->double('prof_rating')->after('third');
         });
     }
 
@@ -29,7 +29,7 @@ class AddRatingsToDoctorsTable extends Migration
     public function down()
     {
         Schema::table('doctors', function (Blueprint $table) {
-            $table->dropColumn(['attent_rating', 'manner_rating', 'time_rating','rating']);
+            $table->dropColumn(['first', 'second', 'third','prof_rating']);
         });
     }
 }

@@ -33,6 +33,7 @@
                             Гастроэнтеролог, Терапевт
                         @endif
                         <br> Стаж 19 лет</em></p>
+                <span class="text-secondary">Проф. рейтинг - <strong>{{$doctor->prof_rating}}</strong></span>
                 <p class="text-secondary font-weight-light m-0 mt-md-2 mb-lg-3">
                     Приём от
                     <span class="text-primary font-weight-bold">{{ $doctor->price ?? '1400' }} руб.</span>
@@ -42,7 +43,7 @@
                     Телефон для записи: <br>
                     +996(777)777-777
                 </p>
-                <p class="text-secondary font-weight-light small pt-3">На прошлой неделе записалось два человека</span>
+                <p class="text-secondary font-weight-light small pt-3">На прошлой неделе записалось два человека</p>
 
             </div>
         </div>

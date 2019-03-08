@@ -48,14 +48,14 @@
                         ({{ \App\Service::all()->where('is_diagnostic',false)->count() }})</a>
                 </li>
                 <li class="nav-item">
-                    <a href="/diagnostic'" class="nav-link text-light">Диагностики
+                    <a href="/diagnostic" class="nav-link text-light">Диагностики
                         ({{ \App\Service::all()->where('is_diagnostic',true)->count() }})</a>
                 </li>
             </ul>
-
-            <ul class="navbar-nav mx-auto text-center d-none d-md-block">
+<p class="ml-auto my-auto text-light d-md-block d-none">Нужна помощь?</p>
+            <ul class="navbar-nav text-center d-none d-md-block pl-3">
                 <li class="nav-item">
-                    <a href="" class="nav-link text-light p-0">+996(777)312-312</a>
+                    <a href="" class="nav-link text-light p-0">+996(700)312-312</a>
                 </li>
                 <li class="nav-item">
                     <a href="" class="nav-link text-light p-0">+996(700)312-312</a>

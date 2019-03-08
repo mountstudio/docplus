@@ -59,7 +59,7 @@ class SpecController extends Controller
             return $item->doctors;
         })->flatten()->unique('id');
 
-        return view('category.show',[
+        return view('spec.show',[
             'doctors' => $doctors,
         ]);
 
