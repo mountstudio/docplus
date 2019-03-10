@@ -21,6 +21,10 @@
                     @include('_partials.stars', ['id' => $doctor->id.'-doctor'])
                 </div>
                 <p class="text-muted font-weight-light mt-3 mb-0 small">Рейтинг врача на основе {{count($doctor->feedbacks)}} отзывов-(ва)</p>
+                <div class="row justify-content-center mt-3">
+                    @include('_partials.stars', ['id' => $doctor->id.'-prof'])
+                </div>
+                <p class="text-muted font-weight-light mt-3 mb-0 small">Профессиональный рейтинг врача</p>
             </div>
             <div class="col-7">
                 <a href="{{ route('doctor.show', $doctor->id) }}">
@@ -33,7 +37,6 @@
                             Гастроэнтеролог, Терапевт
                         @endif
                         <br> Стаж 19 лет</em></p>
-                <span class="text-secondary">Проф. рейтинг - <strong>{{$doctor->prof_rating}}</strong></span>
                 <p class="text-secondary font-weight-light m-0 mt-md-2 mb-lg-3">
                     Приём от
                     <span class="text-primary font-weight-bold">{{ $doctor->price ?? '1400' }} руб.</span>
@@ -126,7 +129,15 @@
                 rating: "{{ $doctor->rating }}",
                 readOnly: true,
                 ratedFill: "red",
-                starWidth: "20px",
+                starWidth: "15px",
+                spacing: "5px"
+            });
+
+            $("#rateYo-{{ $doctor->id }}-prof").rateYo({
+                rating: "{{ $doctor->prof_rating }}",
+                readOnly: true,
+                ratedFill: "red",
+                starWidth: "15px",
                 spacing: "5px"
             });
         </script>

@@ -4,9 +4,9 @@
 
     <div class="container-fluid py-5 position-relative" style="background-image: url('{{ asset('img/welcome-doctor.png') }}'); background-size: cover; background-position: center right">
         <div class="backdrop"></div>
-        <div class="row py-5 justify-content-center">
-            <div class="col-12 col-sm-12 col-md-12 col-lg-12 py-5 d-none d-md-block">
-                <h1 class="text-uppercase text-white text-center">Найдите проверенного специалиста <br> и запишитесь к нему на прием</h1>
+        <div class="row py-3 py-md-5 justify-content-center">
+            <div class="col-12 col-sm-12 col-md-12 col-lg-12 py-5">
+                <h1 class="text-uppercase text-white text-left text-md-center font-weight-bold">Найдите проверенного специалиста <br> и запишитесь к нему на прием</h1>
             </div>
             <div class="col-10 col-sm-10 col-md-8 col-lg-6">
                 @include('_partials.search')
@@ -30,7 +30,7 @@
             </div>
         </div>
     </div>
-    <div class="container">
+    <div class="container-fluid bg-grey-light">
         <div class="row justify-content-center py-5">
 
 
@@ -39,7 +39,7 @@
                 <div class="card shadow-sm border-0">
                     <img src="{{ asset('img/teeth-care.png') }}" alt="" class="card-img-top" >
                     <div class="card-body p-0 px-1">
-                        <p class="text-primary mb-2 font-weight-bold pt-3 text-uppercase">Профилактический осмотр</p>
+                        <p class="text-primary mb-2 font-weight-bold pt-3 text-uppercase text-center">Профилактический осмотр</p>
                     </div>
                     <div class="card-footer border-0 text-center bg-white">
                         <a href="" class="btn btn-primary btn-radius shadow text-uppercase">Записаться</a>
@@ -48,7 +48,7 @@
                 <div class="card shadow-sm border-0">
                     <img src="{{ asset('img/classes.png') }}" alt="" class="card-img-top">
                     <div class="card-body p-0 px-1">
-                        <p class="text-primary mb-2 font-weight-bold pt-3 text-uppercase">Проверка зрения</p>
+                        <p class="text-primary mb-2 font-weight-bold pt-3 text-uppercase text-center">Проверка зрения</p>
                     </div>
                     <div class="card-footer border-0 text-center bg-white">
                         <a href="" class="btn btn-primary btn-radius shadow text-uppercase">Записаться</a>
@@ -57,7 +57,7 @@
                 <div class="card shadow-sm border-0">
                     <img src="{{ asset('img/doctor-instr.png') }}" alt="" class="card-img-top">
                     <div class="card-body p-0 px-1">
-                        <p class="text-primary mb-2 font-weight-bold pt-3 text-uppercase">Плановое посещение педиатра</p>
+                        <p class="text-primary mb-2 font-weight-bold pt-3 text-uppercase text-center">Плановое посещение педиатра</p>
                     </div>
                     <div class="card-footer border-0 text-center bg-white">
                         <a href="" class="btn btn-primary btn-radius shadow text-uppercase">Записаться</a>
@@ -90,16 +90,22 @@
             </div>
 -->
         </div>
-        <div class="row d-none d-md-block">
+    </div>
+
+    <div class="container">
+        <div class="row d-none d-md-block py-5">
             <div class="col-12">
                 @include('_partials.slider')
             </div>
         </div>
+    </div>
+
+    <div class="container">
         <div class="row d-none d-md-block">
 
 
 
-            <div class="col-12 py-4">
+            <div class="col-12 py-5">
 
                 <div class="row justify-content-center">
                     <div class="div-3 text-center mb-4">

@@ -21,7 +21,7 @@ Route::get('/registration-patient', function () {
 });
 Route::get('/question', function () {
     return view('question.index');
-});
+})->name('question');
 Route::get('/', 'MainController@index');
 
 

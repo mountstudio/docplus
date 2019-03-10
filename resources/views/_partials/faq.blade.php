@@ -16,7 +16,7 @@
 
                     <div id="collapseOne" class="collapse px-5" aria-labelledby="headingOne"
                          data-parent="#accordionExample">
-                        <div class="card-body small font-weight-light pt-0">
+                        <div class="card-body font-weight-light pt-0">
                             Docplus - это сервис, который помогает Вам найти хорошего специалиста и без проблем записаться на приём.
                         </div>
                     </div>
@@ -30,7 +30,7 @@
                         </button>
                     </div>
                     <div id="collapseTwo" class="collapse px-5" aria-labelledby="headingTwo" data-parent="#accordionExample">
-                        <div class="card-body small font-weight-light pt-0">
+                        <div class="card-body font-weight-light pt-0">
                             Выбрав нужного специалиста и заполнив форму записи с Вами свяжутся в течении 10 минут. Если запись займет больше 10 минут, то приём оплачиваем мы (DOC+).
                         </div>
                     </div>
@@ -45,7 +45,7 @@
                     </div>
                     <div id="collapseThree" class="collapse px-5" aria-labelledby="headingThree"
                          data-parent="#accordionExample">
-                        <div class="card-body small font-weight-light pt-0">
+                        <div class="card-body font-weight-light pt-0">
                             DOC+ советует в первую очередь ориентироваться на личные достижения специалиста и на отзывы уже побывавших на приёме специалистов.
                         </div>
                     </div>
@@ -60,7 +60,7 @@
                     </div>
                     <div id="collapseFour" class="collapse px-5" aria-labelledby="headingFour"
                          data-parent="#accordionExample">
-                        <div class="card-body small font-weight-light pt-0">
+                        <div class="card-body font-weight-light pt-0">
                             Наш сервис  бесплатный. Вы оплачиваете только стоимость приёма или диагностики в клиники.
                         </div>
                     </div>
@@ -75,7 +75,7 @@
                     </div>
                     <div id="collapseFive" class="collapse px-5" aria-labelledby="headingFive"
                          data-parent="#accordionExample">
-                        <div class="card-body small font-weight-light pt-0">
+                        <div class="card-body font-weight-light pt-0">
                             Наш сервис устроен так, что во многие клиники через DOC+ будет записаться дешевле, чем напрямую в клинику.
                         </div>
                     </div>
