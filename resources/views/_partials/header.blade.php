@@ -97,7 +97,7 @@
                         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                             <a class="dropdown-item text-dark" href="{{ route('options') }}">Админка</a>
                             <a class="dropdown-item text-dark" href="/profile">Личный кабинет</a>
-                            <a class="dropdown-item text-dark" href="{{ route('Выйти') }}"
+                            <a class="dropdown-item text-dark" href="{{ route('logout') }}"
                                onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
                                 {{ __('Logout') }}
@@ -146,7 +146,7 @@
                         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                             <a class="dropdown-item text-dark" href="{{ route('options') }}">Админка</a>
                             <a class="dropdown-item text-dark" href="/profile">Личный кабинет</a>
-                            <a class="dropdown-item text-dark" href="{{ route('Выйти') }}"
+                            <a class="dropdown-item text-dark" href="{{ route('logout') }}"
                                onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
                                 {{ __('Logout') }}
