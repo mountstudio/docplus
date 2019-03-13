@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Category;
 use App\Doctor;
+use App\Feedback;
 use App\Spec;
 use Illuminate\Http\Request;
 use PhpParser\Comment\Doc;
@@ -59,8 +60,13 @@ class SpecController extends Controller
             return $item->doctors;
         })->flatten()->unique('id');
 
+        $feedbacks = $doctors->map(function ($item) {
+            return $item->feedbacks;
+        })->flatten()->reverse();
+
         return view('spec.show',[
             'doctors' => $doctors,
+            'feedbacks' => $feedbacks
         ]);
 
 
