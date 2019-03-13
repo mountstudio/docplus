@@ -1,9 +1,9 @@
-<div class="container-fluid p-5 bg-doc d-none d-lg-block">
-    <div class="row px-5">
-        <div class="col-2 col-lg-3">
-            <img src="{{ asset('img/plus2.png') }}" class="img-fluid" alt="">
+<div class="container-fluid bg-doc d-none d-lg-block">
+    <div class="row">
+        <div class="col-2 col-lg-3 bg-white d-flex">
+            <img src="{{ asset('img/plus2.png') }}" class="img-fluid align-self-center position-absolute w-85" style="right:-35px;" alt="">
         </div>
-        <div class="col-8 col-lg">
+        <div class="col-8 col-lg p-5">
             <div class="accordion text-white text-uppercase bg-transparent" id="accordionExample">
                 <div class="card bg-transparent border-0 ">
                     <div class="card-header bg-transparent border-0" id="headingOne">

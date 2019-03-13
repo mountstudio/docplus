@@ -1,4 +1,4 @@
-<div class="col-12 ">
+<div class="col-12 d-none d-md-block">
     <h3 class="text-secondary text-center font-weight-bold">СПЕЦИАЛЬНОСТИ ВРАЧЕЙ</h3>
     <br>
 

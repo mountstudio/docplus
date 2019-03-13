@@ -22,11 +22,10 @@
                     <a class="nav-link text-secondary" href="/">БЛОГ</a>
                 </nav>
             </div>
-            <div class="col-md-3 col-lg-3 col-12 pt-5">
+            <div class="col-md-3 col-lg-4 col-12 pt-5">
                 <nav class="nav flex-column">
-                    <a href="/"><img class="w-75" src={{asset('img/Logo.png')}} alt=""></a>
-                    <p class="pt-4 mb-0 text-secondary">Наши Контакты: </p>
-                    <p class="text-secondary">Наши Телефоны: </p>
+                    <a href="/"><img class="w-50" src={{asset('img/Logo.png')}} alt=""></a>
+                    <p class="pt-4 mb-0 text-secondary">Наши Контакты: +996(700)312-312</p>
                 </nav>
             </div>
         </div>

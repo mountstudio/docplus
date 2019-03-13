@@ -102,37 +102,37 @@
     </div>
 
     <div class="container">
-        <div class="row d-none d-md-block">
+        <div class="row">
 
 
 
             <div class="col-12 py-5">
 
-                <div class="row justify-content-center">
-                    <div class="div-3 text-center mb-4">
-                        <img class="img-fluid" src="{{ asset('img/logo.png') }}" alt="">
+                <div class="row justify-content-center mb-4 align-items-center">
+                    <div class="col col-md-auto text-center">
+                        <img class="img-fluid " src="{{ asset('img/logo.png') }}" alt="">
                     </div>
-                    <div class="div-3">
-                        <p class="text-center text-primary font-weight-bold text-uppercase h4 px-2 m-4">Доверяют</p>
+                    <div class="col-auto">
+                        <p class="text-center text-primary font-weight-bold text-uppercase h4 m-0">Доверяют</p>
                     </div>
                 </div>
 
                 <div class="row py-2 justify-content-center">
-                    <div class="col-3">
-                        <p class="text-secondary font-weight-bold text-uppercase  text-right">
-                            <span class="h1">{{\App\Feedback::all()->count()}}</span> ОТЗЫВОВ
-                        </p>
-                    </div>
-
-                    <div class="col-3">
+                    <div class="col-12 col-md-3">
                         <p class="text-secondary font-weight-bold text-uppercase  text-center">
-                            <span class="h1">{{\App\Doctor::all()->count()}}</span> ВРАЧЕЙ
+                            <span class="display-2 font-weight-bold">{{\App\Feedback::all()->count()}}</span> ОТЗЫВОВ
                         </p>
                     </div>
 
-                    <div class="col-3">
-                        <p class="text-secondary font-weight-bold text-uppercase  text-left">
-                            <span class="h1">{{\App\Clinic::all()->count()}}</span> КЛИНИК
+                    <div class="col-12 col-md-3">
+                        <p class="text-secondary font-weight-bold text-uppercase  text-center">
+                            <span class="display-2 font-weight-bold">{{\App\Doctor::all()->count()}}</span> ВРАЧЕЙ
+                        </p>
+                    </div>
+
+                    <div class="col-12 col-md-3">
+                        <p class="text-secondary font-weight-bold text-uppercase  text-center">
+                            <span class="display-2 font-weight-bold">{{\App\Clinic::all()->count()}}</span> КЛИНИК
                         </p>
                     </div>
                 </div>
