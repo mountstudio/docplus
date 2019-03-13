@@ -20,7 +20,7 @@
 
               <div class="col-auto my-auto d-md-none">
                   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarContactPhone" aria-controls="navbarContactPhone" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
-                      <span class="fas fa-phone-square fa-lg text-primary text-right"></span>
+                      <span class="fas fa-phone fa-lg text-primary text-right"></span>
                   </button>
               </div>
 

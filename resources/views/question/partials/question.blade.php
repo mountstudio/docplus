@@ -6,7 +6,7 @@
             </div>
             <p><small>{{ \Carbon\Carbon::now()->format('d.m.Y H:i') }}</small></p>
         </div>
-        <div class="col-5 col-md-3 row justify-content-center">
+        <div class="col-5 col-md-3 justify-content-center">
             <div class="col-8">
                 <img src="{{ asset('img/doctor.png') }}" alt="" class="img-fluid">
             </div>

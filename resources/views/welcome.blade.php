@@ -6,7 +6,8 @@
         <div class="backdrop"></div>
         <div class="row py-3 py-md-5 justify-content-center">
             <div class="col-12 col-sm-12 col-md-12 col-lg-12 py-5">
-                <h1 class="text-uppercase text-white text-left text-md-center font-weight-bold">Найдите проверенного специалиста <br> и запишитесь к нему на прием</h1>
+                <h1 class="text-uppercase text-white text-left text-md-center font-weight-bold">Мы делаем медицину доступнее</h1>
+                <p class="text-white text-left text-md-center">Записывайтесь к проверенным специалистам</p>
             </div>
             <div class="col-10 col-sm-10 col-md-8 col-lg-6">
                 @include('_partials.search')
