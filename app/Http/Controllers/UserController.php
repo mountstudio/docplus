@@ -108,12 +108,17 @@ class UserController extends Controller
 
             return view('profile',['doctors' => $doctors, 'clinics' => $clinics, 'user' => Auth::user()]);
         }
-        $records = Record::all()
-            ->where('doctor_id',Auth::user()->doctor->id)
-            ->groupBy(function($d) {
-                return Carbon::parse($d->created_at)->format('M Y');
-            });
-        return view('profile',['user' => Auth::user(), 'records' => $records]);
+        elseif( Auth::user()->role === 'ROLE_DOCTOR') {
+            $records = Record::all()
+                ->where('doctor_id', Auth::user()->doctor->id)
+                ->groupBy(function ($d) {
+                    return Carbon::parse($d->created_at)->format('M Y');
+                });
+            return view('profile', ['user' => Auth::user(), 'records' => $records]);
+        }
+
+        return view('profile', ['user' => Auth::user()]);
+
     }
 
     public function notifications()

@@ -40,20 +40,22 @@
     </div>
     <div class="container d-none d-lg-block">
         <div class="row justify-content-center">
-            @for($i=0;$i<4;$i++)
-                <div class="col-6">
+            @foreach($feedbacks as $feedback)
+                <div class="col-6 my-5">
                     {{--<img class="rounded pt-3" src="{{ asset('img/doctor.png') }}" style="width:55px;" alt="">--}}
-                    <div><p class="m-0"><strong>Бобров Василий Елисеевич</strong></p>
-                        <span>5 отзывов</span><br></div>
+                    <div>
+                        <p class="m-0"><strong>
+                                @foreach($feedback->doctors as $doctor)
+                                    {{$doctor->user->name}}
+                                @endforeach
+                            </strong></p>
+                        <br>
+                    </div>
 
-                    <span style="overflow: hidden; text-overflow: clip;">Бобров Василий Елисеевич - врач окулист(офтальмолог), стаж 24 года.
-                    Скидка на прием врача! Все отзывы о враче. Запись онлайн или по телефону.
-                    Бобров Василий Елисеевич - врач окулист(офтальмолог), стаж 24 года.
-                    Скидка на прием врача! Все отзывы о враче. Запись онлайн или по телефону.
+                    <span style="overflow: hidden; text-overflow: clip;">{{ $feedback->comment }}
                     </span>
-                    <p class="mt-3 mb-5">На модерации, 13 января 2019</p>
                 </div>
-            @endfor
+            @endforeach
         </div>
     </div>
 @endsection
