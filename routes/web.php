@@ -69,3 +69,5 @@ Route::resource('schedule', 'ScheduleController');
 Route::resource('record', 'RecordController');
 Route::resource('feedback', 'FeedbackController');
 Route::get('/profile', 'UserController@profile');
+
+Route::get('/search', 'MainController@search')->name('search');
