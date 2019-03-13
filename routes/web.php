@@ -62,7 +62,7 @@ Route::get('datatable/getspecs', 'AdminController@getSpecs')->name('datatable.ge
 Route::resource('doctor', 'DoctorController');
 Route::resource('clinic', 'ClinicController');
 Route::resource('service', 'ServiceController');
-Route::get('objects/{id}', 'ServiceController@objects');
+Route::get('objects/{service}', 'ServiceController@objects')->name('objects.show');
 Route::resource('spec', 'SpecController');
 Route::resource('category', 'CategoryController');
 Route::resource('schedule', 'ScheduleController');

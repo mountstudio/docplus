@@ -79,10 +79,8 @@ class ServiceController extends Controller
         return redirect()->back();
     }
 
-    public function objects($id)
+    public function objects(Service $service)
     {
-        $service = Service::find($id);
-
         $services = Service::with(['doctors'])->where('category_id',$service->id)->get();
 
         $doctors = $services->map(function ($item, $key) {
