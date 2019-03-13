@@ -98,4 +98,20 @@ class ServiceController extends Controller
             'clinics' => $clinics
         ]);
     }
+    public function apiIndex(Request $request)
+    {
+        if ($request->ids) {
+            $services = Service::whereNotIn('id', $request->ids)
+                ->where('is_diagnostic', true)
+                ->get(['id', 'name']);
+        } else {
+            $services = Service::where('is_diagnostic', '=', true)
+                ->get(['id', 'name']);
+        }
+
+        return response()->json([
+            'id' => $request->ids,
+            'services' => $services,
+        ]);
+    }
 }

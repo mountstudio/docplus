@@ -5,11 +5,11 @@
         <div class="col-9">
             <div class="row">
                 <div class="col-12 col-md-4 text-center ">
-                    <img class="img-fluid" src="{{ asset('img/mobile-doctor.png') }}" alt="">
+                    <img class="img-fluid" src="{{ $clinic->pics->first() ? asset('uploads/'.$clinic->pics->first()->image) : asset('img/doctor.jpg') }}" alt="">
                     <div class="row justify-content-center">
                         @include('_partials.stars', ['id' => 'clinic-show'])
                     </div>
-                    <p class="text-secondary text-uppercase py-2">60 отзывов</p>
+                    <p class="text-secondary text-uppercase py-2">{{$clinic->feedbacks->count()}} отзывов</p>
                 </div>
 
                 <div class="col-8 d-none d-md-block">
@@ -105,20 +105,22 @@
         </div>
     </div>
 
-    <div class="row py-3 d-none d-md-block">
-        @for($j = 0; $j < 2; $j++)
-            <p class="text-secondary h4 pt-4">Цены на диагностические услуги</p>
-            <div class="col-12 pr-1 py-2">
-                @for($i = 0; $i < 5; $i++)
-                    <a class="btn btn-secondary" href="">Гастроскопия</a>
-                @endfor
+    <div class="py-3 d-none d-md-block">
+            <p class="h3 py-4">Цены на диагностические услуги</p>
+        <div class="row">
+        @foreach($clinic->services as $service)
+            <div class="col-6 pr-1">
+                    <div class="row">
+                        <div class="col-8 text-secondary py-2">
+                            <span class="h4">{{$service->name}}</span>
+                        </div>
+                        <div class="col-4 py-2">
+                            <span class="h4">{{$service->pivot->service_price}} сом</span>
+                        </div>
+                    </div>
             </div>
-            <div class="col-12">
-                @for($i = 0; $i < 5; $i++)
-                    <a class="btn btn-secondary" href="">Гастроскопия</a>
-                @endfor
-            </div>
-        @endfor
+        @endforeach
+        </div>
     </div>
 </div>
 

@@ -40,7 +40,9 @@ class Clinic extends Model
     }
     public function services()
     {
-        return $this->belongsToMany(Service::class);
+        return $this->belongsToMany(Service::class)->withPivot([
+            'service_price',
+        ]);
     }
     public function pics()
     {

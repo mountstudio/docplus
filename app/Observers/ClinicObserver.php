@@ -49,8 +49,8 @@ class ClinicObserver
         }
 
         if (request()->services) {
-            foreach (request()->services as $service) {
-                $clinic->services()->attach($service);
+            foreach (request()->services as $index => $service) {
+                $clinic->services()->attach($service, ['service_price' => request('prices')[$index]]);
             }
         }
     }

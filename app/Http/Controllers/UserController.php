@@ -4,7 +4,11 @@ namespace App\Http\Controllers;
 
 use App\Clinic;
 use App\Doctor;
+use App\Record;
 use App\User;
+use Carbon\Carbon;
+use function foo\func;
+use function GuzzleHttp\Promise\all;
 use Illuminate\Auth\Middleware\Authenticate;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -100,10 +104,16 @@ class UserController extends Controller
             $clinics = Clinic::all();
 
 
+
+
             return view('profile',['doctors' => $doctors, 'clinics' => $clinics, 'user' => Auth::user()]);
         }
-
-        return view('profile',['user' => Auth::user()]);
+        $records = Record::all()
+            ->where('doctor_id',Auth::user()->doctor->id)
+            ->groupBy(function($d) {
+                return Carbon::parse($d->created_at)->format('M Y');
+            });
+        return view('profile',['user' => Auth::user(), 'records' => $records]);
     }
 
     public function notifications()

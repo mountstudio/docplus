@@ -6,5 +6,5 @@
 </div>
 
 @push('scripts')
-	<script src="{{ asset('js/form-fields.js') }}"></script>
+	<script src="{{ asset('js/form-fields-doctor-education.js') }}"></script>
 @endpush

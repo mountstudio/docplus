@@ -27,6 +27,9 @@
                 <li class="nav-item">
                     <a class="nav-link" id="" data-toggle="tab" href="#story" role="tab" aria-controls="" aria-selected="true">{{ $user->role === 'ROLE_DOCTOR' && 'ROLE_CLINIC' ? 'История' : 'История записей'}}</a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="" data-toggle="tab" href="#statistic" role="tab" aria-controls="" aria-selected="true">{{ $user->role === 'ROLE_DOCTOR' && 'ROLE_CLINIC' ? 'Статистика' : ''}}</a>
+                </li>
             </ul>
         </div>
         <div class="row">
@@ -36,6 +39,9 @@
                     @includeWhen($user->role === 'ROLE_DOCTOR' , 'doctor.tabs.story_pick')
                     @includeWhen($user->role === 'ROLE_CLINIC' , 'clinic.tabs.story_pick')
                     @includeWhen($user->role === 'ROLE_USER' , 'user.tabs.story', ['records' => \App\User::getRecord($user)])
+                </div>
+                <div class="tab-pane fade" id="statistic" role="tabpanel" aria-labelledby="">
+                    @includeWhen($user->role === 'ROLE_DOCTOR', 'doctor.tabs.statistic_tab');
                 </div>
             </div>
         </div>
