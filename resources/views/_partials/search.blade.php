@@ -5,7 +5,7 @@
     <input type="text" id="search-input-select2" class="form-control" placeholder="Клиники Врачи Услуги" aria-label="Username" aria-describedby="basic-addon1">
     <div id="search-result" class="position-absolute bg-white border border-dark d-none"></div>
     <div class="input-group-append">
-        <span class="input-group-text bg-blue-light text-white border-blue-light shadow" id="basic-addon2"><span class="d-none d-md-block">Поиск</span> <i class="fas fa-search d-md-none"></i></span>
+        <a href="{{ route('search') }}" class="input-group-text bg-blue-light text-white border-blue-light shadow" id="search-btn"><span class="d-none d-md-block">Поиск</span> <i class="fas fa-search d-md-none"></i></a>
     </div>
 </div>
 
@@ -16,11 +16,13 @@
             let value = $(this).val();
 
             if (value != '') {
+                let searchBtn = $('#search-btn');
+                searchBtn.prop('href', '');
+                searchBtn.prop('href', '/search?search=' + value);
                 $.ajax({
                     url: '{!! route('search') !!}',
                     data: {'search': value},
                     success: (data) => {
-                        console.log(data);
                         result.removeClass('d-none');
                         result.html(data);
                     },

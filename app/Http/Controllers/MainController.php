@@ -40,8 +40,14 @@ class MainController extends Controller
         $result = $result->merge(collect(['Клиники' => Clinic::where('name', 'like', '%' . $search. '%')->get(['id', 'name'])]));
         $result = $result->merge(collect(['Услуги' => Service::where('name', 'like', '%' . $search. '%')->get(['id', 'name'])]));
 
-        return response()->json(view('_partials.search-result', [
+        if ($request->ajax()) {
+            return response()->json(view('_partials.search-result-ajax', [
+                'result' => $result,
+            ])->render());
+        }
+
+        return view('_partials.search-result', [
             'result' => $result,
-        ])->render());
+        ]);
     }
 }
