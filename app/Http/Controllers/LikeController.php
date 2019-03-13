@@ -21,9 +21,9 @@ class LikeController extends Controller
 
             $model->likes()->save($like);
 
-            return response()->json(['status' => 'success']);
+            return response()->json(['status' => 'success', 'action' => 'like']);
         } catch (\Exception $exception) {
-            return response()->json(['status' => 'error']);
+            return response()->json(['status' => 'error', 'action' => null]);
         }
 
     }

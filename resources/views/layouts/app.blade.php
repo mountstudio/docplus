@@ -38,6 +38,30 @@
         @include('_partials.footer')
     </div>
     <script src="{{ asset('js/app.js') }}"></script>
+    <script>
+        $('.like-btn-ajax').click((e) => {
+            e.preventDefault();
+            let btn = $(e.currentTarget);
+
+            $.ajax({
+                url: btn.prop('href'),
+                success: (data) => {
+                    console.log(data);
+                    if (data.action == 'like') {
+                        btn.find('.fa-heart').removeClass('far');
+                        btn.find('.fa-heart').addClass('fas');
+                    } else if (data.action == 'dislike') {
+                        btn.find('.fa-heart').removeClass('fas');
+                        btn.find('.fa-heart').addClass('far');
+                    }
+                },
+                error: () => {
+                    console.log('error');
+                }
+            });
+        })
+    </script>
     @stack('scripts')
+
 </body>
 </html>
