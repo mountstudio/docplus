@@ -4,15 +4,7 @@
             <div class="col-5 text-center">
                 <div class="row justify-content-center">
                     <div class="col-12 col-md-8">
-                        @auth
-                            <a href="#">
-                                <img class="position-absolute rounded-circle img-thumbnail like " src="{{ asset('img/heart-0.png') }}" alt="">
-                            </a>
-                        @elseauth
-                            <a href="{{ route('login') }}">
-                                <img class="position-absolute rounded-circle img-thumbnail like " src="{{ asset('img/heart-0.png') }}" alt="">
-                            </a>
-                        @endauth
+                        @include('_partials.like', ['type' => 'Doctor', 'model' => $doctor->id])
                         <img class="img-card-doctors_clinics rounded-circle mb-2 img-thumbnail" src="{{ $doctor->pics->first() ? asset('uploads/'.$doctor->pics->first()->image) : asset('img/doctor.jpg') }}" alt="">
                     </div>
                 </div>

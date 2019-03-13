@@ -77,3 +77,22 @@
     <link rel="stylesheet" href="{{ asset('css/rateyo.css') }}">
 @endpush
 
+@push('scripts')
+    <script>
+        $('.like-btn-ajax').click((e) => {
+            e.preventDefault();
+            let btn = $(e.currentTarget);
+
+            $.ajax({
+                url: btn.prop('href'),
+                success: (data) => {
+                    console.log(data);
+                    console.log(btn.find('fa-heart').first());
+                },
+                error: () => {
+                    console.log('error');
+                }
+            });
+        })
+    </script>
+@endpush

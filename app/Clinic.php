@@ -44,6 +44,12 @@ class Clinic extends Model
             'service_price',
         ]);
     }
+
+    public function likes()
+    {
+        return $this->morphMany(Like::class, 'likeable');
+    }
+
     public function pics()
     {
         return $this->belongsToMany(Pic::class);
