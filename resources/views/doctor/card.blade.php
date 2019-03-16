@@ -4,7 +4,7 @@
             <div class="col-5 text-center">
                 <div class="row justify-content-center">
                     <div class="col-12 col-md-8">
-                        @include('_partials.like', ['type' => 'Doctor', 'model' => $doctor->id])
+                        @include('_partials.like', ['type' => 'Doctor', 'model' => $doctor])
                         <img class="img-card-doctors_clinics rounded-circle mb-2 img-thumbnail" src="{{ $doctor->pics->first() ? asset('uploads/'.$doctor->pics->first()->image) : asset('img/doctor.jpg') }}" alt="">
                     </div>
                 </div>

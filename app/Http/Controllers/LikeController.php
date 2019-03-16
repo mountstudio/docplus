@@ -15,13 +15,19 @@ class LikeController extends Controller
         try {
             $model = call_user_func('App\\'.$type."::find", $id);
 
-            $like = new Like(['user_id' => Auth::id()]);
+            if ($like = Like::getExistedLike(Auth::user(), $model)) {
+                $like->delete();
 
-            Auth::user()->likes()->save($like);
+                return response()->json(['status' => 'success', 'action' => 'dislike']);
+            } else {
+                $like = new Like(['user_id' => Auth::id()]);
 
-            $model->likes()->save($like);
+                Auth::user()->likes()->save($like);
 
-            return response()->json(['status' => 'success', 'action' => 'like']);
+                $model->likes()->save($like);
+
+                return response()->json(['status' => 'success', 'action' => 'like']);
+            }
         } catch (\Exception $exception) {
             return response()->json(['status' => 'error', 'action' => null]);
         }
