@@ -12,4 +12,9 @@ class Record extends Model
     {
         return $this->belongsTo(Doctor::class);
     }
+
+    public function schedule()
+    {
+        return $this->belongsTo(Schedule::class);
+    }
 }

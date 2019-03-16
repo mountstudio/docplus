@@ -38,11 +38,9 @@ class RecordController extends Controller
             $doctor = $schedule->doctor;
 
             $doctor->user->notify(new NewRecordNotification($record));
-        }
-        else
-        {
+        } else {
             $record = Record::create([
-                'schedule_id' => 0,
+                'schedule_id' => null,
                 'user_id' => Auth::id(),
                 'name' => $request->name,
                 'phone_number' => $request->phone_number,
