@@ -1,11 +1,11 @@
 
-<nav class="navbar navbar-expand-md navbar-dark navbar-laravel  py-0 pl-0 shadow-lg border-bottom sticky-top px-0">
+<nav class="navbar navbar-expand-xl navbar-dark navbar-laravel  py-0 pl-0 shadow-lg border-bottom sticky-top px-0">
     <div class="container-fluid px-0 bg-primary">
-        <div class="col-12 col-sm-12 col-md-3 bg-light py-2 pl-0 shadow d-flex">
+        <div class="col-12 col-sm-12 col-xl-3 bg-light py-2 pl-0 shadow d-flex">
 
           {{--<div class="row">--}}
 
-              <div class="col-auto my-auto d-md-none">
+              <div class="col-auto my-auto d-xl-none">
                   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                       <i class="fas fa-bars fa-lg text-primary "></i>
                   </button>
@@ -18,7 +18,7 @@
                   </a>
               </div>
 
-              <div class="col-auto my-auto d-md-none">
+              <div class="col-auto my-auto d-xl-none">
                   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarContactPhone" aria-controls="navbarContactPhone" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                       <span class="fas fa-phone fa-lg text-primary text-right"></span>
                   </button>
@@ -112,7 +112,7 @@
             </ul>
 
         </div>
-        <div class=" shadow-sm ml-4 d-none d-md-block h-100 bg-danger">
+        <div class=" shadow-sm ml-4 d-none d-xl-block h-100 bg-danger">
             <ul class="nav text-center ml-auto">
 
                 <!-- Authentication Links -->
@@ -160,7 +160,7 @@
                 @endguest
             </ul>
         </div>
-        <div class="row d-block d-md-none mx-auto">
+        <div class="row d-block d-xl-none mx-auto">
             <div class="collapse navbar-collapse text-center" id="navbarContactPhone">
                 <ul class="navbar-nav text-center  ">
                     <li class="nav-item">
