@@ -1,7 +1,7 @@
-<div class="row justify-content-center my-4 border shadow p-md-4 py-3">
-    <div class="col-12 col-lg-9">
-        <div class="row">
-            <div class="col-5 text-center">
+<div class="row align-items-center justify-content-center my-4 border shadow p-md-3 py-3">
+    <div class="col-12 col-lg-auto">
+        <div class="row ">
+            <div class="col-12 col-md-5 text-center">
                 <div class="row justify-content-center">
                     <div class="col-12 col-md-8">
                         @include('_partials.like', ['type' => 'Doctor', 'model' => $doctor->id])
@@ -12,15 +12,16 @@
                 <div class="row justify-content-center">
                     @include('_partials.stars', ['id' => $doctor->id.'-doctor'])
                 </div>
-                <p class="text-muted font-weight-light mt-3 mb-0 small">Рейтинг врача на основе {{count($doctor->feedbacks)}} отзывов-(ва)</p>
+                <p class="text-muted font-weight-light mb-0 small">Рейтинг врача на основе {{count($doctor->feedbacks)}} отзывов-(ва)</p>
                 <div class="row justify-content-center mt-3">
                     @include('_partials.stars', ['id' => $doctor->id.'-prof'])
                 </div>
-                <p class="text-muted font-weight-light mt-3 mb-0 small">Профессиональный рейтинг врача</p>
+                <p class="text-muted font-weight-light mb-0 small">Профессиональный рейтинг врача</p>
             </div>
-            <div class="col-7">
+            <div class="col col-md-auto mt-3 mt-md-0
+">
                 <a href="{{ route('doctor.show', $doctor->id) }}">
-                    <span class="text-secondary h3 mt-5 mb-2">{{ $doctor->user->fullName ?? 'Бобров Василий Елисеевич' }}</span>
+                    <span class="text-secondary text-center text-md-left h3 mt-5 mb-2">{{ $doctor->user->fullName ?? 'Бобров Василий Елисеевич' }}</span>
                 </a>
                 <p class="text-secondary font-weight-light h6 my-3"><em>
                         @if(isset($doctor))
