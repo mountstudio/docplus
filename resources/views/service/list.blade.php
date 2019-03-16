@@ -8,7 +8,7 @@
             <div class="col-12 py-5">
                 <h1 class="text-uppercase text-white text-center">Найдите нужную вам Услугу</h1>
             </div>
-            <div class="col-6">
+            <div class="col-12 col-md-6 ">
                 @include('_partials.search')
             </div>
         </div>
