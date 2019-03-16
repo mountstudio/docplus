@@ -35,22 +35,7 @@
             <!-- Right Side Of Navbar -->
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav text-center">
-                <li class="nav-item">
-                    <a href="{{ route('doctor.index') }}" class="nav-link text-light">Врачи
-                        ({{ \App\Doctor::all()->count() }})</a>
-                </li>
-                <li class="nav-item">
-                    <a href="{{ route('clinic.index') }}" class="nav-link text-light    ">Клиники
-                        ({{ \App\Clinic::all()->count() }})</a>
-                </li>
-                <li class="nav-item">
-                    <a href="{{ route('service.index') }}" class="nav-link text-light">Услуги
-                        ({{ \App\Service::all()->where('is_diagnostic',false)->count() }})</a>
-                </li>
-                <li class="nav-item">
-                    <a href="/diagnostic" class="nav-link text-light">Диагностики
-                        ({{ \App\Service::all()->where('is_diagnostic',true)->count() }})</a>
-                </li>
+
                 <li class="nav-item">
                     <a href="{{ route('question') }}" class="nav-link text-light font-weight-bold">Вопрос врачу</a>
                 </li>
@@ -174,6 +159,23 @@
                     </li>
                 </ul>
             </div>
+        </div>
+    </div>
+</nav>
+
+<nav class="d-md-none navbar fixed-bottom navbar-expand-md px-0 py-0">
+    <div class="container-fluid bg-primary">
+        <div class="col-3 border-left border-right border-blue-light">
+            <a href="{{ route('doctor.index') }}" class="nav-link text-light"><i class="fas fa-user-md fa-lg"></i></a>
+        </div>
+        <div class="col-3 border-left border-right border-blue-light">
+            <a href="{{ route('clinic.index') }}" class="nav-link text-light"><i class="fas fa-clinic-medical fa-lg"></i></a>
+        </div>
+        <div class="col-3 border-left border-right border-blue-light">
+            <a href="{{ route('service.index') }}" class="nav-link text-light"><i class="fas fa-briefcase-medical fa-lg"></i></a>
+        </div>
+        <div class="col-3 border-left border-right border-blue-light">
+            <a href="/diagnostic" class="nav-link text-light"><i class="fas fa-diagnoses fa-lg"></i></a>
         </div>
     </div>
 </nav>
