@@ -46,16 +46,28 @@ class NewRecordNotification extends Notification
      */
     public function toArray($notifiable)
     {
-        if ($this->record->user_id) {
-            $message = 'К Вам записался пользователь: ' . User::find($this->record->user_id)->fullName
-                . ' с номером телефона: ' . $this->record->phone_number . '<br>На дату и время: '
-                . Carbon::make(Schedule::find($this->record->schedule_id)->date_of_record)->format('d/m/Y') . ' '
-                . Carbon::make(Schedule::find($this->record->schedule_id)->time_of_record)->format('H:i');
+        if ($this->record->schedule_id) {
+            if ($this->record->user_id) {
+                $message = 'К Вам записался пользователь: ' . User::find($this->record->user_id)->fullName
+                    . ' с номером телефона: ' . $this->record->phone_number .
+                    '<br>На дату и время: '
+                    . Carbon::make($this->record->schedule->date_of_record)->format('d/m/Y') . ' '
+                    . Carbon::make($this->record->schedule->time_of_record)->format('H:i');
+            } else {
+                $message = 'К Вам записался пациент: ' . $this->record->name . ' с номером телефона: '
+                    . $this->record->phone_number .
+                    '<br>На дату и время: '
+                    . Carbon::make($this->record->schedule->date_of_record)->format('d/m/Y') . ' '
+                    . Carbon::make($this->record->schedule->time_of_record)->format('H:i');
+            }
         } else {
-            $message = 'К Вам записался пациент: ' . $this->record->name . ' с номером телефона: '
-                . $this->record->phone_number . '<br>На дату и время: '
-                . Carbon::make(Schedule::find($this->record->schedule_id)->date_of_record)->format('d/m/Y') . ' '
-                . Carbon::make(Schedule::find($this->record->schedule_id)->time_of_record)->format('H:i');
+            if ($this->record->user_id) {
+                $message = 'К Вам записался пользователь: ' . User::find($this->record->user_id)->fullName
+                    . ' с номером телефона: ' . $this->record->phone_number;
+            } else {
+                $message = 'К Вам записался пациент: ' . $this->record->name . ' с номером телефона: '
+                    . $this->record->phone_number;
+            }
         }
 
         return [
