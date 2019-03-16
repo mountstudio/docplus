@@ -29,7 +29,7 @@
 
 .img-card-doctors_clinics {
     width: 142px;
-    height: 142px;
+    height: autow;
 }
 
 .style-text {
