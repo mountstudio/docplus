@@ -1,18 +1,10 @@
 <div class="row justify-content-center my-4 border shadow p-md-4 py-3">
-    <div class="col-12 col-md-7">
+    <div class="col-12 col-lg-9">
         <div class="row">
             <div class="col-5 text-center">
                 <div class="row justify-content-center">
                     <div class="col-12 col-md-8">
-                        @auth
-                            <a href="#">
-                                <img class="position-absolute rounded-circle img-thumbnail like" src="{{ asset('img/heart-0.png') }}" alt="">
-                            </a>
-                        @elseauth
-                            <a href="{{ route('login') }}">
-                                <img class="position-absolute rounded-circle img-thumbnail like" src="{{ asset('img/heart-0.png') }}" alt="">
-                            </a>
-                        @endauth
+                        @include('_partials.like', ['type' => 'Clinic', 'model' => $clinic])
                         <img class="img-card-doctors_clinics rounded-circle mb-2 img-thumbnail" src="{{ $clinic->pics->first() ? asset('uploads/'.$clinic->pics->first()->image) : asset('img/doctor.jpg') }}" alt="">
                     </div>
                 </div>
@@ -104,7 +96,6 @@
 @endpush
 @push('scripts')
     <script src="{{ asset('js/rateyo.js') }}"></script>
-    @foreach($clinics as $clinic)
         <script>
             $("#rateYo-{{ $clinic->id }}-clinic").rateYo({
                 rating: "{{ $clinic->rating }}",
@@ -114,5 +105,4 @@
                 spacing: "5px"
             });
         </script>
-    @endforeach
 @endpush

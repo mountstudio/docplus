@@ -102,10 +102,6 @@ class UserController extends Controller
         {
             $doctors = Doctor::all();
             $clinics = Clinic::all();
-
-
-
-
             return view('profile',['doctors' => $doctors, 'clinics' => $clinics, 'user' => Auth::user()]);
         }
         elseif( Auth::user()->role === 'ROLE_DOCTOR') {
@@ -116,8 +112,17 @@ class UserController extends Controller
                 });
             return view('profile', ['user' => Auth::user(), 'records' => $records]);
         }
-
-        return view('profile', ['user' => Auth::user()]);
+        elseif( Auth::user()->role === 'ROLE_CLINIC') {
+            $records = Record::all()
+                ->where('clinic_id', Auth::user()->clinic->id)
+                ->groupBy(function ($d) {
+                    return Carbon::parse($d->created_at)->format('M Y');
+                });
+            return view('profile', ['user' => Auth::user(), 'records' => $records]);
+        }
+        $doctor_likes = Auth::user()->likes->where('likeable_type', 'App\Doctor');
+        $clinic_likes = Auth::user()->likes->where('likeable_type', 'App\Clinic');
+        return view('profile', ['user' => Auth::user(), 'doctor_likes' => $doctor_likes, 'clinic_likes' => $clinic_likes]);
 
     }
 

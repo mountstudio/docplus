@@ -5,6 +5,9 @@
     <li class="nav-item">
         <a class="nav-link" id="" data-toggle="tab" href="#story_feedback" role="tab" aria-controls="" aria-selected="true">История отзывов</a>
     </li>
+    <li class="nav-item">
+        <a class="nav-link" id="" data-toggle="tab" href="#story_feedback" role="tab" aria-controls="" aria-selected="true">История отзывов</a>
+    </li>
 </ul>
 
 <div class="row py-5">
