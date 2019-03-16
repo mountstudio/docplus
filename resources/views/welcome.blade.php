@@ -118,21 +118,21 @@
                 </div>
 
                 <div class="row py-2 justify-content-center">
-                    <div class="col-12 col-md-3">
+                    <div class="col-12 col-md-4">
                         <p class="text-secondary font-weight-bold text-uppercase  text-center">
-                            <span class="display-2 font-weight-bold">{{\App\Feedback::all()->count()}}</span> ОТЗЫВОВ
+                            <span class="display-2 font-weight-bold count">{{\App\Feedback::all()->count()}}</span> ОТЗЫВОВ
                         </p>
                     </div>
 
-                    <div class="col-12 col-md-3">
+                    <div class="col-12 col-md-4">
                         <p class="text-secondary font-weight-bold text-uppercase  text-center">
-                            <span class="display-2 font-weight-bold">{{\App\Doctor::all()->count()}}</span> ВРАЧЕЙ
+                            <span class="display-2 font-weight-bold count">{{\App\Doctor::all()->count()}}</span> ВРАЧЕЙ
                         </p>
                     </div>
 
-                    <div class="col-12 col-md-3">
+                    <div class="col-12 col-md-4">
                         <p class="text-secondary font-weight-bold text-uppercase  text-center">
-                            <span class="display-2 font-weight-bold">{{\App\Clinic::all()->count()}}</span> КЛИНИК
+                            <span class="display-2 font-weight-bold count">{{\App\Clinic::all()->count()}}</span> КЛИНИК
                         </p>
                     </div>
                 </div>
@@ -189,7 +189,19 @@
             navText: ['<span class="fas fa-chevron-left fa-2x"></span>','<span class="fas fa-chevron-right fa-2x"></span>'],
         })
     </script>
-
+    <script>
+        $('.count').each(function () {
+            $(this).prop('Counter',0).animate({
+                Counter: $(this).text()
+            }, {
+                duration: 2000,
+                easing: 'swing',
+                step: function (now) {
+                    $(this).text(Math.ceil(now));
+                }
+            });
+        });
+    </script>
 
 
 @endpush
