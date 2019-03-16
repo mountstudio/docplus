@@ -21,15 +21,19 @@
         </div>
         <div class="py-5">
             <ul class="nav nav-tabs" id="myTab" role="tablist">
+                @if($user->role !== 'ROLE_OPERATOR')
                 <li class="nav-item">
                     <a class="nav-link active" id="" data-toggle="tab" href="#edit" role="tab" aria-controls="" aria-selected="true">Изменить данные</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" id="" data-toggle="tab" href="#story" role="tab" aria-controls="" aria-selected="true">{{ $user->role === 'ROLE_DOCTOR' && 'ROLE_CLINIC' ? 'История' : 'История записей'}}</a>
+                    <a class="nav-link" id="" data-toggle="tab" href="#story" role="tab" aria-controls="" aria-selected="true">История</a>
                 </li>
+                @endif
+                    @if($user->role !== 'ROLE_USER')
                 <li class="nav-item">
-                    <a class="nav-link" id="" data-toggle="tab" href="#statistic" role="tab" aria-controls="" aria-selected="true">{{ $user->role === 'ROLE_DOCTOR' && 'ROLE_CLINIC' ? 'Статистика' : ''}}</a>
+                    <a class="nav-link" id="" data-toggle="tab" href="#statistic" role="tab" aria-controls="" aria-selected="true">{{ $user->role === 'ROLE_DOCTOR' || $user->role === 'ROLE_CLINIC' ? 'Статистика' : ''}}</a>
                 </li>
+                    @endif
             </ul>
         </div>
         <div class="row">
@@ -38,10 +42,11 @@
                 <div class="tab-pane fade" id="story" role="tabpanel" aria-labelledby="">
                     @includeWhen($user->role === 'ROLE_DOCTOR' , 'doctor.tabs.story_pick')
                     @includeWhen($user->role === 'ROLE_CLINIC' , 'clinic.tabs.story_pick')
-                    @includeWhen($user->role === 'ROLE_USER' , 'user.tabs.story', ['records' => \App\User::getRecord($user)])
+                    @includeWhen($user->role === 'ROLE_USER' , 'user.tabs.story_tabs')
                 </div>
                 <div class="tab-pane fade" id="statistic" role="tabpanel" aria-labelledby="">
-                    @includeWhen($user->role === 'ROLE_DOCTOR', 'doctor.tabs.statistic_tab');
+                    @includeWhen($user->role === 'ROLE_DOCTOR', 'doctor.tabs.statistic_tab')
+                    @includeWhen($user->role === 'ROLE_CLINIC' , 'clinic.tabs.statistic_tab')
                 </div>
             </div>
         </div>
