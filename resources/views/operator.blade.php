@@ -2,7 +2,7 @@
     <div class="row">
         <div class="col-12">
             @foreach($doctors as $doctor)
-                <p>{{ $doctor->user->fullName }}</p>
+                <p>{{ $doctor->name }}</p>
             @endforeach
             @foreach($clinics as $clinic)
                 <p>{{ $clinic->name }}</p>

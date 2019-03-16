@@ -69,10 +69,4 @@ class User extends Authenticatable
     {
         return Record::all()->where('user_id', $user->id);
     }
-
-    public static function getDoctorName($id)
-    {
-        $doctor = Doctor::find($id);
-        return $doctor->user->fullName;
-    }
 }

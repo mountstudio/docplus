@@ -8,7 +8,7 @@
                 <div class="card-body">
                     <div class="row align-items-center">
                         <div class="col-10">
-                            Вы записывались к {{\App\User::getDoctorName($record->doctor_id) }}
+                            Вы записывались к {{ $record->doctor->name }}
                         </div>
                     </div>
                 </div>

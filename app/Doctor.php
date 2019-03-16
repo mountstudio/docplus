@@ -41,6 +41,11 @@ class Doctor extends Model
         return $this->belongsToMany(Service::class);
     }
 
+    public function records()
+    {
+        return $this->hasMany(Record::class);
+    }
+
     public function pics()
     {
         return $this->belongsToMany(Pic::class);
@@ -87,6 +92,9 @@ class Doctor extends Model
         return Record::all()->where('doctor_id', $doctor->id);
     }
 
-
+    public function getNameAttribute()
+    {
+        return $this->user->fullName;
+    }
 
 }

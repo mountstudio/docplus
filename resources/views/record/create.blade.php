@@ -10,7 +10,7 @@
                 <select id="id" name="doctor_id" class="form-control {{ $errors->has('doctor_id') ? 'is-invalid' : '' }}">
                     <option value="{{ null }}" {{ old('doctor_id') ? '' : 'selected' }} disabled>Выберите врача...</option>
                     @foreach($doctors as $doctor)
-                        <option value="{{ $doctor->id }}" {{ old('doctor_id') == $doctor->id ? 'selected' : '' }}>{{ $doctor->user->fullName }}</option>
+                        <option value="{{ $doctor->id }}" {{ old('doctor_id') == $doctor->id ? 'selected' : '' }}>{{ $doctor->name }}</option>
                     @endforeach
                 </select>
             </div>

@@ -43,7 +43,7 @@
     <label for="doctors">Doctors</label>
     <select class="form-control m-0 w-100" name="doctors[]" id="doctors" multiple="">
         @foreach($doctors as $doctor)
-            <option value="{{ $doctor->id }}">{{ $doctor->user->fullName }}</option>
+            <option value="{{ $doctor->id }}">{{ $doctor->name }}</option>
         @endforeach
     </select>
 </div>

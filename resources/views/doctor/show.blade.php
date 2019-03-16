@@ -12,9 +12,7 @@
                     <div class="col-5 text-center">
 
                         <div class="position-relative">
-                            @auth
-                                <img class="position-absolute rounded-circle img-thumbnail like m-0 m-md-2" src="{{ asset('img/heart-0.png') }}" alt="">
-                            @endauth
+                            @include('_partials.like', ['type' => 'Doctor', 'model' => $doctor])
                             <img class="img-fluid rounded-circle mb-2 img-thumbnail " src="{{ $doctor->pics->first() ? asset('uploads/'.$doctor->pics->first()->image) : asset('img/doctor.jpg') }}" alt="">
                         </div>
 
@@ -25,7 +23,7 @@
                     </div>
 
                     <div class="col">
-                        <p class="text-secondary h3 m-0 mt-md-5 mb-md-2">{{ $doctor->user->fullName ?? 'Бобров Василий Елисеевич' }}</p>
+                        <p class="text-secondary h3 m-0 mt-md-5 mb-md-2">{{ $doctor->name ?? 'Бобров Василий Елисеевич' }}</p>
                         <p class="text-secondary font-weight-light h6 my-3"><em>
                                 @if(isset($doctor))
                                     {{ $doctor->specs->implode('name', ', ') }}
