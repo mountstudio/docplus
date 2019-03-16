@@ -115,7 +115,6 @@
 @endpush
 @push('scripts')
     <script src="{{ asset('js/rateyo.js') }}"></script>
-    @foreach($doctors as $doctor)
         <script>
             $("#rateYo-{{ $doctor->id }}-doctor").rateYo({
                 rating: "{{ $doctor->rating }}",
@@ -133,7 +132,6 @@
                 spacing: "5px"
             });
         </script>
-    @endforeach
 @endpush
 
 

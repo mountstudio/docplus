@@ -5,9 +5,11 @@ namespace App\Http\Controllers;
 use App\Category;
 use App\Clinic;
 use App\Doctor;
+use App\Like;
 use App\Service;
 use App\Spec;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Session;
 
 class MainController extends Controller
