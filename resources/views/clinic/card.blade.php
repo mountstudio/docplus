@@ -55,13 +55,13 @@
                 </p>
             </div>
             <div class="col">
-                <p class="text-secondary small w-50 m-0">
+                <p class="text-secondary small m-0">
                     пн-пт:         <span class="float-right">08:00 - 21:00</span>
                 </p>
-                <p class="text-secondary small w-50 m-0">
+                <p class="text-secondary small m-0">
                     сб:            <span class="float-right">08:00 - 21:00</span>
                 </p>
-                <p class="text-secondary small w-50 m-0">
+                <p class="text-secondary small m-0">
                     вс:            <span class="float-right">08:00 - 21:00</span>
                 </p>
             </div>
