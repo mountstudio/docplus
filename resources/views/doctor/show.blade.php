@@ -94,8 +94,12 @@
 
 
     </div>
-
+    <div class="container d-none d-md-block py-4" id="feedbacks">
+        <!-- Отзыв -->
+        @foreach($feedbacks as $feedback)
     @include('doctor.feedback')
+        @endforeach
+    </div>
 
 
     @include('_partials.form-feedback')

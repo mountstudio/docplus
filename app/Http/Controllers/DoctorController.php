@@ -49,7 +49,7 @@ class DoctorController extends Controller
     {
         $schedules = Doctor::getSchedule($doctor);
 
-        $feedbacks = $doctor->feedbacks;
+        $feedbacks = $doctor->feedbacks->where('is_active', true);
 
         return view('doctor.show', [
             'schedules' => $schedules,

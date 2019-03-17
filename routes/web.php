@@ -72,3 +72,4 @@ Route::get('/profile', 'UserController@profile');
 
 Route::get('/search', 'MainController@search')->name('search');
 Route::get('/like/{type}/{id}', 'LikeController@like')->name('like');
+Route::get('/activation/{id}', 'FeedbackController@activation');

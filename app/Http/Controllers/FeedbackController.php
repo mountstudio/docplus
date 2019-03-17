@@ -25,6 +25,14 @@ class FeedbackController extends Controller
         return back();
     }
 
+    public function activation($id)
+    {
+        $feedback = Feedback::find($id);
+        $feedback->is_active = true;
+        $feedback->save();
+
+        return back();
+    }
     /**
      * @param Request $request
      */

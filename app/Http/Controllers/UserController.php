@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Clinic;
 use App\Doctor;
+use App\Feedback;
 use App\Record;
 use App\User;
 use Carbon\Carbon;
@@ -100,9 +101,10 @@ class UserController extends Controller
     {
         if (Auth::user()->role === 'ROLE_OPERATOR')
         {
+            $feedbacks = Feedback::all()->where('is_active', false);
             $doctors = Doctor::all();
             $clinics = Clinic::all();
-            return view('profile',['doctors' => $doctors, 'clinics' => $clinics, 'user' => Auth::user()]);
+            return view('profile',['doctors' => $doctors, 'clinics' => $clinics, 'user' => Auth::user(), 'feedbacks' => $feedbacks]);
         }
         elseif( Auth::user()->role === 'ROLE_DOCTOR') {
             $records = Record::all()
