@@ -22,9 +22,14 @@
     width: 10px;
     height: auto;
 }
+.like-container {
+    width: 42px !important;
+    height: 42px !important;
+}
 .like {
-    width: 45px;
-    height: auto;
+    top: 6px !important;
+    left: 5px !important;
+    font-size: 2em !important;
 }
 
 .img-card-doctors_clinics {
@@ -105,16 +110,26 @@ table.specs td.name span:after{
         width: 10px;
         height: auto;
     }
+    .like-container {
+        width: 42px !important;
+        height: 42px !important;
+    }
     .like {
-        width: 40px;
-        height: auto;
+        top: 6px !important;
+        left: 5px !important;
+        font-size: 2em !important;
     }
 }
 
 @media (max-width: 768px) {
+    .like-container {
+        width: 42px !important;
+        height: 42px !important;
+    }
     .like {
-        width: 35px;
-        height: auto;
+        top: 6px !important;
+        left: 5px !important;
+        font-size: 2em !important;
     }
     .btn-vertical {
         position: relative;
@@ -177,9 +192,16 @@ table.specs td.name span:after{
         width: 10px;
         height: auto;
     }
+    .like-container {
+        width: 38px !important;
+        height: 38px !important;
+    }
     .like {
-        width: 37px;
-        height: auto;
+        top: 9px !important;
+        left: 6px !important;
+        font-size: 1.6em !important;
+        line-height: .75em !important;
+        vertical-align: -.0667em !important;
     }
 }
 @media screen and (max-width: 400px) {
@@ -187,9 +209,16 @@ table.specs td.name span:after{
         width: 10px;
         height: auto;
     }
+    .like-container {
+        width: 33px !important;
+        height: 33px !important;
+    }
     .like {
-        width: 35px;
-        height: auto;
+        top: 8px !important;
+        left: 5px !important;
+        font-size: 1.33333em !important;
+        line-height: .75em !important;
+        vertical-align: -.0667em !important;
     }
 }
 .btn-group.btn-group-lg .btn {

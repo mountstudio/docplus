@@ -37,10 +37,22 @@
             <ul class="navbar-nav text-center">
 
                 <li class="nav-item">
+                    <a href="{{ route('doctor.index') }}" class="nav-link text-light font-weight-bold">Врачи ({{ \App\Doctor::all()->count() }})</a>
+                </li>
+                <li class="nav-item">
+                    <a href="{{ route('clinic.index') }}" class="nav-link text-light font-weight-bold">Клиники ({{ \App\Clinic::all()->count() }})</a>
+                </li>
+                <li class="nav-item">
+                    <a href="{{ route('service.index') }}" class="nav-link text-light font-weight-bold">Услуги ({{ \App\Service::getServices()->count() }})</a>
+                </li>
+                <li class="nav-item">
+                    <a href="{{ route('service.diagnostics') }}" class="nav-link text-light font-weight-bold">Диагностики ({{ \App\Service::getDiagnostics()->count() }})</a>
+                </li>
+                <li class="nav-item">
                     <a href="{{ route('question') }}" class="nav-link text-light font-weight-bold">Вопрос врачу</a>
                 </li>
             </ul>
-            <ul class="ml-auto navbar-nav text-center d-none d-md-block pl-3">
+            <ul class="ml-auto navbar-nav text-center d-none d-xl-block pl-3">
                 <li class="nav-item">
                     <p class="nav-link text-light p-0 m-0 font-weight-bold">Нужна помощь?</p>
                 </li>
@@ -163,19 +175,19 @@
     </div>
 </nav>
 
-<nav class="d-md-none navbar fixed-bottom navbar-expand-md px-0 py-0">
+<nav class="d-xl-none navbar fixed-bottom navbar-expand-lg px-0 py-0">
     <div class="container-fluid bg-primary">
         <div class="col-3 border-left border-right border-blue-light">
-            <a href="{{ route('doctor.index') }}" class="nav-link text-light"><i class="fas fa-user-md fa-lg"></i></a>
+            <a href="{{ route('doctor.index') }}" class="nav-link text-light text-center"><i class="fas fa-user-md fa-lg"></i></a>
         </div>
         <div class="col-3 border-left border-right border-blue-light">
-            <a href="{{ route('clinic.index') }}" class="nav-link text-light"><i class="fas fa-clinic-medical fa-lg"></i></a>
+            <a href="{{ route('clinic.index') }}" class="nav-link text-light text-center"><i class="fas fa-clinic-medical fa-lg"></i></a>
         </div>
         <div class="col-3 border-left border-right border-blue-light">
-            <a href="{{ route('service.index') }}" class="nav-link text-light"><i class="fas fa-briefcase-medical fa-lg"></i></a>
+            <a href="{{ route('service.index') }}" class="nav-link text-light text-center"><i class="fas fa-briefcase-medical fa-lg"></i></a>
         </div>
         <div class="col-3 border-left border-right border-blue-light">
-            <a href="/diagnostic" class="nav-link text-light"><i class="fas fa-diagnoses fa-lg"></i></a>
+            <a href="{{ route('service.diagnostics') }}" class="nav-link text-light text-center"><i class="fas fa-diagnoses fa-lg"></i></a>
         </div>
     </div>
 </nav>

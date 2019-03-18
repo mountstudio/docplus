@@ -17,16 +17,13 @@
 
     <div class="container">
         <div class="row align-items-center">
-            <div class="col-6 my-2 col-md-12">
-                @include('_partials._filter')
-            </div>
-            <div class="col-12 my-2 d-none d-md-block">
-                @include('_partials.sort')
+            <div class="col-12">
+                @include('_partials.buttons.doctor_filter')
             </div>
         </div>
     </div>
 
-    <div class="container d-lg-none p-5 ">
+    <div class="container mt-4">
         <div class="row justify-content-center">
             <div class="col-12 text-center">
                 @include('_partials.mobile-question')

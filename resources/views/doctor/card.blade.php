@@ -13,33 +13,35 @@
                     @include('_partials.stars', ['id' => $doctor->id.'-doctor'])
                 </div>
                 <p class="text-muted font-weight-light mb-0 small">Рейтинг врача на основе {{count($doctor->feedbacks)}} отзывов-(ва)</p>
-                <div class="row justify-content-center mt-3">
-                    @include('_partials.stars', ['id' => $doctor->id.'-prof'])
-                </div>
-                <p class="text-muted font-weight-light mb-0 small">Профессиональный рейтинг врача</p>
+                {{--<div class="row justify-content-center mt-3">--}}
+                    {{--@include('_partials.stars', ['id' => $doctor->id.'-prof'])--}}
+                {{--</div>--}}
+                {{--<p class="text-muted font-weight-light mb-0 small">Профессиональный рейтинг врача</p>--}}
             </div>
             <div class="col col-md-auto mt-3 mt-md-0
 ">
                 <a href="{{ route('doctor.show', $doctor->id) }}">
-                    <span class="text-secondary text-center text-md-left h3 mt-5 mb-2">{{ $doctor->name ?? 'Бобров Василий Елисеевич' }}</span>
+                    <h3 class="text-secondary text-center text-md-left h2 mt-3 mt-md-0">{{ $doctor->name ?? 'Бобров Василий Елисеевич' }}</h3>
                 </a>
-                <p class="text-secondary font-weight-light h6 my-3"><em>
+                <p class="text-secondary font-weight-light">
                         @if(isset($doctor))
                             {{ $doctor->specs->implode('name', ', ') }}
                         @else
                             Гастроэнтеролог, Терапевт
                         @endif
-                        <br> Стаж 19 лет</em></p>
-                <p class="text-secondary font-weight-light m-0 mt-md-2 mb-lg-3">
+                        <br> Стаж <span class="font-weight-bold h5">19</span> лет
+                </p>
+                <p class="text-secondary font-weight-light">Профессиональный рейтинг - <span class="font-weight-bold h5">{{ $doctor->prof_rating }}</span></p>
+                <p class="text-secondary font-weight-light m-0 mb-md-2">
                     Приём от
                     <span class="text-primary font-weight-bold">{{ $doctor->price ?? '1400' }} руб.</span>
                     <i class="fas fa-exclamation-circle"></i>
                 </p>
-                <p class="text-secondary font-weight-light m-0 mt-md-2 mb-lg-3">
+                <p class="text-secondary font-weight-light m-0 mb-md-2">
                     Телефон для записи: <br>
-                    +996(777)777-777
+                    <span class="font-weight-bold h5">+996 (777) 777-777</span>
                 </p>
-                <p class="text-secondary font-weight-light small pt-3">На прошлой неделе записалось два человека</p>
+                <p class="text-secondary font-weight-light small m-0">На прошлой неделе записалось два человека</p>
 
             </div>
         </div>
@@ -125,13 +127,13 @@
                 spacing: "5px"
             });
 
-            $("#rateYo-{{ $doctor->id }}-prof").rateYo({
-                rating: "{{ $doctor->prof_rating }}",
-                readOnly: true,
-                ratedFill: "red",
-                starWidth: "15px",
-                spacing: "5px"
-            });
+            {{--$("#rateYo-{{ $doctor->id }}-prof").rateYo({--}}
+                {{--rating: "{{ $doctor->prof_rating }}",--}}
+                {{--readOnly: true,--}}
+                {{--ratedFill: "red",--}}
+                {{--starWidth: "15px",--}}
+                {{--spacing: "5px"--}}
+            {{--});--}}
         </script>
 @endpush
 

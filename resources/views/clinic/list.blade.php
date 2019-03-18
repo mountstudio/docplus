@@ -2,45 +2,36 @@
 
 @section('content')
 
-    <div class="container">
-        <div class="row justify-content-center my-5">
-            <div class="col-12 col-md-8">
-
+    <div class="container mt-4">
+        <div class="row justify-content-center">
+            <div class="col-12 col-md-10 col-lg-8">
                 @include('_partials.search')
+            </div>
+        </div>
+    </div>
 
+
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-12">
+                @include('_partials.buttons.clinic_filter')
             </div>
         </div>
     </div>
     <div class="container">
         <div class="row">
-            <div class="col-12 my-2">
-                @include('_partials.filter-clinic')
-            </div>
-            <div class="col-12 my-2 d-none d-md-block">
-                @include('_partials.sort-clinic')
-            </div>
-        </div>
-        <div class="row">
             <div class="col-12">
                 <p class="text-primary font-weight-bold mt-3 h3">
-                    СТОМАТОЛОГИ БИШКЕКА
-                    <span class="text-secondary font-weight-light">17</span>
+                    Клиники Бишкека
+                    <span class="text-secondary font-weight-light">{{ $clinics->count() }}</span>
                 </p>
             </div>
-
-
         </div>
-        <div class="row">
-            <div class="col-6 my-2 col-md-12">
-
-            </div>
-        </div>
-
     </div>
 
 
     <!-- Create table clinics and map -->
-    <div class="container my-5">
+    <div class="container">
         @foreach($clinics as $clinic)
             @include('clinic.card')
         @endforeach
@@ -97,21 +88,8 @@
 @push('styles')
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css"
           integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-    <link rel="stylesheet" href="{{ asset('css/rateyo.css') }}">
 @endpush
 
-@push('scripts')
-    <script src="{{ asset('js/rateyo.js') }}"></script>
-    <script>
-        $(".rateYo").rateYo({
-            rating: 4,
-            readOnly: true,
-            ratedFill: "red",
-            starWidth: "20px",
-            spacing: "5px"
-        });
-    </script>
-@endpush
 
 
 

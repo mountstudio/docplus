@@ -11,6 +11,16 @@ class Service extends Model
     	'name', 'category_id','is_diagnostic', 'title', 'description', 'keywords',
     ];
 
+    public static function getServices()
+    {
+        return Service::where('is_diagnostic', false)->get();
+    }
+
+    public static function getDiagnostics()
+    {
+        return Service::where('is_diagnostic', true)->get();
+    }
+
     public function category()
     {
     	return $this->belongsTo(Category::class);

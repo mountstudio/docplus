@@ -42,7 +42,7 @@ Route::get('/getservices', function () {
     return view('service.index');
 })->name('service.admin');
 
-Route::get('/diagnostic', 'ServiceController@show_diagnostic');
+Route::get('/diagnostic', 'ServiceController@show_diagnostic')->name('service.diagnostics');
 
 Auth::routes();
 

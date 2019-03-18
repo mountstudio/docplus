@@ -11,8 +11,7 @@ class ServiceController extends Controller
     //
     public function index()
     {
-        $services = Service::all()
-            ->where('is_diagnostic', false)
+        $services = Service::getServices()
             ->groupBy(function ($item, $key) {
                 return $item->category->name;
             });
@@ -23,21 +22,7 @@ class ServiceController extends Controller
     }
     public function show_diagnostic()
     {
-        $services = Service::all()
-            ->where('is_diagnostic', true)
-            ->groupBy(function ($item, $key) {
-                return $item->category->name;
-            });
-
-        return view('service.list',[
-            'services' => $services
-        ]);
-    }
-
-    public function show_services()
-    {
-        $services = Service::all()
-            ->where('is_diagnostic', false)
+        $services = Service::getDiagnostics()
             ->groupBy(function ($item, $key) {
                 return $item->category->name;
             });
@@ -96,6 +81,7 @@ class ServiceController extends Controller
             'clinics' => $clinics
         ]);
     }
+
     public function apiIndex(Request $request)
     {
         if ($request->ids) {
