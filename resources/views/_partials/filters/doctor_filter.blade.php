@@ -1,17 +1,17 @@
-<form action="{{ route('doctor.index') }}" method="get">
+<form action="{{ route('doctor.index') }}" class="border pt-3 shadow my-4" method="get">
 
     <div class="px-3">
         <h5 class="h5">
             Прочее
         </h5>
         <div class="form-check">
-            <input class="form-check-input" name="child" type="checkbox" id="defaultCheck1">
+            <input class="form-check-input" name="child" type="checkbox" id="defaultCheck1" {{ $child ? 'checked' : '' }}>
             <label class="form-check-label" for="defaultCheck1">
                 <i class="fas fa-baby"></i> Детский
             </label>
         </div>
         <div class="form-check">
-            <input class="form-check-input" name="home" type="checkbox" id="defaultCheck2">
+            <input class="form-check-input" name="home" type="checkbox" id="defaultCheck2" {{ $home ? 'checked' : '' }}>
             <label class="form-check-label" for="defaultCheck2">
                 <i class="fas fa-ambulance"></i> На дом
             </label>
@@ -22,29 +22,25 @@
             Сортировка по:
         </h5>
         <div class="form-check">
-            <input class="form-check-input" type="radio" name="filter" id="exampleRadios1"
-                   value="popularity">
+            <input class="form-check-input" type="radio" name="filter" id="exampleRadios1" value="popularity" {{ $filter === 'popularity' ? 'checked' : '' }}>
             <label class="form-check-label" for="exampleRadios1">
                 Популярные
             </label>
         </div>
         <div class="form-check">
-            <input class="form-check-input" type="radio" name="filter" id="exampleRadios2"
-                   value="rating">
+            <input class="form-check-input" type="radio" name="filter" id="exampleRadios2" value="rating" {{ $filter === 'rating' ? 'checked' : '' }}>
             <label class="form-check-label" for="exampleRadios2">
                 Рейтинг
             </label>
         </div>
         <div class="form-check">
-            <input class="form-check-input" type="radio" name="filter" id="exampleRadios3"
-                   value="price">
+            <input class="form-check-input" type="radio" name="filter" id="exampleRadios3" value="price" {{ $filter === 'price' ? 'checked' : '' }}>
             <label class="form-check-label" for="exampleRadios3">
                 Стоимость
             </label>
         </div>
         <div class="form-check">
-            <input class="form-check-input" type="radio" name="filter" id="exampleRadios4"
-                   value="feeds">
+            <input class="form-check-input" type="radio" name="filter" id="exampleRadios4" value="feeds" {{ $filter === 'feeds' ? 'checked' : '' }}>
             <label class="form-check-label" for="exampleRadios4">
                 Отзывы
             </label>

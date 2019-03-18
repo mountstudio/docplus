@@ -18,8 +18,7 @@
                 {{--</div>--}}
                 {{--<p class="text-muted font-weight-light mb-0 small">Профессиональный рейтинг врача</p>--}}
             </div>
-            <div class="col col-md-auto mt-3 mt-md-0
-">
+            <div class="col col-md-auto mt-3 mt-md-0">
                 <a href="{{ route('doctor.show', $doctor->id) }}">
                     <h3 class="text-secondary text-center text-md-left h2 mt-3 mt-md-0">{{ $doctor->name ?? 'Бобров Василий Елисеевич' }}</h3>
                 </a>

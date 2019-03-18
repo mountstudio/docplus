@@ -6,7 +6,7 @@
 <!-- Modal -->
 <div class="modal fade" id="infoModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
      aria-hidden="true">
-    <div class="modal-dialog" role="document">
+    <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title" id="exampleModalLabel">О специализации</h5>
@@ -30,7 +30,7 @@
                 <p class="my-5"><strong>ОБРАТИТЕ ВНИМАНИЕ!</strong> Информация на странице представлена для ознакомления. Для назначения лечения обратитесь к врачу.</p>
             </div>
 
-            <div class="modal-footer justify-content-center py-2 bg-danger" data-dismiss="modal" aria-label="Close">
+            <div class="modal-footer justify-content-center py-2 bg-danger" style="cursor:pointer;" data-dismiss="modal" aria-label="Close">
                 <p class="font-weight-bold h3 text-light">
                     Закрыть
                 </p>

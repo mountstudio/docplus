@@ -18,11 +18,9 @@ class ClinicController extends Controller
 
         return view('clinic.list', [
             'clinics' => $clinics,
-            'popular' => $request->popular ? 0 : 1,
-            'rating' => $request->rating ? 0 : 1,
-            'feeds' => $request->feeds ? 0 : 1,
-            'child' => $request->child ? null : 1,
-            'fullDay' => $request->fullDay ? null : 1,
+            'filter' => $request->filter,
+            'child' => $request->child ? 1 : null,
+            'fullDay' => $request->fullDay ? 1 : null,
         ]);
     }
 

@@ -21,8 +21,9 @@ class DoctorController extends Controller
 
         return view('doctor.list', [
             'doctors' => $doctors,
-            'child' => $request->child ? null : 1,
-            'home' => $request->home ? null : 1,
+            'child' => $request->child ? 1 : null,
+            'home' => $request->home ? 1 : null,
+            'filter' => $request->filter,
         ]);
     }
 

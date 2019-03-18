@@ -13,7 +13,7 @@
 
     <div class="container">
         <div class="row align-items-center">
-            <div class="col-12">
+            <div class="col-12 d-lg-none">
                 @include('_partials.buttons.clinic_filter')
             </div>
         </div>
@@ -32,9 +32,16 @@
 
     <!-- Create table clinics and map -->
     <div class="container">
-        @foreach($clinics as $clinic)
-            @include('clinic.card')
-        @endforeach
+        <div class="row">
+            <div class="col-auto">
+                @include('_partials.filters.clinic_filter')
+            </div>
+            <div class="col">
+                @foreach($clinics as $clinic)
+                    @include('clinic.card')
+                @endforeach
+            </div>
+        </div>
 
         <div class="row">
 

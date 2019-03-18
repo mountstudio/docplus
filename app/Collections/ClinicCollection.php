@@ -17,75 +17,56 @@ class ClinicCollection extends Collection
     public function sortingAndFilter($request)
     {
         $model = $this;
-        if ($request->feeds != null) {
-            $model = $this->sortByFeeds($request->feeds);
+        if ($request->filter != null && $request->filter == 'feeds') {
+            $model = $this->sortByFeeds();
         }
-//        if ($request->popular != null) {
-//            $model = $this->sortByPopular($request->popular);
-//        }
-        if ($request->rating != null) {
-            $model = $this->sortByRating($request->rating);
+        if ($request->filter != null && $request->filter == 'popularity') {
+            $model = $this->sortByPopular();
+        }
+        if ($request->filter != null && $request->filter == 'rating') {
+            $model = $this->sortByRating();
         }
 
-        if ($request->home) {
-            $model = $this->filterByFullDay($request->fullDay);
+        if ($request->fullDay) {
+            $model = $this->filterByFullDay();
         }
         if ($request->child) {
-            $model = $this->filterByChild($request->child);
+            $model = $this->filterByChild();
         }
 
         return $model;
     }
 
-//    public function sortByPopular($popular)
-//    {
-//        if ($popular) {
-//            return $this->sortBy(function ($clinic) {
-//                /**
-//                 * @var Clinic $clinic
-//                 */
-//                return $clinic->getScheduleActivated($clinic)->count();
-//            });
-//        } else {
-//            return $this->sortByDesc(function ($clinic) {
-//                /**
-//                 * @var Clinic $clinic
-//                 */
-//                return $clinic->getScheduleActivated($clinic)->count();
-//            });
-//        }
-//    }
-
-    public function sortByRating($rating)
+    public function sortByPopular()
     {
-        if ($rating) {
-            return $this->sortBy('rating');
-        } else {
-            return $this->sortByDesc('rating');
-        }
+        return $this->sortByDesc(function ($clinic) {
+            /**
+             * @var Clinic $clinic
+             */
+            return $clinic->getScheduleActivated($clinic)->count();
+        });
     }
 
-    public function sortByFeeds($feeds)
+    public function sortByRating()
     {
-        if ($feeds) {
-            return $this->sortBy(function ($clinic) {
-                return $clinic->feedbacks->count();
-            });
-        } else {
-            return $this->sortByDesc(function ($clinic) {
-                return $clinic->feedbacks->count();
-            });
-        }
+        return $this->sortByDesc('rating');
     }
 
-    public function filterByFullDay($fullDay)
+    public function sortByFeeds()
     {
-        return $this->where('fullDay', $fullDay);
+        return $this->sortByDesc(function ($clinic) {
+            return $clinic->feedbacks->count();
+        });
     }
 
-    public function filterByChild($child)
+    public function filterByFullDay()
     {
-        return $this->where('child', $child);
+        return $this->where('fullDay', true);
+    }
+
+    public function filterByChild()
+    {
+        return $this->where('child', true);
     }
 
     public function getByUserId($id)

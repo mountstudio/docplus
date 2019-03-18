@@ -62,4 +62,13 @@ class Clinic extends Model
     {
 //        return Record::all()->where('clinic_id', $clinic->id);
     }
+
+    public static function getScheduleActivated(Clinic $clinic)
+    {
+        return Schedule::all()
+            ->where('clinic_id', $clinic->id)
+            ->where('active', true)
+            ->where('accepted', false)
+            ->groupBy('date_of_record');
+    }
 }
