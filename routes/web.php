@@ -19,9 +19,7 @@ Route::get('/login', function () {
 Route::get('/registration-patient', function () {
     return view('auth.register-patient');
 });
-Route::get('/question', function () {
-    return view('question.index');
-})->name('question');
+
 Route::get('/', 'MainController@index');
 
 
@@ -69,6 +67,8 @@ Route::resource('category', 'CategoryController');
 Route::resource('schedule', 'ScheduleController');
 Route::resource('record', 'RecordController');
 Route::resource('feedback', 'FeedbackController');
+Route::resource('question', 'QuestionController');
+Route::resource('answer', 'AnswerController');
 Route::get('/profile', 'UserController@profile');
 
 Route::get('/search', 'MainController@search')->name('search');

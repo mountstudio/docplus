@@ -49,7 +49,7 @@
                     <a href="{{ route('service.diagnostics') }}" class="nav-link text-light font-weight-bold">Диагностики ({{ \App\Service::getDiagnostics()->count() }})</a>
                 </li>
                 <li class="nav-item">
-                    <a href="{{ route('question') }}" class="nav-link text-light font-weight-bold">Вопрос врачу</a>
+                    <a href="{{ route('question.index') }}" class="nav-link text-light font-weight-bold">Вопрос врачу</a>
                 </li>
             </ul>
             <ul class="ml-auto navbar-nav text-center d-none d-xl-block pl-3">

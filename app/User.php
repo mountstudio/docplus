@@ -49,6 +49,11 @@ class User extends Authenticatable
         return $this->hasOne(Pic::class);
     }
 
+    public function questions()
+    {
+        return $this->hasMany(Question::class);
+    }
+
     public static function registerUser($data, $role = 'ROLE_USER')
     {
         return User::create([
