@@ -6,21 +6,11 @@
             <h1>Уведомления</h1>
         </div>
         <div class="row">
-            @foreach($notifications as $notification)
-                <div class="col-12 my-2">
-                    <div class="card shadow-sm p-3">
-                        <div class="card-body">
-                            <div class="row align-items-center">
-                                <div class="col-10">
-                                    {!!  $notification->data['message']  !!}
-                                </div>
-                                <div class="col">
-                                    <a href="{{ route('notification.read', $notification) }}" class="btn btn-primary">Принять</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+            @foreach($notifications->keys() as $key)
+                @if($key === 'App\Notifications\NewRecordNotification')
+                    <p>У вас новые клиента на запись. (Кол-во записей - {{ $notifications[$key]->count() }} )</p>
+                    <a href="/profile">Перейти</a>
+                @endif
             @endforeach
         </div>
     </div>

@@ -130,7 +130,8 @@ class UserController extends Controller
 
     public function notifications()
     {
-        $notifications = Auth::user()->unreadNotifications;
+        $notifications = Auth::user()->unreadNotifications
+        ->groupBy('type');
 
         return view('notifications', [
             'notifications' => $notifications,

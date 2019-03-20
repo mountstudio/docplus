@@ -60,9 +60,9 @@
         </div>
     </div>
 
-    @includeWhen($user->role === "ROLE_OPERATOR" && isset($doctors) && isset($clinics), 'operator', [
-        'doctors' => $doctors ?? null,
-        'clinics' => $clinics ?? null,
-    ])
+    {{--@includeWhen($user->role === "ROLE_OPERATOR" && isset($doctors) && isset($clinics), 'operator', [--}}
+        {{--'doctors' => $doctors ?? null,--}}
+        {{--'clinics' => $clinics ?? null,--}}
+    {{--])--}}
 
 @endsection

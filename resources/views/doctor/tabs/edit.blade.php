@@ -1,4 +1,4 @@
-    <form action="" method="POST" enctype="multipart/form-data">
+    <form action="{{ route('') }}" method="POST" enctype="multipart/form-data">
         @csrf
         <div class="form-row">
             <div class="col-6 form-group">

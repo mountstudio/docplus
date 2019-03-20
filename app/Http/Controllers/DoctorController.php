@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Feedback;
 use App\Helpers\ImageSaver;
+use App\Notifications\NewEditNotification;
 use App\Pic;
 use App\Schedule;
 use App\Service;
@@ -59,13 +60,9 @@ class DoctorController extends Controller
         ]);
     }
 
-    public function edit(Doctor $doctor)
+    public function edit(Request $request)
     {
-        $user = $doctor->user;
-        return view('doctor.edit', [
-            'doctor' => $doctor,
-            'user' => $user
-        ]);
+
     }
     public function update(Request $request)
     {
@@ -97,5 +94,12 @@ class DoctorController extends Controller
 
 
         return view('doctor.list');
+    }
+
+    public function userUpdate(Request $request, Doctor $doctor)
+    {
+        $users = User::where('role', 'ROLE_OPERATOR')->get();
+
+        $users->notify(new NewEditNotification($request, $doctor));
     }
 }
