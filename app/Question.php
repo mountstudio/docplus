@@ -3,6 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\Session;
 
 class Question extends Model
 {
@@ -25,5 +26,22 @@ class Question extends Model
     public function category()
     {
         return $this->belongsTo(Category::class);
+    }
+
+    public static function updateQuestionViews(Question $question = null)
+    {
+        if ($question) {
+            if (!Session::has('questionViews')) {
+                Session::put('questionViews', []);
+            } else {
+                $questionViews = Session::get('questionViews');
+
+                if (!in_array($question->id, $questionViews)) {
+                    $question->update(['views' => $question->views++]);
+                    $questionViews[] = $question->id;
+                    Session::put('questionViews', $questionViews);
+                }
+            }
+        }
     }
 }

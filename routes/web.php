@@ -69,7 +69,7 @@ Route::resource('record', 'RecordController');
 Route::resource('feedback', 'FeedbackController');
 Route::resource('question', 'QuestionController');
 Route::resource('answer', 'AnswerController');
-Route::get('/profile', 'UserController@profile');
+Route::get('/profile', 'UserController@profile')->name('profile');
 
 Route::get('/search', 'MainController@search')->name('search');
 Route::get('/like/{type}/{id}', 'LikeController@like')->name('like');

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Category;
 use App\Question;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Session;
 
 class QuestionController extends Controller
 {
@@ -15,6 +16,8 @@ class QuestionController extends Controller
      */
     public function index(Request $request)
     {
+        Question::updateQuestionViews();
+
         $catsChecked = $request->catsChecked;
 
         $questions = Question::where('active', true)->get();
@@ -65,7 +68,7 @@ class QuestionController extends Controller
      */
     public function show(Question $question)
     {
-        $question->update(['views' => $question->views++]);
+        Question::updateQuestionViews($question);
 
         return view('question.show', [
             'question' => $question,

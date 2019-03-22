@@ -2,7 +2,7 @@
 
 @section('content')
 
-    <div class="container py-5">
+    <div class="container pt-5 pb-3">
         @include('question.buttons.back_to_all')
         <div class="row">
             <div class="col p-4 shadow-sm border">
@@ -22,6 +22,7 @@
                         @include('question.chat')
                     </div>
                 </div>
+
             </div>
 
             <div class="col-3">
@@ -30,5 +31,9 @@
             </div>
         </div>
     </div>
+    @if(Auth::check() && Auth::user()->role === 'ROLE_DOCTOR')
+        @include('answer.create')
+    @endif
 
+    @includeWhen(\Illuminate\Support\Facades\Session::has('new_answer'), '_partials.alerts.new_answer')
 @stop
