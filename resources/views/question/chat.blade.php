@@ -1,6 +1,4 @@
-<div class="row justify-content-center">
-    <div class="chat border rounded py-3">
-        @include('question.partials.question')
-        @include('question.partials.answer')
-    </div>
+<div class="row justify-content-between">
+    @include('question.partials.question')
+    @includeWhen($question->answers->where('active', 1)->count(), 'answer.list', ['answers' => $question->answers->where('active', 1)])
 </div>
