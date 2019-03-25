@@ -49,8 +49,9 @@ Route::get('/schedule/{schedule}/accept','RecordController@index')->name('schedu
 
 
 Route::get('/notifications', 'UserController@notifications')->name('user.notifications');
+Route::post('/notifications/{notification}/edit', 'UserController@DoctorEditmarkAsRead')->name('notification.edit');
 Route::get('/notifications/{notification}/read', 'UserController@markAsRead')->name('notification.read');
-Route::post('/edit_notifications', 'NotificationController@edit')->name('edit.notifications');
+Route::post('/edit.notifications/{doctor}', 'DoctorController@userUpdate')->name('edit.notifications');
 
 Route::get('options', 'AdminController@options')->name('options');
 Route::get('datatable/getdoctors', 'AdminController@getDoctors')->name('datatable.getdoctors');
@@ -69,8 +70,8 @@ Route::resource('record', 'RecordController');
 Route::resource('feedback', 'FeedbackController');
 Route::resource('question', 'QuestionController');
 Route::resource('answer', 'AnswerController');
-Route::get('/profile', 'UserController@profile');
+Route::get('/profile', 'UserController@profile')->name('profile');
 
 Route::get('/search', 'MainController@search')->name('search');
 Route::get('/like/{type}/{id}', 'LikeController@like')->name('like');
-Route::get('/activation/{id}', 'FeedbackController@activation');
+Route::get('/activation/{feedback}', 'FeedbackController@activation')->name('feedback.activation');

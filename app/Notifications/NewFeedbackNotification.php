@@ -2,29 +2,23 @@
 
 namespace App\Notifications;
 
-use App\User;
 use Illuminate\Bus\Queueable;
 use Illuminate\Notifications\Notification;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Notifications\Messages\MailMessage;
 
-class NewEditNotification extends Notification
+class NewFeedbackNotification extends Notification
 {
     use Queueable;
 
-    private $request;
-
-    private $model;
-
     /**
      * Create a new notification instance.
-     *
+
      * @return void
      */
-    public function __construct($request, $model)
+    public function __construct()
     {
-        $this->request = $request;
-        $this->model = $model;
+        //
     }
 
     /**
@@ -46,7 +40,6 @@ class NewEditNotification extends Notification
      */
     public function toMail($notifiable)
     {
-
     }
 
     /**
@@ -57,13 +50,9 @@ class NewEditNotification extends Notification
      */
     public function toArray($notifiable)
     {
-        $message = 'Доктор: ' . User::find($this->model->user_id)->fullName
-            . ' Хочет изменить свои данные. ';
-
+        $message = ' Новые отзывы для врачей ';
         return [
-            'message' => $message,
-            'request' => $this->request,
-            'doctor' => $this->model
+            'message' => $message
         ];
     }
 }

@@ -23,7 +23,7 @@
                     </div>
 
                     <div class="col">
-                        <p class="text-secondary h3 m-0 mt-md-5 mb-md-2">{{ $doctor->name ?? 'Бобров Василий Елисеевич' }}</p>
+                        <p class="text-secondary h3 m-0 mt-md-5 mb-md-2">{{ $doctor->fullName ?? 'Бобров Василий Елисеевич' }}</p>
                         <p class="text-secondary font-weight-light h6 my-3"><em>
                                 @if(isset($doctor))
                                     {{ $doctor->specs->implode('name', ', ') }}

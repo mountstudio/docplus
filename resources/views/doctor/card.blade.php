@@ -20,7 +20,7 @@
             </div>
             <div class="col col-md-auto mt-3 mt-md-0">
                 <a href="{{ route('doctor.show', $doctor->id) }}">
-                    <h3 class="text-secondary text-center text-md-left h2 mt-3 mt-md-0">{{ $doctor->name ?? 'Бобров Василий Елисеевич' }}</h3>
+                    <h3 class="text-secondary text-center text-md-left h2 mt-3 mt-md-0">{{ $doctor->fullName ?? 'Бобров Василий Елисеевич' }}</h3>
                 </a>
                 <p class="text-secondary font-weight-light">
                         @if(isset($doctor))

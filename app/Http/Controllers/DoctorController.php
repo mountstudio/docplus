@@ -100,6 +100,10 @@ class DoctorController extends Controller
     {
         $users = User::where('role', 'ROLE_OPERATOR')->get();
 
-        $users->notify(new NewEditNotification($request, $doctor));
+        foreach ($users as $user) {
+            $user->notify(new NewEditNotification($request->except(['_token']), $doctor));
+        }
+
+        return back();
     }
 }

@@ -1,4 +1,4 @@
-<div class="row border my-3 p-4">
+<div class="row border p-3">
     <div class="col-2">
         @foreach($feedback->doctors as $doctor)
             <div class="position-relative">
@@ -33,7 +33,7 @@
         <p class="text-secondary">Отзыв оставил пользователь {{ $feedback->name }}</p>
         <p class="text-secondary">Тел: {{ $feedback->phone_number }}</p>
 
-        <a href="/activation/{{ $feedback->id }}" class="btn btn-sm btn-primary"><i class="fas fa-check"></i> Одобрить </a>
+        <a href="{{ route('feedback.activation', $feedback) }}" class="btn btn-sm btn-primary"><i class="fas fa-check"></i> Одобрить </a>
     </div>
 </div>
 <!-- End Отзыв -->

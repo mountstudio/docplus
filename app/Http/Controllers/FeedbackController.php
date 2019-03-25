@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Doctor;
 use App\Feedback;
+use App\Notifications\NewFeedbackNotification;
+use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -21,13 +23,17 @@ class FeedbackController extends Controller
 
         $feedback = Feedback::create($request->all());
 
+        $users = User::where('role', 'ROLE_OPERATOR')->get();
+
+        foreach ($users as $user) {
+            $user->notify(new NewFeedbackNotification());
+        }
 
         return back();
     }
 
-    public function activation($id)
+    public function activation(Feedback $feedback)
     {
-        $feedback = Feedback::find($id);
         $feedback->is_active = true;
         $feedback->save();
 

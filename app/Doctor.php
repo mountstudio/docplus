@@ -97,9 +97,13 @@ class Doctor extends Model
         return Record::all()->where('doctor_id', $doctor->id);
     }
 
-    public function getNameAttribute()
+    public function getFullNameAttribute()
     {
         return $this->user->fullName;
     }
 
+    public function getNameAttribute()
+    {
+        return $this->user->name;
+    }
 }

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Clinic;
 use App\Doctor;
 use App\Feedback;
+use App\Notifications\NewEditDoctorNotification;
 use App\Record;
 use App\User;
 use Carbon\Carbon;
@@ -12,7 +13,9 @@ use function foo\func;
 use function GuzzleHttp\Promise\all;
 use Illuminate\Auth\Middleware\Authenticate;
 use Illuminate\Http\Request;
+use Illuminate\Notifications\Notification;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 
 class UserController extends Controller
 {
@@ -97,14 +100,16 @@ class UserController extends Controller
         //
     }
 
-    public function profile()
+    public function profile(Request $request)
     {
         if (Auth::user()->role === 'ROLE_OPERATOR')
         {
+            $edits = Auth::user()->unreadNotifications
+                ->where('type', 'App\Notifications\NewEditNotification');
             $feedbacks = Feedback::all()->where('is_active', false);
             $doctors = Doctor::all();
             $clinics = Clinic::all();
-            return view('profile',['doctors' => $doctors, 'clinics' => $clinics, 'user' => Auth::user(), 'feedbacks' => $feedbacks]);
+            return view('profile',['show' => $request->show ? $request->show : null,'edits' => $edits, 'doctors' => $doctors, 'clinics' => $clinics, 'user' => Auth::user(), 'feedbacks' => $feedbacks]);
         }
         elseif( Auth::user()->role === 'ROLE_DOCTOR') {
             $records = Record::all()
@@ -136,6 +141,28 @@ class UserController extends Controller
         return view('notifications', [
             'notifications' => $notifications,
         ]);
+    }
+
+    public function DoctorEditmarkAsRead(Request $request, $notification)
+    {
+        $edit = Auth::user()->Notifications->where('id', $notification)->first();
+
+        $doctor = Doctor::find($edit->data['doctor']['id']);
+
+        if($request->number == 1) {
+            $doctor->user->name = $edit->data['request']['name'];
+            $doctor->user->last_name = $edit->data['request']['last_name'];
+            $doctor->address = $edit->data['request']['address'];
+            $doctor->price = $edit->data['request']['price'];
+            $doctor->discount = $edit->data['request']['discount'];
+            $doctor->save();
+
+        }
+
+        $notifications = DB::table('notifications')->where('data', json_encode($edit->data))->delete();
+        $doctor->user->notify(new NewEditDoctorNotification($request->number));
+
+        return back();
     }
 
     public function markAsRead($notification)
