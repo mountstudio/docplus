@@ -106,4 +106,9 @@ class Doctor extends Model
     {
         return $this->user->name;
     }
+
+    public function getLastNameAttribute()
+    {
+        return $this->user->last_name;
+    }
 }

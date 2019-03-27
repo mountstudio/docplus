@@ -32,18 +32,16 @@
                         <p>Доктор <a href="{{ route('doctor.show', $edit->data['doctor']['id']) }}" class="h5 text-secondary"> {{\App\User::find($edit->data['doctor']['user_id'])->fullName}} </a> предложил следующие изменения:</p>
                         </div>
                             @foreach(array_keys($edit->data['request']) as $key)
-                                @if($loop->first || $loop->index === 1)
-
-                                @elseif($edit->data['request'][$key] != $edit->data['doctor'][$key])
+                                @if($edit->data['request'][$key] != \App\Doctor::find($edit->data['doctor']['id'])->$key)
                                     <div class="row col-12">
                                         <div class="col-2">
                                             <span class="mr-2">{{$key}}:</span>
                                         </div>
                                         <div class="col-4">
-                                        <span class="text-success h5">{{ $edit->data['request'][$key] }}</span>
+                                            <span class="text-success h5">{{ $edit->data['request'][$key] }}</span>
                                         </div>
                                         <div class="col-4">
-                                        <span class="text-danger h5">{{ $edit->data['doctor'][$key] }}</span>
+                                            <span class="text-danger h5">{{ \App\Doctor::find($edit->data['doctor']['id'])->$key }}</span>
                                         </div>
                                         </div>
                                 @endif
