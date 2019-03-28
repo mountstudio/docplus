@@ -69,9 +69,10 @@ Route::resource('schedule', 'ScheduleController');
 Route::resource('record', 'RecordController');
 Route::resource('feedback', 'FeedbackController');
 Route::resource('question', 'QuestionController');
+Route::get('/activation/question/{question}', 'QuestionController@activate')->name('question.activate');
 Route::resource('answer', 'AnswerController');
 Route::get('/profile', 'UserController@profile')->name('profile');
 
 Route::get('/search', 'MainController@search')->name('search');
 Route::get('/like/{type}/{id}', 'LikeController@like')->name('like');
-Route::get('/activation/{feedback}', 'FeedbackController@activation')->name('feedback.activation');
+Route::get('/activation/feedback/{feedback}', 'FeedbackController@activation')->name('feedback.activation');

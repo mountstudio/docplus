@@ -6,6 +6,7 @@ use App\Clinic;
 use App\Doctor;
 use App\Feedback;
 use App\Notifications\NewEditDoctorNotification;
+use App\Question;
 use App\Record;
 use App\User;
 use Carbon\Carbon;
@@ -104,12 +105,25 @@ class UserController extends Controller
     {
         if (Auth::user()->role === 'ROLE_OPERATOR')
         {
-            $edits = Auth::user()->unreadNotifications
-                ->where('type', 'App\Notifications\NewEditNotification');
+            $edits = Auth::user()
+                ->unreadNotifications->where('type', 'App\Notifications\NewEditNotification');
+
+            $questionNotifications = Auth::user()
+                ->unreadNotifications->where('type', 'App\Notifications\NewQuestionNotification');
             $feedbacks = Feedback::all()->where('is_active', false);
+            $questions = Question::where('active', false)->get();
             $doctors = Doctor::all();
             $clinics = Clinic::all();
-            return view('profile',['show' => $request->show ? $request->show : null,'edits' => $edits, 'doctors' => $doctors, 'clinics' => $clinics, 'user' => Auth::user(), 'feedbacks' => $feedbacks]);
+
+            return view('profile',[
+                'show' => $request->show ? $request->show : null,
+                'edits' => $edits,
+                'doctors' => $doctors,
+                'clinics' => $clinics,
+                'user' => Auth::user(),
+                'feedbacks' => $feedbacks,
+                'questionNotifications' => $questionNotifications,
+            ]);
         }
         elseif( Auth::user()->role === 'ROLE_DOCTOR') {
             $records = Record::all()
@@ -165,10 +179,18 @@ class UserController extends Controller
         return back();
     }
 
-    public function markAsRead($notification)
+    public function markAsRead(Request $request, $notification)
     {
-        Auth::user()->unreadNotifications->where('id', $notification)->markAsRead();
+        $notification = Auth::user()->notifications->where('id', $notification)->first();
 
-        return back();
+        if ($request->has('operators')) {
+            $operators = User::where('role', 'ROLE_OPERATOR')->get();
+
+            foreach ($operators as $operator) {
+                $operator->unreadNotifications->where('data', $notification->data)->markAsRead();
+            }
+        } else {
+            Auth::user()->unreadNotifications->where('id', $notification->id)->markAsRead();
+        }
     }
 }

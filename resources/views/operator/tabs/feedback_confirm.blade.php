@@ -1,4 +1,4 @@
-<div class="row border p-3">
+<div class="row border p-3 my-2">
     <div class="col-2">
         @foreach($feedback->doctors as $doctor)
             <div class="position-relative">

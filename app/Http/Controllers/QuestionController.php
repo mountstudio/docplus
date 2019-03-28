@@ -4,7 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Category;
 use App\Question;
+use App\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Session;
 
 class QuestionController extends Controller
@@ -108,5 +110,15 @@ class QuestionController extends Controller
     public function destroy(Question $question)
     {
         //
+    }
+
+    public function activate(Request $request, Question $question)
+    {
+        $question->active = true;
+        $question->save();
+
+        User::markAsRead($request->notification, Auth::user(), ['operators' => 1]);
+
+        return back();
     }
 }

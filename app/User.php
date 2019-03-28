@@ -74,4 +74,19 @@ class User extends Authenticatable
     {
         return Record::all()->where('user_id', $user->id);
     }
+
+    public static function markAsRead($notification, $user, $params = [])
+    {
+        $notification = $user->notifications->where('id', $notification)->first();
+
+        if (array_has($params, ['operators'])) {
+            $operators = User::where('role', 'ROLE_OPERATOR')->get();
+
+            foreach ($operators as $operator) {
+                $operator->unreadNotifications->where('data', $notification->data)->markAsRead();
+            }
+        } else {
+            Auth::user()->unreadNotifications->where('id', $notification->id)->markAsRead();
+        }
+    }
 }
