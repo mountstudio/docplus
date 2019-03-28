@@ -1,12 +1,16 @@
 @if(!isset($withOutName))
         <div class="form-row">
-            <div class="col-6 form-group">
-                <label for="name">Name</label>
+            <div class="col form-group">
+                <label for="name">Имя</label>
                 <input id="name" type="text" name="name" class="form-control">
             </div>
-            <div class="col-6 form-group">
-                <label for="last_name">Last name</label>
+            <div class="col form-group">
+                <label for="last_name">Фамилия</label>
                 <input id="last_name" name="last_name" type="text" class="form-control">
+            </div>
+            <div class="col form-group">
+                <label for="patronymic">Отчество</label>
+                <input id="patronymic" name="patronymic" type="text" class="form-control">
             </div>
         </div>
 @endif

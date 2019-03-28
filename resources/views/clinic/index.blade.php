@@ -17,6 +17,7 @@
                     <th>Название</th>
                     <th>Адресс</th>
                     <th>Номер телефона</th>
+                    <th>Действия</th>
                 </tr>
                 </thead>
             </table>
@@ -42,7 +43,8 @@
                     { data: 'id', name: 'id' },
                     { data: 'name', name: 'name' },
                     { data: 'address', name: 'address' },
-                    { data: 'phones', name: 'phones'}
+                    { data: 'phones', name: 'phones'},
+                    { data: 'action', name: 'action'}
                 ]
             });
         });
