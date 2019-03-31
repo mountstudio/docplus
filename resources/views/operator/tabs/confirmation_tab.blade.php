@@ -14,11 +14,11 @@
     <div class="tab-content col-12" id="myTabContent">
         <div class="tab-pane fade {{ isset($show) && $show == 'App\Notifications\NewFeedbackNotification' ? 'active show' : '' }}" id="feedback_confirm" role="tabpanel" aria-labelledby="">
             <div class="container d-none d-md-block py-4" id="feedbacks">
-                @if($feedbacks->count() === 0)
+                @if($feedbackNotifications->count() === 0)
                     <p>Нет новых отзывов на рассмотрение</p>
                 @else
-                @foreach($feedbacks as $feedback)
-                    @include('operator.tabs.feedback_confirm')
+                @foreach($feedbackNotifications as $notification)
+                    @include('operator.tabs.feedback_confirm', ['feedback' => \App\Feedback::find($notification->data['feedback']['id'])])
                 @endforeach
                 @endif
             </div>

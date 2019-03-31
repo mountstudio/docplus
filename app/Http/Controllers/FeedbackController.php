@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Doctor;
 use App\Feedback;
+use App\Notifications\NewDoctorFeedbackNotification;
 use App\Notifications\NewFeedbackNotification;
 use App\User;
 use Illuminate\Http\Request;
@@ -25,17 +26,23 @@ class FeedbackController extends Controller
 
         $users = User::where('role', 'ROLE_OPERATOR')->get();
 
+
         foreach ($users as $user) {
-            $user->notify(new NewFeedbackNotification());
+            $user->notify(new NewFeedbackNotification($feedback));
         }
 
         return back();
     }
 
-    public function activation(Feedback $feedback)
+    public function activation(Feedback $feedback, Request $request)
     {
         $feedback->is_active = true;
         $feedback->save();
+        User::markAsRead($request->notification, Auth::user(), ['operators' => 1]);
+
+        $doctor = $feedback->doctors()->first();
+
+        $doctor->user->notify(new NewDoctorFeedbackNotification());
 
         return back();
     }

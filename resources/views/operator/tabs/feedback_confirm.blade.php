@@ -33,7 +33,7 @@
         <p class="text-secondary">Отзыв оставил пользователь {{ $feedback->name }}</p>
         <p class="text-secondary">Тел: {{ $feedback->phone_number }}</p>
 
-        <a href="{{ route('feedback.activation', $feedback) }}" class="btn btn-sm btn-primary"><i class="fas fa-check"></i> Одобрить </a>
+        <a href="{{ route('feedback.activation', ['feedback' => $feedback, 'notification' => $notification]) }}" class="btn btn-sm btn-primary"><i class="fas fa-check"></i> Одобрить </a>
     </div>
 </div>
 <!-- End Отзыв -->

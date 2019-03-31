@@ -29,7 +29,7 @@ class NewDoctorFeedbackNotification extends Notification
      */
     public function via($notifiable)
     {
-        return ['mail'];
+        return ['database'];
     }
 
     /**
@@ -40,10 +40,6 @@ class NewDoctorFeedbackNotification extends Notification
      */
     public function toMail($notifiable)
     {
-        return (new MailMessage)
-                    ->line('The introduction to the notification.')
-                    ->action('Notification Action', url('/'))
-                    ->line('Thank you for using our application!');
     }
 
     /**
@@ -54,8 +50,9 @@ class NewDoctorFeedbackNotification extends Notification
      */
     public function toArray($notifiable)
     {
+        $message = ' У вас новые отзывы ';
         return [
-            //
+            'message' => $message
         ];
     }
 }

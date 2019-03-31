@@ -110,8 +110,9 @@ class UserController extends Controller
 
             $questionNotifications = Auth::user()
                 ->unreadNotifications->where('type', 'App\Notifications\NewQuestionNotification');
-            $feedbacks = Feedback::all()->where('is_active', false);
-            $questions = Question::where('active', false)->get();
+            $feedbackNotifications = Auth::user()
+                ->unreadNotifications->where('type', 'App\Notifications\NewFeedbackNotification');
+
             $doctors = Doctor::all();
             $clinics = Clinic::all();
 
@@ -121,7 +122,7 @@ class UserController extends Controller
                 'doctors' => $doctors,
                 'clinics' => $clinics,
                 'user' => Auth::user(),
-                'feedbacks' => $feedbacks,
+                'feedbackNotifications' => $feedbackNotifications,
                 'questionNotifications' => $questionNotifications,
             ]);
         }

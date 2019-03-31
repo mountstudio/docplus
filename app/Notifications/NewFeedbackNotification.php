@@ -11,14 +11,15 @@ class NewFeedbackNotification extends Notification
 {
     use Queueable;
 
+    private $feedback;
     /**
      * Create a new notification instance.
 
      * @return void
      */
-    public function __construct()
+    public function __construct($feedback)
     {
-        //
+        $this->feedback = $feedback;
     }
 
     /**
@@ -50,9 +51,8 @@ class NewFeedbackNotification extends Notification
      */
     public function toArray($notifiable)
     {
-        $message = ' Новые отзывы для врачей ';
         return [
-            'message' => $message
+            'feedback' => $this->feedback,
         ];
     }
 }

@@ -86,7 +86,7 @@ class User extends Authenticatable
                 $operator->unreadNotifications->where('data', $notification->data)->markAsRead();
             }
         } else {
-            Auth::user()->unreadNotifications->where('id', $notification->id)->markAsRead();
+            $user->unreadNotifications->where('id', $notification->id)->markAsRead();
         }
     }
 }
