@@ -29,10 +29,10 @@
                                     {{ $doctor->specs->implode('name', ', ') }}
                                 @else
                                     Гастроэнтеролог, Терапевт
-                                @endif <br> Стаж 19 лет</em></p>
+                                @endif <br> Стаж {{ $doctor->age ?? 19 }} лет</em></p>
                         <span class="text-secondary">Проф. рейтинг - <strong>{{$doctor->prof_rating}}</strong></span>
-                        <p class="text-secondary font-weight-light mt-2 mb-5">Приём от <del>1400</del> руб. <br>
-                            <span class="text-primary font-weight-bold">1000 руб.</span></p>
+                        <p class="text-secondary font-weight-light mt-2 mb-5">Приём от <del>{{ $doctor->price }}</del> сом<br>
+                            <span class="text-primary font-weight-bold">{{ $doctor->price - $doctor->price * $doctor->discount / 100 }} сом</span></p>
                         <a href="#feedbacks" class="text-secondary pt-md-5"><u>Отзывы о враче</u></a>
 
 

@@ -28,12 +28,17 @@
                         @else
                             Гастроэнтеролог, Терапевт
                         @endif
-                        <br> Стаж <span class="font-weight-bold h5">19</span> лет
+                        <br> Стаж <span class="font-weight-bold h5">{{ $doctor->age ?? 19 }}</span> лет
                 </p>
                 <p class="text-secondary font-weight-light">Профессиональный рейтинг - <span class="font-weight-bold h5">{{ $doctor->prof_rating }}</span></p>
                 <p class="text-secondary font-weight-light m-0 mb-md-2">
                     Приём от
-                    <span class="text-primary font-weight-bold">{{ $doctor->price ?? '1400' }} руб.</span>
+                    @if($doctor->discount)
+                        <span class="text-primary font-weight-bold"><del>{{ $doctor->price ?? '1400' }} сом</del></span>
+                        <span>{{ round($doctor->price - $doctor->price * $doctor->discount / 100) }} сом</span>
+                    @else
+                        <span class="text-primary font-weight-bold">{{ $doctor->price ?? '1400' }} сом</span>
+                    @endif
                     <i class="fas fa-exclamation-circle"></i>
                 </p>
                 <p class="text-secondary font-weight-light m-0 mb-md-2">
