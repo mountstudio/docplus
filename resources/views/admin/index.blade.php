@@ -26,7 +26,7 @@
             $('#delete-confirmation').on('show.bs.modal', function (e) {
                 let id = $(e.relatedTarget).attr('data-id');
                 let model = $(e.relatedTarget).attr('data-model');
-                $(this).find('form#delete-form').attr('action', '/admin/' + model + '/' + id);
+                $(this).find('form#delete-form').attr('action', '/' + model + '/' + id);
             })
         });
     </script>
