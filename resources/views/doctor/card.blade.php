@@ -40,7 +40,7 @@
                     @else
                         <span class="text-primary font-weight-bold">{{ $doctor->price ?? '1400' }} сом</span>
                     @endif
-                    <i class="fas fa-exclamation-circle"></i>
+                    <i class="fas fa-exclamation-circle"  data-toggle="tooltip" data-placement="top" title="Скидка указана за первое посещение врача"></i>
                 </p>
                 <p class="text-secondary font-weight-light m-0 mb-md-2">
                     Телефон для записи: <br>
