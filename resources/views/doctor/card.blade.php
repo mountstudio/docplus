@@ -1,4 +1,4 @@
-<div class="row align-items-center justify-content-center my-4 border shadow p-md-3 py-3">
+<div class="row align-items-center my-4 border shadow p-md-3 py-3">
     <div class="col-12 col-lg-auto">
         <div class="row ">
             <div class="col-12 col-md-5 text-center">
@@ -12,7 +12,8 @@
                 <div class="row justify-content-center">
                     @include('_partials.stars', ['id' => $doctor->id.'-doctor'])
                 </div>
-                <p class="text-muted font-weight-light mb-0 small">Рейтинг врача на основе {{count($doctor->feedbacks)}} отзывов-(ва)</p>
+                <p class="text-muted font-weight-light small">Рейтинг врача на основе {{count($doctor->feedbacks)}} отзывов-(ва)</p>
+                <p><a class="text-primary small" href="{{ $doctor->clinic ? route('clinic.show', $doctor->clinic) : '#' }}">{{ $doctor->clinic ? $doctor->clinic->name : '' }}</a></p>
                 {{--<div class="row justify-content-center mt-3">--}}
                     {{--@include('_partials.stars', ['id' => $doctor->id.'-prof'])--}}
                 {{--</div>--}}
