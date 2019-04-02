@@ -84,6 +84,8 @@ class DoctorController extends Controller
     }
     public function destroy(Doctor $doctor)
     {
+        $doctor->user->delete();
+        $doctor->pics->delete();
         $doctor->delete();
 
         return redirect()->back();

@@ -6,6 +6,7 @@ use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Validator;
 
 class User extends Authenticatable
 {
@@ -17,7 +18,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'last_name', 'email', 'password', 'is_doctor',
+        'name', 'last_name', 'email', 'password', 'is_doctor', 'role',
     ];
 
     /**
@@ -56,6 +57,13 @@ class User extends Authenticatable
 
     public static function registerUser($data, $role = 'ROLE_USER')
     {
+        $data = $data->validate([
+            'name' => ['required', 'string', 'max:255'],
+            'last_name' => ['required', 'string', 'max:255'],
+            'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
+            'password' => ['required', 'string', 'min:6', 'confirmed'],
+        ]);
+
         return User::create([
             'name' => $data['name'],
             'last_name' => $data['last_name'],
