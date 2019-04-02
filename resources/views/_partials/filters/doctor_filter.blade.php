@@ -7,13 +7,13 @@
         <div class="form-check">
             <input class="form-check-input" name="child" type="checkbox" id="defaultCheck1" {{ $child ? 'checked' : '' }}>
             <label class="form-check-label" for="defaultCheck1">
-                <i class="fas fa-baby"></i> Детский
+                Детский
             </label>
         </div>
         <div class="form-check">
             <input class="form-check-input" name="home" type="checkbox" id="defaultCheck2" {{ $home ? 'checked' : '' }}>
             <label class="form-check-label" for="defaultCheck2">
-                <i class="fas fa-ambulance"></i> На дом
+                На дом
             </label>
         </div>
         <hr>

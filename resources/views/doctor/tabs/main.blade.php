@@ -6,13 +6,17 @@
 </div>
 
 <div class="form-row">
-	<div class="form-group col-6">
+	<div class="form-group col">
 		<label for="price">Price</label>
 		<input id="price" name="price" type="text" class="form-control">
 	</div>
-	<div class="form-group col-6">
+	<div class="form-group col">
 		<label for="discount">Discount</label>
 		<input id="discount" name="discount" type="text" class="form-control">
+	</div>
+	<div class="form-group col">
+		<label for="age">Стаж</label>
+		<input id="age" name="age" type="text" class="form-control">
 	</div>
 </div>
 <div class="form-row py-4">

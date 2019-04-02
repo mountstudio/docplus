@@ -32,7 +32,10 @@
     </div>
 
     <div class="container my-5">
-    <p>Показано врачей ({{$doctors->count()}})</p>
+        <p class="text-primary font-weight-bold mt-3 h3">
+            Частные врачи Бишкека
+            <span class="text-secondary font-weight-light">{{ $doctors->count() }}</span>
+        </p>
 
         <div class="row">
             <div class="col-auto d-none d-lg-block">
