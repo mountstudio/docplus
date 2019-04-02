@@ -31,7 +31,7 @@
             </div>
         </div>
     </div>
-    <div class="container-fluid bg-grey-light">
+    <div class="container-fluid bg-grey-lighter">
         <div class="row justify-content-center py-5">
 
 
