@@ -1,6 +1,6 @@
-<div class="container-fluid bg-doc d-none d-lg-block">
+<div class="container-fluid bg-doc">
     <div class="row">
-        <div class="col-2 col-lg-3 bg-white d-flex">
+        <div class="col-2 col-lg-3 bg-white d-none d-lg-flex">
             <img src="{{ asset('img/plus2.png') }}" class="img-fluid align-self-center position-absolute w-85" style="right:-35px;" alt="">
         </div>
         <div class="col-8 col-lg p-5">

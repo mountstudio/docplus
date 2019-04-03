@@ -36,16 +36,16 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav text-center">
 
-                <li class="nav-item">
+                <li class="nav-item border-right">
                     <a href="{{ route('doctor.index') }}" class="nav-link text-light font-weight-bold">Врачи ({{ \App\Doctor::all()->count() }})</a>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item border-right">
                     <a href="{{ route('clinic.index') }}" class="nav-link text-light font-weight-bold">Клиники ({{ \App\Clinic::all()->count() }})</a>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item border-right">
                     <a href="{{ route('service.index') }}" class="nav-link text-light font-weight-bold">Услуги ({{ \App\Service::getServices()->count() }})</a>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item border-right">
                     <a href="{{ route('service.diagnostics') }}" class="nav-link text-light font-weight-bold">Диагностики ({{ \App\Service::getDiagnostics()->count() }})</a>
                 </li>
                 <li class="nav-item">

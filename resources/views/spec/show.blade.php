@@ -11,10 +11,16 @@
             </div>
         </div>
     </div>
-
+    <div class="container mt-4">
+        <div class="row justify-content-center">
+            <div class="col-12 text-center">
+                @include('_partials.mobile-question')
+            </div>
+        </div>
+    </div>
 
     <div class="container">
-        <p class="mt-3">Показано врачей ({{$doctors->count()}})</p>
+        <p class="mt-3">Частные клиники Бишкека ({{$doctors->count()}})</p>
         @foreach($doctors as $doctor)
             @include('doctor.card')
         @endforeach

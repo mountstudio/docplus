@@ -31,7 +31,7 @@
             </div>
         </div>
     </div>
-    <div class="container-fluid bg-grey-lighter">
+    <div class="container-fluid bg-white">
         <div class="row justify-content-center py-5">
 
 
@@ -119,21 +119,24 @@
 
                 <div class="row py-2 justify-content-center">
                     <div class="col-12 col-md-4">
-                        <p class="text-secondary font-weight-bold text-uppercase  text-center">
-                            <span class="display-2 font-weight-bold count">{{\App\Feedback::all()->count()}}</span> ОТЗЫВОВ
+                        <p class="text-secondary display-2 font-weight-bold count text-center">
+                            {{\App\Feedback::all()->count()}}
                         </p>
+                        <p class="text-secondary font-weight-bold text-uppercase  text-center"> ОТЗЫВОВ</p>
                     </div>
 
                     <div class="col-12 col-md-4">
-                        <p class="text-secondary font-weight-bold text-uppercase  text-center">
-                            <span class="display-2 font-weight-bold count">{{\App\Doctor::all()->count()}}</span> ВРАЧЕЙ
+                        <p class="text-secondary display-2 font-weight-bold count text-center">
+                            {{\App\Doctor::all()->count()}}
                         </p>
+                        <p class="text-secondary font-weight-bold text-uppercase  text-center"> ВРАЧЕЙ</p>
                     </div>
 
                     <div class="col-12 col-md-4">
-                        <p class="text-secondary font-weight-bold text-uppercase  text-center">
-                            <span class="display-2 font-weight-bold count">{{\App\Clinic::all()->count()}}</span> КЛИНИК
+                        <p class="text-secondary display-2 font-weight-bold count text-center">
+                            {{\App\Clinic::all()->count()}}
                         </p>
+                        <p class="text-secondary font-weight-bold text-uppercase  text-center"> КЛИНИК</p>
                     </div>
                 </div>
             </div>
@@ -191,15 +194,31 @@
     </script>
     <script>
         $('.count').each(function () {
-            $(this).prop('Counter',0).animate({
-                Counter: $(this).text()
-            }, {
-                duration: 2000,
-                easing: 'swing',
-                step: function (now) {
-                    $(this).text(Math.ceil(now));
-                }
-            });
+            if ($(this).text() < 20)
+            {
+                $(this).prop('Counter',0).animate({
+                    Counter: $(this).text()
+                }, {
+                    duration: 800,
+                    easing: 'swing',
+                    step: function (now) {
+                        $(this).text(Math.ceil(now));
+                    }
+                });
+            }
+            else
+            {
+                $(this).prop('Counter',0).animate({
+                    Counter: $(this).text()
+                }, {
+                    duration: 2000,
+                    easing: 'swing',
+                    step: function (now) {
+                        $(this).text(Math.ceil(now));
+                    }
+                });
+            }
+
         });
     </script>
 

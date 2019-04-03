@@ -23,13 +23,6 @@
         </div>
     </div>
 
-    <div class="container mt-4">
-        <div class="row justify-content-center">
-            <div class="col-12 text-center">
-                @include('_partials.mobile-question')
-            </div>
-        </div>
-    </div>
 
     <div class="container my-5">
         <p class="text-primary font-weight-bold mt-3 h3">

@@ -2,6 +2,10 @@
 
 @section('content')
 
+    <div class="container border-bottom border-secondary d-none d-lg-block">
+        @include('_partials._head_rec')
+    </div>
+
     <div class="container mt-4">
         <div class="row justify-content-center">
             <div class="col-12 col-md-10 col-lg-8">
@@ -18,20 +22,15 @@
             </div>
         </div>
     </div>
-    <div class="container">
-        <div class="row">
-            <div class="col-12">
-                <p class="text-primary font-weight-bold mt-3 h3">
-                    Клиники Бишкека
-                    <span class="text-secondary font-weight-light">{{ $clinics->count() }}</span>
-                </p>
-            </div>
-        </div>
-    </div>
+
 
 
     <!-- Create table clinics and map -->
-    <div class="container">
+    <div class="container my-5">
+        <p class="text-primary font-weight-bold mt-3 h3">
+            Клиники Бишкека
+            <span class="text-secondary font-weight-light">{{ $clinics->count() }}</span>
+        </p>
         <div class="row">
             <div class="col-auto">
                 @include('_partials.filters.clinic_filter')
