@@ -56,6 +56,7 @@
         });
 
         $("#first").rateYo({
+            rating: {!! $doctor->first !!},
             fullStar: true,
             numStars: 5,
             ratedFill: "red",
@@ -73,6 +74,7 @@
             }
         });
         $("#second").rateYo({
+            rating: {!! $doctor->second !!},
             fullStar: true,
             numStars: 5,
             ratedFill: "red",
@@ -90,6 +92,7 @@
             }
         });
         $("#third").rateYo({
+            rating: {!! $doctor->third !!},
             fullStar: true,
             numStars: 5,
             ratedFill: "red",

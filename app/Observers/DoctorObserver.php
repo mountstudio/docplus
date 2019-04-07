@@ -7,6 +7,7 @@ use App\Helpers\ImageSaver;
 use App\Pic;
 use App\Clinic;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 
 class DoctorObserver
 {
@@ -69,7 +70,11 @@ class DoctorObserver
      */
     public function updated(Doctor $doctor)
     {
-        //
+        $user = $doctor->user;
+
+        $user->update(\request()->all());
+        $user->password = Hash::make(\request('password'));
+        $user->save();
     }
 
     /**

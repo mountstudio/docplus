@@ -70,24 +70,13 @@ class DoctorController extends Controller
         ]);
     }
 
-    public function update(Request $request)
+    public function update(Request $request, Doctor $doctor)
     {
-        $doctor = Doctor::find($request->id);
-        $user = User::find($request);
-        $doctor->address = $request->address;
-        $doctor->price = $request->price;
-        $doctor->discount = $request->discount;
+        $doctor->update($request->all());
 
-        $user->name = $request->name;
-        $user->last_name = $request->last_name;
-        $user->email = $request->email;
-        $user->password = Hash::make($request->password);
-        $user->is_doctor = 1;
-        $user->save();
-
-        $doctor->user_id = $user->id;
-        $doctor->save();
+        return redirect()->route('doctor.admin');
     }
+
     public function destroy(Doctor $doctor)
     {
         $doctor->user->delete();

@@ -5,7 +5,7 @@
 				<label for="clinics">Clinics</label>
 				<select class="form-control m-0 w-100" name="clinics[]" id="clinics" multiple="">
 					@foreach($clinics as $clinic)
-						<option value="{{ $clinic->id }}">{{ $clinic->name }} | {{ $clinic->address }}</option>
+						<option value="{{ $clinic->id }}" {{ $doctor->clinics->where('id', $clinic->id)->isNotEmpty() ? 'selected' : '' }}>{{ $clinic->name }} | {{ $clinic->address }}</option>
 					@endforeach
 				</select>
 			</div>
@@ -13,7 +13,7 @@
 				<label for="specializations">Specializations</label>
 				<select class="form-control m-0 w-100" name="specializations[]" id="specializations" multiple="">
 					@foreach($specs as $spec)
-						<option value="{{ $spec->id }}">{{ $spec->name }}</option>
+						<option value="{{ $spec->id }}" {{ $doctor->specs->where('id', $spec->id)->isNotEmpty() ? 'selected' : '' }}>{{ $spec->name }}</option>
 					@endforeach
 				</select>
 			</div>
