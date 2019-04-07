@@ -60,10 +60,16 @@ class DoctorController extends Controller
         ]);
     }
 
-    public function edit(Request $request)
+    public function edit(Request $request, Doctor $doctor)
     {
-
+        return view('doctor.edit', [
+            'doctor' => $doctor,
+            'clinics' => Clinic::all(),
+            'specs' => Spec::all(),
+            'services' => Service::all(),
+        ]);
     }
+
     public function update(Request $request)
     {
         $doctor = Doctor::find($request->id);
@@ -85,7 +91,7 @@ class DoctorController extends Controller
     public function destroy(Doctor $doctor)
     {
         $doctor->user->delete();
-        $doctor->pics->delete();
+        Pic::destroy($doctor->pics);
         $doctor->delete();
 
         return redirect()->back();

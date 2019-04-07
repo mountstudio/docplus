@@ -15,6 +15,7 @@
                 <tr>
                     <th>Id</th>
                     <th>Название</th>
+                    <th>Action</th>
                 </tr>
                 </thead>
             </table>
@@ -38,7 +39,8 @@
                 ajax: '{!! route('datatable.getcategories') !!}',
                 columns: [
                     { data: 'id', name: 'id' },
-                    { data: 'name', name: 'name' }
+                    { data: 'name', name: 'name' },
+                    { data: 'action', name: 'action' }
                 ]
             });
         });

@@ -1,78 +1,115 @@
 @extends('admin.index')
 
 @section('admin_content')
-
-    <form action="{{route('doctor.update', $doctor)}}" method="POST">
+    <form action="{{ route('doctor.update', $doctor) }}" method="POST" enctype="multipart/form-data">
         @csrf
-        <div class="form-group">
-            <label for="name_of_doctor"></label>
-            <input name="name" type="text" class="form-control {{ $errors->has('name') ? 'is-invalid' : '' }}" id="name_of_doctor" placeholder="Имя Доктора" value="{{ $user->name }}">
-            @if($errors->has('name'))
-                <span class="invalid-feedback" role="alert">
-					<strong>{{ $errors->first('name') }}</strong>
-				</span>
-            @endif
+        @method('PUT')
+        <ul class="nav nav-tabs" id="myTab" role="tablist">
+            <li class="nav-item">
+                <a class="nav-link active" id="main-tab" data-toggle="tab" href="#main" role="tab" aria-controls="main" aria-selected="true">Main</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" id="images-tab" data-toggle="tab" href="#images" role="tab" aria-controls="images" aria-selected="true">Images</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" id="educations-tab" data-toggle="tab" href="#educations" role="tab" aria-controls="educations" aria-selected="false">Educations</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" id="specs-tab" data-toggle="tab" href="#specs" role="tab" aria-controls="specs" aria-selected="false">Specializations</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" id="save-tab" data-toggle="tab" href="#save" role="tab" aria-controls="save" aria-selected="false">Save</a>
+            </li>
+        </ul>
+        <div class="tab-content" id="myTabContent">
+            <div class="tab-pane fade show active" id="main" role="tabpanel" aria-labelledby="main-tab">
+                @include('doctor.tabs.main')
+            </div>
+            <div class="tab-pane fade" id="images" role="tabpanel" aria-labelledby="images-tab">
+                @include('doctor.tabs.images')
+            </div>
+            <div class="tab-pane fade" id="educations" role="tabpanel" aria-labelledby="educations-tab">
+                @include('doctor.tabs.educations')
+            </div>
+            <div class="tab-pane fade" id="specs" role="tabpanel" aria-labelledby="specs-tab">
+                @include('doctor.tabs.specs')
+            </div>
+            <div class="tab-pane fade" id="save" role="tabpanel" aria-labelledby="save-tab">
+                @include('doctor.tabs.save')
+            </div>
         </div>
-        <div class="form-group">
-            <label for="last_name_of_doctor"></label>
-            <input name="last_name" type="text" class="form-control {{ $errors->has('last_name') ? 'is-invalid' : '' }}" id="last_name_of_doctor" placeholder="Фамилия Доктора" value="{{ $user->last_name }}">
-            @if($errors->has('last_name'))
-                <span class="invalid-feedback" role="alert">
-					<strong>{{ $errors->first('last_name') }}</strong>
-				</span>
-            @endif
-        </div>
-        <div class="form-group">
-            <label for="email_of_doctor"></label>
-            <input name="email" type="text" class="form-control {{ $errors->has('email') ? 'is-invalid' : '' }}" id="email_of_doctor" placeholder="Email Доктора" value="{{ $user->email }}">
-            @if($errors->has('email'))
-                <span class="invalid-feedback" role="alert">
-					<strong>{{ $errors->first('email') }}</strong>
-				</span>
-            @endif
-        </div>
-        <div class="form-group">
-            <label for="address_of_doctor"></label>
-            <input name="address" type="text" class="form-control {{ $errors->has('address') ? 'is-invalid' : '' }}" id="address_of_doctor" placeholder="Адрес Доктора" value="{{ $doctor->address}}">
-            @if($errors->has('address'))
-                <span class="invalid-feedback" role="alert">x
-					<strong>{{ $errors->first('address') }}</strong>
-				</span>
-            @endif
-        </div>
-        <div class="form-group">
-            <label for="price_of_doctor"></label>
-            <input name="price" type="text" class="form-control {{ $errors->has('price') ? 'is-invalid' : '' }}" id="price_of_doctor" placeholder="Цена Доктора" value="{{ $doctor->price }}">
-            @if($errors->has('price'))
-                <span class="invalid-feedback" role="alert">
-					<strong>{{ $errors->first('price') }}</strong>
-				</span>
-            @endif
-        </div>
-        <div class="form-group">
-            <label for="discount_of_doctor"></label>
-            <input name="discount" type="text" class="form-control {{ $errors->has('discount') ? 'is-invalid' : '' }}" id="discount_of_doctor" placeholder="Скидка Доктора" value="{{ $doctor->discount}}">
-            @if($errors->has('discount'))
-                <span class="invalid-feedback" role="alert">
-					<strong>{{ $errors->first('discount') }}</strong>
-				</span>
-            @endif
-        </div>
-        <div class="form-group">
-            <label for="password_of_doctor"></label>
-            <input name="password" type="password" class="form-control {{ $errors->has('password') ? 'is-invalid' : '' }}" id="password_of_doctor" placeholder="Пароль доктора" required>
-            @if($errors->has('password'))
-                <span class="invalid-feedback" role="alert">
-					<strong>{{ $errors->first('password') }}</strong>
-				</span>
-            @endif
-        </div>
-        <div class="form-group">
-            <label for="password-confirm"></label>
-
-            <input id="password-confirm" type="password" class="form-control" name="password_confirmation" placeholder="Подтвердите пароль" required>
-        </div>
-        <button type="submit" class="btn btn-primary">Внести изменения</button>
     </form>
-
 @endsection
+
+@push('scripts')
+    <script src="{{ asset('js/file-upload-with-preview.js') }}"></script>
+    <script>
+        var upload = new FileUploadWithPreview('myUniqueUploadId')
+    </script>
+    <script src="{{ asset('js/rateyo.js') }}"></script>
+    <script>
+        let rating_end = $("#rating_end").rateYo({
+            readOnly: true,
+            ratedFill: "red",
+            starWidth: "20px",
+            spacing: "5px",
+        });
+
+        $("#first").rateYo({
+            fullStar: true,
+            numStars: 5,
+            ratedFill: "red",
+            starWidth: "20px",
+            spacing: "5px",
+            onSet: function(rating, rateYoInstance) {
+                $('#first_input').val(rating);
+                let second = $('#second_input').val();
+                let third = $('#third_input').val();
+
+                let rating_this = ((parseInt(second, 10) + parseInt(third, 10) + parseInt(rating, 10)) / 3).toFixed(1);
+
+                $('#rating_end_input').val(rating_this);
+                rating_end.rateYo("rating", rating_this);
+            }
+        });
+        $("#second").rateYo({
+            fullStar: true,
+            numStars: 5,
+            ratedFill: "red",
+            starWidth: "20px",
+            spacing: "5px",
+            onSet: function(rating, rateYoInstance) {
+                $('#second_input').val(rating);
+                let first = $('#first_input').val();
+                let third = $('#third_input').val();
+
+                let rating_this = ((parseInt(first, 10) + parseInt(third, 10) + parseInt(rating, 10)) / 3).toFixed(1);
+
+                $('#rating_end_input').val(rating_this);
+                rating_end.rateYo("rating", rating_this);
+            }
+        });
+        $("#third").rateYo({
+            fullStar: true,
+            numStars: 5,
+            ratedFill: "red",
+            starWidth: "20px",
+            spacing: "5px",
+            onSet: function(rating, rateYoInstance) {
+                $('#third_input').val(rating);
+                let second = $('#second_input').val();
+                let first = $('#first_input').val();
+
+                let rating_this = ((parseInt(second, 10) + parseInt(first, 10) + parseInt(rating, 10)) / 3).toFixed(1);
+
+                $('#rating_end_input').val(rating_this);
+                rating_end.rateYo("rating", rating_this);
+            }
+        });
+    </script>
+@endpush
+
+@push('stylesheets')
+    <link rel="stylesheet" href="{{ asset('css/rateyo.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/file-upload-with-preview.css') }}">
+@endpush

@@ -2,21 +2,21 @@
 
 <div class="form-group">
 	<label for="address">Address</label>
-	<input id="address" name="address" type="text" class="form-control">
+	<input id="address" name="address" type="text" class="form-control" value="{{ isset($doctor) ? $doctor->address : '' }}">
 </div>
 
 <div class="form-row">
 	<div class="form-group col">
 		<label for="price">Price</label>
-		<input id="price" name="price" type="text" class="form-control">
+		<input id="price" name="price" type="text" class="form-control" value="{{ isset($doctor) ? $doctor->price : '' }}">
 	</div>
 	<div class="form-group col">
 		<label for="discount">Discount</label>
-		<input id="discount" name="discount" type="text" class="form-control">
+		<input id="discount" name="discount" type="text" class="form-control" value="{{ isset($doctor) ? $doctor->discount : '' }}">
 	</div>
 	<div class="form-group col">
 		<label for="age">Стаж</label>
-		<input id="age" name="age" type="text" class="form-control">
+		<input id="age" name="age" type="text" class="form-control" value="{{ isset($doctor) ? $doctor->age : '' }}">
 	</div>
 </div>
 <div class="form-row py-4">

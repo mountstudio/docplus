@@ -16,6 +16,7 @@
                     <th>Id</th>
                     <th>Название</th>
                     <th>Диагностика</th>
+                    <th>Action</th>
                 </tr>
                 </thead>
             </table>
@@ -40,7 +41,8 @@
                 columns: [
                     { data: 'id', name: 'id' },
                     { data: 'name', name: 'name' },
-                    { data: 'is_diagnostic', name: 'is_diagnostic' }
+                    { data: 'is_diagnostic', name: 'is_diagnostic' },
+                    { data: 'action', name: 'action' }
                 ]
             });
         });

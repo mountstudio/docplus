@@ -55,6 +55,11 @@ class AdminController extends Controller
         $categories = Category::query();
 
         return Datatables::of($categories)
+            ->addColumn('action', function ($model) {
+                return '<a href="'.route('category.show', $model->id).'" class="btn btn-sm btn-secondary"><i class="fas fa-info"></i> Show </a>
+                        <a href="'.route('category.edit', $model->id).'" class="btn btn-sm btn-primary"><i class="far fa-edit"></i> Edit</a>
+                        <a href="'.route('category.destroy', $model->id).'" data-model="category" data-id="'.$model->id.'" onclick="event.preventDefault();" data-toggle="modal" data-target="#delete-confirmation" class="btn btn-sm btn-danger"><i class="far fa-trash-alt"></i> Delete</a>';
+            })
             ->make(true);
     }
 
@@ -63,6 +68,11 @@ class AdminController extends Controller
         $services = Service::query();
 
         return Datatables::of($services)
+            ->addColumn('action', function ($model) {
+                return '<a href="'.route('service.show', $model->id).'" class="btn btn-sm btn-secondary"><i class="fas fa-info"></i> Show </a>
+                        <a href="'.route('service.edit', $model->id).'" class="btn btn-sm btn-primary"><i class="far fa-edit"></i> Edit</a>
+                        <a href="'.route('service.destroy', $model->id).'" data-model="service" data-id="'.$model->id.'" onclick="event.preventDefault();" data-toggle="modal" data-target="#delete-confirmation" class="btn btn-sm btn-danger"><i class="far fa-trash-alt"></i> Delete</a>';
+            })
             ->make(true);
     }
 
@@ -71,6 +81,11 @@ class AdminController extends Controller
         $specs = Spec::query();
 
         return Datatables::of($specs)
+            ->addColumn('action', function ($model) {
+                return '<a href="'.route('spec.show', $model->id).'" class="btn btn-sm btn-secondary"><i class="fas fa-info"></i> Show </a>
+                        <a href="'.route('spec.edit', $model->id).'" class="btn btn-sm btn-primary"><i class="far fa-edit"></i> Edit</a>
+                        <a href="'.route('spec.destroy', $model->id).'" data-model="spec" data-id="'.$model->id.'" onclick="event.preventDefault();" data-toggle="modal" data-target="#delete-confirmation" class="btn btn-sm btn-danger"><i class="far fa-trash-alt"></i> Delete</a>';
+            })
             ->make(true);
     }
 
