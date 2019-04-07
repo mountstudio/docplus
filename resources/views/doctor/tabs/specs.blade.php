@@ -3,8 +3,7 @@
 		<div class="col-10">
 			<div class="form-group">
 				<label for="clinics">Clinics</label>
-				<select class="form-control m-0 w-100" name="clinic" id="clinics">
-					<option value="">Choose...</option>
+				<select class="form-control m-0 w-100" name="clinics[]" id="clinics" multiple="">
 					@foreach($clinics as $clinic)
 						<option value="{{ $clinic->id }}">{{ $clinic->name }} | {{ $clinic->address }}</option>
 					@endforeach

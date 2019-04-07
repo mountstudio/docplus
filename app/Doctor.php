@@ -27,9 +27,9 @@ class Doctor extends Model
         return $this->belongsTo(User::class);
     }
 
-    public function clinic()
+    public function clinics()
     {
-        return $this->belongsTo(Clinic::class);
+        return $this->belongsToMany(Clinic::class);
     }
 
     public function specs()

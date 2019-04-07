@@ -1,7 +1,7 @@
-<div class="container py-5">
+<div class="container py-5 mt-5">
     <div class="row justify-content-center">
         <div class="col-12 mb-3">
-            <h2 class="h1 text-center text-uppercase">Клиники партнеры</h2>
+            <h3 class="text-secondary text-center font-weight-bold">КЛИНИКИ ПАРТНЕРЫ</h3>
         </div>
 
         <div class="col-2">

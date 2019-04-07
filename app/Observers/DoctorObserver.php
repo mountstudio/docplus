@@ -48,9 +48,10 @@ class DoctorObserver
             }
         }
 
-        if (request()->clinic) {
-            $doctor->clinic()->associate(Clinic::find(request()->clinic));
-            $doctor->save();
+        if (request()->clinics) {
+            foreach (request()->clinics as $clinic) {
+                $doctor->clinics()->attach($clinic);
+            }
         }
 
         if (request()->services) {

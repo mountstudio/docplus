@@ -5,9 +5,9 @@
     <form action="{{ route('schedule.store') }}" method="POST" class="col-8" enctype="multipart/form-data">
         @csrf
         <div class="form-row">
-        <div class="form-group col-6">
+        <div class="form-group col-4">
                 <label for="name_of_stock">Врач</label>
-                <select id="id" name="doctor_id" class="form-control {{ $errors->has('doctor_id') ? 'is-invalid' : '' }}">
+                <select id="doctor_id" name="doctor_id" class="form-control {{ $errors->has('doctor_id') ? 'is-invalid' : '' }}">
                     <option value="{{ null }}" {{ old('doctor_id') ? '' : 'selected' }} disabled>Выберите врача...</option>
                     @foreach($doctors as $doctor)
                         <option value="{{ $doctor->id }}" {{ old('doctor_id') == $doctor->id ? 'selected' : '' }}>{{ $doctor->name }}</option>
@@ -16,11 +16,20 @@
             </div>
 
 
-            <div class="form-group col-6">
+            <div class="form-group col-4">
                 <label for="start_date">Дата расписания</label>
                 <input class="form-control" type="date" id="date_of_record" name="schedule_date" required>
             </div>
 
+            <div id="hidden-select" class="form-group mx-4 d-none">
+                <label for="child-category">Выберите клинику</label>
+                <select name="clinic_id" id="clinic_id" class="form-control {{ $errors->has('clinic_id') ? 'is-invalid' : '' }}"></select>
+                @if($errors->has('clinic_id'))
+                    <span class="invalid-feedback" role="alert">
+						<strong>{{ $errors->first('clinic_id') }}</strong>
+					</span>
+                @endif
+            </div>
         </div>
 
         <div id="selects">
@@ -43,6 +52,7 @@
 
 @push('scripts')
     <script src="{{ asset('js/selectize.min.js') }}"></script>
+    <script src="{{ asset('js/select_clinic.js') }}"></script>
     <script>
         let option = [];
         let arrayProductIds = [];

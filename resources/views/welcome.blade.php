@@ -120,7 +120,7 @@
                 <div class="row py-2 justify-content-center">
                     <div class="col-12 col-md-4">
                         <p class="text-secondary display-2 font-weight-bold count text-center">
-                            {{\App\Feedback::all()->count()}}
+                            {{\App\Feedback::all()->where('is_active', true)->count()}}
                         </p>
                         <p class="text-secondary font-weight-bold text-uppercase  text-center"> ОТЗЫВОВ</p>
                     </div>

@@ -114,4 +114,15 @@ class DoctorController extends Controller
 
         return back();
     }
+    public function getChildren($id)
+    {
+        $result = '';
+
+        $doctor = Doctor::find($id);
+
+        $children = $doctor->clinics;
+        log($children);
+
+        return response()->json(['children' => $children]);
+    }
 }
