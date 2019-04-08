@@ -5,7 +5,7 @@
                 <label for="services">Services</label>
                 <select class="form-control m-0 w-100" name="services[]" id="services" multiple="">
                     @foreach($services as $service)
-                        <option value="{{ $service->id }}" {{ $doctor->services->where('id', $service->id)->isNotEmpty() ? 'selected' : '' }}>{{ $service->name }}</option>
+                        <option value="{{ $service->id }}" {{ isset($doctor) ? $doctor->services->where('id', $service->id)->isNotEmpty() ? 'selected' : '' : ''}}>{{ $service->name }}</option>
                     @endforeach
                 </select>
             </div>
