@@ -50,7 +50,6 @@ class DoctorController extends Controller
     public function show(Doctor $doctor)
     {
         $schedules = Doctor::getSchedule($doctor);
-        dd($doctor->clinics());
 
         $feedbacks = $doctor->feedbacks->where('is_active', true);
 
