@@ -1,5 +1,5 @@
 <div class="full_edu">
-    <p>{{ $doctor->educations ? implode(', ', $doctor->educations) : '' }}</p>
+    <p>{{ isset($doctor) ? $doctor->educations ? implode(', ', $doctor->educations) : '' : '' }}</p>
 </div>
 <div id="edu">
 

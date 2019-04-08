@@ -50,6 +50,7 @@ class DoctorController extends Controller
     public function show(Doctor $doctor)
     {
         $schedules = Doctor::getSchedule($doctor);
+        dd($doctor->clinics());
 
         $feedbacks = $doctor->feedbacks->where('is_active', true);
 
@@ -109,9 +110,8 @@ class DoctorController extends Controller
 
         $doctor = Doctor::find($id);
 
-        $children = $doctor->clinics;
-        log($children);
+        $clinics = $doctor->clinics;
 
-        return response()->json(['children' => $children]);
+        return response()->json(['clinics' => $clinics]);
     }
 }
