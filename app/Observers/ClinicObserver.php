@@ -17,6 +17,14 @@ class ClinicObserver
      */
     public function created(Clinic $clinic)
     {
+        if (request('fullDay')) {
+            $clinic->fullDay = true;
+            $clinic->save();
+        }
+        if (request('child')) {
+            $clinic->child = true;
+            $clinic->save();
+        }
         if (request()->categories) {
             foreach (request()->categories as $category) {
                 $clinic->categories()->attach($category);
@@ -29,7 +37,7 @@ class ClinicObserver
                  * @var Doctor $doctor
                  */
                 $doctor = Doctor::find($doctor);
-                $doctor->clinic()->associate($clinic);
+                $doctor->clinics()->attach($clinic);
                 $doctor->save();
             }
         }

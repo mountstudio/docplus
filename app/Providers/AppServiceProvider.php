@@ -10,6 +10,8 @@ use App\Observers\DoctorObserver;
 use App\Observers\FeedbackObserver;
 use App\Observers\QuestionObserver;
 use App\Question;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\ServiceProvider;
 
@@ -28,6 +30,10 @@ class AppServiceProvider extends ServiceProvider
         Clinic::observe(ClinicObserver::class);
         Feedback::observe(FeedbackObserver::class);
         Question::observe(QuestionObserver::class);
+
+        Blade::if('admin', function () {
+            return Auth::check() && Auth::user()->role === 'ROLE_ADMIN';
+        });
     }
 
     /**

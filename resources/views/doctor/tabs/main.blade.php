@@ -19,6 +19,20 @@
 		<input id="age" name="age" type="text" class="form-control" value="{{ isset($doctor) ? $doctor->age : '' }}">
 	</div>
 </div>
+<div class="form-row justify-content-center">
+	<div class="form-group col-auto">
+		<label for="home">
+			<input type="checkbox" name="home" id="home">
+			Выезд на дом
+		</label>
+	</div>
+	<div class="form-group col-auto">
+		<label for="child">
+			<input type="checkbox" name="child" id="child">
+			Детский
+		</label>
+	</div>
+</div>
 <div class="form-row py-4">
 	<div class="form-group col">
 		<label for="first">Степень</label>
