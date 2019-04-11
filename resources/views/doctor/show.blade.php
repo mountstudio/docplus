@@ -33,7 +33,9 @@
                         <span class="text-secondary">Проф. рейтинг - <strong>{{$doctor->prof_rating}}</strong></span>
                         <p class="text-secondary font-weight-light mt-2 mb-5">Приём от <del>{{ $doctor->price }}</del> сом<br>
                             <span class="text-primary font-weight-bold">{{ $doctor->price - $doctor->price * $doctor->discount / 100 }} сом</span></p>
-                        <a href="#feedbacks" class="text-secondary pt-md-5"><u>Отзывы о враче</u></a>
+                        @if($doctor->feedbacks->count() > 0)
+                            <a href="#feedbacks" class="text-secondary pt-md-5"><u>Отзывы о враче</u></a>
+                        @endif
 
 
                     </div>
@@ -62,11 +64,7 @@
         <div class="row justify-content-center">
             <div class="col-12 col-md-8 position-relative">
                 <h5 class="text-secondary font-weight-bold text-center">Информация о враче</h5>
-                <p class="text-secondary">Бобров Василий Елисеевич - врач окулист(офтальмолог), стаж 24 года.
-                    Скидка на прием врача! Все отзывы о враче. Запись онлайн или по телефону.</p>
-                <p class="text-secondary">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto corporis impedit mollitia soluta!
-                    Ab, animi consequatur eum, eveniet facere illo illum iure modi nemo nulla, quae quas qui repellat voluptate.
-                    <a class="text-primary" href="">др. подробная информация о враче</a></p>
+                <p>{{ $doctor->description }}</p>
 
                 <p class="text-secondary">Отзывы о врачах могут оставлять пациенты записавшиеся через сервис DOC+.
                     Каждый отзыв проходит тщательную проверку, что позволяет избежать заказныъ и рекламных отзывов.</p>
