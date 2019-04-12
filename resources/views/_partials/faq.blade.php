@@ -1,4 +1,4 @@
-<div class="container-fluid bg-doc">
+<div class="container-fluid bg-doc1">
     <div class="row">
         <div class="col-2 col-lg-3 bg-white d-none d-lg-flex">
             <img src="{{ asset('img/heart.png') }}" class="img-fluid align-self-center position-absolute w-85" style="right:-35px;" alt="">

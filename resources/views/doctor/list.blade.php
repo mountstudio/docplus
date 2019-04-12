@@ -25,7 +25,7 @@
 
 
     <div class="container my-5">
-        <p class="text-primary font-weight-bold mt-3 h3">
+        <p class="text-doc font-weight-bold mt-3 h3">
             Частные врачи Бишкека
             <span class="text-secondary font-weight-light">{{ $doctors->count() }}</span>
         </p>

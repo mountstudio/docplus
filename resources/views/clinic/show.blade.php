@@ -50,7 +50,7 @@
 
                                     <div class="col-md-12 col-lg-3 text-center">
                                         <button type="button"
-                                                class="btn btn-lg btn-info text-light font-weight-bold my-4 shadow text-uppercase h4 py-1"
+                                                class="btn btn-lg btn-info bg-doc text-light font-weight-bold my-4 shadow text-uppercase h4 py-1"
                                                 style="border-radius: 50px;">
                                             Записаться
                                         </button>

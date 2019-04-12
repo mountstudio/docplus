@@ -1,7 +1,7 @@
 
-<nav class="navbar navbar-expand-xl navbar-dark navbar-laravel  py-0 pl-0 shadow-lg border-bottom sticky-top px-0">
-    <div class="container-fluid px-0 bg-primary">
-        <div class="col-12 col-sm-12 col-xl-3 bg-light py-2 pl-0 shadow d-flex">
+<nav class="navbar navbar-expand-xl navbar-dark navbar-laravel  py-0 pl-0 shadow-lg fixed-top px-0" style="background-color:rgba(0, 0, 0, 0.4);">
+    <div class="container-fluid px-0">
+        <div class="col-12 col-sm-12 col-xl-3 py-2 pl-0 d-flex">
 
           {{--<div class="row">--}}
 

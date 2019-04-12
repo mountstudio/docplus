@@ -3,7 +3,7 @@
         <div class="row">
             <div class="col-md-3 col-lg-3 col-12 col-sm-6 my-3 pt-0">
                 <nav class="nav flex-column">
-                    <h4 class="text-primary">ГЛАВНОЕ</h4>
+                    <h4 class="text-doc">ГЛАВНОЕ</h4>
                     <a class="nav-link text-secondary" href="/about_us">О НАС</a>
                     {{--<a class="nav-link text-secondary" href="/contacts">КОНТАКТЫ</a>--}}
                     <a class="nav-link text-secondary" href="/question">FAQ</a>
@@ -14,7 +14,7 @@
 
             <div class="col-md-3 col-lg-3 col-12 col-sm-6 my-3 pt-3 pt-sm-0">
                 <nav class="nav flex-column">
-                    <h4 class="text-primary">ПАЦИЕНТУ</h4>
+                    <h4 class="text-doc">ПАЦИЕНТУ</h4>
                     <a class="nav-link text-secondary" href="{{ route('doctor.index') }}">ВРАЧИ</a>
                     <a class="nav-link text-secondary" href="/clinic">КЛИНИКИ</a>
                     <a class="nav-link text-secondary" href="/service">УСЛУГИ</a>

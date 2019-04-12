@@ -19,7 +19,7 @@
 
 
 
-    <div class="container-fluid bg-primary d-none d-md-block">
+    <div class="container-fluid bg-doc d-none d-md-block">
         <div class="container py-5">
             <div class="row py-3 text-uppercase text-white text-center">
                 <div class="col-md-12">
@@ -40,28 +40,28 @@
                 <div class="card shadow-sm border-0">
                     <img src="{{ asset('img/teeth-care.png') }}" alt="" class="card-img-top" >
                     <div class="card-body p-0 px-1">
-                        <p class="text-primary mb-2 font-weight-bold pt-3 text-uppercase text-center">Профилактический осмотр</p>
+                        <p class="text-doc mb-2 font-weight-bold pt-3 text-uppercase text-center">Профилактический осмотр</p>
                     </div>
                     <div class="card-footer border-0 text-center bg-white">
-                        <a href="" class="btn btn-primary btn-radius shadow text-uppercase">Записаться</a>
+                        <a href="" class="btn bg-doc2 btn-radius shadow text-uppercase text-white">Записаться</a>
                     </div>
                 </div>
                 <div class="card shadow-sm border-0">
                     <img src="{{ asset('img/classes.png') }}" alt="" class="card-img-top">
                     <div class="card-body p-0 px-1">
-                        <p class="text-primary mb-2 font-weight-bold pt-3 text-uppercase text-center">Проверка зрения</p>
+                        <p class="text-doc mb-2 font-weight-bold pt-3 text-uppercase text-center">Проверка зрения</p>
                     </div>
                     <div class="card-footer border-0 text-center bg-white">
-                        <a href="" class="btn btn-primary btn-radius shadow text-uppercase">Записаться</a>
+                        <a href="" class="btn bg-doc2 btn-radius shadow text-uppercase text-white">Записаться</a>
                     </div>
                 </div>
                 <div class="card shadow-sm border-0">
                     <img src="{{ asset('img/doctor-instr.png') }}" alt="" class="card-img-top">
                     <div class="card-body p-0 px-1">
-                        <p class="text-primary mb-2 font-weight-bold pt-3 text-uppercase text-center">Плановое посещение педиатра</p>
+                        <p class="text-doc mb-2 font-weight-bold pt-3 text-uppercase text-center">Плановое посещение педиатра</p>
                     </div>
                     <div class="card-footer border-0 text-center bg-white">
-                        <a href="" class="btn btn-primary btn-radius shadow text-uppercase">Записаться</a>
+                        <a href="" class="btn bg-doc2 btn-radius shadow text-uppercase text-white">Записаться</a>
                     </div>
                 </div>
             </div>

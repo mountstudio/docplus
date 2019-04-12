@@ -27,7 +27,7 @@
 
     <!-- Create table clinics and map -->
     <div class="container my-5">
-        <p class="text-primary font-weight-bold mt-3 h3">
+        <p class="text-doc font-weight-bold mt-3 h3">
             Клиники Бишкека
             <span class="text-secondary font-weight-light">{{ $clinics->count() }}</span>
         </p>

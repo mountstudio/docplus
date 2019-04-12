@@ -22,7 +22,7 @@
                         <br> Стаж 19 лет</em></p>
                 <p class="text-secondary font-weight-light m-0 mt-md-2 mb-lg-3">
                     Приём от
-                    <span class="text-primary font-weight-bold">{{ $clinic->price ?? '1400' }} руб.</span>
+                    <span class="text-doc font-weight-bold">{{ $clinic->price ?? '1400' }} руб.</span>
                     <i class="fas fa-exclamation-circle"></i>
                 </p>
                 <p class="text-secondary font-weight-light m-0 mt-md-2 mb-lg-3">
@@ -79,7 +79,7 @@
 
 
         <div class="row justify-content-center">
-            <button type="button" class="btn btn-lg btn-info text-light font-weight-bold my-2 shadow text-uppercase h4 py-1 border-bottom" style="border-radius: 50px;">
+            <button type="button" class="btn btn-lg btn-info bg-doc text-light font-weight-bold my-2 shadow text-uppercase h4 py-1 border-bottom" style="border-radius: 50px;">
                 Записаться
             </button>
         </div>

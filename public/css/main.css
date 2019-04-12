@@ -76,7 +76,22 @@
 }
 
 .bg-doc {
-    background-color: #29afd5 !important;
+    background-color: #5bb1b7 !important;
+}
+.bg-doc1 {
+    background-color: #bf79b8 !important;
+}
+.bg-doc2 {
+    background-color: #85dae0 !important;
+}
+.text-doc {
+    color:#5bb1b7 !important;
+}
+.text-doc1 {
+    color:#bf79b8 !important;
+}
+.text-doc2 {
+    color:#85dae0 !important;
 }
 
 p, h1, h2, h3, h4, h5, h6, pre, del, strong, span, a {

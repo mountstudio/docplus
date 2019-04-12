@@ -8,7 +8,8 @@
                 <div class="card-body">
                     <div class="row align-items-center">
                         <div class="col-10">
-                            Вы записывались к {{ $record->doctor->name }}
+                            Вы записывались к <a href="{{ route('doctor.show', $record->doctor->id) }}">{{ $record->doctor->fullName }}</a>
+                            <span class="float-right">{{$record->created_at}}</span>
                         </div>
                     </div>
                 </div>

@@ -1,11 +1,11 @@
 <div class="container justify-content-center">
-
+@include('_partials._head_rec')
     <!-- img -->
     <div class="row py-4">
         <div class="col-9">
             <div class="row">
                 <div class="col-12 col-md-4 text-center ">
-                    <img class="img-fluid" src="{{ $clinic->pics->first() ? asset('uploads/'.$clinic->pics->first()->image) : asset('img/doctor.jpg') }}" alt="">
+                    <img class="img-fluid rounded-circle mb-2 img-thumbnail" src="{{ $clinic->pics->first() ? asset('uploads/'.$clinic->pics->first()->image) : asset('img/doctor.jpg') }}" alt="">
                     <div class="row justify-content-center">
                         @include('_partials.stars', ['id' => 'clinic-show'])
                     </div>
@@ -15,7 +15,7 @@
                 <div class="col-8 d-none d-md-block">
                 <!--<img class="" src="{{ asset('img/cabinet-clinic.png') }}" alt="">-->
 
-                    @include('_partials.slider')
+                    {{--@include('_partials.slider')--}}
 
                 </div>
             </div>
@@ -63,7 +63,7 @@
                 </div>
                 <div class="col">
                     <p class="text-secondary small">
-                        г. Москва, Цветной б-р, д. 30, корп 2 Цветной бульвар, Трубная, Сухаревская
+                        {{$clinic->address}}
                     </p>
                 </div>
             </div>
@@ -92,12 +92,12 @@
                     </p>
                 </div>
                 <div class="col">
-                    <p class="font-weight-bold">+996 (700) 700 - 700</p>
+                    <p class="font-weight-bold">{{$clinic->phones}}</p>
                 </div>
             </div>
             <div class="row">
                 <div class="col-12 text-center">
-                    <button type="button" class="btn btn-lg btn-info text-light font-weight-bold mb-4 shadow text-uppercase h4 py-1" style="border-radius: 50px;">
+                    <button type="button" class="btn btn-lg btn-info bg-doc text-light font-weight-bold mb-4 shadow text-uppercase h4 py-1" style="border-radius: 50px;">
                         Записаться
                     </button>
                 </div>
