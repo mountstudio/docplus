@@ -1,5 +1,5 @@
 
-<nav class="navbar navbar-expand-xl navbar-dark navbar-laravel  py-0 pl-0 shadow-lg fixed-top px-0" style="background-color:rgba(0, 0, 0, 0.4);">
+<nav class="navbar navbar-expand-xl  py-0 pl-0 fixed-top px-0">
     <div class="container-fluid px-0">
         <div class="col-12 col-sm-12 col-xl-3 py-2 pl-0 d-flex">
 
@@ -34,7 +34,25 @@
 
             <!-- Right Side Of Navbar -->
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav text-center">
+            <ul class="navbar-nav text-center d-none d-lg-flex">
+
+                <li class="nav-item border-right">
+                    <a href="{{ route('doctor.index') }}" class="nav-link text-light font-weight-bold">Врачи ({{ \App\Doctor::all()->count() }})</a>
+                </li>
+                <li class="nav-item border-right">
+                    <a href="{{ route('clinic.index') }}" class="nav-link text-light font-weight-bold">Клиники ({{ \App\Clinic::all()->count() }})</a>
+                </li>
+                <li class="nav-item border-right">
+                    <a href="{{ route('service.index') }}" class="nav-link text-light font-weight-bold">Услуги ({{ \App\Service::getServices()->count() }})</a>
+                </li>
+                <li class="nav-item border-right">
+                    <a href="{{ route('service.diagnostics') }}" class="nav-link text-light font-weight-bold">Диагностики ({{ \App\Service::getDiagnostics()->count() }})</a>
+                </li>
+                <li class="nav-item">
+                    <a href="{{ route('question.index') }}" class="nav-link text-light font-weight-bold">Вопрос врачу</a>
+                </li>
+            </ul>
+            <ul class="navbar-nav text-center bg-doc d-block d-lg-none">
 
                 <li class="nav-item border-right">
                     <a href="{{ route('doctor.index') }}" class="nav-link text-light font-weight-bold">Врачи ({{ \App\Doctor::all()->count() }})</a>
@@ -61,7 +79,7 @@
                 </li>
             </ul>
 
-            <ul class="navbar-nav text-center ml-auto d-block d-md-none">
+            <ul class="navbar-nav text-center ml-auto d-block d-md-none bg-doc">
 
                 <!-- Authentication Links -->
                 @guest
@@ -161,9 +179,9 @@
                 @endguest
             </ul>
         </div>
-        <div class="row d-block d-xl-none mx-auto">
+        <div class="row d-block d-xl-none mx-auto w-100">
             <div class="collapse navbar-collapse text-center" id="navbarContactPhone">
-                <ul class="navbar-nav text-center  ">
+                <ul class="navbar-nav text-center bg-doc">
                     <li class="nav-item">
                         <a href="" class="nav-link text-light">+996(777)312-312</a>
                     </li>
