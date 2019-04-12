@@ -24,7 +24,7 @@
             </div>
             <div class="col-md-3 col-lg-4 col-12 my-3 pb-5 pb-md-0">
                 <nav class="nav flex-column">
-                    <a href="/"><img class="w-50" src={{asset('img/Logo.png')}} alt=""></a>
+                    <a href="/"><img class="w-50" src={{asset('img/doc_logo.png')}} alt=""></a>
                     <p class="pt-4 mb-0 text-secondary">Наши Контакты: +996(700)312-312</p>
                 </nav>
             </div>
