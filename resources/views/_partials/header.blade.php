@@ -20,7 +20,7 @@
 
               <div class="col-auto my-auto d-xl-none">
                   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarContactPhone" aria-controls="navbarContactPhone" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
-                      <span class="fas fa-phone fa-lg text-primary text-right"></span>
+                      <i class="fas fa-phone fa-lg text-primary text-right"></i>
                   </button>
               </div>
 
@@ -92,12 +92,14 @@
                         </a>
 
                         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item text-dark" href="{{ route('options') }}">Админка</a>
+                            @admin
+                                <a class="dropdown-item text-dark" href="{{ route('options') }}">Админка</a>
+                            @endadmin
                             <a class="dropdown-item text-dark" href="/profile">Личный кабинет</a>
                             <a class="dropdown-item text-dark" href="{{ route('logout') }}"
                                onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
-                                {{ __('Logout') }}
+                                {{ __('Выход') }}
                             </a>
 
                             <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
@@ -141,12 +143,14 @@
                         </a>
 
                         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item text-dark" href="{{ route('options') }}">Админка</a>
+                            @admin
+                                <a class="dropdown-item text-dark" href="{{ route('options') }}">Админка</a>
+                            @endadmin
                             <a class="dropdown-item text-dark" href="/profile">Личный кабинет</a>
                             <a class="dropdown-item text-dark" href="{{ route('logout') }}"
                                onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
-                                {{ __('Logout') }}
+                                {{ __('Выход') }}
                             </a>
 
                             <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">

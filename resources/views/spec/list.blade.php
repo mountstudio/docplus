@@ -1,4 +1,4 @@
-    <div class="col-12 d-none d-md-block">
+<div class="col-12 pb-4 pb-md-0">
     <h3 class="text-secondary text-center font-weight-bold">СПЕЦИАЛЬНОСТИ ВРАЧЕЙ</h3>
     <br>
 
@@ -7,7 +7,7 @@
     <div class="row">
 
         @foreach($specs as $key => $spec)
-            <div class="col-3">
+            <div class="col-12 col-md-3">
                 <div class="row">
                     <div class="col-2">
                         <h3 class="text-doc">{{ $key }}</h3>

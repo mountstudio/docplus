@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Clinic;
+use App\Pic;
 use App\Service;
 use App\Doctor;
 use App\Category;
@@ -67,6 +68,8 @@ class ClinicController extends Controller
 
     public function destroy(Clinic $clinic)
     {
+        $clinic->user->delete();
+        Pic::destroy($clinic->pics);
         $clinic->delete();
 
         return redirect()->back();
