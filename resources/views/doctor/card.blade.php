@@ -59,7 +59,7 @@
                 <div class="col-5 text-center">
                     <div class="position-relative">
                         @include('_partials.like', ['type' => 'Doctor', 'model' => $doctor])
-                        <img class="img-fluid rounded-circle mb-2 img-thumbnail" src="{{ $doctor->pics->first() ? asset('uploads/'.$doctor->pics->first()->image) : asset('img/doctor.jpg') }}" alt="">
+                        <img class="img-fluid rounded-circle mb-2 img-thumbnail" src="{{ $doctor->pics->first() ? asset('uploads/'.$doctor->pics->first()->image) : asset('img/noavatar.png') }}" alt="">
                     </div>
                     <div class="row justify-content-center">
                         @include('_partials.stars', ['id' => $doctor->id.'-doctor'])

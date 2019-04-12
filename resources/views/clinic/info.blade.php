@@ -5,7 +5,7 @@
         <div class="col-9">
             <div class="row">
                 <div class="col-12 col-md-4 text-center ">
-                    <img class="img-fluid rounded-circle mb-2 img-thumbnail" src="{{ $clinic->pics->first() ? asset('uploads/'.$clinic->pics->first()->image) : asset('img/doctor.jpg') }}" alt="">
+                    <img class="img-fluid rounded-circle mb-2 img-thumbnail" src="{{ $clinic->pics->first() ? asset('uploads/'.$clinic->pics->first()->image) : asset('img/noavatar.png') }}" alt="">
                     <div class="row justify-content-center">
                         @include('_partials.stars', ['id' => 'clinic-show'])
                     </div>
@@ -30,29 +30,25 @@
     <!-- adress form and contacts-->
     <div class="row pt-3">
         <div class="col-12 col-md-8">
+            @if($clinic->description)
             <p class="text-secondary">
             <h5>О клинике</h5>
-            <div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A cumque deserunt dolorem, in incidunt
-                inventore ipsa ipsum nam obcaecati officia officiis placeat possimus quaerat quisquam, repudiandae
-                tempora tempore ut vitae.
-            </div>
-            <div>Consectetur ex iure magnam voluptas voluptatum. A beatae blanditiis dolore, ducimus eos facere hic
-                iusto laboriosam maiores maxime, minus necessitatibus nesciunt, nihil odit praesentium quas quia quod
-                repellendus sapiente voluptatibus?
+            <div>
+                {{$clinic->description}}
             </div>
             </p>
 
             <p class="text-secondary">
             <h5>Специализация</h5>
-            <div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet aperiam cum deserunt dolores doloribus
-                esse explicabo, magni modi praesentium reprehenderit? Cumque distinctio dolorum excepturi fuga iure
-                laudantium libero nostrum repellat.
-            </div>
-            <div>Accusamus impedit ipsum nulla repudiandae sequi sint sunt. Accusantium aliquam corporis culpa delectus
-                distinctio dolorem eaque earum fugiat incidunt ipsum libero minus nobis, odio perspiciatis rerum sequi
-                temporibus tenetur vel.
+            <div>
+                {{$clinic->description}}
             </div>
             </p>
+            @else
+                <p class="text-secondary">
+                <h5>Информация отсутствует</h5>
+                </p>
+            @endif
         </div>
         <div class="col-12 col-md-4">
             <div class="row">

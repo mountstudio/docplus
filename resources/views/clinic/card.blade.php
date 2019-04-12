@@ -5,7 +5,7 @@
                 <div class="row justify-content-center">
                     <div class="col-12 col-md-8">
                         @include('_partials.like', ['type' => 'Clinic', 'model' => $clinic])
-                        <img class="img-card-doctors_clinics rounded-circle mb-2 img-thumbnail" src="{{ $clinic->pics->first() ? asset('uploads/'.$clinic->pics->first()->image) : asset('img/doctor.jpg') }}" alt="">
+                        <img class="img-card-doctors_clinics rounded-circle mb-2 img-thumbnail" src="{{ $clinic->pics->first() ? asset('uploads/'.$clinic->pics->first()->image) : asset('img/noavatar.png') }}" alt="">
                     </div>
                 </div>
 
@@ -22,7 +22,7 @@
                         <br> Стаж 19 лет</em></p>
                 <p class="text-secondary font-weight-light m-0 mt-md-2 mb-lg-3">
                     Приём от
-                    <span class="text-doc font-weight-bold">{{ $clinic->price ?? '1400' }} руб.</span>
+                    <span class="text-doc font-weight-bold">{{ $clinic->price ?? '1400' }} сом.</span>
                     <i class="fas fa-exclamation-circle"></i>
                 </p>
                 <p class="text-secondary font-weight-light m-0 mt-md-2 mb-lg-3">

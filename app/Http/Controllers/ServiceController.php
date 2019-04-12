@@ -66,7 +66,7 @@ class ServiceController extends Controller
 
     public function objects(Service $service)
     {
-        $services = Service::with(['doctors'])->where('category_id',$service->id)->get();
+        $services = Service::with(['doctors'])->where('id',$service->id)->get();
 
         $doctors = $services->map(function ($item, $key) {
             return $item->doctors;

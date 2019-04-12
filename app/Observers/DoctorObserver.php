@@ -23,7 +23,7 @@ class DoctorObserver
             $doctor->home = true;
             $doctor->save();
         }
-        if (\request('child')) {
+        if (request('child')) {
             $doctor->child = true;
             $doctor->save();
         }

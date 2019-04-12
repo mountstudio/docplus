@@ -11,7 +11,7 @@
                         <div class="row justify-content-center">
                             <div class="col-10 col-md-8">
                                 @include('_partials.like', ['type' => 'Doctor', 'model' => $doctor])
-                                <img class="img-card-doctors_clinics rounded-circle mb-2 img-thumbnail w-100" src="{{ $doctor->pics->first() ? asset('uploads/'.$doctor->pics->first()->image) : asset('img/doctor.jpg') }}" alt="">
+                                <img class="img-card-doctors_clinics rounded-circle mb-2 img-thumbnail w-100" src="{{ $doctor->pics->first() ? asset('uploads/'.$doctor->pics->first()->image) : asset('img/noavatar.png') }}" alt="">
                             </div>
                         </div>
 
@@ -37,7 +37,7 @@
                             @endif
                             <br> Стаж <span class="font-weight-bold h5">{{ $doctor->age ?? 19 }}</span> лет
                         </p>
-                        <p class="text-secondary font-weight-light">Профессиональный рейтинг - <span class="font-weight-bold h5">{{ $doctor->prof_rating }}</span></p>
+                        <p class="text-secondary font-weight-light">Профессиональный рейтинг - <span class="font-weight-bold h5">{{ $doctor->prof_rating }} </span><i class="fas fa-exclamation-circle"  data-toggle="tooltip" data-placement="top" title="Профессиональный рейтинг основан на трех критериях: Стаж, категория, степень."></i></p>
 
                         <p class="text-secondary font-weight-light m-0 mb-md-2">
                             Приём от
@@ -57,22 +57,22 @@
                         <p class="text-secondary font-weight-light small m-0">На прошлой неделе записалось два человека</p>
 
                     </div>
-                    <div class="col-auto d-md-block d-none">
-                        <div class="row">
-                            <div class="col-6">
-                                <p class="mb-0">Степень </p>
-                                <p class="mb-0">Категория </p>
-                                <p class="mb-0">Стаж </p>
-                                <p class="mb-0">Проф.рейтинг</p>
-                            </div>
-                            <div class="col-6">
-                                <div class="mb-1">@include('_partials.stars', ['id' => 'first'])</div>
-                                <div class="mb-1">@include('_partials.stars', ['id' => 'second'])</div>
-                                <div class="mb-1">@include('_partials.stars', ['id' => 'third'])</div>
-                                <div class="mb-1">@include('_partials.stars', ['id' => 'prof_rating'])</div>
-                            </div>
-                        </div>
-                    </div>
+                    {{--<div class="col-auto d-md-block d-none">--}}
+                        {{--<div class="row">--}}
+                            {{--<div class="col-6">--}}
+                                {{--<p class="mb-0">Степень </p>--}}
+                                {{--<p class="mb-0">Категория </p>--}}
+                                {{--<p class="mb-0">Стаж </p>--}}
+                                {{--<p class="mb-0">Проф.рейтинг</p>--}}
+                            {{--</div>--}}
+                            {{--<div class="col-6">--}}
+                                {{--<div class="mb-1">@include('_partials.stars', ['id' => 'first'])</div>--}}
+                                {{--<div class="mb-1">@include('_partials.stars', ['id' => 'second'])</div>--}}
+                                {{--<div class="mb-1">@include('_partials.stars', ['id' => 'third'])</div>--}}
+                                {{--<div class="mb-1">@include('_partials.stars', ['id' => 'prof_rating'])</div>--}}
+                            {{--</div>--}}
+                        {{--</div>--}}
+                    {{--</div>--}}
                 </div>
             </div>
     {{--<div class="col-12 d-md-none d-block">--}}
@@ -183,6 +183,18 @@
         </div>
         </div>
     </div>
+
+    @if($doctor->clinics)
+    <div class="container py-4">
+            <div class="row">
+                <div class="col">
+                    @foreach($doctor->clinics as $clinic)
+                        @include('clinic.card')
+                    @endforeach
+                </div>
+            </div>
+    </div>
+    @endif
 @endsection
 
 @push('styles')
