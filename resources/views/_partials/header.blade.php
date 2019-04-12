@@ -1,5 +1,5 @@
 
-<nav class="navbar navbar-expand-xl  py-0 pl-0 fixed-top px-0">
+<nav class="navbar navbar-expand-xl  py-0 pl-0 fixed-top px-0" style="background: rgba(0,0,0,.4)">
     <div class="container-fluid px-0">
         <div class="col-12 col-sm-12 col-xl-3 py-2 pl-0 d-flex">
 
@@ -7,20 +7,20 @@
 
               <div class="col-auto my-auto d-xl-none">
                   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
-                      <i class="fas fa-bars fa-lg text-primary "></i>
+                      <i class="fas fa-bars fa-lg text-doc "></i>
                   </button>
               </div>
 
 
               <div class="col text-center">
                   <a class="navbar-brand m-0" href="{{ url('/') }}">
-                      <img class="w-50 mx-auto" src={{asset('img/Logo.png')}} alt="">
+                      <img class="w-50 mx-auto" src={{asset('img/doc_logo.png')}} alt="">
                   </a>
               </div>
 
               <div class="col-auto my-auto d-xl-none">
                   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarContactPhone" aria-controls="navbarContactPhone" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
-                      <i class="fas fa-phone fa-lg text-primary text-right"></i>
+                      <i class="fas fa-phone fa-lg text-doc text-right"></i>
                   </button>
               </div>
 
@@ -198,17 +198,17 @@
 </nav>
 
 <nav class="d-xl-none navbar fixed-bottom navbar-expand-lg px-0 py-0">
-    <div class="container-fluid bg-primary">
-        <div class="col-3 border-left border-right border-blue-light">
+    <div class="container-fluid bg-doc">
+        <div class="col-3 border-left border-right border-teal-light">
             <a href="{{ route('doctor.index') }}" class="nav-link text-light text-center"><i class="fas fa-user-md fa-lg"></i></a>
         </div>
-        <div class="col-3 border-left border-right border-blue-light">
+        <div class="col-3 border-left border-right border-teal-light">
             <a href="{{ route('clinic.index') }}" class="nav-link text-light text-center"><i class="fas fa-clinic-medical fa-lg"></i></a>
         </div>
-        <div class="col-3 border-left border-right border-blue-light">
+        <div class="col-3 border-left border-right border-teal-light">
             <a href="{{ route('service.index') }}" class="nav-link text-light text-center"><i class="fas fa-briefcase-medical fa-lg"></i></a>
         </div>
-        <div class="col-3 border-left border-right border-blue-light">
+        <div class="col-3 border-left border-right border-teal-light">
             <a href="{{ route('service.diagnostics') }}" class="nav-link text-light text-center"><i class="fas fa-diagnoses fa-lg"></i></a>
         </div>
     </div>

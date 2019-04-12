@@ -38,30 +38,24 @@
 
             <div class="card-deck col-11 col-md-10 col-lg-8">
                 <div class="card shadow-sm border-0">
-                    <img src="{{ asset('img/teeth-care.png') }}" alt="" class="card-img-top" >
-                    <div class="card-body p-0 px-1">
-                        <p class="text-doc mb-2 font-weight-bold pt-3 text-uppercase text-center">Профилактический осмотр</p>
-                    </div>
-                    <div class="card-footer border-0 text-center bg-white">
-                        <a href="" class="btn bg-doc2 btn-radius shadow text-uppercase text-white">Записаться</a>
+                    <div class="backdrop"></div>
+                    <img src="{{ asset('img/teeth-care.png') }}" alt="" class="card-img" >
+                    <div class="card-img-overlay p-0 px-1 d-flex justify-content-center">
+                        <p class="text-white  align-self-end h4 mb-2 font-weight-bold text-uppercase text-center">Профилактический осмотр</p>
                     </div>
                 </div>
                 <div class="card shadow-sm border-0">
-                    <img src="{{ asset('img/classes.png') }}" alt="" class="card-img-top">
-                    <div class="card-body p-0 px-1">
-                        <p class="text-doc mb-2 font-weight-bold pt-3 text-uppercase text-center">Проверка зрения</p>
-                    </div>
-                    <div class="card-footer border-0 text-center bg-white">
-                        <a href="" class="btn bg-doc2 btn-radius shadow text-uppercase text-white">Записаться</a>
+                    <div class="backdrop"></div>
+                    <img src="{{ asset('img/classes.png') }}" alt="" class="card-img">
+                    <div class="card-img-overlay p-0 px-1 d-flex justify-content-center">
+                        <p class="text-white  align-self-end h4 mb-2 font-weight-bold text-uppercase text-center">Проверка зрения</p>
                     </div>
                 </div>
                 <div class="card shadow-sm border-0">
-                    <img src="{{ asset('img/doctor-instr.png') }}" alt="" class="card-img-top">
-                    <div class="card-body p-0 px-1">
-                        <p class="text-doc mb-2 font-weight-bold pt-3 text-uppercase text-center">Плановое посещение педиатра</p>
-                    </div>
-                    <div class="card-footer border-0 text-center bg-white">
-                        <a href="" class="btn bg-doc2 btn-radius shadow text-uppercase text-white">Записаться</a>
+                    <div class="backdrop"></div>
+                    <img src="{{ asset('img/doctor-instr.png') }}" alt="" class="card-img">
+                    <div class="card-img-overlay p-0 px-1 d-flex justify-content-center">
+                        <p class="text-white  align-self-end h4 mb-2 font-weight-bold text-uppercase text-center">Плановое посещение педиатра</p>
                     </div>
                 </div>
             </div>
@@ -189,7 +183,7 @@
             margin: 10,
             nav: true,
             dots: false,
-            navText: ['<span class="fas fa-chevron-left fa-2x"></span>','<span class="fas fa-chevron-right fa-2x"></span>'],
+            navText: ['<i class="text-white fas fa-chevron-left fa-2x"></i>','<i class="text-white fas fa-chevron-right fa-2x"></i>'],
         })
     </script>
     <script>
