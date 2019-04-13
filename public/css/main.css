@@ -94,6 +94,16 @@
     color:#85dae0 !important;
 }
 
+.border-doc {
+    border-color: #5bb1b7 !important;
+}
+.border-doc1 {
+    border-color: #bf79b8 !important;
+}
+.border-doc2 {
+    border-color: #85dae0 !important;
+}
+
 p, h1, h2, h3, h4, h5, h6, pre, del, strong, span, a {
     font-family: 'Montserrat', sans-serif !important;
 }
