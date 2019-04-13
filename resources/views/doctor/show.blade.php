@@ -26,9 +26,7 @@
                         {{--<p class="text-muted font-weight-light mb-0 small">Профессиональный рейтинг врача</p>--}}
                     </div>
                     <div class="col col-md-auto mt-3 mt-md-0">
-                        <a href="{{ route('doctor.show', $doctor->id) }}">
-                            <h3 class="text-secondary text-center text-md-left h2 mt-3 mt-md-0">{{ $doctor->fullName ?? 'Бобров Василий Елисеевич' }}</h3>
-                        </a>
+                            <h3 class="text-secondary text-center text-md-left h2 mt-3 mt-md-0 font-weight-bold">{{ $doctor->fullName ?? 'Бобров Василий Елисеевич' }}</h3>
                         <p class="text-secondary font-weight-light">
                             @if(isset($doctor))
                                 {{ $doctor->specs->implode('name', ', ') }}
@@ -92,23 +90,20 @@
     <div class="d-md-block d-none">
     <div class="container py-4">
         <div class="row justify-content-center">
-            <div class="col-12 col-md-8 position-relative">
-                <h5 class="text-secondary font-weight-bold text-center">Информация о враче</h5>
-                <p>{{ $doctor->description }}</p>
-
-                <p class="text-secondary">Отзывы о врачах могут оставлять пациенты записавшиеся через сервис DOC+.
-                    Каждый отзыв проходит тщательную проверку, что позволяет избежать заказныъ и рекламных отзывов.</p>
-                {{--<div class="row">--}}
-                    {{--<div class="col-5">--}}
-                {{--<p class="text-secondary font-weight-bold ml-1">ВНИМАТЕЛЬНОСТЬ</p>--}}
-                {{--<p class="text-secondary font-weight-bold ml-1">МАНЕРЫ</p>--}}
-                {{--<p class="text-secondary font-weight-bold ml-1">ВРЕМЯ ОЖИДАНИЯ</p>--}}
-                {{--</div>--}}
-                    {{--@include('_partials.stars', ['class' => 'doctor-attent'])<br>--}}
-                    {{--@include('_partials.stars', ['class' => 'doctor-manner'])<br>--}}
-                    {{--@include('_partials.stars', ['class' => 'doctor-time'])--}}
-                {{--</div>--}}
-        </div>
+            <div class="col-12 col-md-8">
+                @if($doctor->description)
+                    <p>
+                    <h5 class="text-secondary font-weight-bold">Информация о враче</h5>
+                    <div>
+                        <span class="text-secondary">{{$doctor->description}}</span>
+                    </div>
+                    </p>
+                @else
+                    <p>
+                    <h5 class="text-secondary font-weight-bold">Информация отсутствует</h5>
+                    </p>
+                @endif
+            </div>
 
             <div class="col">
 
@@ -117,6 +112,7 @@
             </div>
 
         </div>
+
 
 
     </div>
@@ -129,7 +125,10 @@
 
 
     @include('_partials.form-feedback')
-
+<div class="container">
+    <p class="text-secondary">Отзывы о врачах могут оставлять пациенты записавшиеся через сервис DOC+.
+        Каждый отзыв проходит тщательную проверку, что позволяет избежать заказных и рекламных отзывов.</p>
+</div>
     </div>
 
     <div class="d-md-none d-block">
@@ -185,6 +184,13 @@
     </div>
 
     @if($doctor->clinics)
+        <div class="container mt-5">
+            <div class="row justify-content-center">
+                <div class="col-12 mb-3">
+                    <h3 class="text-secondary text-center font-weight-bold">Клиники врача</h3>
+                </div>
+            </div>
+        </div>
     <div class="container py-4">
             <div class="row">
                 <div class="col">
@@ -213,7 +219,7 @@
             spacing: "5px",
         });
 
-        $('.rateYo-doctor-attent').rateYo({
+        $('#rateYo-doctor-attent').rateYo({
             rating: "{!! $doctor->attent_rating !!}",
             readOnly: true,
             ratedFill: "red",
@@ -221,7 +227,7 @@
             spacing: "5px",
         });
 
-        $('.rateYo-doctor-manner').rateYo({
+        $('#rateYo-doctor-manner').rateYo({
             rating: "{!! $doctor->manner_rating !!}",
             readOnly: true,
             ratedFill: "red",
@@ -229,7 +235,7 @@
             spacing: "5px",
         });
 
-        $('.rateYo-doctor-time').rateYo({
+        $('#rateYo-doctor-time').rateYo({
             rating: "{!! $doctor->time_rating !!}",
             readOnly: true,
             ratedFill: "red",

@@ -53,7 +53,6 @@ class CategoryController extends Controller
         $doctors = $specs->map(function ($item, $key) {
             return $item->doctors;
         })->flatten()->unique('id');
-
         return view('category.show',[
             'doctors' => $doctors,
         ]);

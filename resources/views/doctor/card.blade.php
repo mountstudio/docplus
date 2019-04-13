@@ -64,11 +64,12 @@
                     <div class="row justify-content-center">
                         @include('_partials.stars', ['id' => $doctor->id.'-doctor'])
                     </div>
+                    <p class="text-muted font-weight-light mt-3 mb-0 small">Рейтинг врача на основе {{$doctor->feedbacks->count()}} отзывов</p>
                 </div>
 
                 <div class="col">
                     <a href="{{ route('doctor.show', $doctor->id) }}">
-                        <p class="text-secondary h3 m-0 mb-md-2">{{ $doctor->fullName ?? 'Бобров Василий Елисеевич' }}</p>
+                        <p class="text-secondary h3 m-0 mb-md-2 font-weight-bold">{{ $doctor->fullName ?? 'Бобров Василий Елисеевич' }}</p>
                     </a>
 
                     <p class="text-secondary font-weight-light h6 my-3"><em>
