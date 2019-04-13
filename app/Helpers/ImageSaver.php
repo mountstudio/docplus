@@ -13,13 +13,15 @@ class ImageSaver
      * @param $prefix
      * @return string
      */
-    public static function save(UploadedFile $file, $dir, $prefix)
+    public static function save(UploadedFile $file, $dir, $prefix, $params = [])
     {
         $filename = uniqid($prefix . '_') . '.' . mb_strtolower($file->getClientOriginalExtension());
 
-        Image::make($file)
-            ->resize(500, 500)
-            ->save(public_path($dir .'/'. $filename), 40);
+        $img = Image::make($file);
+        if (array_key_exists('width', $params) && array_key_exists('height', $params)) {
+            $img->resize($params['width'], $params['height']);
+        }
+        $img->save(public_path($dir .'/'. $filename), 40);
 
         return $filename;
     }

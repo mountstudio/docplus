@@ -60,11 +60,13 @@ class User extends Authenticatable
         $data = $data->validate([
             'name' => ['required', 'string', 'max:255'],
             'last_name' => ['required', 'string', 'max:255'],
+            'patronymic' => ['sometimes', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:6', 'confirmed'],
         ]);
 
         return User::create([
+            'patronymic' => $data['patronymic'],
             'name' => $data['name'],
             'last_name' => $data['last_name'],
             'email' => $data['email'],

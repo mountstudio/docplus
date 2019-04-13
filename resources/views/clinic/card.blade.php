@@ -5,7 +5,7 @@
                 <div class="row justify-content-center">
                     <div class="col-12 col-md-8">
                         @include('_partials.like', ['type' => 'Clinic', 'model' => $clinic])
-                        <img class="img-card-doctors_clinics rounded-circle mb-2 img-thumbnail" src="{{ $clinic->pics->first() ? asset('uploads/'.$clinic->pics->first()->image) : asset('img/noavatar.png') }}" alt="">
+                        <img class="img-card-doctors_clinics rounded-circle mb-2 img-thumbnail" src="{{ $clinic->logo && file_exists(public_path('uploads/'.$clinic->logo)) ? asset('uploads/'.$clinic->logo) : asset('img/noavatar.png') }}" alt="">
                     </div>
                 </div>
 

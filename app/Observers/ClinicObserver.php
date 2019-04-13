@@ -42,17 +42,22 @@ class ClinicObserver
             }
         }
 
-        if (request()->allFiles()) {
-            foreach (request()->allFiles() as $input) {
-                foreach ($input as $file) {
-                    $fileName = ImageSaver::save($file, 'uploads', 'clinic');
+        if (request('logo')) {
+            $fileName = ImageSaver::save(request('logo'), 'uploads', 'clinic_logo', ['width' => 500, 'height' => 500]);
 
-                    $pic = Pic::create([
-                        'image' => $fileName,
-                    ]);
+            $clinic->logo = $fileName;
+            $clinic->save();
+        }
 
-                    $clinic->pics()->attach($pic->id);
-                }
+        if (request('pics')) {
+            foreach (request('pics') as $file) {
+                $fileName = ImageSaver::save($file, 'uploads', 'clinic');
+
+                $pic = Pic::create([
+                    'image' => $fileName,
+                ]);
+
+                $clinic->pics()->attach($pic->id);
             }
         }
 

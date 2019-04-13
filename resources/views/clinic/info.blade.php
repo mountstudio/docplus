@@ -7,7 +7,7 @@
                 <div class="row justify-content-center">
                     <div class="col-10 col-md-8">
                         @include('_partials.like', ['type' => 'Clinic', 'model' => $clinic])
-                        <img class="img-card-doctors_clinics rounded-circle mb-2 img-thumbnail w-100" src="{{ $clinic->pics->first() ? asset('uploads/'.$clinic->pics->first()->image) : asset('img/noavatar.png') }}" alt="">
+                        <img class="img-card-doctors_clinics rounded-circle mb-2 img-thumbnail w-100" src="{{ $clinic->logo && file_exists(public_path('uploads/'.$clinic->logo)) ? asset('uploads/'.$clinic->logo) : asset('img/noavatar.png') }}" alt="">
                     </div>
                 </div>
 
@@ -24,7 +24,7 @@
                 <h3 class="text-secondary text-center text-md-left h2 mt-3 mt-md-0 font-weight-bold">{{ $clinic->name }}</h3>
                 <p class="text-secondary font-weight-light m-0 mb-md-2">
                     Телефон для записи: <br>
-                    <span class="font-weight-bold h5">+996 (777) 777-777</span>
+                    <span class="font-weight-bold h5">{{ $clinic->phones }}</span>
                 </p>
                 <a href="#feedbacks" class="text-secondary pt-md-5 d-md-block d-none"><u>Отзывы о клинике</u></a>
                 <p class="text-secondary font-weight-light small m-0">На прошлой неделе записалось два человека</p>

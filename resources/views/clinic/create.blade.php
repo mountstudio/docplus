@@ -25,10 +25,10 @@
                 @include('clinic.tabs.services')
             </div>
             <div class="tab-pane fade" id="images" role="tabpanel" aria-labelledby="images-tab">
-                @include('doctor.tabs.images')
+                @include('clinic.tabs.images')
             </div>
             <div class="tab-pane fade" id="save" role="tabpanel" aria-labelledby="save-tab">
-                @include('doctor.tabs.save')
+                @include('clinic.tabs.save')
             </div>
         </div>
     </form>
@@ -46,6 +46,9 @@
     <script src="{{ asset('js/file-upload-with-preview.js') }}"></script>
     <script>
         var upload = new FileUploadWithPreview('myUniqueUploadId')
+    </script>
+    <script>
+        var uploadLogo = new FileUploadWithPreview('myUniqueLogoUploadId')
     </script>
 
     <script>
