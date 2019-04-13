@@ -12,11 +12,11 @@
                 <div class="row justify-content-center">
                     @include('_partials.stars', ['id' => $clinic->id.'-clinic'])
                 </div>
-                <p class="text-muted font-weight-light mt-3 mb-0 small">Превосходный клиника на основе 171 отзыв</p>
+                <p class="text-muted font-weight-light mt-3 mb-0 small">Рейтинг клиники на основе {{$clinic->feedbacks->count()}} отзывов</p>
             </div>
             <div class="col-7">
                 <a href="{{ route('clinic.show', $clinic->id) }}">
-                    <span class="text-secondary h3 mt-5 mb-2">{{ $clinic->name ?? 'Бобров Василий Елисеевич' }}</span>
+                    <span class="text-secondary h3 mt-5 mb-2 font-weight-bold">{{ $clinic->name ?? 'Бобров Василий Елисеевич' }}</span>
                 </a>
                 <p class="text-secondary font-weight-light h6 my-3"><em>
                         <br> Стаж 19 лет</em></p>

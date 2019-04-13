@@ -1,5 +1,5 @@
 @isset($id)
-    <div class="rateYo-{{ isset($class) ? $class : '' }}" id="rateYo"></div>
+    <div class="rateYo" id="rateYo-{{ isset($id) ? $id : '' }}"></div>
 @else
-    <div class="rateYo-{{ isset($class) ? $class : '' }}"></div>
+    <div class="rateYo"></div>
 @endisset
