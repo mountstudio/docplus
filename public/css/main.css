@@ -118,6 +118,10 @@ table.specs td.name span:after{
 
 
 
+#logo {
+    width: 50% !important;
+    height: auto !important;
+}
 
 @media screen and (max-width: 1100px) {
     .star {
@@ -133,9 +137,18 @@ table.specs td.name span:after{
         left: 5px !important;
         font-size: 2em !important;
     }
+
+    #logo {
+        width: 20% !important;
+        height: auto !important;
+    }
 }
 
 @media (max-width: 768px) {
+    #logo {
+        width: 25% !important;
+        height: auto !important;
+    }
     .like-container {
         width: 42px !important;
         height: 42px !important;
@@ -219,6 +232,10 @@ table.specs td.name span:after{
     }
 }
 @media screen and (max-width: 400px) {
+    #logo {
+        width: 50% !important;
+        height: auto !important;
+    }
     .star {
         width: 10px;
         height: auto;
@@ -239,7 +256,6 @@ table.specs td.name span:after{
     border-radius: 0;
     border: none;
 }
-
 
 
 /* carousel*/

@@ -42,6 +42,13 @@ class DoctorController extends Controller
 
         $request->merge(['user_id' => $user->id]);
 
+        if ($request->child) {
+            $request->merge(['child' => true]);
+        }
+        if ($request->home) {
+            $request->merge(['home' => true]);
+        }
+
         $doctor = Doctor::create($request->all());
 
         return redirect()->route('doctor.admin');

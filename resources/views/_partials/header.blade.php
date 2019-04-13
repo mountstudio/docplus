@@ -14,7 +14,7 @@
 
               <div class="col text-center">
                   <a class="navbar-brand m-0" href="{{ url('/') }}">
-                      <img class="w-50 mx-auto" src={{asset('img/doc_logo.png')}} alt="">
+                      <img class="" id="logo" src={{asset('img/doc_logo.png')}} alt="">
                   </a>
               </div>
 
