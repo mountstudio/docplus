@@ -23,7 +23,7 @@
     <nav class="navbar font-weight-normal shadow-sm navbar-expand-md navbar-light bg-white">
         <div class="container">
             <a class="navbar-brand" href="{{ url('/') }}">
-                <img class="w-50" src={{asset('img/logo.png')}} alt="">
+                <img style="width:15%;" src={{asset('img/doc_logo.png')}} alt="">
             </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
                     aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">

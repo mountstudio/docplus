@@ -103,11 +103,11 @@
             <div class="col-12 py-5">
 
                 <div class="row justify-content-center mb-4 align-items-center">
-                    <div class="col col-md-auto text-center">
-                        <img class="img-fluid " src="{{ asset('img/logo.png') }}" alt="">
+                    <div class="col col-md-3 text-center">
+                        <img class="img-fluid" src="{{ asset('img/doc_logo.png') }}" alt="">
                     </div>
                     <div class="col-auto">
-                        <p class="text-center text-primary font-weight-bold text-uppercase h4 m-0">Доверяют</p>
+                        <p class="text-center text-doc font-weight-bold text-uppercase h4 m-0">Доверяют</p>
                     </div>
                 </div>
 

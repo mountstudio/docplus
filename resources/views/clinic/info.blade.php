@@ -73,80 +73,104 @@
 
     <!-- secondary line -->
     <div class="row bg-secondary pt-1 my-3"></div>
-
-
-    <!-- adress form and contacts-->
     <div class="row pt-3">
-        <div class="col-12 col-md-8">
-            @if($clinic->description)
-            <p class="text-secondary">
-            <h5>О клинике</h5>
-            <div>
-                {{$clinic->description}}
-            </div>
-            </p>
+    <ul class="nav nav-tabs" id="myTab" role="tablist">
+            <li class="nav-item">
+                <a class="nav-link active" id="" data-toggle="tab" href="#information" role="tab" aria-controls="" aria-selected="true">Информация</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" id="" data-toggle="tab" href="#gallery" role="tab" aria-controls="" aria-selected="true">Галерея</a>
+            </li>
+    </ul>
+    <div class="tab-content" id="myTabContent">
+            <div class="tab-pane fade show active" id="information" role="tabpanel" aria-labelledby="">
+                <div class="col-12 col-md-8">
+                    @if($clinic->description)
+                        <p class="text-secondary">
+                        <h5>О клинике</h5>
+                        <div>
+                            {{$clinic->description}}
+                        </div>
+                        </p>
 
-            <p class="text-secondary">
-            <h5>Специализация</h5>
-            <div>
-                {{$clinic->description}}
+                        <p class="text-secondary">
+                        <h5>Специализация</h5>
+                        <div>
+                            {{$clinic->description}}
+                        </div>
+                        </p>
+                    @else
+                        <p class="text-secondary">
+                        <h5>Информация отсутствует</h5>
+                        </p>
+                    @endif
+                </div>
+                <div class="col-12 col-md-4">
+                    <div class="row">
+                        <div class="col-auto">
+                            <p class="text-secondary small">
+                                <i class="fas fa-map-marker-alt fa-2x"></i>
+                            </p>
+                        </div>
+                        <div class="col">
+                            <p class="text-secondary small">
+                                {{$clinic->address}}
+                            </p>
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <div class="col-auto">
+                            <p class="text-secondary small">
+                                <i class="far fa-clock fa-2x"></i>
+                            </p>
+                        </div>
+                        <div class="col">
+                            <p class="text-secondary small w-50 m-0">
+                                пн-пт:         <span class="float-right">08:00 - 21:00</span>
+                            </p>
+                            <p class="text-secondary small w-50 m-0">
+                                сб:            <span class="float-right">08:00 - 21:00</span>
+                            </p>
+                            <p class="text-secondary small w-50 m-0">
+                                вс:            <span class="float-right">08:00 - 21:00</span>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-auto">
+                            <p class="text-secondary small">
+                                <i class="fas fa-phone fa-2x"></i>
+                            </p>
+                        </div>
+                        <div class="col">
+                            <p class="font-weight-bold">{{$clinic->phones}}</p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12 text-center">
+                            <button type="button" class="btn btn-lg btn-info bg-doc text-light font-weight-bold mb-4 shadow text-uppercase h4 py-1" style="border-radius: 50px;">
+                                Записаться
+                            </button>
+                        </div>
+                    </div>
+                </div>
             </div>
-            </p>
-            @else
-                <p class="text-secondary">
-                <h5>Информация отсутствует</h5>
-                </p>
-            @endif
+        <div class="tab-pane fade" id="gallery" role="tabpanel" aria-labelledby="">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-md-6 col-10" style=" padding:12px;">
+                        <div class="owl-carousel owl-theme">
+                            @foreach($clinic->pics as $pic)
+                            <div class="item"><img src="{{ asset('uploads/'.$pic->image) }}" alt=""></div>
+                            @endforeach
+                        </div>
+                    </div>
+                </div>
         </div>
-        <div class="col-12 col-md-4">
-            <div class="row">
-                <div class="col-auto">
-                    <p class="text-secondary small">
-                        <i class="fas fa-map-marker-alt fa-2x"></i>
-                    </p>
-                </div>
-                <div class="col">
-                    <p class="text-secondary small">
-                        {{$clinic->address}}
-                    </p>
-                </div>
-            </div>
-            <div class="row mb-3">
-                <div class="col-auto">
-                    <p class="text-secondary small">
-                        <i class="far fa-clock fa-2x"></i>
-                    </p>
-                </div>
-                <div class="col">
-                    <p class="text-secondary small w-50 m-0">
-                        пн-пт:         <span class="float-right">08:00 - 21:00</span>
-                    </p>
-                    <p class="text-secondary small w-50 m-0">
-                        сб:            <span class="float-right">08:00 - 21:00</span>
-                    </p>
-                    <p class="text-secondary small w-50 m-0">
-                        вс:            <span class="float-right">08:00 - 21:00</span>
-                    </p>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-auto">
-                    <p class="text-secondary small">
-                        <i class="fas fa-phone fa-2x"></i>
-                    </p>
-                </div>
-                <div class="col">
-                    <p class="font-weight-bold">{{$clinic->phones}}</p>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-12 text-center">
-                    <button type="button" class="btn btn-lg btn-info bg-doc text-light font-weight-bold mb-4 shadow text-uppercase h4 py-1" style="border-radius: 50px;">
-                        Записаться
-                    </button>
-                </div>
-            </div>
-        </div>
+    </div>
+    <!-- adress form and contacts-->
+
+
     </div>
 
     @if(count($clinic->services) > 1)
@@ -216,6 +240,7 @@
             </div>
         </div>
     </div>
+</div>
 </div>
 
 @push('styles')
