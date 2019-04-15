@@ -65,6 +65,7 @@ class ClinicController extends Controller
     public function update(Request $request, Clinic $clinic)
     {
         $clinic->update($request->all());
+        $clinic->save();
 
         return redirect()->route('clinic.admin');
     }
