@@ -18,8 +18,6 @@
                 <a href="{{ route('clinic.show', $clinic->id) }}">
                     <span class="text-secondary h3 mt-5 mb-2 font-weight-bold">{{ $clinic->name ?? 'Бобров Василий Елисеевич' }}</span>
                 </a>
-                <p class="text-secondary font-weight-light h6 my-3"><em>
-                        <br> Стаж 19 лет</em></p>
                 <p class="text-secondary font-weight-light m-0 mt-md-2 mb-lg-3">
                     Приём от
                     <span class="text-doc font-weight-bold">{{ $clinic->price ?? '1400' }} сом.</span>
@@ -78,12 +76,13 @@
         </div>
 
 
-        <div class="row justify-content-center">
-            <button type="button" class="btn btn-lg btn-info bg-doc text-light font-weight-bold my-2 shadow text-uppercase h4 py-1 border-bottom" style="border-radius: 50px;">
-                Записаться
-            </button>
-        </div>
+        {{--<div class="row justify-content-center">--}}
+            {{--<button type="button" data-toggle="modal" data-target="#servicerecordModal" class="btn btn-lg btn-info bg-doc text-light font-weight-bold my-2 shadow text-uppercase h4 py-1 border-bottom" style="border-radius: 50px;">--}}
+                {{--Записаться--}}
+            {{--</button>--}}
+        {{--</div>--}}
 
+        {{--@include('_partials.modals.service_record_modal')--}}
 
     </div>
 

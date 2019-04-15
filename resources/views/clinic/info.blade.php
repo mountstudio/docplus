@@ -73,7 +73,7 @@
 
     <!-- secondary line -->
     <div class="row bg-secondary pt-1 my-3"></div>
-    <div class="row pt-3">
+
     <ul class="nav nav-tabs" id="myTab" role="tablist">
             <li class="nav-item">
                 <a class="nav-link active" id="" data-toggle="tab" href="#information" role="tab" aria-controls="" aria-selected="true">Информация</a>
@@ -84,6 +84,7 @@
     </ul>
     <div class="tab-content" id="myTabContent">
             <div class="tab-pane fade show active" id="information" role="tabpanel" aria-labelledby="">
+                <div class="row pt-3">
                 <div class="col-12 col-md-8">
                     @if($clinic->description)
                         <p class="text-secondary">
@@ -148,12 +149,14 @@
                     </div>
                     <div class="row">
                         <div class="col-12 text-center">
-                            <button type="button" class="btn btn-lg btn-info bg-doc text-light font-weight-bold mb-4 shadow text-uppercase h4 py-1" style="border-radius: 50px;">
+                            <button type="button" data-toggle="modal" data-target="#servicerecordModal" class="btn btn-lg btn-info bg-doc text-light font-weight-bold mb-4 shadow text-uppercase h4 py-1" style="border-radius: 50px;">
                                 Записаться
                             </button>
                         </div>
                     </div>
+                    @include('_partials.modals.service_record_modal')
                 </div>
+            </div>
             </div>
         <div class="tab-pane fade" id="gallery" role="tabpanel" aria-labelledby="">
             <div class="container">
@@ -173,6 +176,7 @@
 
     </div>
 
+
     @if(count($clinic->services) > 1)
     <div class="py-3 d-none d-md-block">
             <p class="h3 py-4">Цены на диагностические услуги</p>
@@ -181,7 +185,7 @@
             <div class="col-6 pr-1">
                     <div class="row">
                         <div class="col-8 text-secondary py-2">
-                            <a href="" data-toggle="modal" data-target="#service" class="h4">{{$service->name}}</a>
+                            <a href="" data-toggle="modal" data-target="#servicerecordModal" class="h4">{{$service->name}}</a>
                         </div>
                         <div class="col-4 py-2">
                             <span class="h4">{{$service->pivot->service_price}} сом</span>
@@ -193,54 +197,7 @@
     </div>
         @endif
 
-    <div class="modal fade" id="service" tabindex="-1" role="form" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title text-secondary" id="exampleModalLabel">Введите свои данные</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div>
-                    <div class="modal-body">
-                        <form class="text-secondary" action="" method="POST">
-                            @csrf
-                            <div class="form-group">
-                                <label for="recipient-name" class="col-form-label">Введите вашу фамилию:</label>
-                                <input type="text" name="last_name" class="form-control" id="recipient-name" placeholder="Ваша фамилия" value="{{ Auth::check() ? Auth::user()->last_name : '' }}" required {{ Auth::check() ? 'disabled' : '' }}>
-                                @auth
-                                    <input type="hidden" name="last_name" class="form-control" value="{{ Auth::user()->last_name }}" required>
-                                @endauth
-                            </div>
-                            <div class="form-group">
-                                <label for="recipient-name" class="col-form-label">Введите ваше имя:</label>
-                                <input type="text" name="name" class="form-control" id="recipient-name" placeholder="Ваше имя" value="{{ Auth::check() ? Auth::user()->name : '' }}" required {{ Auth::check() ? 'disabled' : '' }}>
-                                @auth
-                                    <input type="hidden" name="name" class="form-control" value="{{ Auth::user()->name }}" required>
-                                @endauth
-                            </div>
-                            <input type="hidden" name="schedule_id" id="schedule_id">
-
-                            <div class="form-group">
-                                <label for="recipient-name" class="col-form-label">Введите ваш телефон:</label>
-                                <input type="tel" name="phone_number" class="form-control" placeholder="Номер телефона">
-                            </div>
-                            <p class=" h6">*на указанный вами номер будет отправлено SMS с кодом подтверждения</p>
-                            <div class="row">
-                                <div class="col-4">
-                                    <button type="submit" class="btn btn-outline-success my-4">Отправить</button>
-                                </div>
-                            </div>
-
-                        </form>
-
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
+    @include('_partials.modals.service_record_modal')
 </div>
 
 @push('styles')

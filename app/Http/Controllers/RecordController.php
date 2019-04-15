@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Clinic;
 use App\Doctor;
 use App\Notifications\NewRecordNotification;
 use App\Record;
@@ -24,32 +25,53 @@ class RecordController extends Controller
     public function store(Request $request)
     {
         $schedule = Schedule::find($request->schedule_id);
-
         if ($schedule) {
             $record = Record::create([
                 'schedule_id' => $schedule->id,
                 'user_id' => Auth::id(),
                 'name' => $request->name,
                 'phone_number' => $request->phone_number,
+                'lastname' => $request->lastname
             ]);
             $schedule->active = 1;
             $schedule->save();
+        }
+        else {
 
-            $doctor = $schedule->doctor;
-
-            $doctor->user->notify(new NewRecordNotification($record));
-        } else {
             $record = Record::create([
                 'schedule_id' => null,
                 'user_id' => Auth::id(),
                 'name' => $request->name,
                 'phone_number' => $request->phone_number,
-                'doctor_id' => $request->doctor_id,
+                'lastname' => $request->lastname
             ]);
-
+        }
+        if($request->doctor_id)
+        {
+            $record->doctor_id = $request->doctor_id;
+            if($request->spec_id)
+            {
+                $record->spec_id = $request->spec_id;
+            }
+            if($request->doctor_clinic_id)
+            {
+                $record->doctor_clinic_id = $request->doctor_clinic_id;
+            }
             $doctor = Doctor::find($request->doctor_id);
             $doctor->user->notify(new NewRecordNotification($record));
         }
+        if($request->clinic_id)
+        {
+            $record->clinic_id = $request->clinic_id;
+            if($request->service_id)
+            {
+                $record->service_id = $request->service_id;
+            }
+            $clinic = Clinic::find($request->clinic_id);
+            $clinic->user->notify(new NewRecordNotification($record));
+        }
+
+        $record->save();
 
 
 

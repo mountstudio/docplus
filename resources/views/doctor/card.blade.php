@@ -107,52 +107,13 @@
         </p>
 
 
-        <div class="row justify-content-center">
-            <button data-toggle="modal" data-target="#recModal" class="btn btn-lg bg-doc text-light font-weight-bold my-2 shadow text-uppercase h4 py-1 border-bottom" style="border-radius: 50px;">
-                Записаться
-            </button>
-        </div>
+        {{--<div class="row justify-content-center">--}}
+            {{--<button data-toggle="modal" data-target="#doctorrecordModal" class="btn btn-lg bg-doc text-light font-weight-bold my-2 shadow text-uppercase h4 py-1 border-bottom" style="border-radius: 50px;">--}}
+                {{--Записаться--}}
+            {{--</button>--}}
+        {{--</div>--}}
 
-        <div class="modal fade" id="recModal" tabindex="-1" role="form" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title text-secondary" id="exampleModalLabel">Введите свои данные</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <div>
-                        <div class="modal-body">
-                            <form class="text-secondary" action="{{ route('record.store') }}" method="POST">
-                                @csrf
-                                <div class="form-group">
-                                    <label for="recipient-name" class="col-form-label">Введите ваше имя:</label>
-                                    <input type="text" name="name" class="form-control" id="recipient-name" placeholder="Ваше имя" value="{{ Auth::check() ? Auth::user()->name : '' }}" required {{ Auth::check() ? 'disabled' : '' }}>
-                                    @auth
-                                        <input type="hidden" name="name" class="form-control" value="{{ Auth::user()->name }}" required>
-                                    @endauth
-                                </div>
-                                <input type="hidden" name="doctor_id" id="doctor_id" value="{{ $doctor->id }}">
-
-                                <div class="form-group">
-                                    <label for="recipient-name" class="col-form-label">Введите ваш телефон:</label>
-                                    <input type="tel" name="phone_number" class="form-control" placeholder="Номер телефона">
-                                </div>
-                                <p class=" h6">*на указанный вами номер будет отправлено SMS с кодом подтверждения</p>
-                                <div class="row">
-                                    <div class="col-4">
-                                        <button type="submit" class="btn btn-outline-success my-4">Отправить</button>
-                                    </div>
-                                </div>
-
-                            </form>
-
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+        {{--@include('_partials.modals.doctor_record_modal')--}}
 
 
         <p class="text-secondary text-md-left text-center small">

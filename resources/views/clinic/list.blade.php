@@ -50,6 +50,7 @@
                     @include('clinic.card')
                 @endforeach
             </div>
+
         </div>
 
         <div class="row">
