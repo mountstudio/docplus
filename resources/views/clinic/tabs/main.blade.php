@@ -1,5 +1,5 @@
 
-@include('user.register', ['doctor' => isset($clinic) ? $clinic : null])
+@include('user.register', ['doctor' => isset($clinic) ? $clinic : null, 'create' => $create])
 <div class="form-row">
     <div class="form-group col">
         <label for="name_of_clinic"></label>

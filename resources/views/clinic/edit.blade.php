@@ -20,7 +20,7 @@
         </ul>
         <div class="tab-content" id="myTabContent">
             <div class="tab-pane fade show active" id="main" role="tabpanel" aria-labelledby="main-tab">
-                @include('clinic.tabs.main')
+                @include('clinic.tabs.main', ['create' => false])
             </div>
             <div class="tab-pane fade" id="service" role="tabpanel" aria-labelledby="services-tab">
                 @include('clinic.tabs.services')

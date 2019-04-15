@@ -1,4 +1,4 @@
-@include('user.register')
+@include('user.register', ['doctor' => isset($doctor) ? $doctor : null, 'create' => $create])
 
 <div class="form-group">
 	<label for="address">Address</label>

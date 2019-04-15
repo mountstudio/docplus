@@ -22,7 +22,7 @@
         </ul>
         <div class="tab-content" id="myTabContent">
             <div class="tab-pane fade show active" id="main" role="tabpanel" aria-labelledby="main-tab">
-                @include('doctor.tabs.main')
+                @include('doctor.tabs.main', ['create' => true])
             </div>
             <div class="tab-pane fade" id="images" role="tabpanel" aria-labelledby="images-tab">
                 @include('doctor.tabs.images')
