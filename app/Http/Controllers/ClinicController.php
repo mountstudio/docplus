@@ -51,11 +51,24 @@ class ClinicController extends Controller
 
     public function edit(Clinic $clinic)
     {
+        $doctors = Doctor::all()->where('clinic_id', '<>', $clinic->id);
+
         return view('clinic.edit', [
             'clinic' => $clinic,
             'clinics' => Clinic::all(),
+            'categories' => Category::all(),
+            'doctors' => $doctors,
+            'services' => Service::all(),
         ]);
     }
+
+    public function update(Request $request, Clinic $clinic)
+    {
+        $clinic->update($request->all());
+
+        return redirect()->route('clinic.admin');
+    }
+
     public function show($id)
     {
         $clinic = Clinic::find($id);

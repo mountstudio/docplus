@@ -2,22 +2,22 @@
         <div class="form-row">
             <div class="col form-group">
                 <label for="name">Имя</label>
-                <input id="name" type="text" name="name" class="form-control" value="{{ isset($doctor) ? $doctor->user->name : '' }}">
+                <input id="name" type="text" name="name" class="form-control" value="{{ isset($doctor) && $doctor ? $doctor->user->name : '' }}">
             </div>
             <div class="col form-group">
                 <label for="last_name">Фамилия</label>
-                <input id="last_name" name="last_name" type="text" class="form-control" value="{{ isset($doctor) ? $doctor->user->last_name : '' }}">
+                <input id="last_name" name="last_name" type="text" class="form-control" value="{{ isset($doctor) && $doctor ? $doctor->user->last_name : '' }}">
             </div>
             <div class="col form-group">
                 <label for="patronymic">Отчество</label>
-                <input id="patronymic" name="patronymic" type="text" class="form-control" value="{{ isset($doctor) ? $doctor->user->patronymic : '' }}">
+                <input id="patronymic" name="patronymic" type="text" class="form-control" value="{{ isset($doctor) && $doctor ? $doctor->user->patronymic : '' }}">
             </div>
         </div>
 @endif
 
 <div class="form-group">
     <label for="email">E-mail</label>
-    <input id="email" name="email" type="email" class="form-control" value="{{ isset($doctor) ? $doctor->user->email : '' }}">
+    <input id="email" name="email" type="email" class="form-control" value="{{ isset($doctor) && $doctor ? $doctor->user->email : '' }}">
 </div>
 
 <div class="form-group row">
