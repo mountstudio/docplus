@@ -274,19 +274,15 @@ table.specs td.name span:after{
 }
 
 /* owl nav */
-.owl-prev span, .owl-next span {
+.owl-prev i, .owl-next i {
     color: #FFF;
-}
-
-.owl-prev span:hover,
-.owl-next span:hover {
-    color: #8199A3;
 }
 
 .owl-prev, .owl-next {
     position: absolute;
-    top: 0;
-    height: 100%;
+    top: 40%;
+    height: auto;
+    padding: 5px!important;
 }
 
 .owl-prev {
