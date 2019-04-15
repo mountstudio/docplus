@@ -12,7 +12,7 @@
                 <div class="row justify-content-center">
                     @include('_partials.stars', ['id' => $clinic->id.'-clinic'])
                 </div>
-                <p class="text-muted font-weight-light mt-3 mb-0 small">Рейтинг клиники на основе {{$clinic->feedbacks->count()}} отзывов</p>
+                <p class="text-muted font-weight-light mt-3 mb-0 small d-md-block d-none">Рейтинг клиники на основе {{$clinic->feedbacks->count()}} отзывов</p>
             </div>
             <div class="col-7">
                 <a href="{{ route('clinic.show', $clinic->id) }}">
@@ -23,7 +23,7 @@
                     <span class="text-doc font-weight-bold">{{ $clinic->price ?? '1400' }} сом.</span>
                     <i class="fas fa-exclamation-circle"></i>
                 </p>
-                <p class="text-secondary font-weight-light m-0 mt-md-2 mb-lg-3">
+                <p class="text-secondary font-weight-light m-0 mt-md-2 mb-lg-3 d-md-block d-none">
                     Телефон для записи: <br>
                     +996(777)777-777
                 </p>
@@ -33,7 +33,7 @@
         </div>
     </div>
 
-    <div class="col-12 col-md">
+    <div class="col-12 col-md d-md-block d-none">
         <div class="row">
             <div class="col-auto">
                 <p class="text-secondary small">

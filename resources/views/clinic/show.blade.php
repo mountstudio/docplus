@@ -68,9 +68,25 @@
         {{--</div>--}}
     {{--</div>--}}
 
-    <div class="container">
+        @if($clinic->doctors)
+            <div class="container mt-5">
+                <div class="row justify-content-center">
+                    <div class="col-12 mb-3">
+                        <h3 class="text-secondary text-center font-weight-bold">Врачи нашей клиники</h3>
+                    </div>
+                </div>
+            </div>
+            <div class="container py-4">
+                <div class="row justify-content-center">
+                    <div class="col-12">
+                        @foreach($clinic->doctors as $doctor)
+                            @include('doctor.card')
+                        @endforeach
+                    </div>
+                </div>
+            </div>
+        @endif
 
-    </div>
 @endsection
 
 
