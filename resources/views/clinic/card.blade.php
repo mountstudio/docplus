@@ -18,15 +18,6 @@
                 <a href="{{ route('clinic.show', $clinic->id) }}">
                     <span class="text-secondary h3 mt-5 mb-2 font-weight-bold">{{ $clinic->name ?? 'Бобров Василий Елисеевич' }}</span>
                 </a>
-                <p class="text-secondary font-weight-light m-0 mt-md-2 mb-lg-3">
-                    Приём от
-                    <span class="text-doc font-weight-bold">{{ $clinic->price ?? '1400' }} сом.</span>
-                    <i class="fas fa-exclamation-circle"></i>
-                </p>
-                <p class="text-secondary font-weight-light m-0 mt-md-2 mb-lg-3 d-md-block d-none">
-                    Телефон для записи: <br>
-                    +996(777)777-777
-                </p>
                 <p class="text-secondary font-weight-light small pt-3">На прошлой неделе записалось два человека</p>
 
             </div>
