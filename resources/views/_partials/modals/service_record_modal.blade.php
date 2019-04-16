@@ -52,7 +52,7 @@
                         <div class="form-group">
                             <label for="recipient-name" class="col-form-label">Введите вашу фамилию:</label>
                             <input type="text" name="lastname" class="form-control" id="recipient-lastname" placeholder="Ваша фамилия" required>
-                            <input type="hidden" name="lastname" class="form-control" value="{{ Auth::user()->lastname }}" required>
+                            <input type="hidden" name="lastname" class="form-control" value="{{ Auth::user()->last_name }}" required>
                         </div>
                         <input type="hidden" name="schedule_id" id="schedule_id">
                         <input type="hidden" name="clinic_id" id="clinic_id" value="{{$clinic->id}}">
