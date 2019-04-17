@@ -36,7 +36,7 @@ class DoctorObserver
         if (request()->allFiles()) {
             foreach (request()->allFiles() as $input) {
                 foreach ($input as $file) {
-                    $fileName = ImageSaver::save($file, 'uploads', 'doctor', ['width' => 500, 'height' => 500]);
+                    $fileName = ImageSaver::save($file, 'uploads', 'doctor');
 
                     $pic = new Pic([
                         'image' => $fileName,
