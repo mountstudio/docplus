@@ -12,7 +12,7 @@ class Clinic extends Model
 {
     protected $fillable = [
         'name', 'address', 'phones', 'clinic_rating', 'comfort_rating', 'discipline_rating', 'rating', 'user_id',
-        'title', 'description', 'keywords', 'type',
+        'title', 'description', 'keywords', 'logo', 'child', 'fullDay', 'type',
     ];
 
     protected $casts = [

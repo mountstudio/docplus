@@ -11,6 +11,20 @@ use Illuminate\Support\Facades\Hash;
 
 class DoctorObserver
 {
+    public function creating(Doctor $doctor)
+    {
+        if (request('home')) {
+            $doctor->home = true;
+        } else {
+            $doctor->home = false;
+        }
+        if (request('child')) {
+            $doctor->child = true;
+        } else {
+            $doctor->child = true;
+        }
+    }
+
     /**
      * Handle the doctor "created" event.
      *
@@ -19,19 +33,10 @@ class DoctorObserver
      */
     public function created(Doctor $doctor)
     {
-        if (request('home')) {
-            $doctor->home = true;
-            $doctor->save();
-        }
-        if (request('child')) {
-            $doctor->child = true;
-            $doctor->save();
-        }
-
         if (request()->allFiles()) {
             foreach (request()->allFiles() as $input) {
                 foreach ($input as $file) {
-                    $fileName = ImageSaver::save($file, 'uploads', 'doctor');
+                    $fileName = ImageSaver::save($file, 'uploads', 'doctor', ['width' => 500, 'height' => 500]);
 
                     $pic = new Pic([
                         'image' => $fileName,
@@ -59,6 +64,20 @@ class DoctorObserver
             foreach (request()->services as $service) {
                 $doctor->services()->attach($service);
             }
+        }
+    }
+
+    public function updating(Doctor $doctor)
+    {
+        if (request('home')) {
+            $doctor->home = true;
+        } else {
+            $doctor->home = false;
+        }
+        if (request('child')) {
+            $doctor->child = true;
+        } else {
+            $doctor->child = true;
         }
     }
 
