@@ -117,15 +117,15 @@ class SpecController extends Controller
 
     public function clinic(Request $request, $id, $spec)
     {
-
         $clinic = Clinic::find($id);
 
 
         $doctors = $clinic->doctors->filter(function($item, $key) use ($spec) {
             return $item->specs->where('id', $spec)->count() > 0;
         });
-        dd($doctors);
 
-        return back();
+        $spec = Spec::find($spec);
+
+        return view('clinic.doctors', ['doctors' => $doctors, 'clinic' => $clinic, 'spec' => $spec]);
     }
 }

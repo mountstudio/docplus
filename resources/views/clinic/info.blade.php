@@ -87,7 +87,7 @@
                         <p class="text-secondary mt-5">
                         <h5>Специализации</h5>
                     @foreach($specs as $spec)
-                            <a href="#">{{$spec->name}}</a>
+                            <a href="{{ route('clinic.doctor',[$clinic->id, $spec->id]) }}">{{$spec->name}}</a>
                     @endforeach
                         </p>
                     @else
