@@ -3,12 +3,12 @@
 @section('admin_content')
 
     <form action="{{ route('service.update', $service) }}" method="POST">
-        @csrf
         @method('PUT')
-        @include('seo')
+        @csrf
+        @include('seo', ['model' => $service])
         <div class="form-group">
             <label for="name_of_service"></label>
-            <input name="name" type="text" class="form-control {{ $errors->has('name') ? 'is-invalid' : '' }}" id="name_of_service" placeholder="Название Сервиса" value="{{$service->name}}">
+            <input name="name" type="text" class="form-control {{ $errors->has('name') ? 'is-invalid' : '' }}" id="name_of_service" placeholder="Название Сервиса" value="{{ $service->name }}">
             @if($errors->has('name'))
                 <span class="invalid-feedback" role="alert">
 					<strong>{{ $errors->first('name') }}</strong>
@@ -22,14 +22,14 @@
                 <option value="" disabled="">Choose...</option>
 
                 @foreach($categories as $category)
-                    <option value="{{ $category->id }}">{{ $category->name }}</option>
+                    <option value="{{ $category->id }}" {{ $category->id === $service->category->id ? 'selected' : '' }}>{{ $category->name }}</option>
                 @endforeach
 
             </select>
         </div>
 
         <div class="form-check">
-            <input type="checkbox" class="form-check-input"  name="is_diagnostic" id="exampleCheck2">
+            <input type="checkbox" class="form-check-input"  name="is_diagnostic" id="exampleCheck2" {{ $service->is_diagnostic ? 'checked' : '' }}>
             <label class="form-check-label" for="exampleCheck2">Диагностика</label>
         </div>
 

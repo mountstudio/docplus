@@ -61,9 +61,7 @@ class ServiceController extends Controller
     {
         if($request->is_diagnostic == 'on') {
             $request->merge(['is_diagnostic' => true]);
-        }
-        else
-        {
+        } else {
             $request->merge(['is_diagnostic' => false]);
         }
         $service->update($request->all());
