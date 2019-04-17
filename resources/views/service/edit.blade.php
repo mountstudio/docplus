@@ -19,7 +19,7 @@
         <div class="form-group">
             <label for="category">Choose category</label>
             <select name="category_id" id="category">
-                <option value="" disabled="">Choose...</option>
+                <option value="{{$service->category->id}}">{{$service->category->name}}</option>
 
                 @foreach($categories as $category)
                     <option value="{{ $category->id }}">{{ $category->name }}</option>
@@ -33,7 +33,7 @@
             <label class="form-check-label" for="exampleCheck2">Диагностика</label>
         </div>
 
-        <button type="submit" class="btn btn-primary">Создать</button>
+        <button type="submit" class="btn btn-primary">Изменить</button>
     </form>
 
 @endsection

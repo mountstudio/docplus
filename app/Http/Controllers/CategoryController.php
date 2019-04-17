@@ -37,6 +37,14 @@ class CategoryController extends Controller
             'categorys' => Category::all(),
         ]);
     }
+
+    public function update(Request $request, Category $category)
+    {
+        $category->update($request->all());
+
+        return redirect()->route('category.admin');
+    }
+
     public function destroy(Category $category)
     {
         $category->delete();

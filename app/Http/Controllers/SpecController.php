@@ -81,8 +81,10 @@ class SpecController extends Controller
      */
     public function edit(Spec $spec)
     {
+
         return view('spec.edit', [
             'spec' => $spec,
+            'categories' => Category::all(),
         ]);
     }
 
@@ -95,9 +97,9 @@ class SpecController extends Controller
      */
     public function update(Request $request, Spec $spec)
     {
-        $spec = Spec::update($request->all());
+        $spec->update($request->all());
 
-        return redirect()->route('spec.index');
+        return redirect()->route('spec.admin');
     }
 
     /**

@@ -39,6 +39,12 @@ Route::get('/getclinics', function () {
 Route::get('/getservices', function () {
     return view('service.index');
 })->name('service.admin');
+Route::get('/getcategories', function () {
+    return view('category.index');
+})->name('category.admin');
+Route::get('/getspecs', function () {
+    return view('spec.index');
+})->name('spec.admin');
 
 Route::get('/diagnostic', 'ServiceController@show_diagnostic')->name('service.diagnostics');
 
