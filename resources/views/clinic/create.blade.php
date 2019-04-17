@@ -62,6 +62,7 @@
     <script src="{{ asset('js/rateyo.js') }}"></script>
     <script>
         let rating_end = $("#rating_end").rateYo({
+        {{ old('rating') ? 'rating: '.old('rating').',': '' }}
             readOnly: true,
             ratedFill: "red",
             starWidth: "20px",
@@ -69,6 +70,7 @@
         });
 
         $("#clinic").rateYo({
+            {{ old('clinic_rating') ? 'rating: '.old('clinic_rating').',': '' }}
             fullStar: true,
             numStars: 5,
             ratedFill: "red",
@@ -86,6 +88,7 @@
             }
         });
         $("#comfort").rateYo({
+            {{ old('comfort_rating') ? 'rating: '.old('comfort_rating').',': '' }}
             fullStar: true,
             numStars: 5,
             ratedFill: "red",
@@ -103,6 +106,7 @@
             }
         });
         $("#discipline").rateYo({
+            {{ old('discipline_rating') ? 'rating: '.old('discipline_rating').',': '' }}
             fullStar: true,
             numStars: 5,
             ratedFill: "red",

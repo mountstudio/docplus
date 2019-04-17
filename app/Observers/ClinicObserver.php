@@ -9,6 +9,26 @@ use App\Pic;
 
 class ClinicObserver
 {
+    public function creating(Clinic $clinic)
+    {
+        if (request('fullDay')) {
+            $clinic->fullDay = true;
+        } else {
+            $clinic->fullDay = false;
+        }
+        if (request('child')) {
+            $clinic->child = true;
+        } else {
+            $clinic->child = false;
+        }
+
+        if (request('logo')) {
+            $fileName = ImageSaver::save(request('logo'), 'uploads', 'clinic_logo', ['width' => 500, 'height' => 500]);
+
+            $clinic->logo = $fileName;
+        }
+    }
+
     /**
      * Handle the clinic "created" event.
      *
@@ -17,14 +37,6 @@ class ClinicObserver
      */
     public function created(Clinic $clinic)
     {
-        if (request('fullDay')) {
-            $clinic->fullDay = true;
-            $clinic->save();
-        }
-        if (request('child')) {
-            $clinic->child = true;
-            $clinic->save();
-        }
         if (request()->categories) {
             foreach (request()->categories as $category) {
                 $clinic->categories()->attach($category);
@@ -40,13 +52,6 @@ class ClinicObserver
                 $doctor->clinics()->attach($clinic);
                 $doctor->save();
             }
-        }
-
-        if (request('logo')) {
-            $fileName = ImageSaver::save(request('logo'), 'uploads', 'clinic_logo', ['width' => 500, 'height' => 500]);
-
-            $clinic->logo = $fileName;
-            $clinic->save();
         }
 
         if (request('pics')) {
@@ -68,6 +73,26 @@ class ClinicObserver
         }
     }
 
+    public function updating(Clinic $clinic)
+    {
+        if (request('fullDay')) {
+            $clinic->fullDay = true;
+        } else {
+            $clinic->fullDay = false;
+        }
+        if (request('child')) {
+            $clinic->child = true;
+        } else {
+            $clinic->child = false;
+        }
+
+        if (request('logo')) {
+            $fileName = ImageSaver::save(request('logo'), 'uploads', 'clinic_logo', ['width' => 500, 'height' => 500]);
+
+            $clinic->logo = $fileName;
+        }
+    }
+
     /**
      * Handle the clinic "updated" event.
      *
@@ -76,14 +101,8 @@ class ClinicObserver
      */
     public function updated(Clinic $clinic)
     {
-        if (request('fullDay')) {
-            $clinic->fullDay = true;
-            $clinic->save();
-        }
-        if (request('child')) {
-            $clinic->child = true;
-            $clinic->save();
-        }
+        \Log::info('Clinic updated');
+
         if (request()->categories) {
             foreach (request()->categories as $category) {
                 $clinic->categories()->attach($category);
@@ -99,13 +118,6 @@ class ClinicObserver
                 $doctor->clinics()->attach($clinic);
                 $doctor->save();
             }
-        }
-
-        if (request('logo')) {
-            $fileName = ImageSaver::save(request('logo'), 'uploads', 'clinic_logo', ['width' => 500, 'height' => 500]);
-
-            $clinic->logo = $fileName;
-            $clinic->save();
         }
 
         if (request('pics')) {

@@ -33,13 +33,13 @@
 <div class="form-row justify-content-center">
     <div class="form-group col-auto">
         <label for="fullDay">
-            <input type="checkbox" name="fullDay" id="fullDay" {{ isset($clinic) && $clinic->fullDay ? 'checked' : '' }}>
+            <input type="checkbox" name="fullDay" id="fullDay" {{ (isset($clinic) && $clinic->fullDay) || old('fullDay') ? 'checked' : '' }}>
             Круглосуточно
         </label>
     </div>
     <div class="form-group col-auto">
         <label for="child">
-            <input type="checkbox" name="child" id="child" {{ isset($clinic) && $clinic->child ? 'checked' : '' }}>
+            <input type="checkbox" name="child" id="child" {{ (isset($clinic) && $clinic->child) || old('child') ? 'checked' : '' }}>
             Детский
         </label>
     </div>
@@ -68,25 +68,41 @@
     <div class="form-group col">
         <label for="clinic">Состояние клиники</label>
         <div id="clinic" class="rateYo"></div>
-        <input type="hidden" id="clinic_input" name="clinic_rating" value="{{ isset($clinic) && $clinic->clinic_rating ? $clinic->clinic_rating : '' }}">
+        @if(old('clinic_raing'))
+            <input type="hidden" id="clinic_input" name="clinic_rating" value="{{ old('clinic_rating') }}">
+        @else
+            <input type="hidden" id="clinic_input" name="clinic_rating" value="{{ isset($clinic) && $clinic->clinic_rating ? $clinic->clinic_rating : '' }}">
+        @endif
     </div>
 
     <div class="form-group col">
         <label for="comfort">Комфорт</label>
         <div id="comfort" class="rateYo"></div>
-        <input type="hidden" id="comfort_input" name="comfort_rating" value="{{ isset($clinic) && $clinic->comfort_rating ? $clinic->comfort_rating : '' }}">
+        @if(old('comfort_raing'))
+            <input type="hidden" id="comfort_input" name="comfort_rating" value="{{ old('comfort_rating') }}">
+        @else
+            <input type="hidden" id="comfort_input" name="comfort_rating" value="{{ isset($clinic) && $clinic->comfort_rating ? $clinic->comfort_rating : '' }}">
+        @endif
     </div>
 
     <div class="form-group col">
         <label for="discipline">Персонал</label>
         <div id="discipline" class="rateYo"></div>
-        <input type="hidden" id="discipline_input" name="discipline_rating" value="{{ isset($clinic) && $clinic->discipline_rating ? $clinic->discipline_rating : '' }}">
+        @if(old('discipline_raing'))
+            <input type="hidden" id="discipline_input" name="discipline_rating" value="{{ old('discipline_rating') }}">
+        @else
+            <input type="hidden" id="discipline_input" name="discipline_rating" value="{{ isset($clinic) && $clinic->discipline_rating ? $clinic->discipline_rating : '' }}">
+        @endif
     </div>
 
     <div class="form-group col">
         <label for="rating_end">Итоговый рейтинг</label>
         <div id="rating_end" class="rateYo"></div>
-        <input type="hidden" id="rating_end_input" name="rating" value="{{ isset($clinic) && $clinic->rating ? $clinic->rating : '' }}">
+        @if(old('raing'))
+            <input type="hidden" id="rating_end_input" name="rating" value="{{ old('rating') }}">
+        @else
+            <input type="hidden" id="rating_end_input" name="rating" value="{{ isset($clinic) && $clinic->rating ? $clinic->rating : '' }}">
+        @endif
     </div>
 </div>
 

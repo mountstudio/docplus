@@ -2,21 +2,21 @@
 
 <div class="form-group">
 	<label for="address">Address</label>
-	<input id="address" name="address" type="text" class="form-control" value="{{ isset($doctor) ? $doctor->address : '' }}">
+	<input id="address" name="address" type="text" class="form-control" value="{{ isset($doctor) ? $doctor->address : '' }}" required>
 </div>
 
 <div class="form-row">
 	<div class="form-group col">
 		<label for="price">Price</label>
-		<input id="price" name="price" type="text" class="form-control" value="{{ isset($doctor) ? $doctor->price : '' }}">
+		<input id="price" name="price" type="text" class="form-control" value="{{ isset($doctor) ? $doctor->price : '' }}" required>
 	</div>
 	<div class="form-group col">
 		<label for="discount">Discount</label>
-		<input id="discount" name="discount" type="text" class="form-control" value="{{ isset($doctor) ? $doctor->discount : '' }}">
+		<input id="discount" name="discount" type="text" class="form-control" value="{{ isset($doctor) ? $doctor->discount : '' }}" required>
 	</div>
 	<div class="form-group col">
 		<label for="age">Стаж</label>
-		<input id="age" name="age" type="text" class="form-control" value="{{ isset($doctor) ? $doctor->age : '' }}">
+		<input id="age" name="age" type="text" class="form-control" value="{{ isset($doctor) ? $doctor->age : '' }}" required>
 	</div>
 </div>
 <div class="form-row justify-content-center">
@@ -37,19 +37,19 @@
 	<div class="form-group col">
 		<label for="first">Степень</label>
 		<div id="first" class="rateYo"></div>
-		<input type="hidden" id="first_input" name="first">
+		<input type="hidden" id="first_input" name="first" required>
 	</div>
 
 	<div class="form-group col">
 		<label for="second">Категория</label>
 		<div id="second" class="rateYo"></div>
-		<input type="hidden" id="second_input" name="second">
+		<input type="hidden" id="second_input" name="second" required>
 	</div>
 
 	<div class="form-group col">
 		<label for="third">Стаж</label>
 		<div id="third" class="rateYo"></div>
-		<input type="hidden" id="third_input" name="third">
+		<input type="hidden" id="third_input" name="third" required>
 	</div>
 
 	<div class="form-group col">
