@@ -121,10 +121,9 @@ class SpecController extends Controller
         $clinic = Clinic::find($id);
 
 
-        $doctors = $clinic->doctors->map(function($item, $key)
-        {
-
-        })->flatten()->unique('id');
+        $doctors = $clinic->doctors->filter(function($item, $key) use ($spec) {
+            return $item->specs->where('id', $spec)->count() > 0;
+        });
         dd($doctors);
 
         return back();
