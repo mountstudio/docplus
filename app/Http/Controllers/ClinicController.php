@@ -7,6 +7,7 @@ use App\Pic;
 use App\Service;
 use App\Doctor;
 use App\Category;
+use App\Spec;
 use App\User;
 use Illuminate\Http\Request;
 
@@ -71,11 +72,17 @@ class ClinicController extends Controller
 
     public function show($id)
     {
+
         $clinic = Clinic::find($id);
+        $specs = $clinic->doctors->map(function($item, $key)
+        {
+            return $item->specs;
+        })->flatten()->unique('id');
 
         return view('clinic.show',[
             'clinic' => $clinic,
             'doctors' => $clinic->doctors,
+            'specs' => $specs,
         ]);
     }
 

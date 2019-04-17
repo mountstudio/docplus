@@ -18,13 +18,19 @@
                 <a href="{{ route('clinic.show', $clinic->id) }}">
                     <span class="text-secondary h3 mt-5 mb-2 font-weight-bold">{{ $clinic->name ?? 'Бобров Василий Елисеевич' }}</span>
                 </a>
-                <p class="text-secondary font-weight-light small pt-3">На прошлой неделе записалось два человека</p>
+                <p class="text-secondary font-weight-light h6 my-3"><em>
+                        @if($clinic->type)
+                            {{$clinic->type}}
+                            @endif
+                    </em></p>
+                <p class="text-secondary font-weight-light small pt-3 d-md-block d-none">На прошлой неделе записалось два человека</p>
 
             </div>
         </div>
     </div>
 
-    <div class="col-12 col-md d-md-block d-none">
+    <div class="border-top w-100 d-md-none d-block my-4"></div>
+    <div class="col-12 col-md">
         <div class="row">
             <div class="col-auto">
                 <p class="text-secondary small">
@@ -61,22 +67,23 @@
                     <i class="fas fa-phone fa-2x"></i>
                 </p>
             </div>
-            <div class="col">
-                <p class="font-weight-bold">{{$clinic->phones}}</p>
-            </div>
+            @if($clinic->phones)
+                <div class="col">
+                    <p class="font-weight-bold">{{$clinic->phones}}</p>
+                </div>
+            @endif
         </div>
 
 
         {{--<div class="row justify-content-center">--}}
-            {{--<button type="button" data-toggle="modal" data-target="#servicerecordModal" class="btn btn-lg btn-info bg-doc text-light font-weight-bold my-2 shadow text-uppercase h4 py-1 border-bottom" style="border-radius: 50px;">--}}
-                {{--Записаться--}}
-            {{--</button>--}}
+        {{--<button type="button" data-toggle="modal" data-target="#servicerecordModal" class="btn btn-lg btn-info bg-doc text-light font-weight-bold my-2 shadow text-uppercase h4 py-1 border-bottom" style="border-radius: 50px;">--}}
+        {{--Записаться--}}
+        {{--</button>--}}
         {{--</div>--}}
 
         {{--@include('_partials.modals.service_record_modal')--}}
 
     </div>
-
 </div>
 
 @push('styles')

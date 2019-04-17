@@ -94,11 +94,11 @@
                         </div>
                         </p>
 
-                        <p class="text-secondary">
-                        <h5>Специализация</h5>
-                        <div>
-                            {{$clinic->description}}
-                        </div>
+                        <p class="text-secondary mt-5">
+                        <h5>Специализации</h5>
+                    @foreach($specs as $spec)
+                            <a href="#">{{$spec->name}}</a>
+                    @endforeach
                         </p>
                     @else
                         <p class="text-secondary">

@@ -77,3 +77,4 @@ Route::get('/search', 'MainController@search')->name('search');
 Route::get('/like/{type}/{id}', 'LikeController@like')->name('like');
 Route::get('/activation/feedback/{feedback}', 'FeedbackController@activation')->name('feedback.activation');
 Route::get('/getchildren/{id}', 'DoctorController@getChildren')->name('getchildren');
+Route::get('/clinic.doctor/{id}/{spec}', 'SpecController@clinic')->name('clinic.doctor');

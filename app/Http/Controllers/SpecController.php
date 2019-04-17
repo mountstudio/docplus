@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Category;
+use App\Clinic;
 use App\Doctor;
 use App\Feedback;
 use App\Spec;
@@ -108,6 +109,21 @@ class SpecController extends Controller
     public function destroy(Spec $spec)
     {
         $spec->delete();
+
+        return back();
+    }
+
+    public function clinic(Request $request, $id, $spec)
+    {
+
+        $clinic = Clinic::find($id);
+
+
+        $doctors = $clinic->doctors->map(function($item, $key)
+        {
+
+        })->flatten()->unique('id');
+        dd($doctors);
 
         return back();
     }
