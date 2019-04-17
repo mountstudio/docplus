@@ -13,7 +13,9 @@ class ServiceController extends Controller
     {
         $services = Service::getServices()
             ->groupBy(function ($item, $key) {
-                return $item->category->name;
+                if(count($item->doctors) || count($item->clinics)){
+                    return $item->category->name;
+                }
             });
 
         return view('service.list',[
@@ -24,7 +26,9 @@ class ServiceController extends Controller
     {
         $services = Service::getDiagnostics()
             ->groupBy(function ($item, $key) {
+                if(count($item->doctors) || count($item->clinics)){
                 return $item->category->name;
+                }
             });
 
         return view('service.list',[

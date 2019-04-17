@@ -1,5 +1,5 @@
 @foreach($services as $service)
-    @if($service->doctors->count() || $service->clinics->count() != 0)
+    @if(count($service->doctors) || count($service->clinics))
         <li class="nav-item h6 my-0 ">
             <a class="nav-link py-1 text-black" href="/objects/{{$service->id}}">{{$service->name}}</a>
         </li>
