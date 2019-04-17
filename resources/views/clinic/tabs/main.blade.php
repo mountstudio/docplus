@@ -45,13 +45,14 @@
     </div>
 </div>
 
-<div class="form-group">
-    <label for="categories">Сategories</label>
-    <select class="form-control m-0 w-100" name="categories[]" id="categories" multiple="">
-        @foreach($categories as $category)
-            <option value="{{ $category->id }}" {{ isset($clinic) && !$clinic->categories->where('id', $category->id)->isEmpty() ? 'selected' : '' }}>{{ $category->name }}</option>
-        @endforeach
-    </select>
+<div class="form-group col">
+    <label for="type_of_clinic"></label>
+    <input name="type" type="text" class="form-control {{ $errors->has('type') ? 'is-invalid' : '' }}" id="type_of_clinic" placeholder="Тип Клиники" value="{{ isset($clinic) ? $clinic->type : old('type') }}">
+    @if($errors->has('type'))
+        <span class="invalid-feedback" role="alert">
+                <strong>{{ $errors->first('type') }}</strong>
+            </span>
+    @endif
 </div>
 
 <div class="form-group">

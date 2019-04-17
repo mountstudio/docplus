@@ -78,19 +78,20 @@
                 </p>
             </div>
         </div>
+                @if($doctor->phones)
         <div class="row">
             <div class="col-auto">
                 <p class="text-secondary small">
                     <i class="fas fa-phone fa-2x"></i>
                 </p>
             </div>
-            @if($doctor->phones)
+
             <div class="col">
                 <p class="font-weight-bold">{{$doctor->phones}}</p>
             </div>
-            @endif
-        </div>
 
+        </div>
+                @endif
 
         {{--<div class="row justify-content-center">--}}
         {{--<button type="button" data-toggle="modal" data-target="#servicerecordModal" class="btn btn-lg btn-info bg-doc text-light font-weight-bold my-2 shadow text-uppercase h4 py-1 border-bottom" style="border-radius: 50px;">--}}

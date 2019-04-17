@@ -73,11 +73,11 @@ class ClinicObserver
      */
 //    public function updated(Clinic $clinic)
 //    {
-//        if (request('fullDay')) {
+//        if (request('fullDay' == 'on')) {
 //            $clinic->fullDay = true;
 //            $clinic->save();
 //        }
-//        if (request('child')) {
+//        if (request('child' == 'on')) {
 //            $clinic->child = true;
 //            $clinic->save();
 //        }

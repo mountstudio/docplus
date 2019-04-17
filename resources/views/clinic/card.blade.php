@@ -61,18 +61,20 @@
                 </p>
             </div>
         </div>
+        @if($clinic->phones)
         <div class="row">
             <div class="col-auto">
                 <p class="text-secondary small">
                     <i class="fas fa-phone fa-2x"></i>
                 </p>
             </div>
-            @if($clinic->phones)
+
                 <div class="col">
                     <p class="font-weight-bold">{{$clinic->phones}}</p>
                 </div>
-            @endif
+
         </div>
+        @endif
 
 
         {{--<div class="row justify-content-center">--}}
