@@ -4,6 +4,7 @@ namespace App;
 
 use App\Doctor;
 use App\Category;
+use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Eloquent\Model;
 
 class Spec extends Model
@@ -21,4 +22,5 @@ class Spec extends Model
     {
     	return $this->belongsToMany(Doctor::class);
     }
+
 }

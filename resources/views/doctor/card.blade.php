@@ -5,7 +5,7 @@
                     <div class="row justify-content-center">
                         <div class="col-12 col-md-8">
                             @include('_partials.like', ['type' => 'Doctor', 'model' => $doctor])
-                            <img class="img-fluid rounded-circle mb-2 img-thumbnail" src="{{ $doctor->pics->first() ? asset('uploads/'.$doctor->pics->first()->image) : asset('img/noavatar.png') }}" alt="">
+                            <img class="img-fluid rounded-circle mb-2 img-thumbnail" src="{{ $doctor->pics->first() && file_exists(public_path('uploads/'.$doctor->pics->first()->image)) ? asset('uploads/'.$doctor->pics->first()->image) : asset('img/noavatar.png') }}" alt="">
                         </div>
                     </div>
 
@@ -14,7 +14,7 @@
                     </div>
                     <p class="text-muted font-weight-light mt-3 mb-0 small d-md-block d-none">Рейтинг клиники на основе {{$doctor->feedbacks->count()}} отзывов</p>
                 </div>
-                <div class="col mt-md-4 mt-0">
+                <div class="col mt-md-4 mt-0 px-md-0 px-0">
                     <a href="{{ route('doctor.show', $doctor->id) }}">
                         <p class="text-secondary h3 m-0 mb-md-2 font-weight-bold">{{ $doctor->fullName ?? 'Бобров Василий Елисеевич' }}</p>
                     </a>
@@ -24,11 +24,15 @@
                                 {{ $doctor->specs->implode('name', ', ') }}
                             @else
                                 Гастроэнтеролог, Терапевт
-                            @endif <br> Стаж {{ $doctor->age ?? 19 }} лет</em></p>
+                            @endif
+                            @if($doctor->age)
+                            <br> Стаж {{ $doctor->age }} лет
+                            @endif
+                        </em></p>
                     <p class="text-secondary font-weight-light m-0 mb-md-2">
                         Приём от
                         @if($doctor->discount)
-                            <span class="text-doc2 font-weight-bold"><del>{{ $doctor->price ?? '1400' }} сом</del></span>
+                            <span class="text-doc2 font-weight-bold"><del>{{ $doctor->price ?? '1400' }}</del></span>
                             <span>{{ round($doctor->price - $doctor->price * $doctor->discount / 100) }} сом</span>
                         @else
                             <span class="text-doc2 font-weight-bold">{{ $doctor->price ?? '1400' }} сом</span>
@@ -42,15 +46,15 @@
         </div>
 
 
-
-    <div class="col-12 col-md d-md-block d-none">
-        <div class="row">
-            <div class="col-auto">
-                <p class="text-secondary small">
-                    <i class="fas fa-map-marker-alt fa-2x"></i>
-                </p>
-            </div>
-            <div class="col">
+<div class="border-top w-100 d-md-none d-block my-4"></div>
+            <div class="col-12 col-md">
+                <div class="row">
+                    <div class="col-auto">
+                        <p class="text-secondary small">
+                            <i class="fas fa-map-marker-alt fa-2x"></i>
+                        </p>
+                    </div>
+                    <div class="col">
                 <p class="text-secondary small">
                     {{$doctor->address}}
                 </p>
@@ -74,17 +78,20 @@
                 </p>
             </div>
         </div>
+                @if($doctor->phones)
         <div class="row">
             <div class="col-auto">
                 <p class="text-secondary small">
                     <i class="fas fa-phone fa-2x"></i>
                 </p>
             </div>
+
             <div class="col">
                 <p class="font-weight-bold">{{$doctor->phones}}</p>
             </div>
-        </div>
 
+        </div>
+                @endif
 
         {{--<div class="row justify-content-center">--}}
         {{--<button type="button" data-toggle="modal" data-target="#servicerecordModal" class="btn btn-lg btn-info bg-doc text-light font-weight-bold my-2 shadow text-uppercase h4 py-1 border-bottom" style="border-radius: 50px;">--}}

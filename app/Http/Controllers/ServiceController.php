@@ -53,8 +53,22 @@ class ServiceController extends Controller
     {
         return view('service.edit', [
             'service' => $service,
-            'services' => Service::all(),
+            'categories' => Category::all(),
         ]);
+    }
+
+    public function update(Request $request, Service $service)
+    {
+        if($request->is_diagnostic == 'on') {
+            $request->merge(['is_diagnostic' => true]);
+        }
+        else
+        {
+            $request->merge(['is_diagnostic' => false]);
+        }
+        $service->update($request->all());
+
+        return redirect()->route('service.admin');
     }
 
     public function destroy(Service $service)

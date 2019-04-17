@@ -31,7 +31,7 @@ class RecordController extends Controller
                 'user_id' => Auth::id(),
                 'name' => $request->name,
                 'phone_number' => $request->phone_number,
-                'lastname' => $request->lastname
+                'last_name' => $request->last_name
             ]);
             $schedule->active = 1;
             $schedule->save();
@@ -43,7 +43,7 @@ class RecordController extends Controller
                 'user_id' => Auth::id(),
                 'name' => $request->name,
                 'phone_number' => $request->phone_number,
-                'lastname' => $request->lastname
+                'last_name' => $request->last_name
             ]);
         }
         if($request->doctor_id)

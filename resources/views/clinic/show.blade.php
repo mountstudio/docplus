@@ -68,7 +68,7 @@
         {{--</div>--}}
     {{--</div>--}}
 
-        @if($clinic->doctors)
+        @if($clinic->doctors->count() != 0)
             <div class="container mt-5">
                 <div class="row justify-content-center">
                     <div class="col-12 mb-3">

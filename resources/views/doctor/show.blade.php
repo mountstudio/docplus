@@ -148,15 +148,12 @@
                 <div class="tab-pane fade" id="info" role="tabpanel" aria-labelledby="">
                     <div class="row justify-content-center mt-5">
                         <div class="col-12 col-md-8 position-relative">
+                            @if($doctor->description)
                             <h5 class="text-secondary font-weight-bold text-center">Информация о враче</h5>
-                            <p class="text-secondary">Бобров Василий Елисеевич - врач окулист(офтальмолог), стаж 24 года.
-                                Скидка на прием врача! Все отзывы о враче. Запись онлайн или по телефону.</p>
-                            <p class="text-secondary">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto corporis impedit mollitia soluta!
-                                Ab, animi consequatur eum, eveniet facere illo illum iure modi nemo nulla, quae quas qui repellat voluptate.
-                                <a class="text-primary" href="">др. подробная информация о враче</a></p>
-
-                            <p class="text-secondary">Отзывы о врачах могут оставлять пациенты записавшиеся через сервис DOC+.
-                                Каждый отзыв проходит тщательную проверку, что позволяет избежать заказныъ и рекламных отзывов.</p>
+                            <p class="text-secondary">{{$doctor->description}}</p>
+                                @else
+                                <h5 class="text-secondary font-weight-bold text-center">Информация отсутствует</h5>
+                            @endif
 
                         </div>
                     </div>
@@ -183,7 +180,7 @@
         </div>
     </div>
 
-    @if($doctor->clinics)
+    @if($doctor->clinics->count() != 0)
         <div class="container mt-5">
             <div class="row justify-content-center">
                 <div class="col-12 mb-3">

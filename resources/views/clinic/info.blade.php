@@ -74,16 +74,6 @@
     <!-- secondary line -->
     <div class="row bg-secondary pt-1 my-3"></div>
 
-    <ul class="nav nav-tabs" id="myTab" role="tablist">
-            <li class="nav-item">
-                <a class="nav-link active" id="" data-toggle="tab" href="#information" role="tab" aria-controls="" aria-selected="true">Информация</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" id="" data-toggle="tab" href="#gallery" role="tab" aria-controls="" aria-selected="true">Галерея</a>
-            </li>
-    </ul>
-    <div class="tab-content" id="myTabContent">
-            <div class="tab-pane fade show active" id="information" role="tabpanel" aria-labelledby="">
                 <div class="row pt-3">
                 <div class="col-12 col-md-8">
                     @if($clinic->description)
@@ -94,11 +84,11 @@
                         </div>
                         </p>
 
-                        <p class="text-secondary">
-                        <h5>Специализация</h5>
-                        <div>
-                            {{$clinic->description}}
-                        </div>
+                        <p class="text-secondary mt-5">
+                        <h5>Специализации</h5>
+                    @foreach($specs as $spec)
+                            <a href="#">{{$spec->name}}</a>
+                    @endforeach
                         </p>
                     @else
                         <p class="text-secondary">
@@ -174,9 +164,6 @@
     <!-- adress form and contacts-->
 
 
-    </div>
-
-
     @if(count($clinic->services) > 1)
     <div class="py-3 d-none d-md-block">
             <p class="h3 py-4">Цены на диагностические услуги</p>
@@ -198,7 +185,6 @@
         @endif
 
     @include('_partials.modals.service_record_modal')
-</div>
 
 @push('styles')
     <link rel="stylesheet" href="{{ asset('css/rateyo.css') }}">
