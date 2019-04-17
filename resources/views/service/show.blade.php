@@ -72,30 +72,47 @@
     <div class="container">
         <div class="row justify-content-center">
             <ul class="nav nav-tabs" id="myTab" role="tablist">
+                @if($doctors->count() != 0)
                 <li class="nav-item">
                     <a class="nav-link active" id="doctor-tab" data-toggle="tab" href="#doctor" role="tab"
                        aria-controls="doctor" aria-selected="true">Доктора</a>
                 </li>
-
+                @endif
+                    @if($clinics->count() != 0 && $doctors->count() === 0)
                 <li class="nav-item">
-                    <a class="nav-link" id="clinic-tab" data-toggle="tab" href="#clinic" role="tab"
+                    <a class="nav-link active" id="clinic-tab" data-toggle="tab" href="#clinic" role="tab"
                        aria-controls="clinic" aria-selected="true">Клиники</a>
                 </li>
+                        @elseif($clinics->count() != 0)
+                        <li class="nav-item">
+                            <a class="nav-link" id="clinic-tab" data-toggle="tab" href="#clinic" role="tab"
+                               aria-controls="clinic" aria-selected="true">Клиники</a>
+                        </li>
+                    @endif
             </ul>
             <div class="col-12">
 
                 <div class="tab-content" id="myTabContent">
+                    @if($doctors->count() != 0)
                     <div class="tab-pane fade active show" id="doctor" role="tabpanel" aria-labelledby="doctor-tab">
                         @foreach($doctors as $doctor)
                             @include('doctor.card')
                         @endforeach
                     </div>
-
-                    <div class="tab-pane fade" id="clinic" role="tabpanel" aria-labelledby="clinic-tab">
+                    @endif
+                        @if($clinics->count() != 0 && $doctors->count() === 0)
+                    <div class="tab-pane fade active show" id="clinic" role="tabpanel" aria-labelledby="clinic-tab">
                         @foreach($clinics as $clinic)
                             @include('clinic.card')
                         @endforeach
                     </div>
+                        @elseif($clinics->count() != 0)
+                            <div class="tab-pane fade" id="clinic" role="tabpanel" aria-labelledby="clinic-tab">
+                                @foreach($clinics as $clinic)
+                                    @include('clinic.card')
+                                @endforeach
+                            </div>
+                    @endif
                 </div>
             </div>
         </div>
