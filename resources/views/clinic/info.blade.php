@@ -83,18 +83,19 @@
                             {{$clinic->description}}
                         </div>
                         </p>
-
+                    @endif
+                    @if(count($specs))
                         <p class="text-secondary mt-5">
                         <h5>Специализации</h5>
-                    @foreach($specs as $spec)
+                        @foreach($specs as $spec)
                             <a href="{{ route('clinic.doctor',[$clinic->id, $spec->id]) }}">{{$spec->name}}</a>
-                    @endforeach
-                        </p>
-                    @else
-                        <p class="text-secondary">
-                        <h5>Информация отсутствует</h5>
-                        </p>
-                    @endif
+                        @endforeach
+                            </p>
+                            @else
+                                <p class="text-secondary">
+                                <h5>Информация отсутствует</h5>
+                                </p>
+                        @endif
                 </div>
                 <div class="col-12 col-md-4">
                     <div class="row">
