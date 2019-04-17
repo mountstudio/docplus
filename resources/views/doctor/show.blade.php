@@ -11,10 +11,23 @@
                         <div class="row justify-content-center">
                             <div class="col-10 col-md-8">
                                 @include('_partials.like', ['type' => 'Doctor', 'model' => $doctor])
-                                <img class="img-card-doctors_clinics rounded-circle mb-2 img-thumbnail w-100" src="{{ $doctor->pics->first() ? asset('uploads/'.$doctor->pics->first()->image) : asset('img/noavatar.png') }}" alt="">
+                                    <img class="img-card-doctors_clinics rounded-circle mb-2 img-thumbnail w-100" src="{{ $doctor->pics->first() ? asset('uploads/'.$doctor->pics->first()->image) : asset('img/noavatar.png') }}" alt="">
+
                             </div>
                         </div>
+                        <a href="{{asset('uploads/'.$doctor->pics->first()->image)}}" class="elem" data-lcl-thumb="{{ $doctor->pics->first() ? asset('uploads/'.$doctor->pics->first()->image) : asset('img/noavatar.png') }}">
+                                Все фото врача
+                        </a>
+                        <div class="content">
+                            @foreach($doctor->pics as $pic)
+                                @if(!$loop->first)
+                                    <a class="elem" href="{{asset('uploads/'.$pic->image)}}" data-lcl-thumb="{{asset('uploads/'.$pic->image)}}">
+                                        <span style="background-image: url({{asset('uploads/'.$pic->image)}});"></span>
+                                    </a>
+                                @endif
+                            @endforeach
 
+                        </div>
                         <div class="row justify-content-center">
                             @include('_partials.stars', ['id' => 'doctor-show'])
                         </div>
@@ -198,15 +211,41 @@
             </div>
     </div>
     @endif
+
 @endsection
 
 @push('styles')
+
+    <link rel="stylesheet" href="{{ asset('css/lc_lightbox.css') }}" />
+
+    <link rel="stylesheet" href="{{ asset('css/skins/minimal.css') }}" />
+
     <link rel="stylesheet" href="{{ asset('css/rateyo.css') }}">
 @endpush
 
 @push('scripts')
+    <script src="{{ asset('js/lib/jquery.js') }}" type="text/javascript"></script>
+    <script src="{{ asset('js/lc_lightbox.lite.js') }}" type="text/javascript"></script>
+    <script src="{{ asset('js/lib/AlloyFinger/alloy_finger.min.js') }}" type="text/javascript"></script>
     <script src="{{ asset('js/imask.js') }}"></script>
     <script src="{{ asset('js/rateyo.js') }}"></script>
+    <script type="text/javascript">
+        $(document).ready(function(e) {
+
+            // live handler
+            lc_lightbox('.elem', {
+                wrap_class: 'lcl_fade_oc',
+                gallery : true,
+                thumb_attr: 'data-lcl-thumb',
+
+                skin: 'minimal',
+                radius: 0,
+                padding	: 0,
+                border_w: 0,
+            });
+
+        });
+    </script>
     <script>
         $('#rateYo-doctor-show').rateYo({
             rating: "{!! $doctor->rating !!}",

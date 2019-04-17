@@ -91,10 +91,6 @@
                             <a href="{{ route('clinic.doctor',[$clinic->id, $spec->id]) }}">{{$spec->name}}</a>
                         @endforeach
                             </p>
-                            @else
-                                <p class="text-secondary">
-                                <h5>Информация отсутствует</h5>
-                                </p>
                         @endif
                 </div>
                 <div class="col-12 col-md-4">
