@@ -39,7 +39,7 @@
     <div class="container my-5">
         <p class="text-doc font-weight-bold mt-3 h3">
             Клиники Бишкека
-            <span class="text-secondary font-weight-light">{{ $clinics->count() }}</span>
+            <span class="text-secondary font-weight-light">{{ $clinics->total() }}</span>
         </p>
         <div class="row">
             <div class="col-auto d-none d-lg-block">
@@ -53,40 +53,13 @@
 
         </div>
 
-        <div class="row">
-
-            <!--for map-->
-            <div class="col-2 d-none d-md-block">
-
+        @if($clinics instanceof \Illuminate\Pagination\LengthAwarePaginator)
+            <div class="row">
+                <div class="col-4 pt-3">
+                    {{ $clinics->appends(request()->query())->links() }}
+                </div>
             </div>
-
-
-            <div class="col-4 pt-3 ">
-                <nav aria-label="...">
-                    <ul class="pagination pagination">
-                        <li class="page-item">
-                            <a class="page-link" href="#" aria-label="Previous">
-                                <span aria-hidden="true">&laquo;</span>
-                                <span class="sr-only">Previous</span>
-                            </a>
-                        </li>
-                        <li class="page-item active">
-                            <a class="page-link" href="#" tabindex="-1">1</a>
-                        </li>
-                        <li class="page-item"><a class="page-link" href="#">2</a></li>
-                        <li class="page-item"><a class="page-link" href="#">3</a></li>
-                        <li class="page-item"><a class="page-link" href="#">4</a></li>
-                        <li class="page-item"><a class="page-link" href="#">5</a></li>
-                        <li class="page-item">
-                            <a class="page-link" href="#" aria-label="Next">
-                                <span aria-hidden="true">&raquo;</span>
-                                <span class="sr-only">Next</span>
-                            </a>
-                        </li>
-                    </ul>
-                </nav>
-            </div>
-        </div>
+        @endif
     </div>
     <div class="container">
         <div class="row">

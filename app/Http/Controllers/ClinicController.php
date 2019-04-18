@@ -16,7 +16,7 @@ class ClinicController extends Controller
     //
     public function index(Request $request)
     {
-        $clinics = Clinic::all()->sortingAndFilter($request);
+        $clinics = Clinic::all()->sortingAndFilter($request)->paginate(5);
 
         return view('clinic.list', [
             'clinics' => $clinics,

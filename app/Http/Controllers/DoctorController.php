@@ -18,7 +18,7 @@ class DoctorController extends Controller
 {
     public function index(Request $request)
     {
-        $doctors = Doctor::with('feedbacks')->get()->sortingAndFilter($request);
+        $doctors = Doctor::with('feedbacks')->get()->sortingAndFilter($request)->paginate(5);
 
         return view('doctor.list', [
             'doctors' => $doctors,
