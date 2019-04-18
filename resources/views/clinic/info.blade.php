@@ -145,18 +145,6 @@
                 </div>
             </div>
             </div>
-        <div class="tab-pane fade" id="gallery" role="tabpanel" aria-labelledby="">
-            <div class="container">
-                <div class="row justify-content-center">
-                    <div class="col-md-6 col-10" style=" padding:12px;">
-                        <div class="owl-carousel owl-theme">
-                            @foreach($clinic->pics as $pic)
-                            <div class="item"><img src="{{ asset('uploads/'.$pic->image) }}" alt=""></div>
-                            @endforeach
-                        </div>
-                    </div>
-                </div>
-        </div>
     </div>
     <!-- adress form and contacts-->
 
