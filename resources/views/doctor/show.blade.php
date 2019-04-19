@@ -15,9 +15,11 @@
 
                             </div>
                         </div>
-                        <a href="{{asset('uploads/'.$doctor->pics->first()->image)}}" class="elem" data-lcl-thumb="{{ $doctor->pics->first() ? asset('uploads/'.$doctor->pics->first()->image) : asset('img/noavatar.png') }}">
+                        @if(!$doctor->pics->isEmpty())
+                            <a href="{{ $doctor->pics->first() && file_exists(public_path('uploads/'.$doctor->pics->first()->image)) ? asset('uploads/'.$doctor->pics->first()->image) : asset('img/noavatar.png') }}" class="elem" data-lcl-thumb="{{ $doctor->pics->first() ? asset('uploads/'.$doctor->pics->first()->image) : asset('img/noavatar.png') }}">
                                 Все фото врача
-                        </a>
+                            </a>
+                        @endif
                         <div class="content">
                             @foreach($doctor->pics as $pic)
                                 @if(!$loop->first)
