@@ -88,7 +88,7 @@
                         <p class="text-secondary mt-5">
                         <h5>Специализации</h5>
                         @foreach($specs as $spec)
-                            <a href="{{ route('clinic.doctor',[$clinic->id, $spec->id]) }}">{{$spec->name}}</a>
+                            <a href="{{ route('clinic.doctor',[$clinic->id, $spec->id]) }}">{{$spec->name}}.</a>
                         @endforeach
                             </p>
                         @endif
@@ -148,7 +148,7 @@
     </div>
     <!-- adress form and contacts-->
 
-
+<div class="container">
     @if(count($clinic->services) > 1)
     <div class="py-3 d-none d-md-block">
             <p class="h3 py-4">Цены на диагностические услуги</p>
@@ -168,7 +168,7 @@
         </div>
     </div>
         @endif
-
+</div>
     @include('_partials.modals.service_record_modal')
 
 @push('styles')

@@ -102,11 +102,9 @@ class ServiceController extends Controller
     {
         if ($request->ids) {
             $services = Service::whereNotIn('id', $request->ids)
-                ->where('is_diagnostic', true)
                 ->get(['id', 'name']);
         } else {
-            $services = Service::where('is_diagnostic', '=', true)
-                ->get(['id', 'name']);
+            $services = Service::all();
         }
 
         return response()->json([

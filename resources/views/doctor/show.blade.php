@@ -104,6 +104,15 @@
     <div class="container py-4">
         <div class="row justify-content-center">
             <div class="col-12 col-md-8">
+                <div class="text-secondary mb-5">
+                    @if(count($doctor->services))
+                        <p class="font-weight-bold h5">Услуги врача</p>
+                        @foreach($doctor->services as $service)
+                            <span class="mr-2">{{$service->name}}</span>
+
+                        @endforeach
+                    @endif
+                </div>
                 @if($doctor->description)
                     <p>
                     <h5 class="text-secondary font-weight-bold">Информация о враче</h5>

@@ -36,6 +36,7 @@
                         <div class="form-group">
                             <label for="recipient-name" class="col-form-label">Услуга: </label>
                             <select class="ml-5" name="service_id">
+                                <option value="null">Нет</option>
                                 @foreach($clinic->services as $service)
                                     <option value="{{$service->id}}">{{ $service->name }}</option>
                                 @endforeach

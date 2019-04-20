@@ -29,6 +29,8 @@
                             <br> Стаж {{ $doctor->age }} лет
                             @endif
                         </em></p>
+                    <p class="text-secondary font-weight-light">Профессиональный рейтинг - <span class="font-weight-bold h5">{{ $doctor->prof_rating }} </span><i class="fas fa-exclamation-circle"  data-toggle="tooltip" data-placement="top" title="Профессиональный рейтинг основан на трех критериях: Стаж, категория, степень."></i></p>
+
                     <p class="text-secondary font-weight-light m-0 mb-md-2">
                         Приём от
                         @if($doctor->discount)
@@ -57,24 +59,6 @@
                     <div class="col">
                 <p class="text-secondary small">
                     {{$doctor->address}}
-                </p>
-            </div>
-        </div>
-        <div class="row mb-3">
-            <div class="col-auto">
-                <p class="text-secondary small">
-                    <i class="far fa-clock fa-2x"></i>
-                </p>
-            </div>
-            <div class="col">
-                <p class="text-secondary small m-0">
-                    пн-пт:         <span class="float-right">08:00 - 21:00</span>
-                </p>
-                <p class="text-secondary small m-0">
-                    сб:            <span class="float-right">08:00 - 21:00</span>
-                </p>
-                <p class="text-secondary small m-0">
-                    вс:            <span class="float-right">08:00 - 21:00</span>
                 </p>
             </div>
         </div>
