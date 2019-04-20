@@ -29,7 +29,7 @@
                     Телефон для записи: <br>
                     <span class="font-weight-bold h5">{{ $clinic->phones }}</span>
                 </p>
-                <a href="#feedbacks" class="text-secondary pt-md-5 d-md-block d-none"><u>Отзывы о клинике</u></a>
+                {{--<a href="#feedbacks" class="text-secondary pt-md-5 d-md-block d-none"><u>Отзывы о клинике</u></a>--}}
                 <p class="text-secondary font-weight-light small m-0">На прошлой неделе записалось два человека</p>
 
             </div>
