@@ -13,12 +13,26 @@ class Service extends Model
 
     public static function getServices()
     {
-        return Service::where('is_diagnostic', false)->get();
+        return self::where('is_diagnostic', false)->get();
     }
 
     public static function getDiagnostics()
     {
-        return Service::where('is_diagnostic', true)->get();
+        return self::where('is_diagnostic', true)->get();
+    }
+
+    public static function getServicesHasDoctorsAndClinics()
+    {
+        $collection = collect(self::where('is_diagnostic', false)->has('clinics')->with(['clinics', 'doctors'])->get());
+        $collection = $collection->merge(self::where('is_diagnostic', false)->has('doctors')->with(['clinics', 'doctors'])->get());
+        return $collection->unique();
+    }
+
+    public static function getDiagnosticsHasDoctorsAndClinics()
+    {
+        $collection = collect(self::where('is_diagnostic', true)->has('clinics')->with(['clinics', 'doctors'])->get());
+        $collection = $collection->merge(self::where('is_diagnostic', true)->has('doctors')->with(['clinics', 'doctors'])->get());
+        return $collection->unique();
     }
 
     public function category()

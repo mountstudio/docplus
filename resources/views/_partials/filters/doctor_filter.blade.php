@@ -1,4 +1,4 @@
-<form action="{{ route('doctor.index') }}" class="border pt-3 shadow my-4" method="get">
+<form action="{{ $route ?? route('doctor.index') }}" class="border pt-3 shadow my-4" method="get">
 
     <div class="px-3">
         <h5 class="h5">

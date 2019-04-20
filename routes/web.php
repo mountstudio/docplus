@@ -65,6 +65,7 @@ Route::get('datatable/getclinics', 'AdminController@getClinics')->name('datatabl
 Route::get('datatable/getservices', 'AdminController@getServices')->name('datatable.getservices');
 Route::get('datatable/getcategories', 'AdminController@getCategories')->name('datatable.getcategories');
 Route::get('datatable/getspecs', 'AdminController@getSpecs')->name('datatable.getspecs');
+Route::get('datatable/getlevels', 'AdminController@getLevels')->name('datatable.getlevels');
 Route::resource('doctor', 'DoctorController');
 Route::resource('clinic', 'ClinicController');
 Route::resource('service', 'ServiceController');
@@ -75,6 +76,7 @@ Route::resource('schedule', 'ScheduleController');
 Route::resource('record', 'RecordController');
 Route::resource('feedback', 'FeedbackController');
 Route::resource('question', 'QuestionController');
+Route::resource('level', 'LevelController');
 Route::get('/activation/question/{question}', 'QuestionController@activate')->name('question.activate');
 Route::resource('answer', 'AnswerController');
 Route::get('/profile', 'UserController@profile')->name('profile');

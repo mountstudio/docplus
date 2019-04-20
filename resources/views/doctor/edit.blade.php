@@ -9,6 +9,9 @@
                 <a class="nav-link active" id="main-tab" data-toggle="tab" href="#main" role="tab" aria-controls="main" aria-selected="true">Main</a>
             </li>
             <li class="nav-item">
+                <a class="nav-link" id="logo-tab" data-toggle="tab" href="#logo" role="tab" aria-controls="logo" aria-selected="true">Logo</a>
+            </li>
+            <li class="nav-item">
                 <a class="nav-link" id="images-tab" data-toggle="tab" href="#images" role="tab" aria-controls="images" aria-selected="true">Images</a>
             </li>
             <li class="nav-item">
@@ -24,6 +27,9 @@
         <div class="tab-content" id="myTabContent">
             <div class="tab-pane fade show active" id="main" role="tabpanel" aria-labelledby="main-tab">
                 @include('doctor.tabs.main', ['create' => false])
+            </div>
+            <div class="tab-pane fade" id="logo" role="tabpanel" aria-labelledby="logo-tab">
+                @include('doctor.tabs.logo')
             </div>
             <div class="tab-pane fade" id="images" role="tabpanel" aria-labelledby="images-tab">
                 @include('doctor.tabs.images')
@@ -44,11 +50,13 @@
 @push('scripts')
     <script src="{{ asset('js/file-upload-with-preview.js') }}"></script>
     <script>
-        var upload = new FileUploadWithPreview('myUniqueUploadId')
+        var upload = new FileUploadWithPreview('myUniqueUploadId');
+        var logoUpload = new FileUploadWithPreview('myUniqueLogoUploadId');
     </script>
     <script src="{{ asset('js/rateyo.js') }}"></script>
     <script>
         let rating_end = $("#rating_end").rateYo({
+            rating: {!! $doctor->prof_rating !!},
             readOnly: true,
             ratedFill: "red",
             starWidth: "20px",
