@@ -1,7 +1,7 @@
 <div class="container justify-content-center">
 @include('_partials._head_rec')
 <!-- img -->
-    <div class="container py-5">
+    <div class="container py-5 mb-5">
         <div class="row ">
             <div class="col-12 col-md-4   text-center">
                 <div class="row justify-content-center">
@@ -150,12 +150,11 @@
         </div>
     </div>
 </div>
-</div>
 <!-- adress form and contacts-->
 
 
 @if(count($clinic->services) > 1)
-    <div class="container d-none d-md-block">
+    <div class="container d-none d-md-block mb-5">
         <p class="h3 py-4">Цены на диагностические услуги</p>
         <div class="row">
             @foreach($clinic->services as $service)

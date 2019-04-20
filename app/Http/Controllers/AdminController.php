@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Branch;
 use App\Category;
 use App\Clinic;
 use App\Doctor;
@@ -60,6 +61,19 @@ class AdminController extends Controller
                 return '<a href="'.route('category.show', $model->id).'" class="btn btn-sm btn-secondary"><i class="fas fa-info"></i> Show </a>
                         <a href="'.route('category.edit', $model->id).'" class="btn btn-sm btn-primary"><i class="far fa-edit"></i> Edit</a>
                         <a href="'.route('category.destroy', $model->id).'" data-model="category" data-id="'.$model->id.'" onclick="event.preventDefault();" data-toggle="modal" data-target="#delete-confirmation" class="btn btn-sm btn-danger"><i class="far fa-trash-alt"></i> Delete</a>';
+            })
+            ->make(true);
+    }
+
+    public function getBranches()
+    {
+        $branches = Branch::query();
+
+        return Datatables::of($branches)
+            ->addColumn('action', function ($model) {
+                return '<a href="'.route('branch.show', $model->id).'" class="btn btn-sm btn-secondary"><i class="fas fa-info"></i> Show </a>
+                        <a href="'.route('branch.edit', $model->id).'" class="btn btn-sm btn-primary"><i class="far fa-edit"></i> Edit</a>
+                        <a href="'.route('branch.destroy', $model->id).'" data-model="branch" data-id="'.$model->id.'" onclick="event.preventDefault();" data-toggle="modal" data-target="#delete-confirmation" class="btn btn-sm btn-danger"><i class="far fa-trash-alt"></i> Delete</a>';
             })
             ->make(true);
     }

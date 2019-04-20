@@ -13,7 +13,7 @@ class Clinic extends Model
 {
     protected $fillable = [
         'name', 'address', 'phones', 'clinic_rating', 'comfort_rating', 'discipline_rating', 'rating', 'user_id',
-        'title', 'description', 'keywords', 'logo', 'child', 'fullDay', 'type',
+        'title', 'description', 'keywords', 'logo', 'child', 'fullDay', 'type', 'branch_id',
     ];
 
     protected $casts = [
@@ -33,6 +33,11 @@ class Clinic extends Model
     public function doctors()
     {
         return $this->belongsToMany(Doctor::class);
+    }
+
+    public function branch()
+    {
+        return $this->belongsTo('App\Branch');
     }
 
     public function categories()

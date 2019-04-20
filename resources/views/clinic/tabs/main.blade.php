@@ -45,13 +45,25 @@
     </div>
 </div>
 
-<div class="form-group">
-    <label for="categories">Сategories</label>
-    <select class="form-control m-0 w-100" name="categories[]" id="categories" multiple="">
-        @foreach($categories as $category)
-            <option value="{{ $category->id }}" {{ isset($clinic) && !$clinic->categories->where('id', $category->id)->isEmpty() ? 'selected' : '' }}>{{ $category->name }}</option>
+<div class="form-row">
+<div class="form-group col">
+    <label for="type">Type</label>
+    <input name="type" type="text" class="form-control {{ $errors->has('type') ? 'is-invalid' : '' }}" id="type_of_clinic" placeholder="Тип клиника" value="{{ isset($clinic) ? $clinic->type : old('type') }}" required>
+    @if($errors->has('type'))
+        <span class="invalid-feedback" role="alert">
+                <strong>{{ $errors->first('type') }}</strong>
+            </span>
+    @endif
+</div>
+<div class="form-group col">
+    <label for="branch_id">Branch</label>
+    <select class="form-control m-0 w-100" name="branch_id" id="branch_id">
+        <option value="">Нет</option>
+        @foreach($branches as $branch)
+            <option value="{{ $branch->id }}" {{ isset($clinic) && !$clinic->branch->where('id', $branch->id)->isEmpty() ? 'selected' : '' }}>{{ $branch->name }}</option>
         @endforeach
     </select>
+</div>
 </div>
 
 <div class="form-group">

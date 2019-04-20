@@ -21,11 +21,8 @@
                                     </div></div>
 
                                 <div class="col">
-                                    <a href="{{ route('clinic.show', $clinic->id) }}">
                                         <p class="text-secondary h3 m-0 mb-md-2 font-weight-bold">{{ $clinic->name ?? 'Бобров Василий Елисеевич' }}</p>
-                                    </a>
-
-
+                                        <p class="text-secondary h3 m-0 mb-md-2 font-weight-bold">{{ $clinic->type }}</p>
                                 </div>
                             </div>
                         </div>

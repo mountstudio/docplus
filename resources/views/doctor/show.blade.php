@@ -114,7 +114,7 @@
     {{--</div>--}}
     {{--</div>--}}
     <div class="d-md-block d-none">
-    <div class="container py-4">    
+    <div class="container py-4">
         <div class="row justify-content-center">
             <div class="col-12 col-md-8">
                 <div class="text-secondary mb-5">

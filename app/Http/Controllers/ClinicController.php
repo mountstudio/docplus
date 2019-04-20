@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Branch;
 use App\Clinic;
 use App\Pic;
 use App\Service;
@@ -34,6 +35,7 @@ class ClinicController extends Controller
         return view('clinic.create', [
             'clinics' => Clinic::all(),
             'categories' => Category::all(),
+            'branches' => Branch::all(),
             'doctors' => $doctors,
             'services' => Service::all(),
         ]);
@@ -42,6 +44,7 @@ class ClinicController extends Controller
     public function store(Request $request)
     {
         $user = User::registerUser($request, 'ROLE_CLINIC');
+
 
         $request->merge(['user_id' => $user->id]);
 
@@ -79,10 +82,19 @@ class ClinicController extends Controller
             return $item->specs;
         })->flatten()->unique('id');
 
+
+        $branch = Branch::find($clinic->branch_id);
+
+        $branches = Clinic::all()->filter(function($item, $key) use ($branch) {
+            return $item->branch->where('id', $branch->id)->count() > 0;
+        })->except($clinic->id)->take(4);
+
+
         return view('clinic.show',[
             'clinic' => $clinic,
             'doctors' => $clinic->doctors,
             'specs' => $specs,
+            'branches' => $branches
         ]);
     }
 

@@ -42,6 +42,9 @@ Route::get('/getservices', function () {
 Route::get('/getcategories', function () {
     return view('category.index');
 })->name('category.admin');
+Route::get('/getbranches', function () {
+    return view('branch.index');
+})->name('branch.admin');
 Route::get('/getspecs', function () {
     return view('spec.index');
 })->name('spec.admin');
@@ -64,6 +67,7 @@ Route::get('datatable/getdoctors', 'AdminController@getDoctors')->name('datatabl
 Route::get('datatable/getclinics', 'AdminController@getClinics')->name('datatable.getclinics');
 Route::get('datatable/getservices', 'AdminController@getServices')->name('datatable.getservices');
 Route::get('datatable/getcategories', 'AdminController@getCategories')->name('datatable.getcategories');
+Route::get('datatable/getbranches', 'AdminController@getBranches')->name('datatable.getbranches');
 Route::get('datatable/getspecs', 'AdminController@getSpecs')->name('datatable.getspecs');
 Route::get('datatable/getlevels', 'AdminController@getLevels')->name('datatable.getlevels');
 Route::resource('doctor', 'DoctorController');
@@ -72,6 +76,7 @@ Route::resource('service', 'ServiceController');
 Route::get('objects/{service}', 'ServiceController@objects')->name('objects.show');
 Route::resource('spec', 'SpecController');
 Route::resource('category', 'CategoryController');
+Route::resource('branch', 'BranchController');
 Route::resource('schedule', 'ScheduleController');
 Route::resource('record', 'RecordController');
 Route::resource('feedback', 'FeedbackController');

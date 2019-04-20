@@ -76,7 +76,7 @@
                     </div>
                 </div>
             </div>
-            <div class="container py-4">
+            <div class="container py-4  mb-5">
                 <div class="row justify-content-center">
                     <div class="col-12">
                         @foreach($clinic->doctors as $doctor)
@@ -86,6 +86,33 @@
                 </div>
             </div>
         @endif
+
+    @if($branches->count() != 0)
+        <div class="container mt-5">
+            <div class="row justify-content-center">
+                <div class="col-12 mb-3">
+                    <h3 class="text-secondary text-center font-weight-bold">Наши филиалы</h3>
+                </div>
+            </div>
+        </div>
+        <div class="container py-4 mb-5">
+            <div class="row justify-content-center">
+                    @foreach($branches as $branch)
+                    <div class="col-3 text-center">
+
+                        <a href="{{ route('clinic.show', $branch->id) }}">
+                            <p class="h4 text-secondary font-weight-bold">{{$branch->name}}</p>
+                         </a>
+                        <img src="{{ asset('uploads/'.$branch->logo) }}" class="img-fluid" alt="">
+
+                        <p class="text-secondary font-weight-bold">{{$branch->address}}</p>
+                    </div>
+                    @endforeach
+            </div>
+        </div>
+    @endif
+
+
 
 @endsection
 

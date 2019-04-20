@@ -21,9 +21,7 @@
                                     </div></div>
 
                                 <div class="col">
-                                    <a href="{{ route('doctor.show', $doctor->id) }}">
                                         <p class="text-secondary h3 m-0 mb-md-2 font-weight-bold">{{ $doctor->fullName ?? 'Бобров Василий Елисеевич' }}</p>
-                                    </a>
 
                                     <p class="text-secondary font-weight-light h6 my-3"><em>
                                             @if(isset($doctor))

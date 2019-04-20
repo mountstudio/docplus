@@ -11,6 +11,9 @@
     <li class="nav-item py-1 border-bottom {{ Request::is('*clinic*') ? 'bg-secondary' : '' }}">
         <a class="nav-link {{ Request::is('*clinic*') ? 'text-light' : 'text-dark' }}" href="{{ route('clinic.admin') }}">Клиника</a>
     </li>
+    <li class="nav-item py-1 border-bottom {{ Request::is('*branch*') ? 'bg-secondary' : '' }}">
+        <a class="nav-link {{ Request::is('*branch*') ? 'text-light' : 'text-dark' }}" href="{{ route('branch.admin') }}">Филиал</a>
+    </li>
     <li class="nav-item py-1 border-bottom {{ Request::is('*category*') ? 'bg-secondary' : '' }}">
         <a class="nav-link {{ Request::is('*category*') ? 'text-light' : 'text-dark' }}" href="{{ route('category.index') }}">Категории</a>
     </li>

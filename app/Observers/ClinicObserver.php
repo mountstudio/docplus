@@ -2,6 +2,7 @@
 
 namespace App\Observers;
 
+use App\Branch;
 use App\Clinic;
 use App\Doctor;
 use App\Helpers\ImageSaver;
@@ -37,10 +38,15 @@ class ClinicObserver
      */
     public function created(Clinic $clinic)
     {
-        if (request()->categories) {
-            foreach (request()->categories as $category) {
-                $clinic->categories()->attach($category);
-            }
+//        if (request()->categories) {
+//            foreach (request()->categories as $category) {
+//                $clinic->categories()->attach($category);
+//            }
+//        }
+
+        if(request()->branch_id) {
+            $branch = Branch::find(request()->branch_id);
+            $branch->clinics()->attach($clinic->id);
         }
 
         if (request()->doctors) {

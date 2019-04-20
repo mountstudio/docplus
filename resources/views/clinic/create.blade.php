@@ -55,6 +55,9 @@
         $('#categories').select2({
             width: 'resolve'
         });
+        $('#branches').select2({
+            width: 'resolve'
+        });
         $('#doctors').select2({
             width: 'resolve'
         });
