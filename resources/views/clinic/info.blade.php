@@ -16,7 +16,7 @@
                 <div class="row justify-content-center">
                     @include('_partials.stars', ['id' => 'clinic-show'])
                 </div>
-                <p class="text-muted font-weight-light small">Рейтинг клиник на основе {{count($clinic->feedbacks)}}
+                <p class="text-muted font-weight-light small">{{count($clinic->feedbacks)}}
                     отзывов-(ва)</p>
                 {{--<div class="row justify-content-center mt-3">--}}
                 {{--@include('_partials.stars', ['id' => $doctor->id.'-prof'])--}}
