@@ -103,42 +103,7 @@ class ClinicObserver
     {
         \Log::info('Clinic updated');
 
-        if (request()->categories) {
-            foreach (request()->categories as $category) {
-                $clinic->categories()->attach($category);
-            }
-        }
 
-        if (request()->doctors) {
-            foreach (request()->doctors as $doctor) {
-                /**
-                 * @var Doctor $doctor
-                 */
-                $doctor = Doctor::find($doctor);
-                $doctor->clinics()->attach($clinic);
-                $doctor->save();
-            }
-        }
-
-        if (request('pics')) {
-            foreach (request('pics') as $file) {
-                $fileName = ImageSaver::save($file, 'uploads', 'clinic');
-
-                $pic = Pic::create([
-                    'image' => $fileName,
-                ]);
-
-                $clinic->pics()->attach($pic->id);
-            }
-        }
-
-        if (request()->services) {
-            foreach (request()->services as $index => $service) {
-                $clinic->services()->attach($service, ['service_price' => request('prices')[$index]]);
-            }
-        }
-
-        $clinic->user->update(request()->all());
     }
 
     /**

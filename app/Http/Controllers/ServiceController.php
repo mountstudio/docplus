@@ -11,7 +11,7 @@ class ServiceController extends Controller
     //
     public function index()
     {
-        $services = Service::getServices()
+        $services = Service::getServicesHasDoctorsAndClinics()
             ->groupBy(function ($item, $key) {
                 if(count($item->doctors) || count($item->clinics)){
                     return $item->category->name;
@@ -24,7 +24,7 @@ class ServiceController extends Controller
     }
     public function show_diagnostic()
     {
-        $services = Service::getDiagnostics()
+        $services = Service::getDiagnosticsHasDoctorsAndClinics()
             ->groupBy(function ($item, $key) {
                 if(count($item->doctors) || count($item->clinics)){
                 return $item->category->name;
@@ -80,21 +80,20 @@ class ServiceController extends Controller
         return redirect()->back();
     }
 
-    public function objects(Service $service)
+    public function objects(Request $request, Service $service)
     {
-        $services = Service::with(['doctors'])->where('id',$service->id)->get();
+        $doctors = $service->doctors->sortingAndFilter($request)->paginate(5);
 
-        $doctors = $services->map(function ($item, $key) {
-            return $item->doctors;
-        })->flatten()->unique('id');
-
-        $clinics = $services->map(function ($item, $key) {
-            return $item->clinics;
-        })->flatten()->unique('id');
+        $clinics = $service->clinics->sortingAndFilter($request)->paginate(5);
 
         return view('service.show',[
             'doctors' => $doctors,
-            'clinics' => $clinics
+            'clinics' => $clinics,
+            'child' => $request->child ? 1 : null,
+            'home' => $request->home ? 1 : null,
+            'filter' => $request->filter,
+            'route' => route('objects.show', $service),
+            'fullDay' => $request->fullDay ? 1 : null,
         ]);
     }
 

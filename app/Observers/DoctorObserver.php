@@ -23,6 +23,12 @@ class DoctorObserver
         } else {
             $doctor->child = true;
         }
+
+        if (request('logo')) {
+            $fileName = ImageSaver::save(request('logo'), 'uploads', 'doctor_logo', ['width' => 500, 'height' => 500]);
+
+            $doctor->logo = $fileName;
+        }
     }
 
     /**
@@ -33,9 +39,8 @@ class DoctorObserver
      */
     public function created(Doctor $doctor)
     {
-        if (request()->allFiles()) {
-            foreach (request()->allFiles() as $input) {
-                foreach ($input as $file) {
+        if (request('pics')) {
+            foreach (request('pics') as $file) {
                     $fileName = ImageSaver::save($file, 'uploads', 'doctor');
 
                     $pic = new Pic([
@@ -44,26 +49,19 @@ class DoctorObserver
                     $pic->save();
 
                     $doctor->pics()->attach($pic->id);
-                }
             }
         }
 
-        if (request()->specializations) {
-            foreach (request()->specializations as $spec) {
-                $doctor->specs()->attach($spec);
-            }
+        if ($specs = request()->specializations) {
+            $doctor->specs()->sync($specs);
         }
 
-        if (request()->clinics) {
-            foreach (request()->clinics as $clinic) {
-                $doctor->clinics()->attach($clinic);
-            }
+        if ($clinics = request()->clinics) {
+            $doctor->clinics()->sync($clinics);
         }
 
-        if (request()->services) {
-            foreach (request()->services as $service) {
-                $doctor->services()->attach($service);
-            }
+        if ($services = request()->services) {
+            $doctor->services()->sync($services);
         }
     }
 
@@ -79,6 +77,12 @@ class DoctorObserver
         } else {
             $doctor->child = true;
         }
+
+        if (request('logo')) {
+            $fileName = ImageSaver::save(request('logo'), 'uploads', 'doctor_logo', ['width' => 500, 'height' => 500]);
+
+            $doctor->logo = $fileName;
+        }
     }
 
     /**
@@ -89,11 +93,7 @@ class DoctorObserver
      */
     public function updated(Doctor $doctor)
     {
-        $user = $doctor->user;
 
-        $user->update(\request()->all());
-        $user->password = Hash::make(\request('password'));
-        $user->save();
     }
 
     /**

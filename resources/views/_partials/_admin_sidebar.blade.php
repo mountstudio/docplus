@@ -2,6 +2,9 @@
     <li class="nav-item py-1 border-bottom {{ Request::is('admin/options') ? 'bg-secondary' : '' }}">
         <a class="nav-link {{ Request::is('*options*') ? 'text-light' : 'text-dark' }}" href="{{ route('options') }}">Настройки</a>
     </li>
+    <li class="nav-item py-1 border-bottom {{ Request::is('*level*') ? 'bg-secondary' : '' }}">
+        <a class="nav-link {{ Request::is('*level*') ? 'text-light' : 'text-dark' }}" href="{{ route('level.index') }}">Степени</a>
+    </li>
     <li class="nav-item py-1 border-bottom {{ Request::is('*doctor*') ? 'bg-secondary' : '' }}">
         <a class="nav-link {{ Request::is('*doctor*') ? 'text-light' : 'text-dark' }}" href="{{ route('doctor.admin') }}">Доктора</a>
     </li>

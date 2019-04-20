@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Category;
 use App\Clinic;
 use App\Doctor;
+use App\Level;
 use App\Service;
 use App\User;
 use App\Spec;
@@ -89,4 +90,16 @@ class AdminController extends Controller
             ->make(true);
     }
 
+    public function getLevels()
+    {
+        $levels = Level::query();
+
+        return DataTables::of($levels)
+            ->addColumn('action', function ($model) {
+                return '<a href="'.route('level.show', $model->id).'" class="btn btn-sm btn-secondary"><i class="fas fa-info"></i> Show </a>
+                        <a href="'.route('level.edit', $model->id).'" class="btn btn-sm btn-primary"><i class="far fa-edit"></i> Edit</a>
+                        <a href="'.route('level.destroy', $model->id).'" data-model="level" data-id="'.$model->id.'" onclick="event.preventDefault();" data-toggle="modal" data-target="#delete-confirmation" class="btn btn-sm btn-danger"><i class="far fa-trash-alt"></i> Delete</a>';
+            })
+            ->make(true);
+    }
 }

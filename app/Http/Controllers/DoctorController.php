@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Feedback;
 use App\Helpers\ImageSaver;
+use App\Level;
 use App\Notifications\NewEditNotification;
 use App\Pic;
 use App\Schedule;
@@ -31,11 +32,13 @@ class DoctorController extends Controller
     public function create()
     {
         return view('doctor.create', [
+            'levels' => Level::all(),
             'specs' => Spec::all(),
             'clinics' => Clinic::all(),
             'services' => Service::all()->where('is_diagnostic', false)
         ]);
     }
+
     public function store(Request $request)
     {
         $user = User::registerUser($request, 'ROLE_DOCTOR');
@@ -63,6 +66,7 @@ class DoctorController extends Controller
     public function edit(Request $request, Doctor $doctor)
     {
         return view('doctor.edit', [
+            'levels' => Level::all(),
             'doctor' => $doctor,
             'clinics' => Clinic::all(),
             'specs' => Spec::all(),
@@ -73,6 +77,8 @@ class DoctorController extends Controller
     public function update(Request $request, Doctor $doctor)
     {
         $doctor->update($request->all());
+
+        $doctor->updateDoctorRelations($request);
 
         return redirect()->route('doctor.admin');
     }

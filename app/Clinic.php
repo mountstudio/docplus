@@ -7,6 +7,7 @@ use App\Doctor;
 use App\Pic;
 use App\Category;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Http\Request;
 
 class Clinic extends Model
 {
@@ -70,5 +71,36 @@ class Clinic extends Model
             ->where('active', true)
             ->where('accepted', false)
             ->groupBy('date_of_record');
+    }
+
+    public function updateClinicRelations(Request $request)
+    {
+        if ($cats = $request->categories) {
+                $this->categories()->sync($cats);
+        }
+
+        if ($docs = $request->doctors) {
+            $this->doctors()->sync($docs);
+        }
+
+        if ($pics = $request->pics) {
+            foreach ($pics as $file) {
+                $fileName = ImageSaver::save($file, 'uploads', 'clinic');
+
+                $pic = Pic::create([
+                    'image' => $fileName,
+                ]);
+
+                $this->pics()->attach($pic->id);
+            }
+        }
+
+        if ($services = $request->services) {
+            foreach ($services as $index => $service) {
+                $this->services()->syncWithoutDetaching([$service => ['service_price' => request('prices')[$index]]]);
+            }
+        }
+
+        $this->user->update($request->all());
     }
 }

@@ -12,7 +12,7 @@
                 <div class="row justify-content-center">
                     @include('_partials.stars', ['id' => $clinic->id.'-clinic'])
                 </div>
-                <p class="text-muted font-weight-light mt-3 mb-0 small d-md-block d-none">Рейтинг клиники на основе {{$clinic->feedbacks->count()}} отзывов</p>
+                <p class="text-muted font-weight-light mt-3 mb-0 small d-md-block d-none">{{$clinic->feedbacks->count()}} отзывов</p>
             </div>
             <div class="col-7">
                 <a href="{{ route('clinic.show', $clinic->id) }}">
