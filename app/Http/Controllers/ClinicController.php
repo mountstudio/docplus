@@ -87,7 +87,7 @@ class ClinicController extends Controller
         $branch = Branch::find($clinic->branch_id);
 
         $branches = Clinic::all()->filter(function($item, $key) use ($branch) {
-            return $item->branch->where('id', $branch->id)->count() > 0;
+            return $item->where('branch_id', $branch->id)->get()->count() > 0;
         })->except($clinic->id)->take(4);
 
 
