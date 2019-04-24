@@ -3,10 +3,10 @@
 <div class="form-row">
     <div class="form-group col">
         <label for="name_of_clinic"></label>
-        <input name="name" type="text" class="form-control {{ $errors->has('name') ? 'is-invalid' : '' }}" id="name_of_clinic" placeholder="Название Клиники" value="{{ isset($clinic) ? $clinic->name : old('name') }}" required>
-        @if($errors->has('name'))
+        <input name="clinic_name" type="text" class="form-control {{ $errors->has('name') ? 'is-invalid' : '' }}" id="name_of_clinic" placeholder="Название Клиники" value="{{ isset($clinic) ? $clinic->clinic_name : old('clinic_name') }}" required>
+        @if($errors->has('clinic_name'))
             <span class="invalid-feedback" role="alert">
-                <strong>{{ $errors->first('name') }}</strong>
+                <strong>{{ $errors->first('clinic_name') }}</strong>
             </span>
         @endif
     </div>
@@ -58,9 +58,9 @@
 <div class="form-group col">
     <label for="branch_id">Branch</label>
     <select class="form-control m-0 w-100" name="branch_id" id="branch_id">
-        <option value="">Нет</option>
+        <option value="null">Нет</option>
         @foreach($branches as $branch)
-            <option value="{{ $branch->id }}" {{ isset($clinic) && !$clinic->branch->where('id', $branch->id)->isEmpty() ? 'selected' : '' }}>{{ $branch->name }}</option>
+            <option value="{{ $branch->id }}" {{ isset($clinic) && $clinic->branch_id ? 'selected' : '' }}>{{ $branch->name }}</option>
         @endforeach
     </select>
 </div>
@@ -79,41 +79,41 @@
 <div class="form-row">
     <div class="form-group col">
         <label for="clinic">Состояние клиники</label>
-        <div id="clinic" class="rateYo"></div>
+        <div id="clinic" class="rateYo p-1"></div>
         @if(old('clinic_raing'))
-            <input type="hidden" id="clinic_input" name="clinic_rating" value="{{ old('clinic_rating') }}" required>
+            <input type="hidden" id="clinic_input" name="clinic_rating" class="rating_input" value="{{ old('clinic_rating') }}" required>
         @else
-            <input type="hidden" id="clinic_input" name="clinic_rating" value="{{ isset($clinic) && $clinic->clinic_rating ? $clinic->clinic_rating : '' }}" required>
+            <input type="hidden" id="clinic_input" name="clinic_rating" class="rating_input" value="{{ isset($clinic) && $clinic->clinic_rating ? $clinic->clinic_rating : '' }}" required>
         @endif
     </div>
 
     <div class="form-group col">
         <label for="comfort">Комфорт</label>
-        <div id="comfort" class="rateYo"></div>
+        <div id="comfort" class="rateYo p-1"></div>
         @if(old('comfort_raing'))
-            <input type="hidden" id="comfort_input" name="comfort_rating" value="{{ old('comfort_rating') }}" required>
+            <input type="hidden" id="comfort_input" name="comfort_rating" class="rating_input" value="{{ old('comfort_rating') }}" required>
         @else
-            <input type="hidden" id="comfort_input" name="comfort_rating" value="{{ isset($clinic) && $clinic->comfort_rating ? $clinic->comfort_rating : '' }}" required>
+            <input type="hidden" id="comfort_input" name="comfort_rating" class="rating_input" value="{{ isset($clinic) && $clinic->comfort_rating ? $clinic->comfort_rating : '' }}" required>
         @endif
     </div>
 
     <div class="form-group col">
         <label for="discipline">Персонал</label>
-        <div id="discipline" class="rateYo"></div>
+        <div id="discipline" class="rateYo p-1"></div>
         @if(old('discipline_raing'))
-            <input type="hidden" id="discipline_input" name="discipline_rating" value="{{ old('discipline_rating') }}" required>
+            <input type="hidden" id="discipline_input" name="discipline_rating" class="rating_input" value="{{ old('discipline_rating') }}" required>
         @else
-            <input type="hidden" id="discipline_input" name="discipline_rating" value="{{ isset($clinic) && $clinic->discipline_rating ? $clinic->discipline_rating : '' }}" required>
+            <input type="hidden" id="discipline_input" name="discipline_rating" class="rating_input" value="{{ isset($clinic) && $clinic->discipline_rating ? $clinic->discipline_rating : '' }}" required>
         @endif
     </div>
 
     <div class="form-group col">
         <label for="rating_end">Итоговый рейтинг</label>
-        <div id="rating_end" class="rateYo"></div>
+        <div id="rating_end" class="rateYo p-1"></div>
         @if(old('raing'))
-            <input type="hidden" id="rating_end_input" name="rating" value="{{ old('rating') }}">
+            <input type="hidden" id="rating_end_input" name="rating" class="rating_input" value="{{ old('rating') }}">
         @else
-            <input type="hidden" id="rating_end_input" name="rating" value="{{ isset($clinic) && $clinic->rating ? $clinic->rating : '' }}">
+            <input type="hidden" id="rating_end_input" name="rating" class="rating_input" value="{{ isset($clinic) && $clinic->rating ? $clinic->rating : '' }}">
         @endif
     </div>
 </div>

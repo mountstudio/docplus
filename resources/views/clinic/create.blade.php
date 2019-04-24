@@ -1,7 +1,7 @@
 @extends('admin.index')
 
 @section('admin_content')
-    <form action="{{ route('clinic.store') }}" method="POST" enctype="multipart/form-data">
+    <form action="{{ route('clinic.store') }}" method="POST" enctype="multipart/form-data" id="validate">
         @csrf
         <ul class="nav nav-tabs" id="myTab" role="tablist">
             <li class="nav-item">
@@ -17,7 +17,7 @@
                 <a class="nav-link" id="save-tab" data-toggle="tab" href="#save" role="tab" aria-controls="save" aria-selected="false">Save</a>
             </li>
         </ul>
-        <div class="tab-content" id="myTabContent">
+        <div class="tab-content tab-validate" id="myTabContent">
             <div class="tab-pane fade show active" id="main" role="tabpanel" aria-labelledby="main-tab">
                 @include('clinic.tabs.main', ['create' => true])
             </div>
@@ -36,7 +36,53 @@
 @endsection
 
 @push('scripts')
+    <script src="{{ asset('js/jquery.validate.js') }}"></script>
+    <script>
+        $('#validate').validate({
+            ignore: [],
+            errorPlacement: function() {},
+            submitHandler: function() {
+                alert('Successfully saved!');
+            },
+            invalidHandler: function() {
+                setTimeout(function() {
+                    $('.nav-tabs a small.required').remove();
+                    let validatePane = $('.tab-content.tab-validate .tab-pane:has(input.error)').each(function() {
+                        let id = $(this).attr('id');
+                        $('.nav-tabs').find('a[href^="#' + id + '"]').append(' <small class="required">***</small>');
+                    });
 
+                    let rateYoValidations = $('.rating_input').each(function () {
+                        let id = $(this).siblings('label').attr('for');
+                        console.log($(this).hasClass('error'));
+                        if ($(this).hasClass('error')) {
+                            $('#'+id).addClass('border border-danger');
+                        } else {
+                            $('#'+id).removeClass('border border-danger');
+                        }
+                    });
+                });
+            },
+            rules: {
+                name: 'required',
+                email: {
+                    required: true,
+                    email: true
+                },
+                clinic_name: 'required',
+                address: 'required',
+                phones: 'required',
+                type: 'required',
+                clinic_rating: 'required',
+                comfort_rating: 'required',
+                discipline_rating: 'required',
+                last_name: 'required',
+                patronymic: 'required',
+                password: 'required',
+                password_confirmation: 'required',
+            }
+        });
+    </script>
     <script src="{{ asset('js/select2.js') }}"></script>
     <script>
         $('#services').select2({

@@ -37,7 +37,53 @@
 @endsection
 
 @push('scripts')
+    <script src="{{ asset('js/jquery.validate.js') }}"></script>
+    <script>
+        $('#validate').validate({
+            ignore: [],
+            errorPlacement: function() {},
+            submitHandler: function() {
+                alert('Successfully saved!');
+            },
+            invalidHandler: function() {
+                setTimeout(function() {
+                    $('.nav-tabs a small.required').remove();
+                    let validatePane = $('.tab-content.tab-validate .tab-pane:has(input.error)').each(function() {
+                        let id = $(this).attr('id');
+                        $('.nav-tabs').find('a[href^="#' + id + '"]').append(' <small class="required">***</small>');
+                    });
 
+                    let rateYoValidations = $('.rating_input').each(function () {
+                        let id = $(this).siblings('label').attr('for');
+                        console.log($(this).hasClass('error'));
+                        if ($(this).hasClass('error')) {
+                            $('#'+id).addClass('border border-danger');
+                        } else {
+                            $('#'+id).removeClass('border border-danger');
+                        }
+                    });
+                });
+            },
+            rules: {
+                name: 'required',
+                email: {
+                    required: true,
+                    email: true
+                },
+                clinic_name: 'required',
+                address: 'required',
+                phones: 'required',
+                type: 'required',
+                clinic_rating: 'required',
+                comfort_rating: 'required',
+                discipline_rating: 'required',
+                last_name: 'required',
+                patronymic: 'required',
+                password: 'required',
+                password_confirmation: 'required',
+            }
+        });
+    </script>
     <script src="{{ asset('js/select2.js') }}"></script>
     <script>
         $('#services').select2({

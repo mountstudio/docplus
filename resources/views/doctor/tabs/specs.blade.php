@@ -5,7 +5,7 @@
 				<label for="clinics">Clinics</label>
 				<select class="form-control m-0 w-100" name="clinics[]" id="clinics" multiple="">
 					@foreach($clinics as $clinic)
-						<option value="{{ $clinic->id }}" {{ isset($doctor) ? $doctor->clinics->where('id', $clinic->id)->isNotEmpty() ? 'selected' : '' : '' }}>{{ $clinic->name }} | {{ $clinic->address }}</option>
+						<option value="{{ $clinic->id }}" {{ isset($doctor) ? $doctor->clinics->where('id', $clinic->id)->isNotEmpty() ? 'selected' : '' : '' }}>{{ $clinic->clinic_name }} | {{ $clinic->address }}</option>
 					@endforeach
 				</select>
 			</div>

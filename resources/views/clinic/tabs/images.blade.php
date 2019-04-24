@@ -5,7 +5,6 @@
 
             <label class="custom-file-container__custom-file" >
                 <input name="logo" type="file" class="custom-file-container__custom-file__custom-file-input" accept="*">
-                <input type="hidden" name="MAX_FILE_SIZE" value="10485760" />
                 <span class="custom-file-container__custom-file__custom-file-control"></span>
             </label>
             <div class="custom-file-container__image-preview"></div>

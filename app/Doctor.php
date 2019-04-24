@@ -9,6 +9,7 @@ use App\Clinic;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\Hash;
+use Symfony\Component\HttpFoundation\File\UploadedFile;
 use Symfony\Component\HttpFoundation\Request;
 
 class Doctor extends Model
@@ -17,7 +18,7 @@ class Doctor extends Model
         'address', 'educations', 'experiences', 'price', 'discount', 'age',
         'attent_rating', 'manner_rating', 'time_rating', 'rating' ,'user_id',
         'title', 'description', 'keywords', 'first', 'second', 'third', 'prof_rating',
-        'child', 'home', 'logo', 'level_id',
+        'child', 'home', 'logo', 'level_id', 'second_price',
     ];
 
     protected $casts = [
@@ -122,8 +123,11 @@ class Doctor extends Model
 
     public function updateDoctorRelations(Request $request)
     {
-        if (request('pics')) {
-            foreach (request('pics') as $file) {
+        if ($request->pics) {
+            foreach ($request->pics as $file) {
+                /**
+                 * @var UploadedFile $file
+                 */
                 $fileName = ImageSaver::save($file, 'uploads', 'doctor');
 
                 $pic = new Pic([

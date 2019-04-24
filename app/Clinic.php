@@ -4,6 +4,7 @@ namespace App;
 
 use App\Collections\ClinicCollection;
 use App\Doctor;
+use App\Helpers\ImageSaver;
 use App\Pic;
 use App\Category;
 use Illuminate\Database\Eloquent\Model;
@@ -12,7 +13,7 @@ use Illuminate\Http\Request;
 class Clinic extends Model
 {
     protected $fillable = [
-        'name', 'address', 'phones', 'clinic_rating', 'comfort_rating', 'discipline_rating', 'rating', 'user_id',
+        'clinic_name', 'address', 'phones', 'clinic_rating', 'comfort_rating', 'discipline_rating', 'rating', 'user_id',
         'title', 'description', 'keywords', 'logo', 'child', 'fullDay', 'type', 'branch_id',
     ];
 
@@ -60,10 +61,17 @@ class Clinic extends Model
     {
         return $this->belongsToMany(Pic::class);
     }
+
     public function feedbacks()
     {
         return $this->belongsToMany(Feedback::class);
     }
+
+    public function records()
+    {
+        return $this->hasMany(Record::class);
+    }
+
     public static function getRecord(Clinic $clinic)
     {
 //        return Record::all()->where('clinic_id', $clinic->id);

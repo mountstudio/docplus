@@ -21,7 +21,7 @@
                                     </div></div>
 
                                 <div class="col">
-                                        <p class="text-secondary h3 m-0 mb-md-2 font-weight-bold">{{ $clinic->name ?? 'Бобров Василий Елисеевич' }}</p>
+                                        <p class="text-secondary h3 m-0 mb-md-2 font-weight-bold">{{ $clinic->clinic_name ?? 'Бобров Василий Елисеевич' }}</p>
                                         <p class="text-secondary h3 m-0 mb-md-2 font-weight-bold">{{ $clinic->type }}</p>
                                 </div>
                             </div>

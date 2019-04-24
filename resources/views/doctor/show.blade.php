@@ -3,8 +3,6 @@
 @section('content')
 
 
-    @include('_partials._head_rec')
-
     <div class="container py-5">
         <div class="row ">
             <div class="col-12 col-md-4   text-center">
@@ -18,9 +16,9 @@
                     </div>
                 </div>
                 @if(!$doctor->pics->isEmpty())
-                    <a href="{{ $doctor->logo && file_exists(public_path('uploads/'.$doctor->logo)) ? asset('uploads/'.$doctor->logo) : asset('img/noavatar.png') }}"
+                    <a href="{{ $doctor->pics->first()->image && file_exists(public_path('uploads/'.$doctor->pics->first()->image)) ? asset('uploads/'.$doctor->pics->first()->image) : asset('img/noavatar.png') }}"
                        class="elem"
-                       data-lcl-thumb="{{ $doctor->logo && file_exists(public_path('uploads/'.$doctor->logo)) ? asset('uploads/'.$doctor->logo) : asset('img/noavatar.png') }}">
+                       data-lcl-thumb="{{ $doctor->pics->first()->image && file_exists(public_path('uploads/'.$doctor->pics->first()->image)) ? asset('uploads/'.$doctor->pics->first()->image) : asset('img/noavatar.png') }}">
                         Все фото врача
                     </a>
                 @endif
@@ -39,7 +37,7 @@
                 <p class="text-muted font-weight-light small">{{count($doctor->feedbacks)}}
                     отзывов-(ва)</p>
                 <p><a class="text-primary small"
-                      href="{{ $doctor->clinic ? route('clinic.show', $doctor->clinic) : '#' }}">{{ $doctor->clinic ? $doctor->clinic->name : '' }}</a>
+                      href="{{ $doctor->clinic ? route('clinic.show', $doctor->clinic) : '#' }}">{{ $doctor->clinic ? $doctor->clinic->clinic_name : '' }}</a>
                 </p>
                 {{--<div class="row justify-content-center mt-3">--}}
                 {{--@include('_partials.stars', ['id' => $doctor->id.'-prof'])--}}
@@ -47,7 +45,7 @@
                 {{--<p class="text-muted font-weight-light mb-0 small">Профессиональный рейтинг врача</p>--}}
             </div>
             <div class="col col-md-auto mt-3 mt-md-0">
-                <h3 class="text-secondary text-center text-md-left h2 mt-3 mt-md-0 font-weight-bold">{{ $doctor->fullName ?? 'Бобров Василий Елисеевич' }}</h3>
+                <h1 class="text-secondary text-center text-md-left h2 mt-3 mt-md-0 font-weight-bold">{{ $doctor->fullName ?? 'Бобров Василий Елисеевич' }}</h1>
                 <p class="text-secondary font-weight-light">
                     @if(isset($doctor))
                         {{ $doctor->specs->implode('name', ', ') }}
@@ -78,7 +76,7 @@
                     <span class="font-weight-bold h5">+996 (777) 777-777</span>
                 </p>
                 <a href="#feedbacks" class="text-secondary pt-md-5 d-md-block d-none"><u>Отзывы о враче</u></a>
-                <p class="text-secondary font-weight-light small m-0">На прошлой неделе записалось два человека</p>
+                <p class="text-secondary font-weight-light small m-0">На прошлой неделе записалось {{ $doctor->records->count() }} человек(-а)</p>
 
             </div>
             {{--<div class="col-auto d-md-block d-none">--}}
@@ -114,31 +112,27 @@
     {{--</div>--}}
     {{--</div>--}}
     <div class="d-md-block d-none">
-    <div class="container py-4">
-        <div class="row justify-content-center">
-            <div class="col-12 col-md-8">
-                <div class="text-secondary mb-5">
-                    @if(count($doctor->services))
-                        <p class="font-weight-bold h5">Услуги врача</p>
-                        @foreach($doctor->services as $service)
-                            <span class="mr-2">{{$service->name}}</span>
+        <div class="container py-4">
+            <div class="row justify-content-center">
+                <div class="col-12 col-md-8">
+                    <div class="text-secondary mb-5">
+                        @if(count($doctor->services))
+                            <p class="font-weight-bold h5">Услуги врача</p>
+                            @foreach($doctor->services as $service)
+                                <span class="mr-2">{{$service->name}}</span>
 
-                        @endforeach
+                            @endforeach
+                        @endif
+                    </div>
+                    @if($doctor->description)
+                        <h5 class="text-secondary font-weight-bold">Информация о враче</h5>
+                        <div>
+                            <span class="text-secondary">{{$doctor->description}}</span>
+                        </div>
+                    @else
+                        <h5 class="text-secondary font-weight-bold">Информация отсутствует</h5>
                     @endif
                 </div>
-                @if($doctor->description)
-                    <p>
-                    <h5 class="text-secondary font-weight-bold">Информация о враче</h5>
-                    <div>
-                        <span class="text-secondary">{{$doctor->description}}</span>
-                    </div>
-                    </p>
-                @else
-                    <p>
-                    <h5 class="text-secondary font-weight-bold">Информация отсутствует</h5>
-                    </p>
-                @endif
-            </div>
 
                 <div class="col">
 

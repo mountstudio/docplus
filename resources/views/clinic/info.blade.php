@@ -24,7 +24,7 @@
                 {{--<p class="text-muted font-weight-light mb-0 small">Профессиональный рейтинг врача</p>--}}
             </div>
             <div class="col col-md-auto mt-3 mt-md-0">
-                <h3 class="text-secondary text-center text-md-left h2 mt-3 mt-md-0 font-weight-bold">{{ $clinic->name }}</h3>
+                <h3 class="text-secondary text-center text-md-left h2 mt-3 mt-md-0 font-weight-bold">{{ $clinic->clinic_name }}</h3>
                 <p class="text-secondary font-weight-light m-0 mb-md-2">
                     Телефон для записи: <br>
                     <span class="font-weight-bold h5">{{ $clinic->phones }}</span>

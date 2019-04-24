@@ -41,7 +41,7 @@
                 ajax: '{!! route('datatable.getclinics') !!}',
                 columns: [
                     { data: 'id', name: 'id' },
-                    { data: 'name', name: 'name' },
+                    { data: 'clinic_name', name: 'clinic_name' },
                     { data: 'address', name: 'address' },
                     { data: 'phones', name: 'phones'},
                     { data: 'action', name: 'action'}

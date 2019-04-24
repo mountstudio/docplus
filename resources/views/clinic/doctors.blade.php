@@ -17,7 +17,7 @@
 
     <div class="container my-5">
         <p class="text-doc font-weight-bold mt-3 h3">
-            {{$clinic->name}}
+            {{$clinic->clinic_name}}
         </p>
         <p class="text-doc font-weight-bold mt-3 h3">
             Врачи специальности {{ $spec->name }}

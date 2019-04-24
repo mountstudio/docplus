@@ -62,7 +62,7 @@
                                 <label for="recipient-name" class="col-form-label">Клиника: </label>
                                 <select class="ml-5" name="doctor_clinic_id">
                                     @foreach($doctor->clinics as $clinic)
-                                        <option value="{{$clinic->id}}">{{ $clinic->name }}</option>
+                                        <option value="{{$clinic->id}}">{{ $clinic->clinic_name }}</option>
                                     @endforeach
                                 </select>
                             </div>

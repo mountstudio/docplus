@@ -5,7 +5,7 @@
                 <p>{{ $doctor->name }}</p>
             @endforeach
             @foreach($clinics as $clinic)
-                <p>{{ $clinic->name }}</p>
+                <p>{{ $clinic->clinic_name }}</p>
             @endforeach
         </div>
     </div>

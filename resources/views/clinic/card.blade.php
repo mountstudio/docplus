@@ -16,14 +16,14 @@
             </div>
             <div class="col-7">
                 <a href="{{ route('clinic.show', $clinic->id) }}">
-                    <span class="text-secondary h3 mt-5 mb-2 font-weight-bold">{{ $clinic->name ?? 'Бобров Василий Елисеевич' }}</span>
+                    <span class="text-secondary h3 mt-5 mb-2 font-weight-bold">{{ $clinic->clinic_name ?? 'Бобров Василий Елисеевич' }}</span>
                 </a>
                 <p class="text-secondary font-weight-light h6 my-3"><em>
                         @if($clinic->type)
                             {{$clinic->type}}
                             @endif
                     </em></p>
-                <p class="text-secondary font-weight-light small pt-3 d-md-block d-none">На прошлой неделе записалось два человека</p>
+                <p class="text-secondary font-weight-light small pt-3 d-md-block d-none">На прошлой неделе записалось {{ $clinic->records->count() }} человека</p>
 
             </div>
         </div>

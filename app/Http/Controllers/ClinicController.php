@@ -62,6 +62,7 @@ class ClinicController extends Controller
             'clinics' => Clinic::all(),
             'categories' => Category::all(),
             'doctors' => $doctors,
+            'branches' => Branch::all(),
             'services' => Service::all(),
         ]);
     }

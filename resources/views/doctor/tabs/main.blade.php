@@ -1,4 +1,4 @@
-@include('user.register', ['doctor' => isset($doctor) ? $doctor : null, 'create' => $create])
+@include('user.register', ['doctor' => isset($doctor) ? $doctor : null, 'create' => $create, 'errors' => $errors])
 
 <div class="form-group">
 	<label for="address">Address</label>
@@ -9,6 +9,10 @@
 	<div class="form-group col">
 		<label for="price">Price</label>
 		<input id="price" name="price" type="text" class="form-control" value="{{ isset($doctor) ? $doctor->price : old('price') }}" required>
+	</div>
+	<div class="form-group col">
+		<label for="second_price">Цена за выезд (необязательно)</label>
+		<input id="second_price" name="second_price" type="text" class="form-control" value="{{ isset($doctor) ? $doctor->second_price : old('second_price') }}">
 	</div>
 	<div class="form-group col">
 		<label for="discount">Discount</label>
@@ -44,31 +48,31 @@
 <div class="form-row py-4">
 	<div class="form-group col">
 		<label for="first">Степень</label>
-		<div id="first" class="rateYo"></div>
+		<div id="first" class="rateYo p-1"></div>
 		@if(old('first'))
-			<input type="hidden" id="first_input" name="first" value="{{ old('clinic_rating') }}" required>
+			<input type="hidden" id="first_input" name="first" class="rating_input" value="{{ old('first') }}" required>
 		@else
-			<input type="hidden" id="first_input" name="first" value="{{ isset($doctor) && $doctor->first ? $doctor->first : '' }}" required>
+			<input type="hidden" id="first_input" name="first" class="rating_input" value="{{ isset($doctor) && $doctor->first ? $doctor->first : '' }}" required>
 		@endif
 	</div>
 
 	<div class="form-group col">
 		<label for="second">Категория</label>
-		<div id="second" class="rateYo"></div>
+		<div id="second" class="rateYo p-1"></div>
 		@if(old('second'))
-			<input type="hidden" id="second_input" name="second" value="{{ old('second') }}" required>
+			<input type="hidden" id="second_input" name="second" class="rating_input" value="{{ old('second') }}" required>
 		@else
-			<input type="hidden" id="second_input" name="second" value="{{ isset($doctor) && $doctor->second ? $doctor->second : '' }}" required>
+			<input type="hidden" id="second_input" name="second" class="rating_input" value="{{ isset($doctor) && $doctor->second ? $doctor->second : '' }}" required>
 		@endif
 	</div>
 
 	<div class="form-group col">
 		<label for="third">Стаж</label>
-		<div id="third" class="rateYo"></div>
+		<div id="third" class="rateYo p-1"></div>
 		@if(old('third'))
-			<input type="hidden" id="third_input" name="third" value="{{ old('third') }}" required>
+			<input type="hidden" id="third_input" name="third" class="rating_input" value="{{ old('third') }}" required>
 		@else
-			<input type="hidden" id="third_input" name="third" value="{{ isset($doctor) && $doctor->third ? $doctor->third : '' }}" required>
+			<input type="hidden" id="third_input" name="third" class="rating_input" value="{{ isset($doctor) && $doctor->third ? $doctor->third : '' }}" required>
 		@endif
 	</div>
 
