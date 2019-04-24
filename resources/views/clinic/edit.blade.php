@@ -1,7 +1,7 @@
 @extends('admin.index')
 
 @section('admin_content')
-    <form action="{{ route('clinic.update', $clinic) }}" method="POST" enctype="multipart/form-data">
+    <form action="{{ route('clinic.update', $clinic) }}" method="POST" enctype="multipart/form-data" id="validate">
         @method('PUT')
         @csrf
         <ul class="nav nav-tabs" id="myTab" role="tablist">
@@ -18,7 +18,7 @@
                 <a class="nav-link" id="save-tab" data-toggle="tab" href="#save" role="tab" aria-controls="save" aria-selected="false">Save</a>
             </li>
         </ul>
-        <div class="tab-content" id="myTabContent">
+        <div class="tab-content tab-validate" id="myTabContent">
             <div class="tab-pane fade show active" id="main" role="tabpanel" aria-labelledby="main-tab">
                 @include('clinic.tabs.main', ['create' => false])
             </div>
@@ -42,9 +42,6 @@
         $('#validate').validate({
             ignore: [],
             errorPlacement: function() {},
-            submitHandler: function() {
-                alert('Successfully saved!');
-            },
             invalidHandler: function() {
                 setTimeout(function() {
                     $('.nav-tabs a small.required').remove();
@@ -73,7 +70,6 @@
                 clinic_name: 'required',
                 address: 'required',
                 phones: 'required',
-                type: 'required',
                 clinic_rating: 'required',
                 comfort_rating: 'required',
                 discipline_rating: 'required',

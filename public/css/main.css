@@ -22,6 +22,10 @@ small.required {
     color: #f00;
 }
 
+.mce-notification {
+    display: none;
+}
+
 .star {
     width: 20px;
     height: auto;

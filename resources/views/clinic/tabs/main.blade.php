@@ -48,7 +48,7 @@
 <div class="form-row">
 <div class="form-group col">
     <label for="type">Type</label>
-    <input name="type" type="text" class="form-control {{ $errors->has('type') ? 'is-invalid' : '' }}" id="type_of_clinic" placeholder="Тип клиника" value="{{ isset($clinic) ? $clinic->type : old('type') }}" required>
+    <input name="type" type="text" class="form-control {{ $errors->has('type') ? 'is-invalid' : '' }}" id="type_of_clinic" placeholder="Тип клиника" value="{{ isset($clinic) ? $clinic->type : old('type') }}">
     @if($errors->has('type'))
         <span class="invalid-feedback" role="alert">
                 <strong>{{ $errors->first('type') }}</strong>

@@ -16,7 +16,7 @@
             </div>
             <div class="col-7">
                 <a href="{{ route('clinic.show', $clinic->id) }}">
-                    <span class="text-secondary h3 mt-5 mb-2 font-weight-bold">{{ $clinic->clinic_name ?? 'Бобров Василий Елисеевич' }}</span>
+                    <span class="text-secondary h3 mt-5 mb-2 font-weight-bold">{{ $clinic->type ?? '' }} {{ $clinic->clinic_name ?? 'Бобров Василий Елисеевич' }}</span>
                 </a>
                 <p class="text-secondary font-weight-light h6 my-3"><em>
                         @if($clinic->type)

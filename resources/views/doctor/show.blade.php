@@ -4,7 +4,7 @@
 
 
     <div class="container py-5">
-        <div class="row ">
+        <div class="row pt-5">
             <div class="col-12 col-md-4   text-center">
                 <div class="row justify-content-center">
                     <div class="col-10 col-md-8">
@@ -79,38 +79,8 @@
                 <p class="text-secondary font-weight-light small m-0">На прошлой неделе записалось {{ $doctor->records->count() }} человек(-а)</p>
 
             </div>
-            {{--<div class="col-auto d-md-block d-none">--}}
-            {{--<div class="row">--}}
-            {{--<div class="col-6">--}}
-            {{--<p class="mb-0">Степень </p>--}}
-            {{--<p class="mb-0">Категория </p>--}}
-            {{--<p class="mb-0">Стаж </p>--}}
-            {{--<p class="mb-0">Проф.рейтинг</p>--}}
-            {{--</div>--}}
-            {{--<div class="col-6">--}}
-            {{--<div class="mb-1">@include('_partials.stars', ['id' => 'first'])</div>--}}
-            {{--<div class="mb-1">@include('_partials.stars', ['id' => 'second'])</div>--}}
-            {{--<div class="mb-1">@include('_partials.stars', ['id' => 'third'])</div>--}}
-            {{--<div class="mb-1">@include('_partials.stars', ['id' => 'prof_rating'])</div>--}}
-            {{--</div>--}}
-            {{--</div>--}}
-            {{--</div>--}}
         </div>
     </div>
-    {{--<div class="col-12 d-md-none d-block">--}}
-    {{--<div class="row">--}}
-    {{--<div class="col-6">--}}
-    {{--<p class="text-secondary font-weight-bold ml-1">ВНИМАТЕЛЬНОСТЬ</p>--}}
-    {{--<p class="text-secondary font-weight-bold ml-1">МАНЕРЫ</p>--}}
-    {{--<p class="text-secondary font-weight-bold ml-1">ВРЕМЯ ОЖИДАНИЯ</p>--}}
-    {{--</div>--}}
-    {{--<div class="col-4">--}}
-    {{--@include('_partials.stars', ['class' => 'doctor-attent'])<br>--}}
-    {{--@include('_partials.stars', ['class' => 'doctor-manner'])<br>--}}
-    {{--@include('_partials.stars', ['class' => 'doctor-time'])--}}
-    {{--</div>--}}
-    {{--</div>--}}
-    {{--</div>--}}
     <div class="d-md-block d-none">
         <div class="container py-4">
             <div class="row justify-content-center">
@@ -127,7 +97,7 @@
                     @if($doctor->description)
                         <h5 class="text-secondary font-weight-bold">Информация о враче</h5>
                         <div>
-                            <span class="text-secondary">{{$doctor->description}}</span>
+                            <span class="text-secondary">{!! $doctor->description !!}</span>
                         </div>
                     @else
                         <h5 class="text-secondary font-weight-bold">Информация отсутствует</h5>

@@ -41,9 +41,6 @@
         $('#validate').validate({
             ignore: [],
             errorPlacement: function() {},
-            submitHandler: function() {
-                alert('Successfully saved!');
-            },
             invalidHandler: function() {
                 setTimeout(function() {
                     $('.nav-tabs a small.required').remove();
@@ -72,7 +69,6 @@
                 clinic_name: 'required',
                 address: 'required',
                 phones: 'required',
-                type: 'required',
                 clinic_rating: 'required',
                 comfort_rating: 'required',
                 discipline_rating: 'required',

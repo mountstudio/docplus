@@ -1,8 +1,7 @@
 <div class="container justify-content-center">
-@include('_partials._head_rec')
 <!-- img -->
     <div class="container py-5 mb-5">
-        <div class="row ">
+        <div class="row pt-5">
             <div class="col-12 col-md-4   text-center">
                 <div class="row justify-content-center">
                     <div class="col-10 col-md-8">
@@ -24,55 +23,17 @@
                 {{--<p class="text-muted font-weight-light mb-0 small">Профессиональный рейтинг врача</p>--}}
             </div>
             <div class="col col-md-auto mt-3 mt-md-0">
-                <h3 class="text-secondary text-center text-md-left h2 mt-3 mt-md-0 font-weight-bold">{{ $clinic->clinic_name }}</h3>
+                <h3 class="text-secondary text-center text-md-left h2 mt-3 mt-md-0 font-weight-bold">{{ $clinic->type ?? '' }} {{ $clinic->clinic_name }}</h3>
                 <p class="text-secondary font-weight-light m-0 mb-md-2">
                     Телефон для записи: <br>
                     <span class="font-weight-bold h5">{{ $clinic->phones }}</span>
                 </p>
                 {{--<a href="#feedbacks" class="text-secondary pt-md-5 d-md-block d-none"><u>Отзывы о клинике</u></a>--}}
-                <p class="text-secondary font-weight-light small m-0">На прошлой неделе записалось два человека</p>
+                <p class="text-secondary font-weight-light small m-0">На прошлой неделе записалось {{ $clinic->records->count() }} человека</p>
 
             </div>
-            {{--<div class="col-auto d-md-block d-none">--}}
-            {{--<div class="row">--}}
-            {{--<div class="col-6">--}}
-            {{--<p class="mb-0">Степень </p>--}}
-            {{--<p class="mb-0">Категория </p>--}}
-            {{--<p class="mb-0">Стаж </p>--}}
-            {{--<p class="mb-0">Проф.рейтинг</p>--}}
-            {{--</div>--}}
-            {{--<div class="col-6">--}}
-            {{--<div class="mb-1">@include('_partials.stars', ['id' => 'first'])</div>--}}
-            {{--<div class="mb-1">@include('_partials.stars', ['id' => 'second'])</div>--}}
-            {{--<div class="mb-1">@include('_partials.stars', ['id' => 'third'])</div>--}}
-            {{--<div class="mb-1">@include('_partials.stars', ['id' => 'prof_rating'])</div>--}}
-            {{--</div>--}}
-            {{--</div>--}}
-            {{--</div>--}}
         </div>
     </div>
-{{--<div class="row py-4">--}}
-{{--<div class="col-9">--}}
-{{--<div class="row">--}}
-{{--<div class="col-12 col-md-4 text-center ">--}}
-{{--<img class="img-fluid rounded-circle mb-2 img-thumbnail" src="{{ $clinic->pics->first() ? asset('uploads/'.$clinic->pics->first()->image) : asset('img/noavatar.png') }}" alt="">--}}
-{{--<div class="row justify-content-center">--}}
-{{--@include('_partials.stars', ['id' => 'clinic-show'])--}}
-{{--</div>--}}
-{{--<p class="text-secondary text-uppercase py-2">{{$clinic->feedbacks->count()}} отзывов</p>--}}
-
-{{--</div>--}}
-
-{{--<div class="col-8 d-none d-md-block">--}}
-{{--<!--<img class="" src="{{ asset('img/cabinet-clinic.png') }}" alt="">-->--}}
-
-{{--@include('_partials.slider')--}}
-{{--<h3 class="ml-5 text-secondary text-center text-md-left h2 mt-3 mt-md-0">{{ $clinic->name ?? 'Бобров Василий Елисеевич' }}</h3>--}}
-{{--</div>--}}
-{{--</div>--}}
-{{--</div>--}}
-
-{{--</div>--}}
 
 <!-- secondary line -->
     <div class="row bg-secondary pt-1 my-3"></div>
@@ -80,21 +41,19 @@
     <div class="row pt-3">
         <div class="col-12 col-md-8">
             @if($clinic->description)
-                <p class="text-secondary">
-                <h5>О клинике</h5>
+                <h5 class="font-weight-bold">О клинике</h5>
                 <div>
-                    {{$clinic->description}}
+                    {!! $clinic->description !!}
                 </div>
-                </p>
             @endif
             @if(count($specs))
-                <p class="text-secondary mt-5">
-                <h5>Специализации</h5>
-                @foreach($specs as $spec)
-                    <a href="{{ route('clinic.doctor',[$clinic->id, $spec->id]) }}">{{$spec->name}}</a>
+                <div class="mt-5">
+                    <h5 class="font-weight-bold">Специализации</h5>
+                    @foreach($specs as $spec)
+                        <a href="{{ route('clinic.doctor',[$clinic->id, $spec->id]) }}">{{$spec->name}}</a>
                     @endforeach
-                    </p>
-                    @endif
+                </div>
+            @endif
         </div>
         <div class="col-12 col-md-4">
             <div class="row">
@@ -154,7 +113,7 @@
 
 
 @if(count($clinic->services) > 1)
-    <div class="container d-none d-md-block mb-5">
+    <div class="container d-none d-md-block my-5">
         <p class="h3 py-4">Цены на диагностические услуги</p>
         <div class="row">
             @foreach($clinic->services as $service)
