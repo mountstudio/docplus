@@ -95,12 +95,38 @@
                         @endif
                     </div>
                     @if($doctor->description)
-                        <h5 class="text-secondary font-weight-bold">Информация о враче</h5>
+                        <div class="mb-5">
+                        <h5 class="text-dark font-weight-bold ">Информация о враче</h5>
                         <div>
                             <span class="text-secondary">{!! $doctor->description !!}</span>
                         </div>
+                        </div>
                     @else
-                        <h5 class="text-secondary font-weight-bold">Информация отсутствует</h5>
+                        <div class="mb-5">
+                        <h5 class="text-dark font-weight-bold">Информация отсутствует</h5>
+                        </div>
+                    @endif
+                    @if($doctor->educations)
+                        <div class="mb-5">
+                        <h5 class="text-dark font-weight-bold">Образование</h5>
+
+                        <ul class="text-secondary">
+                            @foreach($doctor->educations as $education)
+                            <li>{{$education}}</li>
+                            @endforeach
+                        </ul>
+                        </div>
+                    @endif
+                    @if($doctor->experiences)
+                        <div class=" mb-5">
+                        <h5 class="text-dark font-weight-bold">Опыт работы</h5>
+
+                        <ul class="text-secondary">
+                            @foreach($doctor->experiences as $experience)
+                                <li>{{$experience}}</li>
+                            @endforeach
+                        </ul>
+                        </div>
                     @endif
                 </div>
 
