@@ -87,7 +87,7 @@
             </div>
         @endif
 
-    @if($branches->count() != 0)
+    @if($branches)
         <div class="container mt-5">
             <div class="row justify-content-center">
                 <div class="col-12 mb-3">

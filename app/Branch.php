@@ -8,6 +8,6 @@ class Branch extends Model
 {
     Public function clinics()
     {
-        return $this->belongsToMany('App\Clinic');
+        return $this->hasMany('App\Clinic');
     }
 }
