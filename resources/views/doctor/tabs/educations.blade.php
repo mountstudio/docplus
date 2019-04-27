@@ -15,7 +15,7 @@
 	<div class="col-6 text-center">
         <p>Опыт работы</p>
 		<div class="full_exp">
-			<p>{{ isset($doctor) ? $doctor->experiences ? implode(', ', $doctor->experinces) : '' : '' }}</p>
+			<p>{{ isset($doctor) ? $doctor->experiences ? implode(', ', $doctor->experiences) : '' : '' }}</p>
 		</div>
 		<div id="exp">
 

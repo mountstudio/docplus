@@ -19,10 +19,10 @@ $('#add-form-field2').click(e => {
 
     let btn = formField2.find('#remove-form-field2');
 
-    registerToRemove(btn);
+    registerToRemove2(btn);
 });
 
-function registerToRemove(btn) {
+function registerToRemove2(btn) {
     btn.click(e => {
         e.preventDefault();
 
