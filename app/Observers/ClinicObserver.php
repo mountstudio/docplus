@@ -44,11 +44,6 @@ class ClinicObserver
 //            }
 //        }
 
-        if(request()->branch_id) {
-            $branch = Branch::find(request()->branch_id);
-            $branch->clinics()->attach($clinic->id);
-        }
-
         if (request()->doctors) {
             foreach (request()->doctors as $doctor) {
                 /**
@@ -108,7 +103,6 @@ class ClinicObserver
     public function updated(Clinic $clinic)
     {
         \Log::info('Clinic updated');
-
 
     }
 

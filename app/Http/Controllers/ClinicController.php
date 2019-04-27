@@ -89,7 +89,6 @@ class ClinicController extends Controller
         if ($branch) {
             $branches = $branch->clinics->except($clinic->id);
         }
-
         return view('clinic.show',[
             'clinic' => $clinic,
             'doctors' => $clinic->doctors,

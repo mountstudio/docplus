@@ -15,7 +15,7 @@ use Symfony\Component\HttpFoundation\Request;
 class Doctor extends Model
 {
     protected $fillable = [
-        'address', 'educations', 'experiences', 'price', 'discount', 'age',
+        'address', 'educations', 'experiences', 'qualifications', 'price', 'discount', 'age',
         'attent_rating', 'manner_rating', 'time_rating', 'rating' ,'user_id',
         'title', 'description', 'keywords', 'first', 'second', 'third', 'prof_rating',
         'child', 'home', 'logo', 'level_id', 'second_price',
@@ -24,6 +24,7 @@ class Doctor extends Model
     protected $casts = [
         'educations' => 'array',
         'experiences' => 'array',
+        'qualifications' => 'array',
     ];
 
     public function user()

@@ -85,11 +85,11 @@
         <div class="container py-4">
             <div class="row justify-content-center">
                 <div class="col-12 col-md-8">
-                    <div class="text-secondary mb-5">
+                    <div class="mb-5">
                         @if(count($doctor->services))
                             <p class="font-weight-bold h5">Услуги врача</p>
                             @foreach($doctor->services as $service)
-                                <span class="mr-2">{{$service->name}}</span>
+                                <span class="mr-2 text-secondary ">{{$service->name}}</span>
 
                             @endforeach
                         @endif
@@ -126,6 +126,17 @@
                                 <li>{{$experience}}</li>
                             @endforeach
                         </ul>
+                        </div>
+                    @endif
+                    @if($doctor->qualifications)
+                        <div class=" mb-5">
+                            <h5 class="text-dark font-weight-bold">Квалификация</h5>
+
+                            <ul class="text-secondary">
+                                @foreach($doctor->qualifications as $qualification)
+                                    <li>{{$qualification}}</li>
+                                @endforeach
+                            </ul>
                         </div>
                     @endif
                 </div>
