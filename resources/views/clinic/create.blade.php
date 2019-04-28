@@ -8,6 +8,9 @@
                 <a class="nav-link active" id="main-tab" data-toggle="tab" href="#main" role="tab" aria-controls="main" aria-selected="true">Main</a>
             </li>
             <li class="nav-item">
+                <a class="nav-link" id="worktimes-tab" data-toggle="tab" href="#worktime" role="tab" aria-controls="worktime" aria-selected="true">Worktime</a>
+            </li>
+            <li class="nav-item">
                 <a class="nav-link" id="services-tab" data-toggle="tab" href="#service" role="tab" aria-controls="services" aria-selected="true">Services</a>
             </li>
             <li class="nav-item">
@@ -20,6 +23,9 @@
         <div class="tab-content tab-validate" id="myTabContent">
             <div class="tab-pane fade show active" id="main" role="tabpanel" aria-labelledby="main-tab">
                 @include('clinic.tabs.main', ['create' => true])
+            </div>
+            <div class="tab-pane fade" id="worktime" role="tabpanel" aria-labelledby="worktimes-tab">
+                @include('clinic.tabs.working_hours')
             </div>
             <div class="tab-pane fade" id="service" role="tabpanel" aria-labelledby="services-tab">
                 @include('clinic.tabs.services')

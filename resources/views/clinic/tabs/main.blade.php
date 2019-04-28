@@ -58,7 +58,7 @@
 <div class="form-group col">
     <label for="branch_id">Branch</label>
     <select class="form-control m-0 w-100" name="branch_id" id="branch_id">
-        <option value="null">Нет</option>
+        <option value="{{ null }}">Нет</option>
         @foreach($branches as $branch)
             <option value="{{ $branch->id }}" {{ isset($clinic) && $clinic->branch_id ? 'selected' : '' }}>{{ $branch->name }}</option>
         @endforeach

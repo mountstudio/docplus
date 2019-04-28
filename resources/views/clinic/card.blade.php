@@ -51,13 +51,13 @@
             </div>
             <div class="col">
                 <p class="text-secondary small m-0">
-                    пн-пт:         <span class="float-right">08:00 - 21:00</span>
+                    пн-пт:         <span class="float-right">{{ $clinic->worktimes['weekdays_begin'] }} - {{ $clinic->worktimes['weekdays_end'] }}</span>
                 </p>
                 <p class="text-secondary small m-0">
-                    сб:            <span class="float-right">08:00 - 21:00</span>
+                    сб:            <span class="float-right">{{ $clinic->worktimes['saturday_begin'] }} - {{ $clinic->worktimes['saturday_end'] }}</span>
                 </p>
                 <p class="text-secondary small m-0">
-                    вс:            <span class="float-right">08:00 - 21:00</span>
+                    вс:            <span class="float-right">{{ $clinic->worktimes['sunday_begin'] }} - {{ $clinic->worktimes['sunday_end'] }}</span>
                 </p>
             </div>
         </div>
