@@ -148,5 +148,30 @@
             navText: ['<i class="fas fa-chevron-left fa-2x"></i>','<i class="fas fa-chevron-right fa-2x"></i>'],
         })
     </script>
+    <script type="text/javascript">
+        // Функция ymaps.ready() будет вызвана, когда
+        // загрузятся все компоненты API, а также когда будет готово DOM-дерево.
+        ymaps.ready(init);
+        function init(){
+            // Создание карты.
+            var myMap = new ymaps.Map("map", {
+                // Координаты центра карты.
+                // Порядок по умолчанию: «широта, долгота».
+                // Чтобы не определять координаты центра карты вручную,
+                // воспользуйтесь инструментом Определение координат.
+                center: [{{ $clinic->latitude ?? 42.865388923088396 }}, {{ $clinic->longtitude ?? 74.60104350048829 }}],
+                // Уровень масштабирования. Допустимые значения:
+                // от 0 (весь мир) до 19.
+                zoom: 17
+            });
+
+            myMap.geoObjects.add(new ymaps.Placemark([{{ $clinic->latitude ?? 42.865388923088396 }}, {{ $clinic->longtitude ?? 74.60104350048829 }}], {
+                balloonContent: '{{ $clinic->clinic_name }}'
+            }, {
+                preset: 'islands#icon',
+                iconColor: '#0095b6'
+            }))
+        }
+    </script>
 @endpush
 
