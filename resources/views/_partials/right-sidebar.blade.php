@@ -41,7 +41,7 @@
     @if($doctor->home)
     <div class="col-12 border border-top-0">
         <p class="text-secondary">
-            Выезд врача на дом <br> <span class="font-weight-bold">Стоимость выезда: от 350 сом</span>
+            Выезд врача на дом <br> <span class="font-weight-bold">Стоимость выезда: от {{$doctor->second_price}} сом</span>
         </p>
 
         <!-- It's a button -->

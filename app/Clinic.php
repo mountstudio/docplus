@@ -15,11 +15,12 @@ class Clinic extends Model
     protected $fillable = [
         'clinic_name', 'address', 'phones', 'clinic_rating', 'comfort_rating', 'discipline_rating',
         'rating', 'user_id', 'title', 'description', 'keywords', 'logo', 'child', 'fullDay', 'type',
-        'branch_id', 'latitude', 'longtitude',
+        'branch_id', 'latitude', 'longtitude', 'worktimes',
     ];
 
     protected $casts = [
       'phones' => 'array',
+      'worktimes' => 'array',
     ];
 
     public function newCollection(array $models = [])
