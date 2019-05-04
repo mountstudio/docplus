@@ -1,5 +1,33 @@
 @extends('layouts.app')
-
+<style>
+    .wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        justify-content: center;
+    }
+    .xpandable-block {
+        height: 150px;
+        overflow: hidden;
+        order: 0;
+    }
+    .xpand-button {
+        order: 1;
+    }
+    input[type="checkbox"] {
+        display: none;
+    }
+    input[type="checkbox"]:checked + .xpandable-block {
+        height: auto;
+    }
+    label {
+        order: 1;
+        color: blue;
+        text-decoration: underline;
+        font-size: 18px;
+        cursor: pointer;
+    }
+</style>
 @section('content')
     <div class="container border-bottom border-secondary">
         @include('_partials._head_rec')
@@ -14,8 +42,10 @@
 
     @if($spec->description)
     <div class="container mt-4 d-ld-block d-none">
-        <div class="row justify-content-center">
-            <div class="col-12 text-center">
+        <div class="row justify-content-center wrapper">
+            <label for="button">еще...</label>
+            <input type="checkbox" id="button">
+            <div class="col-12 text-center xpandable-block">
                 @include('_partials.mobile-question')
             </div>
         </div>

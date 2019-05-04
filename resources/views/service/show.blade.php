@@ -1,6 +1,33 @@
 @extends('layouts.app')
-
-
+<style>
+    .wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        justify-content: center;
+    }
+    .xpandable-block {
+        height: 150px;
+        overflow: hidden;
+        order: 0;
+    }
+    .xpand-button {
+        order: 1;
+    }
+    input[type="checkbox"] {
+        display: none;
+    }
+    input[type="checkbox"]:checked + .xpandable-block {
+        height: auto;
+    }
+    label {
+        order: 1;
+        color: blue;
+        text-decoration: underline;
+        font-size: 18px;
+        cursor: pointer;
+    }
+</style>
 
 @section('content')
 
@@ -19,9 +46,13 @@
                 <p class="h4 pt-3">
                     <b>{{ $service->name }} :<br>цены, адреса и запись онлайн</b>
                 </p>
-                <p class="pt-3 pb-0">
-                  <span class="text-secondary">{!! $service->description !!}</span>
-                </p>
+                <div class="pt-3 pb-0 wrapper">
+                    <label class="text-secondary" style="text-decoration: none;" for="button">Показать / скрыть</label>
+                    <input type="checkbox" id="button">
+                <div class="xpandable-block">
+                  <p class="text-secondary">{!! $service->description !!}</p>
+                </div>
+                </div>
 
             </div>
         </div>
