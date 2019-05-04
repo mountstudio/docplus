@@ -22,7 +22,7 @@
                 {{--</div>--}}
                 {{--<p class="text-muted font-weight-light mb-0 small">Профессиональный рейтинг врача</p>--}}
             </div>
-            <div class="col col-md-auto mt-3 mt-md-0">
+            <div class="col col-md mt-3 mt-md-0">
                 <h3 class="text-secondary text-center text-md-left h2 mt-3 mt-md-0 font-weight-bold">{{ $clinic->type ?? '' }} {{ $clinic->clinic_name }}</h3>
                 <p class="text-secondary font-weight-light m-0 mb-md-2">
                     Телефон для записи: <br>
@@ -33,7 +33,7 @@
 
             </div>
             @if($clinic->latitude && $clinic->longtitude)
-                <div class="col-12 col-md-4">
+                <div class="col-12 col-md-4 p-0">
                     <div id="map" style="width: 100%; height: 100%;"></div>
                 </div>
             @endif
