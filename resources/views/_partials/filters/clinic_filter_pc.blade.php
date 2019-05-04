@@ -1,4 +1,4 @@
-<form action="{{ $route ?? route('doctor.index') }}" class="my-4 text-center" method="get">
+<form action="{{ $route ?? route('clinic.index') }}" class="my-4 text-center" method="get">
     <div class="row justify-content-center px-4">
         <div class="col-auto">
             <div class="btn-group" data-toggle="buttons">
@@ -10,9 +10,9 @@
         </div>
         <div class="col-auto">
             <div class="btn-group" data-toggle="buttons">
-                <label class="btn btn-primary mb-0 {{ $home ? 'active' : '' }}">
-                    <input class="form-check-input no-appearance" name="home" type="checkbox" id="defaultCheck2" {{ $home ? 'checked' : '' }}>
-                    На дом
+                <label class="btn btn-primary mb-0 {{ $fullDay ? 'active' : '' }}">
+                    <input class="form-check-input no-appearance" name="fullDay" type="checkbox" id="defaultCheck2" {{ $fullDay ? 'checked' : '' }}>
+                    Круглосуточно
                 </label>
             </div>
         </div>
@@ -25,10 +25,6 @@
                 <label class="btn btn-primary mb-0 {{ $filter === 'rating' ? 'active' : '' }}">
                     <input class="form-check-input no-appearance" type="radio" name="filter" id="exampleRadios2" value="rating" {{ $filter === 'rating' ? 'checked' : '' }}>
                     Рейтинг
-                </label>
-                <label class="btn btn-primary mb-0 {{ $filter === 'price' ? 'active' : '' }}">
-                    <input class="form-check-input no-appearance" type="radio" name="filter" id="exampleRadios3" value="price" {{ $filter === 'price' ? 'checked' : '' }}>
-                    Стоимость
                 </label>
                 <label class="btn btn-primary mb-0 {{ $filter === 'feeds' ? 'active' : '' }}">
                     <input class="form-check-input no-appearance" type="radio" name="filter" id="exampleRadios4" value="feeds" {{ $filter === 'feeds' ? 'checked' : '' }}>

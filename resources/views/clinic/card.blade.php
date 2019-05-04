@@ -1,4 +1,4 @@
-<div class="row justify-content-center my-4 border shadow p-md-4 py-3">
+<div class="row justify-content-center mb-3 border shadow p-md-4 py-3">
     <div class="col-12 col-lg-9">
         <div class="row">
             <div class="col-5 text-center">
@@ -21,7 +21,7 @@
                 <p class="text-secondary font-weight-light h6 my-3"><em>
                         @if($clinic->type)
                             {{$clinic->type}}
-                            @endif
+                        @endif
                     </em></p>
                 <p class="text-secondary font-weight-light small pt-3 d-md-block d-none">На прошлой неделе записалось {{ $clinic->records->count() }} человека</p>
 
