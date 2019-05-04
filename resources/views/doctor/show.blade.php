@@ -44,7 +44,7 @@
                 {{--</div>--}}
                 {{--<p class="text-muted font-weight-light mb-0 small">Профессиональный рейтинг врача</p>--}}
             </div>
-            <div class="col col-md-auto mt-3 mt-md-0">
+            <div class="col col-md-4 mt-3 mt-md-0">
                 <h1 class="text-dark text-center text-md-left h2 mt-3 mt-md-0 font-weight-bold">{{ $doctor->fullName ?? 'Бобров Василий Елисеевич' }}</h1>
                 <p class="text-dark font-weight-light">
                     @if(isset($doctor))
@@ -81,8 +81,8 @@
             </div>
 
             @if($doctor->latitude && $doctor->longtitude)
-                <div class="col-12 col-md-4">
-                    <div id="map" style="width: 100%; height: 100%;"></div>
+                <div class="col-12 col-md">
+                    <div id="map" style="width: 100%; height: 350px;"></div>
                 </div>
             @endif
         </div>
