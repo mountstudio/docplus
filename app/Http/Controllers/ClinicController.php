@@ -89,7 +89,7 @@ class ClinicController extends Controller
         if ($branch) {
             $branches = $branch->clinics->except($clinic->id);
         }
-        if ($branches->count() > 4)
+        if ($branches && $branches->count() > 4)
         {
             $branches = $branches->random(4);
         }
