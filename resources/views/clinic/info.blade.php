@@ -32,6 +32,11 @@
                 <p class="text-secondary font-weight-light small m-0">На прошлой неделе записалось {{ $clinic->records->count() }} человека</p>
 
             </div>
+            @if($clinic->latitude && $clinic->longtitude)
+                <div class="col-12 col-md-4">
+                    <div id="map" style="width: 100%; height: 100%;"></div>
+                </div>
+            @endif
         </div>
     </div>
 

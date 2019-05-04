@@ -69,6 +69,7 @@
 
 <script src="{{ asset('js/app.js') }}"></script>
 <script src="{{ asset('js/datatables.min.js') }}"></script>
+<script src="https://api-maps.yandex.ru/2.1/?apikey={{ env('YANDEX_MAPS_API_KEY') }}&lang=ru_RU" type="text/javascript"></script>
 
 @stack('scripts')
 

@@ -5,7 +5,7 @@
         <div class="backdrop"></div>
         <div class="row py-5 justify-content-center">
             <div class="col-12 py-5">
-                <h1 class="text-uppercase text-white text-center">Найдите нужнуого вам Врача</h1>
+                <h1 class="text-uppercase text-white text-center">Найдите нужного вам Врача</h1>
             </div>
             <div class="col-12 col-md-6 ">
                 @include('_partials.search')
@@ -16,6 +16,13 @@
         @include('_partials._head_rec')
     </div>
 
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12 p-0">
+                <div id="map" style="width: auto; height: 300px;"></div>
+            </div>
+        </div>
+    </div>
 
 
     <div class="container">
@@ -54,7 +61,7 @@
                 </div>
             </div>
         @endif
-
+    </div>
 @endsection
 
 @push('styles')
@@ -65,5 +72,23 @@
 @push('scripts')
     <script>
         $('[data-toggle="tooltip"]').tooltip();
+    </script>
+    <script type="text/javascript">
+        // Функция ymaps.ready() будет вызвана, когда
+        // загрузятся все компоненты API, а также когда будет готово DOM-дерево.
+        ymaps.ready(init);
+        function init(){
+            // Создание карты.
+            var myMap = new ymaps.Map("map", {
+                // Координаты центра карты.
+                // Порядок по умолчанию: «широта, долгота».
+                // Чтобы не определять координаты центра карты вручную,
+                // воспользуйтесь инструментом Определение координат.
+                center: [55.76, 37.64],
+                // Уровень масштабирования. Допустимые значения:
+                // от 0 (весь мир) до 19.
+                zoom: 15
+            });
+        }
     </script>
 @endpush

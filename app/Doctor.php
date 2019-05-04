@@ -18,7 +18,7 @@ class Doctor extends Model
         'address', 'educations', 'experiences', 'qualifications', 'price', 'discount', 'age',
         'attent_rating', 'manner_rating', 'time_rating', 'rating' ,'user_id',
         'title', 'description', 'keywords', 'first', 'second', 'third', 'prof_rating',
-        'child', 'home', 'logo', 'level_id', 'second_price',
+        'child', 'home', 'logo', 'level_id', 'second_price', 'latitude', 'longtitude',
     ];
 
     protected $casts = [

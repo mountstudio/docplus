@@ -2,10 +2,9 @@
 
 @section('content')
 
-
     <div class="container py-5">
         <div class="row pt-5">
-            <div class="col-12 col-md-4   text-center">
+            <div class="col-12 col-md-4 text-center">
                 <div class="row justify-content-center">
                     <div class="col-10 col-md-8">
                         @include('_partials.like', ['type' => 'Doctor', 'model' => $doctor])
@@ -17,24 +16,25 @@
                 </div>
                 @if(!$doctor->pics->isEmpty())
                     <a href="{{ $doctor->pics->first()->image && file_exists(public_path('uploads/'.$doctor->pics->first()->image)) ? asset('uploads/'.$doctor->pics->first()->image) : asset('img/noavatar.png') }}"
-                       class="elem"
+                       class="elem text-dark"
                        data-lcl-thumb="{{ $doctor->pics->first()->image && file_exists(public_path('uploads/'.$doctor->pics->first()->image)) ? asset('uploads/'.$doctor->pics->first()->image) : asset('img/noavatar.png') }}">
                         Все фото врача
                     </a>
                 @endif
                 <div class="content">
                     @foreach($doctor->pics as $pic)
-                        <a class="elem" href="{{asset('uploads/'.$pic->image)}}"
-                           data-lcl-thumb="{{asset('uploads/'.$pic->image)}}">
-                            <span style="background-image: url({{asset('uploads/'.$pic->image)}});"></span>
-                        </a>
+                        @if(!$loop->first)
+                            <a class="elem" href="{{asset('uploads/'.$pic->image)}}"
+                               data-lcl-thumb="{{asset('uploads/'.$pic->image)}}">
+                                <span style="background-image: url({{asset('uploads/'.$pic->image)}});"></span>
+                            </a>
+                        @endif
                     @endforeach
-
                 </div>
                 <div class="row justify-content-center">
                     @include('_partials.stars', ['id' => 'doctor-show'])
                 </div>
-                <p class="text-muted font-weight-light small">{{count($doctor->feedbacks)}}
+                <p class="text-dark font-weight-light small">{{count($doctor->feedbacks)}}
                     отзывов-(ва)</p>
                 <p><a class="text-primary small"
                       href="{{ $doctor->clinic ? route('clinic.show', $doctor->clinic) : '#' }}">{{ $doctor->clinic ? $doctor->clinic->clinic_name : '' }}</a>
@@ -45,8 +45,8 @@
                 {{--<p class="text-muted font-weight-light mb-0 small">Профессиональный рейтинг врача</p>--}}
             </div>
             <div class="col col-md-auto mt-3 mt-md-0">
-                <h1 class="text-secondary text-center text-md-left h2 mt-3 mt-md-0 font-weight-bold">{{ $doctor->fullName ?? 'Бобров Василий Елисеевич' }}</h1>
-                <p class="text-secondary font-weight-light">
+                <h1 class="text-dark text-center text-md-left h2 mt-3 mt-md-0 font-weight-bold">{{ $doctor->fullName ?? 'Бобров Василий Елисеевич' }}</h1>
+                <p class="text-dark font-weight-light">
                     @if(isset($doctor))
                         {{ $doctor->specs->implode('name', ', ') }}
                     @else
@@ -54,13 +54,13 @@
                     @endif
                     <br> Стаж <span class="font-weight-bold h5">{{ $doctor->age ?? 19 }}</span> лет
                 </p>
-                <p class="text-secondary font-weight-light">Профессиональный рейтинг - <span
+                <p class="text-dark font-weight-light">Профессиональный рейтинг - <span
                             class="font-weight-bold h5">{{ $doctor->prof_rating }} </span><i
                             class="fas fa-exclamation-circle" data-toggle="tooltip" data-placement="top"
                             title="Профессиональный рейтинг основан на трех критериях: Стаж, категория, степень."></i>
                 </p>
 
-                <p class="text-secondary font-weight-light m-0 mb-md-2">
+                <p class="text-dark font-weight-light m-0 mb-md-2">
                     Приём от
                     @if($doctor->discount)
                         <span class="text-doc2 font-weight-bold"><del>{{ $doctor->price ?? '1400' }} сом</del></span>
@@ -71,16 +71,24 @@
                     <i class="fas fa-exclamation-circle" data-toggle="tooltip" data-placement="top"
                        title="Скидка указана за первое посещение врача"></i>
                 </p>
-                <p class="text-secondary font-weight-light m-0 mb-md-2">
+                <p class="text-dark font-weight-light m-0 mb-md-2">
                     Телефон для записи: <br>
                     <span class="font-weight-bold h5">+996 (777) 777-777</span>
                 </p>
-                <a href="#feedbacks" class="text-secondary pt-md-5 d-md-block d-none"><u>Отзывы о враче</u></a>
-                <p class="text-secondary font-weight-light small m-0">На прошлой неделе записалось {{ $doctor->records->count() }} человек(-а)</p>
+                <a href="#feedbacks" class="text-dark pt-md-5 d-md-block d-none"><u>Отзывы о враче</u></a>
+                <p class="text-dark font-weight-light small m-0">На прошлой неделе записалось {{ $doctor->records->count() }} человек(-а)</p>
 
             </div>
+
+            @if($doctor->latitude && $doctor->longtitude)
+                <div class="col-12 col-md-4">
+                    <div id="map" style="width: 100%; height: 100%;"></div>
+                </div>
+            @endif
         </div>
     </div>
+
+
     <div class="d-md-block d-none">
         <div class="container py-4">
             <div class="row justify-content-center">
@@ -334,5 +342,30 @@
             starWidth: "20px",
             spacing: "5px",
         });
+    </script>
+    <script type="text/javascript">
+        // Функция ymaps.ready() будет вызвана, когда
+        // загрузятся все компоненты API, а также когда будет готово DOM-дерево.
+        ymaps.ready(init);
+        function init(){
+            // Создание карты.
+            var myMap = new ymaps.Map("map", {
+                // Координаты центра карты.
+                // Порядок по умолчанию: «широта, долгота».
+                // Чтобы не определять координаты центра карты вручную,
+                // воспользуйтесь инструментом Определение координат.
+                center: [{{ $doctor->latitude ?? 42.865388923088396 }}, {{ $doctor->longtitude ?? 74.60104350048829 }}],
+                // Уровень масштабирования. Допустимые значения:
+                // от 0 (весь мир) до 19.
+                zoom: 17
+            });
+
+            myMap.geoObjects.add(new ymaps.Placemark([{{ $doctor->latitude ?? 42.865388923088396 }}, {{ $doctor->longtitude ?? 74.60104350048829 }}], {
+                balloonContent: '{{ $doctor->fullName }}'
+            }, {
+                preset: 'islands#icon',
+                iconColor: '#0095b6'
+            }))
+        }
     </script>
 @endpush
