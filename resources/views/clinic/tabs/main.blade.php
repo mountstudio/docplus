@@ -2,7 +2,7 @@
 @include('user.register', ['doctor' => isset($clinic) ? $clinic : null, 'create' => $create])
 <div class="form-row">
     <div class="form-group col">
-        <label for="name_of_clinic"></label>
+        <label for="name_of_clinic">Название клиники</label>
         <input name="clinic_name" type="text" class="form-control {{ $errors->has('name') ? 'is-invalid' : '' }}" id="name_of_clinic" placeholder="Название Клиники" value="{{ isset($clinic) ? $clinic->clinic_name : old('clinic_name') }}" required>
         @if($errors->has('clinic_name'))
             <span class="invalid-feedback" role="alert">
@@ -11,7 +11,7 @@
         @endif
     </div>
     <div class="form-group col">
-        <label for="address_of_clinic"></label>
+        <label for="address_of_clinic">Адрес клиники</label>
         <input name="address" type="text" class="form-control {{ $errors->has('address') ? 'is-invalid' : '' }}" id="address_of_clinic" placeholder="Адрес Клиники" value="{{ isset($clinic) ? $clinic->address : old('address') }}" required>
         @if($errors->has('address'))
             <span class="invalid-feedback" role="alert">
@@ -20,7 +20,7 @@
         @endif
     </div>
     <div class="form-group col">
-        <label for="phones_of_clinic"></label>
+        <label for="phones_of_clinic">Телефон клиники</label>
         <input name="phones" type="text" class="form-control {{ $errors->has('phones') ? 'is-invalid' : '' }}" id="phones_of_clinic" placeholder="Телефон Клиники" value="{{ isset($clinic) ? $clinic->phones : old('phones') }}" required>
         @if($errors->has('phones'))
             <span class="invalid-feedback" role="alert">
@@ -31,6 +31,12 @@
 </div>
 
 <div class="form-row justify-content-center">
+    <div class="form-group col-auto">
+        <label for="partner">
+            <input type="checkbox" name="partner" id="partner" {{ (isset($clinic) && $clinic->partner) || old('partner') ? 'checked' : '' }}>
+            Партнер Docplus
+        </label>
+    </div>
     <div class="form-group col-auto">
         <label for="fullDay">
             <input type="checkbox" name="fullDay" id="fullDay" {{ (isset($clinic) && $clinic->fullDay) || old('fullDay') ? 'checked' : '' }}>
@@ -47,7 +53,7 @@
 
 <div class="form-row">
 <div class="form-group col">
-    <label for="type">Type</label>
+    <label for="type">Тип клиники</label>
     <input name="type" type="text" class="form-control {{ $errors->has('type') ? 'is-invalid' : '' }}" id="type_of_clinic" placeholder="Тип клиника" value="{{ isset($clinic) ? $clinic->type : old('type') }}">
     @if($errors->has('type'))
         <span class="invalid-feedback" role="alert">
@@ -56,7 +62,7 @@
     @endif
 </div>
 <div class="form-group col">
-    <label for="branch_id">Branch</label>
+    <label for="branch_id">Филиал</label>
     <select class="form-control m-0 w-100" name="branch_id" id="branch_id">
         <option value="{{ null }}">Нет</option>
         @foreach($branches as $branch)
@@ -67,7 +73,7 @@
 </div>
 
 <div class="form-group">
-    <label for="doctors">Doctors</label>
+    <label for="doctors">Доктора клиники</label>
     <select class="form-control m-0 w-100" name="doctors[]" id="doctors" multiple="">
         @foreach($doctors as $doctor)
 

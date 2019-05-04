@@ -26,6 +26,7 @@
                 <nav class="nav flex-column">
                     <a href="/"><img class="w-50" src={{asset('img/doc_logo.png')}} alt=""></a>
                     <p class="pt-4 mb-0 text-secondary">Наши Контакты: +996(700)312-312</p>
+                    <p class="pt-4 mb-0 text-secondary">По вопросам сотрудничества и партнерства обращайтесь по номеру</p>
                 </nav>
             </div>
         </div>

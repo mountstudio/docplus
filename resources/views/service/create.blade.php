@@ -36,3 +36,8 @@
     </form>
 
 @endsection
+
+@push('scripts')
+    <script src="https://cloud.tinymce.com/stable/tinymce.min.js"></script>
+    <script>tinymce.init({selector:'#description'});</script>
+@endpush

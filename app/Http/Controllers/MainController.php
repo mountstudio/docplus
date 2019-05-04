@@ -30,7 +30,15 @@ class MainController extends Controller
                 return $key;
             });
 
-        return view('welcome',['specs' => $specs]);
+        $partners = Clinic::where('partner', 1)->get();
+
+        if($partners->count() > 4)
+        {
+            $partners = $partners->random(4);
+        }
+
+
+        return view('welcome',['specs' => $specs, 'partners' => $partners]);
     }
 
     public function search(Request $request)
@@ -39,7 +47,7 @@ class MainController extends Controller
         $result = collect(['Доктора' => Doctor::whereHas('user' ,function($query) use ($search) {
             $query->where('name', 'like', "%$search%");
         })->get(['id', 'user_id'])]);
-        $result = $result->merge(collect(['Клиники' => Clinic::where('name', 'like', '%' . $search. '%')->get(['id', 'name'])]));
+        $result = $result->merge(collect(['Клиники' => Clinic::where('clinic_name', 'like', '%' . $search. '%')->get(['id', 'clinic_name'])]));
         $result = $result->merge(collect(['Услуги' => Service::where('name', 'like', '%' . $search. '%')->get(['id', 'name'])]));
 
         if ($request->ajax()) {

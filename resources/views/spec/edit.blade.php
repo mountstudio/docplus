@@ -26,7 +26,18 @@
 
             </select>
         </div>
+
+        <div class="form-group">
+            <label for="description">Description (Описание специализации)</label>
+            <textarea name="description" id="description" class="form-control" style="width: 100%;">{{ isset($model) && $model ? $model->description : '' }}</textarea>
+        </div>
+
         <button type="submit" class="btn btn-primary">Изменить</button>
     </form>
 
 @endsection
+
+@push('scripts')
+    <script src="https://cloud.tinymce.com/stable/tinymce.min.js"></script>
+    <script>tinymce.init({selector:'#description'});</script>
+@endpush

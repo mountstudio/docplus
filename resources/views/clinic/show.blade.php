@@ -103,7 +103,7 @@
                         <a href="{{ route('clinic.show', $branch->id) }}">
                             <p class="h4 text-secondary font-weight-bold">{{$branch->clinic_name}}</p>
                          </a>
-                        <img src="{{ asset('uploads/'.$branch->logo) }}" class="img-fluid" alt="">
+                        <img src="{{ asset('uploads/'.$branch->logo) }}" class="img-fluid w-75" alt="">
 
                         <p class="text-secondary font-weight-bold">{{$branch->address}}</p>
                     </div>

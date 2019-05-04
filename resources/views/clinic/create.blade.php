@@ -5,19 +5,19 @@
         @csrf
         <ul class="nav nav-tabs" id="myTab" role="tablist">
             <li class="nav-item">
-                <a class="nav-link active" id="main-tab" data-toggle="tab" href="#main" role="tab" aria-controls="main" aria-selected="true">Main</a>
+                <a class="nav-link active" id="main-tab" data-toggle="tab" href="#main" role="tab" aria-controls="main" aria-selected="true">Главное</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" id="worktimes-tab" data-toggle="tab" href="#worktime" role="tab" aria-controls="worktime" aria-selected="true">Worktime</a>
+                <a class="nav-link" id="worktimes-tab" data-toggle="tab" href="#worktime" role="tab" aria-controls="worktime" aria-selected="true">Режим работы</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" id="services-tab" data-toggle="tab" href="#service" role="tab" aria-controls="services" aria-selected="true">Services</a>
+                <a class="nav-link" id="services-tab" data-toggle="tab" href="#service" role="tab" aria-controls="services" aria-selected="true">Услуги</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" id="images-tab" data-toggle="tab" href="#images" role="tab" aria-controls="images" aria-selected="true">Images</a>
+                <a class="nav-link" id="images-tab" data-toggle="tab" href="#images" role="tab" aria-controls="images" aria-selected="true">Изображения</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" id="save-tab" data-toggle="tab" href="#save" role="tab" aria-controls="save" aria-selected="false">Save</a>
+                <a class="nav-link" id="save-tab" data-toggle="tab" href="#save" role="tab" aria-controls="save" aria-selected="false">Сохранение</a>
             </li>
         </ul>
         <div class="tab-content tab-validate" id="myTabContent">

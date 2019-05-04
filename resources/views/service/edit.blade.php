@@ -33,7 +33,13 @@
             <label class="form-check-label" for="exampleCheck2">Диагностика</label>
         </div>
 
+
         <button type="submit" class="btn btn-primary">Изменить</button>
     </form>
 
 @endsection
+
+@push('scripts')
+    <script src="https://cloud.tinymce.com/stable/tinymce.min.js"></script>
+    <script>tinymce.init({selector:'#description'});</script>
+@endpush

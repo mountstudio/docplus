@@ -16,13 +16,6 @@
         @include('_partials._head_rec')
     </div>
 
-    <div class="container mt-4">
-        <div class="row justify-content-center">
-            <div class="col-12 col-md-10 col-lg-8">
-                @include('_partials.search')
-            </div>
-        </div>
-    </div>
 
 
     <div class="container">
@@ -40,10 +33,13 @@
             <span class="text-secondary font-weight-light">{{ $doctors->total() }}</span>
         </p>
 
-        <div class="row">
+
             <div class="col-auto d-none d-lg-block">
-                @include('_partials.filters.doctor_filter')
+                @include('_partials.filters.doctor_filter_pc')
             </div>
+
+        <div class="row">
+
             <div class="col">
                 @foreach($doctors as $doctor)
                     @include('doctor.card')

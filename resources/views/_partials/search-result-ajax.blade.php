@@ -8,7 +8,7 @@
             @if($value instanceof \App\Doctor)
                 <a class="nav-link py-0" href="{{ route('doctor.show', $value->id) }}">{{ $value->name }}</a>
             @elseif($value instanceof \App\Clinic)
-                <a class="nav-link py-0" href="{{ route('clinic.show', $value->id) }}">{{ $value->name }}</a>
+                <a class="nav-link py-0" href="{{ route('clinic.show', $value->id) }}">{{ $value->clinic_name }}</a>
             @elseif($value instanceof \App\Service)
                 <a class="nav-link py-0" href="{{ route('objects.show', $value->id) }}">{{ $value->name }}</a>
             @endif

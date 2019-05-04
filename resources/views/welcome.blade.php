@@ -155,7 +155,9 @@
 
     <div class="d-none d-md-block">
 
+        @if($partners)
     @include('_partials.partners')
+        @endif
     @include('_partials.faq')
 
     </div>

@@ -10,7 +10,7 @@ use Illuminate\Database\Eloquent\Model;
 class Spec extends Model
 {
     protected $fillable = [
-    	'name', 'category_id',
+    	'name', 'category_id', 'keywords' , 'title', 'description',
     ];
 
     public function category()

@@ -78,8 +78,7 @@ class ClinicController extends Controller
     {
 
         $clinic = Clinic::find($id);
-        $specs = $clinic->doctors->map(function($item, $key)
-        {
+        $specs = $clinic->doctors->map(function ($item, $key) {
             return $item->specs;
         })->flatten()->unique('id');
 
@@ -88,6 +87,10 @@ class ClinicController extends Controller
         $branches = null;
         if ($branch) {
             $branches = $branch->clinics->except($clinic->id);
+        }
+        if ($branches->count() > 4)
+        {
+            $branches = $branches->random(4);
         }
         return view('clinic.show',[
             'clinic' => $clinic,

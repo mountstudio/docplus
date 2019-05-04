@@ -13,7 +13,7 @@
                     <div class="col-10">
                         <nav class="nav flex-column border-left pb-2 text-secondary">
                             @foreach($spec as $item)
-                                <a class="nav-link pb-0 text-doc2 font-weight-bold" href="{{ route('spec.show', $item->category_id) }}">{{ $item->name }}</a>
+                                <a class="nav-link pb-0 text-doc2 font-weight-bold" href="{{ route('spec.show', $item->id) }}">{{ $item->name }}<span class="ml-2 text-doc">{{count($item->doctors)}}</span></a>
                             @endforeach
                         </nav>
                     </div>

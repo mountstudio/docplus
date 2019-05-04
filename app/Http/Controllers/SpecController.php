@@ -55,17 +55,16 @@ class SpecController extends Controller
      */
     public function show($id)
     {
-        $specs = Spec::with(['doctors'])->where('category_id',$id)->get();
+        $spec = Spec::find($id);
 
-        $doctors = $specs->map(function ($item, $key) {
-            return $item->doctors;
-        })->flatten()->unique('id');
+        $doctors = $spec->doctors;
 
         $feedbacks = $doctors->map(function ($item) {
             return $item->feedbacks;
         })->flatten()->reverse();
 
         return view('spec.show',[
+            'spec' => $spec,
             'doctors' => $doctors,
             'feedbacks' => $feedbacks
         ]);

@@ -87,6 +87,7 @@ class ServiceController extends Controller
         $clinics = $service->clinics->sortingAndFilter($request)->paginate(5);
 
         return view('service.show',[
+            'service' => $service,
             'doctors' => $doctors,
             'clinics' => $clinics,
             'child' => $request->child ? 1 : null,

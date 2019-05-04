@@ -17,6 +17,13 @@ class ClinicObserver
         } else {
             $clinic->fullDay = false;
         }
+
+        if (request('partner')) {
+            $clinic->partner = true;
+        } else {
+            $clinic->partner = false;
+        }
+
         if (request('child')) {
             $clinic->child = true;
         } else {

@@ -61,7 +61,7 @@
     <div class="form-group row">
 
         <div class="col-md-6">
-            <label for="password" class="col-form-label text-md-right">{{ __('Password') }}</label>
+            <label for="password" class="col-form-label text-md-right">{{ __('Пароль') }}</label>
 
             <input id="password" type="password" class="form-control {{ $errors->has('password') ? 'is-invalid' : '' }}" name="password" required>
 
@@ -73,7 +73,7 @@
         </div>
 
         <div class="col-md-6">
-            <label for="password-confirm" class="col-form-label text-md-right">{{ __('Confirm Password') }}</label>
+            <label for="password-confirm" class="col-form-label text-md-right">{{ __('Подтвердить пароль') }}</label>
 
             <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required>
         </div>
