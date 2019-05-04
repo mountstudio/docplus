@@ -16,14 +16,6 @@
         @include('_partials._head_rec')
     </div>
 
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-12 p-0">
-                <div id="map" style="width: auto; height: 300px;"></div>
-            </div>
-        </div>
-    </div>
-
 
     <div class="container">
         <div class="row align-items-center">
@@ -41,16 +33,23 @@
         </p>
 
 
-            <div class="col-auto d-none d-lg-block">
-                @include('_partials.filters.doctor_filter_pc')
-            </div>
+        <div class="col-auto d-none d-lg-block">
+            @include('_partials.filters.doctor_filter_pc')
+        </div>
 
+
+    </div>
+
+    <div class="container-fluid">
         <div class="row">
 
             <div class="col">
                 @foreach($doctors as $doctor)
                     @include('doctor.card')
                 @endforeach
+            </div>
+            <div class="col-12 col-md-4">
+                <div id="map" class="sticky-top border shadow-sm" style="width: auto; height: 400px;"></div>
             </div>
         </div>
 
@@ -84,10 +83,10 @@
                 // Порядок по умолчанию: «широта, долгота».
                 // Чтобы не определять координаты центра карты вручную,
                 // воспользуйтесь инструментом Определение координат.
-                center: [55.76, 37.64],
+                center: [42.865388923088396, 74.60104350048829],
                 // Уровень масштабирования. Допустимые значения:
                 // от 0 (весь мир) до 19.
-                zoom: 15
+                zoom: 13
             });
         }
     </script>

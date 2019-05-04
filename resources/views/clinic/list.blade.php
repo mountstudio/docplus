@@ -36,12 +36,24 @@
         </p>
         <div class="row">
             <div class="col-auto d-none d-lg-block">
-                @include('_partials.filters.clinic_filter')
+                @include('_partials.filters.clinic_filter_pc')
             </div>
+
+
+        </div>
+
+
+    </div>
+
+    <div class="container-fluid">
+        <div class="row">
             <div class="col">
                 @foreach($clinics as $clinic)
                     @include('clinic.card')
                 @endforeach
+            </div>
+            <div class="col-12 col-md-4">
+                <div id="map" class="sticky-top border shadow-sm" style="width: auto; height: 400px;"></div>
             </div>
 
         </div>
@@ -71,6 +83,27 @@
 @push('styles')
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css"
           integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+@endpush
+
+@push('scripts')
+    <script type="text/javascript">
+        // Функция ymaps.ready() будет вызвана, когда
+        // загрузятся все компоненты API, а также когда будет готово DOM-дерево.
+        ymaps.ready(init);
+        function init(){
+            // Создание карты.
+            var myMap = new ymaps.Map("map", {
+                // Координаты центра карты.
+                // Порядок по умолчанию: «широта, долгота».
+                // Чтобы не определять координаты центра карты вручную,
+                // воспользуйтесь инструментом Определение координат.
+                center: [42.865388923088396, 74.60104350048829],
+                // Уровень масштабирования. Допустимые значения:
+                // от 0 (весь мир) до 19.
+                zoom: 13
+            });
+        }
+    </script>
 @endpush
 
 
