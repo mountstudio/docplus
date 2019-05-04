@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Category;
 use App\Doctor;
+use App\Question;
+use App\Service;
 use App\Spec;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Http\Request;
@@ -47,6 +49,13 @@ class CategoryController extends Controller
 
     public function destroy(Category $category)
     {
+        Service::destroy($category->services);
+        Spec::destroy($category->specs);
+        $category->questions->each(function ($item, $key) {
+            $item->category->dissociate();
+            $item->save();
+        });
+
         $category->delete();
 
         return redirect()->back();

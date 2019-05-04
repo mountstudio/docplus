@@ -71,13 +71,13 @@ class ClinicController extends Controller
     {
         $clinic->update($request->all());
 
+        $clinic->updateClinicRelations($request);
+
         return redirect()->route('clinic.admin');
     }
 
-    public function show($id)
+    public function show(Clinic $clinic)
     {
-
-        $clinic = Clinic::find($id);
         $specs = $clinic->doctors->map(function($item, $key)
         {
             return $item->specs;
