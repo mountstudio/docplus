@@ -100,7 +100,7 @@
                 rating: "{{ $clinic->rating }}",
                 readOnly: true,
                 ratedFill: "red",
-                starWidth: "20px",
+                starWidth: "15px",
                 spacing: "5px"
             });
         </script>
