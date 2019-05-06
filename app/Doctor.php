@@ -89,7 +89,8 @@ class Doctor extends Model
     {
         return Schedule::all()
             ->where('doctor_id', $doctor->id)
-            ->groupBy('date_of_record');
+//            ->groupBy('date_of_record')
+            ->groupBy('clinic_id');
     }
 
     public static function getScheduleActivated(Doctor $doctor)

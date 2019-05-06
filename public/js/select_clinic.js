@@ -2,9 +2,9 @@ var parentSelect = $('#doctor_id');
 var childSelect = $('#clinic_id');
 
 $.ajax({
-    url: '/getchildren/' + parentSelect.val(),
+    url: '/getclinic/' + parentSelect.val(),
     success: function (res) {
-        appendCategories($(res.children));
+        appendCategories($(res.clinics));
     },
     error: function (res) {
         console.log('error');
@@ -14,9 +14,9 @@ $.ajax({
 
 parentSelect.change(function (e) {
     $.ajax({
-        url: '/getchildren/' + $(this).val(),
+        url: '/getclinic/' + $(this).val(),
         success: function (res) {
-            appendCategories($(res.children));
+            appendCategories($(res.clinics));
         },
         error: function (res) {
             console.log('error');
@@ -24,36 +24,25 @@ parentSelect.change(function (e) {
     });
 });
 
-childSelect.change(function (e) {
-    ajaxForProps($(this), 'child');
-});
-
-function selectedOption(id, product_id) {
-    return parseInt(product_id) === parseInt(id) ? 'selected' : '';
-}
-
-function appendCategories(cats) {
+function appendCategories(clinics) {
     let hiddenSelect = $('#hidden-select');
 
-    if(cats.length !== 0) {
-        let id = $('form#edit-product').data('category');
-
-        parentSelect.removeAttr('name');
-        childSelect.attr('name', 'category_id');
+    if(clinics.length !== 0) {
+        childSelect.attr('name', 'clinic_id');
         hiddenSelect.removeClass('d-none');
 
         childSelect.empty();
-        for (let i = 0; i < cats.length; i++) {
-            console.log(id);
+        for (let i = 0; i < clinics.length; i++) {
             childSelect.append(
-                '<option name="child-category" class="form-control" value="' + cats[i].id + '" ' + selectedOption(cats[i].id, id) + '>' +
-                cats[i].name +
+                '<option name="clinic_id" class="form-control" value="' + clinics[i].id + '" ' + '>' +
+                clinics[i].clinic_name +
                 '</option>'
             )
         }
-    } else {
+    }
+    else {
         hiddenSelect.addClass('d-none');
         childSelect.removeAttr('name');
-        parentSelect.attr('name', 'category_id');
+        parentSelect.attr('name', 'clinic_id');
     }
 }

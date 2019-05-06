@@ -33,6 +33,9 @@ Route::get('/contacts', function () {
 Route::get('/getdoctors', function () {
     return view('doctor.index');
 })->name('doctor.admin');
+Route::get('/getschedules', function () {
+    return view('schedule.index');
+})->name('schedule.admin');
 Route::get('/getclinics', function () {
     return view('clinic.index');
 })->name('clinic.admin');
@@ -67,6 +70,7 @@ Route::get('datatable/getdoctors', 'AdminController@getDoctors')->name('datatabl
 Route::get('datatable/getclinics', 'AdminController@getClinics')->name('datatable.getclinics');
 Route::get('datatable/getservices', 'AdminController@getServices')->name('datatable.getservices');
 Route::get('datatable/getcategories', 'AdminController@getCategories')->name('datatable.getcategories');
+Route::get('datatable/getschedules', 'AdminController@getSchedules')->name('datatable.getschedules');
 Route::get('datatable/getbranches', 'AdminController@getBranches')->name('datatable.getbranches');
 Route::get('datatable/getspecs', 'AdminController@getSpecs')->name('datatable.getspecs');
 Route::get('datatable/getlevels', 'AdminController@getLevels')->name('datatable.getlevels');
@@ -90,4 +94,5 @@ Route::get('/search', 'MainController@search')->name('search');
 Route::get('/like/{type}/{id}', 'LikeController@like')->name('like');
 Route::get('/activation/feedback/{feedback}', 'FeedbackController@activation')->name('feedback.activation');
 Route::get('/getchildren/{id}', 'DoctorController@getChildren')->name('getchildren');
+Route::get('/getclinic/{id}', 'DoctorController@getClinic')->name('getclinic');
 Route::get('/clinic.doctor/{id}/{spec}', 'SpecController@clinic')->name('clinic.doctor');

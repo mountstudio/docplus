@@ -1,13 +1,12 @@
-@extends('layouts.app')
+@extends('admin.index')
 
-@section('content')
-
-    <form action="{{ route('schedule.store') }}" method="POST" class="col-8 mt-5 pt-5" enctype="multipart/form-data">
+@section('admin_content')
+    <form action="{{ route('schedule.store') }}" method="POST" class="col-8" enctype="multipart/form-data">
         @csrf
         <div class="form-row">
         <div class="form-group col-4">
-                <label for="name_of_stock">Врач</label>
-                <select id="doctor_id" name="doctor_id">
+                <label for="doctor_id">Выберите врача</label>
+                <select id="doctor_id" name="doctor_id" class="form-control">
                     @foreach($doctors as $doctor)
                         <option value="{{ $doctor->id }}">{{ $doctor->name }}</option>
                     @endforeach
@@ -52,6 +51,7 @@
 @push('scripts')
     <script src="{{ asset('js/selectize.min.js') }}"></script>
     <script src="{{ asset('js/select_clinic.js') }}"></script>
+
     <script>
         let option = [];
         let arrayProductIds = [];

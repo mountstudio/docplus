@@ -26,7 +26,10 @@
     <div class="col-12 border ">
         <div class="pt-3">
             @if(count($schedules))
-            @include('schedule.index')
+                @foreach($schedules->keys() as $key)
+                    @dd($key);
+                    @endforeach
+            {{--@include('schedule.list')--}}
                 @else
                 <p class="text-center text-secondary font-weight-bold pt-3">
                     У данного врача нет расписания

@@ -119,4 +119,11 @@ class DoctorController extends Controller
 
         return response()->json(['clinics' => $clinics]);
     }
+    public function getClinic($id)
+    {
+        $doctor = Doctor::find($id);
+        $clinics = $doctor->clinics;
+
+        return response()->json(['clinics' => $clinics]);
+    }
 }
