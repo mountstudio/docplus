@@ -16,12 +16,11 @@
     </div>
 </div>
 
-@include('_partials.modals.doctor_record_modal')
 
 @push('scripts')
     <script>
 
-        $('#recordModal').on('show.bs.modal', (e) => {
+        $('#doctorrecordModal').on('show.bs.modal', (e) => {
             let btn = $(e.relatedTarget);
             let id = btn.data('id');
             let input = $('#schedule_id');

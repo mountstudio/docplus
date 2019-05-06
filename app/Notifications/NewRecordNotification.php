@@ -16,15 +16,17 @@ class NewRecordNotification extends Notification
     use Queueable;
 
     private $record;
+    private $doctor;
 
     /**
      * Create a new notification instance.
      *
      * @return void
      */
-    public function __construct($record)
+    public function __construct($record, $doctor)
     {
         $this->record = $record;
+        $this->doctor = $doctor;
     }
 
     /**
@@ -47,9 +49,9 @@ class NewRecordNotification extends Notification
     public function toArray($notifiable)
     {
         if ($this->record->schedule_id) {
-            if ($this->record->user_id) {
-                $message = 'К Вам записался пользователь: ' . User::find($this->record->user_id)->fullName
-                    . ' с номером телефона: ' . $this->record->phone_number .
+            if ($this->doctor) {
+                $message = 'К врачу'.  $this->doctor->fullName . ' записался пациент: ' . $this->record->name . ' с номером телефона: '
+                    . $this->record->phone_number .
                     '<br>На дату и время: '
                     . Carbon::make($this->record->schedule->date_of_record)->format('d/m/Y') . ' '
                     . Carbon::make($this->record->schedule->time_of_record)->format('H:i');
@@ -62,8 +64,11 @@ class NewRecordNotification extends Notification
             }
         } else {
             if ($this->record->user_id) {
-                $message = 'К Вам записался пользователь: ' . User::find($this->record->user_id)->fullName
-                    . ' с номером телефона: ' . $this->record->phone_number;
+                $message = 'К врачу'.  $this->doctor->fullName . ' записался пациент: ' . $this->record->name . ' с номером телефона: '
+                    . $this->record->phone_number .
+                    '<br>На дату и время: '
+                    . Carbon::make($this->record->schedule->date_of_record)->format('d/m/Y') . ' '
+                    . Carbon::make($this->record->schedule->time_of_record)->format('H:i');
             } else {
                 $message = 'К Вам записался пациент: ' . $this->record->name . ' с номером телефона: '
                     . $this->record->phone_number;

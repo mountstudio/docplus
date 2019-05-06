@@ -68,17 +68,13 @@
                             </div>
                         @endif
                         <div class="form-group">
-                            <label for="recipient-name" class="col-form-label">Введите ваше имя:</label>
-                            <input type="text" name="name" class="form-control" id="recipient-name" placeholder="Ваше имя" value="{{ Auth::check() ? Auth::user()->name : '' }}" required {{ Auth::check() ? 'disabled' : '' }}>
+                            <label for="recipient-name" class="col-form-label">Введите ваше ФИО:</label>
+                            <input type="text" name="name" class="form-control" id="recipient-name" placeholder="Ваше имя" value="{{ Auth::check() ? Auth::user()->fullName : '' }}" required {{ Auth::check() ? 'disabled' : '' }}>
                             @auth
                                 <input type="hidden" name="name" class="form-control" value="{{ Auth::user()->name }}" required>
                             @endauth
                         </div>
-                        <div class="form-group">
-                            <label for="recipient-name" class="col-form-label">Введите вашу фамилию:</label>
-                            <input type="text" name="last_name" class="form-control" id="recipient-lastname" placeholder="Ваша фамилия" required>
-                            <input type="hidden" name="last_name" class="form-control" value="{{ Auth::check() ? Auth::user()->last_name : ''}}" required>
-                        </div>
+
                         <input type="hidden" name="schedule_id" id="schedule_id">
                         <input type="hidden" name="doctor_id" id="doctor_id" value="{{$doctor->id}}">
 

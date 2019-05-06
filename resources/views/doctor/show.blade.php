@@ -245,6 +245,7 @@
         </div>
     @endif
 
+    @include('_partials.modals.doctor_record_modal')
 @endsection
 
 @push('styles')
