@@ -9,7 +9,7 @@
 
 <div class="row py-5">
     <div class="tab-content col-12" id="myTabContent">
-        <div class="tab-pane fade active show" id="story_record" role="tabpanel" aria-labelledby="">@include('clinic.tabs.story_record',['records' => \App\Clinic::getRecord($user->clinic)])</div>
-        <div class="tab-pane fade" id="story_feedback" role="tabpanel" aria-labelledby="">@include('clinic.tabs.story_feedback',['feedbacks' => $user->clinic->feedbacks])</div>
+        {{--<div class="tab-pane fade active show" id="story_record" role="tabpanel" aria-labelledby="">@include('clinic.tabs.story_record',['records' => \App\Clinic::getRecord($user->clinic)])</div>--}}
+        {{--<div class="tab-pane fade" id="story_feedback" role="tabpanel" aria-labelledby="">@include('clinic.tabs.story_feedback',['feedbacks' => $user->clinic->feedbacks])</div>--}}
     </div>
 </div>

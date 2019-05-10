@@ -16,6 +16,9 @@ Route::get('/registration', function () {
 Route::get('/login', function () {
     return view('auth.login');
 });
+Route::get('/sentence', function () {
+    return view('auth.sentence');
+});
 Route::get('/registration-patient', function () {
     return view('auth.register-patient');
 });
