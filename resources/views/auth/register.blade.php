@@ -86,6 +86,9 @@
                                 <button type="submit" class="btn btn-primary">
                                     {{ __('Register') }}
                                 </button>
+
+                                <p class="mt-4">По вопросам сотрудничества и партнерства оставьте нам предложение </p>
+                                <a href="{{'/sentence'}}" class="btn btn-success">Оставить предложение</a>
                             </div>
                         </div>
                     </form>

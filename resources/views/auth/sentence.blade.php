@@ -11,7 +11,7 @@
                     <div class="form-group row justify-content-center bg-primary   py-2 ">
 
                         <p class="h5 text-light">
-                            Вход
+                            Оставьте нам предложение
                         </p>
 
 
@@ -22,27 +22,37 @@
                         <div class="input-group mb-3">
                             <div class="input-group-prepend">
                                 <span class="input-group-text bg-white text-muted" id="basic-addon1"><i
-                                        class="fas fa-envelope"></i></span>
+                                            class="fas fa-user"></i></span>
                             </div>
-                            <input type="text" name="email" class="form-control" placeholder="Электронная почта"
-                                   aria-label="Username" aria-describedby="basic-addon1">
+                            <input type="text" name="name" class="form-control" placeholder="Ваше ФИО"
+                                   aria-label="name" aria-describedby="basic-addon1">
 
                         </div>
 
                         <div class="input-group mb-3">
                             <div class="input-group-prepend">
                                 <span class="input-group-text bg-white text-muted" id="basic-addon4"><i
-                                        class="fas fa-key"></i></span>
+                                            class="fas fa-phone"></i></span>
                             </div>
-                            <input type="password" name="password" class="form-control" placeholder="Пароль"
-                                   area-label="Password" area-describedby="basic-addon5">
+                            <input type="tel" name="phone" class="form-control" placeholder="Номер телефона"
+                                   area-label="phone" area-describedby="basic-addon5">
                         </div>
 
-                        <div class="form-group mt-5 ">
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text bg-white text-muted" id="basic-addon5"><i
+                                            class="fas fa-envelope"></i></span>
+                            </div>
+                            <textarea name="message" class="form-control" placeholder="Предложение"
+                                   area-label="message" style="height:100px;" area-describedby="basic-addon5">
+                            </textarea>
+                        </div>
+
+                        <div class="form-group">
 
 
-                            <input type="submit" value="Отправить" class="rss-button btn btn-outline-dark mt-4"/>
-
+                            <input type="submit" value="Отправить" class="rss-button btn btn-outline-dark mt-4">
+                            <p class="mt-2">Вас будет видеть большое количество пользователей нашего сервиса</p>
                         </div>
                     </div>
                 </form>
@@ -66,8 +76,8 @@
                     <form method="POST" action="{{ route('login') }}">
                         @csrf
 
-        <div class="form-group row">
-            <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
+            <div class="form-group row">
+                <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
 
                             <div class="col-md-6">
                                 <input id="email" type="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="{{ old('email') }}" required autofocus>
@@ -77,11 +87,11 @@
             <strong>{{ $errors->first('email') }}</strong>
                                     </span>
                                 @endif
+            </div>
         </div>
-    </div>
 
-    <div class="form-group row">
-        <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>
+        <div class="form-group row">
+            <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>
 
                             <div class="col-md-6">
                                 <input id="password" type="password" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password" required>
@@ -91,40 +101,40 @@
             <strong>{{ $errors->first('password') }}</strong>
                                     </span>
                                 @endif
+            </div>
         </div>
-    </div>
 
-    <div class="form-group row">
-        <div class="col-md-6 offset-md-4">
-            <div class="form-check">
-                <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
+        <div class="form-group row">
+            <div class="col-md-6 offset-md-4">
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
 
                                     <label class="form-check-label" for="remember">
                                         {{ __('Remember Me') }}
-        </label>
+            </label>
+        </div>
     </div>
-</div>
-</div>
+    </div>
 
-<div class="form-group row mb-0">
-<div class="col-md-8 offset-md-4">
-    <button type="submit" class="btn btn-primary">
+    <div class="form-group row mb-0">
+    <div class="col-md-8 offset-md-4">
+        <button type="submit" class="btn btn-primary">
 {{ __('Login') }}
-        </button>
+            </button>
 
 @if (Route::has('password.request'))
         <a class="btn btn-link" href="{{ route('password.request') }}">
                                         {{ __('Forgot Your Password?') }}
-            </a>
+                </a>
 @endif
+            </div>
         </div>
+    </form>
     </div>
-</form>
-</div>
-</div>
-</div>
-</div>
-</div>
+    </div>
+    </div>
+    </div>
+    </div>
 -->
 
 
