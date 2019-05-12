@@ -66,7 +66,7 @@ class User extends Authenticatable
         ]);
 
         return User::create([
-            'patronymic' => $data['patronymic'],
+            'patronymic' => $data['patronymic'] ?? '',
             'name' => $data['name'],
             'last_name' => $data['last_name'],
             'email' => $data['email'],
