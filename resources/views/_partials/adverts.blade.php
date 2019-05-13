@@ -1,20 +1,30 @@
 <div class="card-columns">
     <div class="card border-0 rounded-0">
-        <img src="{{ asset('img/2.jpg') }}" class="card-img-top rounded-0" alt="">
+        <a href="">
+            <img src="{{ asset('img/2.jpg') }}" class="card-img-top rounded-0" alt="">
+        </a>
     </div>
     <div class="card border-0 rounded-0">
-        <img src="{{ asset('img/1.jpg') }}" class="card-img-top rounded-0" alt="">
+        <a href="">
+            <img src="{{ asset('img/1.jpg') }}" class="card-img-top rounded-0" alt="">
+        </a>
     </div>
     <div class="card border-0 rounded-0">
-        <img src="{{ asset('img/3.jpg') }}" class="card-img-top rounded-0" alt="">
-    </div>
-    <div class="card border-0 rounded-0">
-        <img src="{{ asset('img/service.png') }}" class="card-img-top rounded-0" alt="">
+        <a href="">
+            <img src="{{ asset('img/3.jpg') }}" class="card-img-top rounded-0" alt="">
+        </a>
     </div>
     <div class="card border-0 rounded-0">
         <div class="owl-carousel owl-theme">
-            <img src="{{ asset('img/4.jpg') }}" class="card-img-top rounded-0" alt="">
-            <img src="{{ asset('img/5.jpg') }}" class="card-img-top rounded-0" alt="">
+            <a href="">
+                <img src="{{ asset('img/4.jpg') }}" class="card-img-top rounded-0" alt="">
+            </a>
+            <a href="">
+                <img src="{{ asset('img/5.jpg') }}" class="card-img-top rounded-0" alt="">
+            </a>
+            <a href="">
+                <img src="{{ asset('img/6.jpg') }}" class="card-img-top rounded-0" alt="">
+            </a>
         </div>
     </div>
 </div>
