@@ -90,7 +90,7 @@
     <div class="container">
         <div class="row d-none d-md-block py-5">
             <div class="col-12">
-                @include('_partials.slider')
+                @include('_partials.adverts')
             </div>
         </div>
     </div>
@@ -174,20 +174,7 @@
     <link rel="stylesheet" href="{{ asset('css/owl.theme.default.min.css') }}">
 @endpush
 @push('scripts')
-    <script src="{{ asset('js/owl.carousel.min.js') }}"></script>
 
-    <script>
-        $('.owl-carousel').owlCarousel({
-            items: 1,
-            loop: true,
-            autoplay: true,
-            autoplayTimeout: 1500,
-            margin: 10,
-            nav: true,
-            dots: false,
-            navText: ['<i class="text-white fas fa-chevron-left fa-2x"></i>','<i class="text-white fas fa-chevron-right fa-2x"></i>'],
-        })
-    </script>
     <script>
         $('.count').each(function () {
             if ($(this).text() < 20)

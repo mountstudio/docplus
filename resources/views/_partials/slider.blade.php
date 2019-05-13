@@ -3,4 +3,3 @@
     <div class="item"><img src="{{ asset('img/3.jpg') }}" alt=""></div>
 </div>
 
-
