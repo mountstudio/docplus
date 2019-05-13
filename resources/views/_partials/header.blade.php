@@ -198,7 +198,7 @@
 </nav>
 
 <nav class="d-xl-none navbar fixed-bottom navbar-expand-lg px-0 py-0">
-    <div class="container-fluid bg-doc">
+    <div class="container-fluid bg-doc p-0">
         <div class="col-3 p-0 border-left border-right border-teal-light">
             <a href="{{ route('doctor.index') }}" class="nav-link text-light text-center px-0">
                 <i class="fas fa-user-md fa-lg"></i>
