@@ -30,6 +30,10 @@ small.required {
     color: #f00;
 }
 
+.smallest {
+    font-size: 60% !important;
+}
+
 .mce-notification {
     display: none;
 }

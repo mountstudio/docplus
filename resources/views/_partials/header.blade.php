@@ -199,17 +199,29 @@
 
 <nav class="d-xl-none navbar fixed-bottom navbar-expand-lg px-0 py-0">
     <div class="container-fluid bg-doc">
-        <div class="col-3 border-left border-right border-teal-light">
-            <a href="{{ route('doctor.index') }}" class="nav-link text-light text-center"><i class="fas fa-user-md fa-lg"></i></a>
+        <div class="col-3 p-0 border-left border-right border-teal-light">
+            <a href="{{ route('doctor.index') }}" class="nav-link text-light text-center px-0">
+                <i class="fas fa-user-md fa-lg"></i>
+                <p class="font-weight-light smallest p-0 m-0">Врачи</p>
+            </a>
         </div>
-        <div class="col-3 border-left border-right border-teal-light">
-            <a href="{{ route('clinic.index') }}" class="nav-link text-light text-center"><i class="fas fa-clinic-medical fa-lg"></i></a>
+        <div class="col-3 p-0 border-left border-right border-teal-light">
+            <a href="{{ route('clinic.index') }}" class="nav-link text-light text-center px-0">
+                <i class="fas fa-clinic-medical fa-lg"></i>
+                <p class="font-weight-light smallest p-0 m-0">Клиники</p>
+            </a>
         </div>
-        <div class="col-3 border-left border-right border-teal-light">
-            <a href="{{ route('service.index') }}" class="nav-link text-light text-center"><i class="fas fa-briefcase-medical fa-lg"></i></a>
+        <div class="col-3 p-0 border-left border-right border-teal-light">
+            <a href="{{ route('service.index') }}" class="nav-link text-light text-center px-0">
+                <i class="fas fa-briefcase-medical fa-lg"></i>
+                <p class="font-weight-light smallest p-0 m-0">Услуги</p>
+            </a>
         </div>
-        <div class="col-3 border-left border-right border-teal-light">
-            <a href="{{ route('service.diagnostics') }}" class="nav-link text-light text-center"><i class="fas fa-diagnoses fa-lg"></i></a>
+        <div class="col-3 p-0 border-left border-right border-teal-light">
+            <a href="{{ route('service.diagnostics') }}" class="nav-link text-light text-center px-0">
+                <i class="fas fa-diagnoses fa-lg"></i>
+                <p class="font-weight-light smallest p-0 m-0">Диагностики</p>
+            </a>
         </div>
     </div>
 </nav>
