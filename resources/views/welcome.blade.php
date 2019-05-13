@@ -88,7 +88,7 @@
     </div>
 
     <div class="container">
-        <div class="row d-none d-md-block py-5">
+        <div class="row py-5">
             <div class="col-12">
                 @include('_partials.adverts')
             </div>
