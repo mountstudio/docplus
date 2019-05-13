@@ -196,7 +196,7 @@
                         <div class="col-12 col-md-8 position-relative">
                             @if($doctor->description)
                                 <h5 class="text-secondary font-weight-bold text-center">Информация о враче</h5>
-                                <p class="text-secondary">{{$doctor->description}}</p>
+                                <p class="text-secondary">{!! $doctor->description !!}</p>
                             @else
                                 <h5 class="text-secondary font-weight-bold text-center">Информация отсутствует</h5>
                             @endif
