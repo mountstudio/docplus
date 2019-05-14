@@ -23,7 +23,7 @@ Route::get('/registration-patient', function () {
     return view('auth.register-patient');
 });
 
-Route::get('/', 'MainController@index');
+Route::get('/', 'MainController@index')->name('homepage');
 
 
 Route::get('/about_us', function () {

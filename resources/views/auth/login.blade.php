@@ -2,58 +2,81 @@
 
 @section('content')
 
-    <div class="container mt-5">
-        <div class="row justify-content-center py-5">
-            <div class="col-10 col-md-5 border border-5 bg-light border-primary">
-
-                <form action="{{ route('login') }}" method="post">
+    <div class="container-fluid">
+        <div class="row h-100">
+            <div class="col-lg-5 col-md-6 bg-purple-dark p-5 h-100 row m-0">
+                <div class="col-12 my-5 pt-5 ">
+                    <a href="{{ route('homepage') }}">
+                        <img src="{{ asset('img/doc_logo.png') }}" style="width: 120px; height: auto;" alt="">
+                    </a>
+                </div>
+                <form class="col-12 align-self-center text-white" action="{{ route('login') }}" method="post">
                     @csrf
-                    <div class="form-group row justify-content-center bg-primary   py-2 ">
-
-                        <p class="h5 text-light">
-                            Вход
-                        </p>
-
-
-                    </div>
 
                     <div class="form-group my-4">
 
                         <div class="input-group mb-3">
                             <div class="input-group-prepend">
                                 <span class="input-group-text bg-white text-muted" id="basic-addon1"><i
-                                        class="fas fa-envelope"></i></span>
+                                            class="fas fa-envelope"></i></span>
                             </div>
                             <input type="text" name="email" class="form-control" placeholder="Электронная почта"
                                    aria-label="Username" aria-describedby="basic-addon1">
-
                         </div>
+                        @if ($errors->has('email'))
+                            <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $errors->first('email') }}</strong>
+                                </span>
+                        @endif
 
                         <div class="input-group mb-3">
                             <div class="input-group-prepend">
                                 <span class="input-group-text bg-white text-muted" id="basic-addon4"><i
-                                        class="fas fa-key"></i></span>
+                                            class="fas fa-key"></i></span>
                             </div>
                             <input type="password" name="password" class="form-control" placeholder="Пароль"
                                    area-label="Password" area-describedby="basic-addon5">
+                        </div>
+                        @if ($errors->has('password'))
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $errors->first('password') }}</strong>
+                            </span>
+                        @endif
+
+                        <div class="form-group">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
+
+                                <label class="form-check-label" for="remember">
+                                    {{ __('Запомнить меня') }}
+                                </label>
+                            </div>
                         </div>
 
                         <div class="form-group mt-5 ">
 
 
-                            <input type="submit" value="Отправить" class="rss-button btn btn-outline-dark mt-4"/>
+                            <input type="submit" value="Войти" class="btn btn-primary"/>
 
                         </div>
                     </div>
                 </form>
             </div>
+            <div class="col row align-items-center m-0 text-white position-relative"
+                 style="background-image: url({{ asset('img/welcome-doctor.png') }}); background-size: cover; background-repeat: no-repeat; background-position: center right;">
+                <div class="backdrop"></div>
+                <div class="col" style="position: relative; z-index: 10;">
+                    <h1 class="mb-5">Добро пожаловать на <img src="{{ asset('img/doc_logo.png') }}" style="width: 100px; height: auto;" alt=""></h1>
+                    <h2 class="">Преимущества</h2>
+                    <ul class="nav flex-column">
+                        <li class="nav-item"><i class="fas fa-check"></i>&nbsp;Бесплатная регистрация</li>
+                        <li class="nav-item"><i class="fas fa-check"></i>&nbsp;Онлайн запись к врачам</li>
+                        <li class="nav-item"><i class="fas fa-check"></i>&nbsp;И многое другое</li>
+                    </ul>
+                </div>
+            </div>
         </div>
     </div>
-
-
-
-
-
 
 
     <!--<div class="container">
@@ -66,8 +89,8 @@
                     <form method="POST" action="{{ route('login') }}">
                         @csrf
 
-        <div class="form-group row">
-            <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
+            <div class="form-group row">
+                <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
 
                             <div class="col-md-6">
                                 <input id="email" type="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="{{ old('email') }}" required autofocus>
@@ -77,11 +100,11 @@
             <strong>{{ $errors->first('email') }}</strong>
                                     </span>
                                 @endif
+            </div>
         </div>
-    </div>
 
-    <div class="form-group row">
-        <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>
+        <div class="form-group row">
+            <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>
 
                             <div class="col-md-6">
                                 <input id="password" type="password" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password" required>
@@ -91,40 +114,40 @@
             <strong>{{ $errors->first('password') }}</strong>
                                     </span>
                                 @endif
+            </div>
         </div>
-    </div>
 
-    <div class="form-group row">
-        <div class="col-md-6 offset-md-4">
-            <div class="form-check">
-                <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
+        <div class="form-group row">
+            <div class="col-md-6 offset-md-4">
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
 
                                     <label class="form-check-label" for="remember">
                                         {{ __('Remember Me') }}
-        </label>
+            </label>
+        </div>
     </div>
-</div>
-</div>
+    </div>
 
-<div class="form-group row mb-0">
-<div class="col-md-8 offset-md-4">
-    <button type="submit" class="btn btn-primary">
+    <div class="form-group row mb-0">
+    <div class="col-md-8 offset-md-4">
+        <button type="submit" class="btn btn-primary">
 {{ __('Login') }}
-        </button>
+            </button>
 
 @if (Route::has('password.request'))
         <a class="btn btn-link" href="{{ route('password.request') }}">
                                         {{ __('Forgot Your Password?') }}
-            </a>
+                </a>
 @endif
+            </div>
         </div>
+    </form>
     </div>
-</form>
-</div>
-</div>
-</div>
-</div>
-</div>
+    </div>
+    </div>
+    </div>
+    </div>
 -->
 
 

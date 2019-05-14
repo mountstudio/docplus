@@ -24,10 +24,8 @@
     @stack('styles')
 </head>
 <body class="bg-white">
-    @include('_partials.header')
     <div id="app">
-
-
+        @include('_partials.header')
 
         <main>
             @yield('content')
