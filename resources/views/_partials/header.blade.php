@@ -61,10 +61,10 @@
                     <a href="{{ route('clinic.index') }}" class="nav-link text-light font-weight-bold">Клиники ({{ \App\Clinic::all()->count() }})</a>
                 </li>
                 <li class="nav-item border-right">
-                    <a href="{{ route('service.index') }}" class="nav-link text-light font-weight-bold">Услуги ({{ \App\Service::getServices()->count() }})</a>
+                    <a href="{{ route('service.index') }}" class="nav-link text-light font-weight-bold">Услуги ({{ \App\Service::getServicesHasDoctorsAndClinics()->count() }})</a>
                 </li>
                 <li class="nav-item border-right">
-                    <a href="{{ route('service.diagnostics') }}" class="nav-link text-light font-weight-bold">Диагностики ({{ \App\Service::getDiagnostics()->count() }})</a>
+                    <a href="{{ route('service.diagnostics') }}" class="nav-link text-light font-weight-bold">Диагностики ({{ \App\Service::getDiagnosticsHasDoctorsAndClinics()->count() }})</a>
                 </li>
                 <li class="nav-item">
                     <a href="{{ route('question.index') }}" class="nav-link text-light font-weight-bold">Вопрос врачу</a>
