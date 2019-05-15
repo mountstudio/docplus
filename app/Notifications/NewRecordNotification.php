@@ -64,12 +64,6 @@ class NewRecordNotification extends Notification
             }
         } else {
             if ($this->record->user_id) {
-                $message = 'К врачу'.  $this->doctor->fullName . ' записался пациент: ' . $this->record->name . ' с номером телефона: '
-                    . $this->record->phone_number .
-                    '<br>На дату и время: '
-                    . Carbon::make($this->record->schedule->date_of_record)->format('d/m/Y') . ' '
-                    . Carbon::make($this->record->schedule->time_of_record)->format('H:i');
-            } else {
                 $message = 'К Вам записался пациент: ' . $this->record->name . ' с номером телефона: '
                     . $this->record->phone_number;
             }

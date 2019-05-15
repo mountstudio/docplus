@@ -93,6 +93,11 @@ class ClinicObserver
         } else {
             $clinic->child = false;
         }
+        if (request('partner')) {
+            $clinic->partner = true;
+        } else {
+            $clinic->partner = false;
+        }
 
         if (request('logo')) {
             $fileName = ImageSaver::save(request('logo'), 'uploads', 'clinic_logo', ['width' => 500, 'height' => 500]);

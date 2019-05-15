@@ -12,10 +12,10 @@ class User extends Authenticatable
 {
     use Notifiable;
 
-    public $USER_ROLE = 'ROLE_USER';
-    public $ADMIN_ROLE = 'ROLE_ADMIN';
-    public $DOC_ROLE = 'ROLE_DOCTOR';
-    public $CLINIC_ROLE = 'ROLE_CLINIC';
+    public static $USER_ROLE = 'ROLE_USER';
+    public static $ADMIN_ROLE = 'ROLE_ADMIN';
+    public static $DOC_ROLE = 'ROLE_DOCTOR';
+    public static $CLINIC_ROLE = 'ROLE_CLINIC';
 
     /**
      * The attributes that are mass assignable.

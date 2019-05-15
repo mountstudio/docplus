@@ -79,7 +79,7 @@ class RecordController extends Controller
                 $record->service_id = $request->service_id;
             }
             $clinic = Clinic::find($request->clinic_id);
-            $clinic->user->notify(new NewRecordNotification($record, $doctor));
+            $clinic->user->notify(new NewRecordNotification($record, $clinic));
         }
 
         $record->save();
