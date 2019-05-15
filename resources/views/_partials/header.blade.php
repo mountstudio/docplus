@@ -46,7 +46,7 @@
                     <a href="{{ route('service.index') }}" class="nav-link text-light font-weight-bold">Услуги ({{ \App\Service::getServicesHasDoctorsAndClinics()->count() }})</a>
                 </li>
                 <li class="nav-item border-right">
-                    <a href="{{ route('service.diagnostics') }}" class="nav-link text-light font-weight-bold">Диагностики ({{ \App\Service::getDiagnosticsHasDoctorsAndClinics()->count() }})</a>
+                    <a href="{{ route('service.diagnostics') }}" class="nav-link text-light font-weight-bold">Диагностика ({{ \App\Service::getDiagnosticsHasDoctorsAndClinics()->count() }})</a>
                 </li>
                 <li class="nav-item">
                     <a href="{{ route('question.index') }}" class="nav-link text-light font-weight-bold">Вопрос врачу</a>
@@ -64,7 +64,7 @@
                     <a href="{{ route('service.index') }}" class="nav-link text-light font-weight-bold">Услуги ({{ \App\Service::getServicesHasDoctorsAndClinics()->count() }})</a>
                 </li>
                 <li class="nav-item border-right">
-                    <a href="{{ route('service.diagnostics') }}" class="nav-link text-light font-weight-bold">Диагностики ({{ \App\Service::getDiagnosticsHasDoctorsAndClinics()->count() }})</a>
+                    <a href="{{ route('service.diagnostics') }}" class="nav-link text-light font-weight-bold">Диагностика ({{ \App\Service::getDiagnosticsHasDoctorsAndClinics()->count() }})</a>
                 </li>
                 <li class="nav-item">
                     <a href="{{ route('question.index') }}" class="nav-link text-light font-weight-bold">Вопрос врачу</a>
@@ -220,7 +220,7 @@
         <div class="col-3 p-0 border-left border-right border-teal-light">
             <a href="{{ route('service.diagnostics') }}" class="nav-link text-light text-center px-0">
                 <i class="fas fa-diagnoses fa-lg"></i>
-                <p class="font-weight-light smallest p-0 m-0">Диагностики</p>
+                <p class="font-weight-light smallest p-0 m-0">Диагностика</p>
             </a>
         </div>
     </div>
