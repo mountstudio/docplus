@@ -48,7 +48,7 @@
                     @include('doctor.card')
                 @endforeach
             </div>
-            <div class="col-12 col-md-4">
+            <div class="col-12 col-md-4 d-none d-md-block">
                 <div id="map" class="sticky-top border shadow-sm" style="width: auto; height: 400px;"></div>
             </div>
         </div>

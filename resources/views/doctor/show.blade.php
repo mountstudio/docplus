@@ -9,7 +9,7 @@
                     <div class="col-10 col-md-8">
                         @include('_partials.like', ['type' => 'Doctor', 'model' => $doctor])
                         <img class="img-card-doctors_clinics rounded-circle mb-2 img-thumbnail w-100"
-                             src="{{ $doctor->logo ? asset('uploads/'.$doctor->logo) : asset('img/noavatar.png') }}"
+                             src="{{ $doctor->logo && file_exists(public_path('/uploads/'.$doctor->logo)) ? asset('uploads/'.$doctor->logo) : asset('img/noavatar.png') }}"
                              alt="">
 
                     </div>
