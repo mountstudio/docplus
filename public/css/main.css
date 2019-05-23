@@ -34,6 +34,30 @@ small.required {
     font-size: 60% !important;
 }
 
+.diagnostic-icon {
+    background: url('../img/healt_care_icons_set.png') no-repeat -178px 0;
+    width: 20px;
+    height: 21px;
+}
+
+.doctor-icon {
+    background: url('../img/healt_care_icons_set.png') no-repeat -152px 0;
+    width: 19px;
+    height: 21px;
+}
+
+.clinic-icon {
+    background: url('../img/healt_care_icons_set.png') no-repeat -123px -2px;
+    width: 22px;
+    height: 19px;
+}
+
+.service-icon {
+    background: url('../img/healt_care_icons_set.png') no-repeat -82px -30px;
+    width: 17px;
+    height: 21px;
+}
+
 .mce-notification {
     display: none;
 }
