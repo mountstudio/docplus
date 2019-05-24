@@ -83,7 +83,7 @@ class ClinicController extends Controller
             return $item->specs;
         })->flatten()->unique('id');
 
-
+        $feedbacks = $clinic->feedbacks->where('is_active', true);
         $branch = Branch::find($clinic->branch_id);
         $branches = null;
         if ($branch) {
@@ -95,6 +95,7 @@ class ClinicController extends Controller
         }
         return view('clinic.show',[
             'clinic' => $clinic,
+            'feedbacks' => $feedbacks,
             'doctors' => $clinic->doctors,
             'specs' => $specs,
             'branches' => $branches

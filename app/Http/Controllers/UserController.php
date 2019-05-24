@@ -153,9 +153,22 @@ class UserController extends Controller
         $notifications = Auth::user()->unreadNotifications
         ->groupBy('type');
 
-        return view('notifications', [
-            'notifications' => $notifications,
-        ]);
+        if(Auth::user()->role == "ROLE_DOCTOR") {
+            return view('doctor.tabs.notifications', [
+                'notifications' => $notifications,
+            ]);
+        }
+        elseif(Auth::user()->role == "ROLE_CLINIC") {
+            return view('clinic.tabs.notifications', [
+                'notifications' => $notifications,
+            ]);
+        }
+        elseif (Auth::user()->role == "ROLE_OPERATOR") {
+            return view('operator.tabs.notifications', [
+                'notifications' => $notifications,
+            ]);
+        }
+
     }
 
     public function DoctorEditmarkAsRead(Request $request, $notification)

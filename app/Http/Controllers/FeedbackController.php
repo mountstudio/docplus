@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Doctor;
 use App\Feedback;
+use App\Notifications\NewClinicFeedbackNotification;
 use App\Notifications\NewDoctorFeedbackNotification;
 use App\Notifications\NewFeedbackNotification;
 use App\User;
@@ -40,9 +41,17 @@ class FeedbackController extends Controller
         $feedback->save();
         User::markAsRead($request->notification, Auth::user(), ['operators' => 1]);
 
-        $doctor = $feedback->doctors()->first();
+        if($feedback->doctors()->count()) {
+            $doctor = $feedback->doctors()->first();
 
-        $doctor->user->notify(new NewDoctorFeedbackNotification());
+            $doctor->user->notify(new NewDoctorFeedbackNotification());
+        }
+        elseif($feedback->clinics()->count())
+        {
+            $clinic = $feedback->clinics()->first();
+
+            $clinic->user->notify(new NewClinicFeedbackNotification());
+        }
 
         return back();
     }

@@ -137,6 +137,19 @@
         </div>
     </div>
 @endif
+<div class="container d-none d-md-block py-4" id="feedbacks">
+    <!-- Отзыв -->
+    @foreach($feedbacks as $feedback)
+        @include('clinic.feedback')
+    @endforeach
+</div>
+
+
+@include('_partials.form-feedback-clinic')
+<div class="container">
+    <p class="text-secondary">Отзывы о врачах могут оставлять пациенты записавшиеся через сервис DOC+.
+        Каждый отзыв проходит тщательную проверку, что позволяет избежать заказных и рекламных отзывов.</p>
+</div>
 
 @include('_partials.modals.service_record_modal')
 

@@ -181,10 +181,10 @@
                     <a class="nav-link" id="" data-toggle="tab" href="#info" role="tab" aria-controls=""
                        aria-selected="true">Информация</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" id="" data-toggle="tab" href="#schedule" role="tab" aria-controls=""
-                       aria-selected="true">Расписание</a>
-                </li>
+                {{--<li class="nav-item">--}}
+                    {{--<a class="nav-link" id="" data-toggle="tab" href="#schedule" role="tab" aria-controls=""--}}
+                       {{--aria-selected="true">Расписание</a>--}}
+                {{--</li>--}}
                 <li class="nav-item">
                     <a class="nav-link" id="" data-toggle="tab" href="#feedback" role="tab" aria-controls=""
                        aria-selected="true">Отзывы</a>
@@ -204,13 +204,13 @@
                         </div>
                     </div>
                 </div>
-                <div class="tab-pane fade" id="schedule" role="tabpanel" aria-labelledby="">
-                    <div class="col mt-5">
+                {{--<div class="tab-pane fade" id="schedule" role="tabpanel" aria-labelledby="">--}}
+                    {{--<div class="col mt-5">--}}
 
-                        @include('_partials.right-sidebar')
+                        {{--@include('_partials.right-sidebar')--}}
 
-                    </div>
-                </div>
+                    {{--</div>--}}
+                {{--</div>--}}
                 <div class="tab-pane fade" id="feedback" role="tabpanel" aria-labelledby="">
                     <div class="container d-none d-md-block py-4 mt-5" id="feedbacks">
                         <!-- Отзыв -->

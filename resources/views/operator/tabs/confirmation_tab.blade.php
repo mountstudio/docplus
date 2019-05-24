@@ -18,7 +18,11 @@
                     <p>Нет новых отзывов на рассмотрение</p>
                 @else
                 @foreach($feedbackNotifications as $notification)
-                    @include('operator.tabs.feedback_confirm', ['feedback' => \App\Feedback::find($notification->data['feedback']['id'])])
+                    @if(\App\Feedback::find($notification->data['feedback']['id'])->doctors()->count())
+                            @include('operator.tabs.feedback_confirm_doctor', ['feedback' => \App\Feedback::find($notification->data['feedback']['id'])])
+                    @elseif(\App\Feedback::find($notification->data['feedback']['id'])->clinics()->count())
+                            @include('operator.tabs.feedback_confirm_clinic', ['feedback' => \App\Feedback::find($notification->data['feedback']['id'])])
+                        @endif
                 @endforeach
                 @endif
             </div>
