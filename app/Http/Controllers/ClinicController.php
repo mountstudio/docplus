@@ -19,8 +19,14 @@ class ClinicController extends Controller
     {
         $clinics = Clinic::all()->sortingAndFilter($request)->paginate(5);
 
+        $clins = Clinic::all();
+        $feedbacks = $clins->map(function ($item, $key) {
+            return $item->feedbacks;
+        })->flatten()->unique('id')->take(4);
+
         return view('clinic.list', [
             'clinics' => $clinics,
+            'feedbacks' => $feedbacks,
             'filter' => $request->filter,
             'child' => $request->child ? 1 : null,
             'fullDay' => $request->fullDay ? 1 : null,

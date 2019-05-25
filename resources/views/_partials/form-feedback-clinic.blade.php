@@ -51,8 +51,8 @@
                         </div>
 
                         <div class="form-group">
-                            <label for="recipient-name" class="col-form-label">Введите ваше имя:</label>
-                            <input type="text" name="name" class="form-control" id="recipient-name" placeholder="Ваше имя">
+                            <label for="recipient-name" class="col-form-label">Введите ваше ФИО:</label>
+                            <input type="text" name="name" class="form-control" id="recipient-name" placeholder="Ваше ФИО">
                         </div>
 
                         <div class="form-group">

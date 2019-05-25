@@ -61,6 +61,19 @@
             </div>
         @endif
     </div>
+
+    <div class="container mb-5">
+        <div class="row">
+            <div class="col-12 font-weight-bold text-secondary h3 pb-5">
+                Отзывы о докторах в Бишкеке
+            </div>
+
+
+            @include('doctor.reviews')
+
+        </div>
+    </div>
+
 @endsection
 
 @push('styles')

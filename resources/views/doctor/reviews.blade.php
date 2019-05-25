@@ -4,13 +4,13 @@
         <div class="row">
 
             <div class="col-3">
-                <a href="{{ route('clinic.show', $feedback->clinics->first()->id) }}">
-                    <img class="img-fluid" src="{{ asset('uploads/'.$feedback->clinics->first()->logo) }}" alt="">
+                <a href="{{ route('doctor.show', $feedback->doctors->first()->id) }}">
+                    <img class="img-fluid" src="{{ asset('uploads/'.$feedback->doctors->first()->logo) }}" alt="">
                 </a>
             </div>
 
             <div class="col-12 col-lg-9">
-                <a href="{{ route('clinic.show', $feedback->clinics->first()->id) }}"><h5 class="text-dark font-weight-bold">{{ $feedback->clinics->first()->clinic_name }}</h5></a>
+                <a href="{{ route('clinic.show', $feedback->doctors->first()->id) }}"><h5 class="text-dark font-weight-bold">{{ $feedback->doctors->first()->fullName }}</h5></a>
                 <p class="text-secondary">{{ $feedback->comment }} <br>
 
                 </p>

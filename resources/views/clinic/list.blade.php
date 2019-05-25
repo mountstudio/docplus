@@ -66,10 +66,10 @@
             </div>
         @endif
     </div>
-    <div class="container">
+    <div class="container mb-5">
         <div class="row">
             <div class="col-12 font-weight-bold text-secondary h3 pb-5">
-                Отзывы о стомотологах в Бишкеке
+                Отзывы о клиниках в Бишкеке
             </div>
 
 

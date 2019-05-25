@@ -14,6 +14,7 @@ use App\Doctor;
 use App\User;
 use App\Clinic;
 use Illuminate\Http\Request;
+use PhpParser\Comment\Doc;
 
 class DoctorController extends Controller
 {
@@ -21,8 +22,14 @@ class DoctorController extends Controller
     {
         $doctors = Doctor::with('feedbacks')->get()->sortingAndFilter($request)->paginate(5);
 
+        $docs = Doctor::all();
+        $feedbacks = $docs->map(function ($item, $key) {
+            return $item->feedbacks;
+        })->flatten()->unique('id')->take(4);
+
         return view('doctor.list', [
             'doctors' => $doctors,
+            'feedbacks' => $feedbacks,
             'child' => $request->child ? 1 : null,
             'home' => $request->home ? 1 : null,
             'filter' => $request->filter,
