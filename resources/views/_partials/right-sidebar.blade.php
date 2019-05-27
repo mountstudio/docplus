@@ -67,5 +67,13 @@
 
     </div>
         @endif
+    <div class="col-12 p-3">
+        <div class="text-center">
+            <button class="btn btn-primary" data-toggle="modal" data-target="#doctorrecordModal-{{$doctor->id}}">
+                Записаться
+            </button>
+        </div>
+    </div>
+    @include('_partials.modals.doctor_record_modal')
 
 </div>

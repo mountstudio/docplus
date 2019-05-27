@@ -1,4 +1,4 @@
-<div class="modal fade" id="doctorrecordModal" tabindex="-1" role="form" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="doctorrecordModal-{{$doctor->id}}" tabindex="-1" role="form" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
@@ -14,7 +14,7 @@
                             <div class="row align-items-start">
                                 <div class="col-5 text-center">
                                     <div class="position-relative">
-                                        <img class="img-fluid rounded-circle mb-2 img-thumbnail" src="{{ $doctor->pics->first() ? asset('uploads/'.$doctor->pics->first()->image) : asset('img/noavatar.png') }}" alt="">
+                                        <img class="img-fluid rounded-circle mb-2 img-thumbnail" src="{{ $doctor->logo ? asset('uploads/'.$doctor->logo) : asset('img/noavatar.png') }}" alt="">
                                     </div>
                                     <div class="row justify-content-center">
                                         @include('_partials.stars', ['id' => $doctor->id.'-doctor'])
@@ -50,7 +50,7 @@
                         @if($doctor->specs->count() != 0)
                         <div class="form-group">
                             <label for="recipient-name" class="col-form-label">Специальность: </label>
-                            <select class="ml-5" name="spec_id">
+                            <select class="form-control" name="spec_id">
                                 @foreach($doctor->specs as $spec)
                                     <option value="{{$spec->id}}">{{ $spec->name }}</option>
                                 @endforeach
@@ -60,7 +60,7 @@
                         @if($doctor->clinics->count() != 0)
                             <div class="form-group">
                                 <label for="recipient-name" class="col-form-label">Клиника: </label>
-                                <select class="ml-5" name="doctor_clinic_id">
+                                <select class="form-control" name="doctor_clinic_id">
                                     @foreach($doctor->clinics as $clinic)
                                         <option value="{{$clinic->id}}">{{ $clinic->clinic_name }}</option>
                                     @endforeach

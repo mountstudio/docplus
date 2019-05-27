@@ -78,6 +78,16 @@
 
         </div>
                 @endif
+                <div class="row">
+                    <div class="col-12 text-center">
+                        <button type="button" data-toggle="modal" data-target="#doctorrecordModal-{{$doctor->id}}"
+                                class="btn btn-lg btn-info bg-doc text-light font-weight-bold mb-4 shadow text-uppercase h4 py-1"
+                                style="border-radius: 50px;">
+                            Записаться
+                        </button>
+                    </div>
+                </div>
+                @include('_partials.modals.doctor_record_modal')
 
         {{--<div class="row justify-content-center">--}}
         {{--<button type="button" data-toggle="modal" data-target="#servicerecordModal" class="btn btn-lg btn-info bg-doc text-light font-weight-bold my-2 shadow text-uppercase h4 py-1 border-bottom" style="border-radius: 50px;">--}}

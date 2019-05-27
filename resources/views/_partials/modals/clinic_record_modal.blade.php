@@ -1,4 +1,4 @@
-<div class="modal fade" id="servicerecordModal" tabindex="-1" role="form" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="clinicrecordModal-{{$clinic->id}}" tabindex="-1" role="form" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
@@ -21,8 +21,8 @@
                                     </div></div>
 
                                 <div class="col">
-                                        <p class="text-secondary h3 m-0 mb-md-2 font-weight-bold">{{ $clinic->clinic_name ?? 'Бобров Василий Елисеевич' }}</p>
-                                        <p class="text-secondary h3 m-0 mb-md-2 font-weight-bold">{{ $clinic->type }}</p>
+                                    <p class="text-secondary h3 m-0 mb-md-2 font-weight-bold">{{ $clinic->clinic_name ?? 'Бобров Василий Елисеевич' }}</p>
+                                    <p class="text-secondary h3 m-0 mb-md-2 font-weight-bold">{{ $clinic->type }}</p>
                                 </div>
                             </div>
                         </div>
@@ -30,15 +30,15 @@
                     <form class="text-secondary mt-4" action="{{route('record.store')}}" method="POST">
                         @csrf
                         @if($clinic->services->count() != 0)
-                        <div class="form-group">
-                            <label for="recipient-name" class="col-form-label">Услуга: </label>
-                            <select class="form-control" name="service_id">
-                                <option value="null">Нет</option>
-                                @foreach($clinic->services as $service)
-                                    <option value="{{$service->id}}">{{ $service->name }}</option>
-                                @endforeach
-                            </select>
-                        </div>
+                            <div class="form-group">
+                                <label for="recipient-name" class="col-form-label">Услуга: </label>
+                                <select class="form-control" name="service_id">
+                                    <option value="null">Нет</option>
+                                    @foreach($clinic->services as $service)
+                                        <option value="{{$service->id}}">{{ $service->name }}</option>
+                                    @endforeach
+                                </select>
+                            </div>
                         @endif
                         <div class="form-group">
                             <label for="recipient-name" class="col-form-label">Введите ваше имя:</label>
