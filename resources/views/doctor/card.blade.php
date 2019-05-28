@@ -1,4 +1,4 @@
-<div class="row align-items-center mb-3 border shadow p-md-3 py-3">
+<div class="row align-items-center mb-3 border shadow p-md-3 py-3" id="doctor-card-{{ $doctor->id }}">
         <div class="col-12 col-lg-9">
             <div class="row">
                 <div class="col-5 text-center">

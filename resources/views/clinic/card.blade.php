@@ -1,4 +1,4 @@
-<div class="row justify-content-center mb-3 border shadow p-md-4 py-3">
+<div class="row justify-content-center mb-3 border shadow p-md-4 py-3" id="clinic-card-{{ $clinic->id }}">
     <div class="col-12 col-lg-9">
         <div class="row">
             <div class="col-5 text-center">

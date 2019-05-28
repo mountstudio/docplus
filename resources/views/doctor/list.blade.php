@@ -99,8 +99,54 @@
                 center: [42.865388923088396, 74.60104350048829],
                 // Уровень масштабирования. Допустимые значения:
                 // от 0 (весь мир) до 19.
-                zoom: 13
+                zoom: 13,
+                controls: ['zoomControl']
             });
+
+            var events = ['mouseenter', 'mouseleave'];
+
+
+
+            @foreach($doctors as $doctor)
+                var doctorPlacemark{{ $doctor->id }} = new ymaps.Placemark([{{ $doctor->latitude ?? 42.865388923088396 }}, {{ $doctor->longtitude ?? 74.60104350048829 }}], {
+                    balloonContent: '<p class="font-weight-bold mb-1">{{ $doctor->fullName }}</p>'+
+                                    '<p class=" mb-1">{{ $doctor->specs->implode('name', ', ') }}</p>' +
+                                    '<p class=" mb-1">Адрес: {{ $doctor->address }}</p>' +
+                                    '<p class=" mb-0">{{ $doctor->clinics->implode('clinic_name', ', ') }}</p>',
+                    hintContent: '<p class="font-weight-bold mb-1">{{ $doctor->fullName }}</p>' +
+                                    '<p class="mb-0">Адрес: {{ $doctor->address }}</p>',
+                    myID: 'placemark-doctor-{{ $doctor->id }}'
+                }, {
+                    preset: 'islands#icon',
+                    iconColor: '#0095b6'
+                });
+
+                doctorPlacemark{{ $doctor->id }}.events
+                    .add('mouseenter', function (e) {
+                        // Ссылку на объект, вызвавший событие,
+                        // можно получить из поля 'target'.
+                        e.get('target').options.set('iconColor', '#ff0000');
+                    })
+                    .add('mouseleave', function (e) {
+                        e.get('target').options.unset('iconColor', '#0095b6');
+                    });
+
+                myMap.geoObjects.add(doctorPlacemark{{ $doctor->id }});
+            @endforeach
+            @foreach($doctors as $doctor)
+                var targetElement{{ $doctor->id }} = document.getElementById('doctor-card-{{ $doctor->id }}'),
+                divListeners{{ $doctor->id }} = ymaps.domEvent.manager.group(targetElement{{ $doctor->id }})
+                    .add(events, function (event) {
+                        if ("mouseenter" === event.get('type')) {
+                            doctorPlacemark{{ $doctor->id }}.options.set('iconColor', '#ff0000');
+                            doctorPlacemark{{ $doctor->id }}.balloon.open();
+                        } else if ("mouseleave" === event.get('type')) {
+                            doctorPlacemark{{ $doctor->id }}.options.set('iconColor', '#0095b6');
+                            doctorPlacemark{{ $doctor->id }}.balloon.close();
+                        }
+                    });
+            @endforeach
+            myMap.setBounds(myMap.geoObjects.getBounds());
         }
     </script>
 @endpush

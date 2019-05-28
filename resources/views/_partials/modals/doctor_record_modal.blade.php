@@ -1,4 +1,5 @@
-<div class="modal fade" id="doctorrecordModal-{{$doctor->id}}" tabindex="-1" role="form" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="doctorrecordModal-{{$doctor->id}}" tabindex="-1" role="form"
+     aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
@@ -14,14 +15,17 @@
                             <div class="row align-items-start">
                                 <div class="col-5 text-center">
                                     <div class="position-relative">
-                                        <img class="img-fluid rounded-circle mb-2 img-thumbnail" src="{{ $doctor->logo ? asset('uploads/'.$doctor->logo) : asset('img/noavatar.png') }}" alt="">
+                                        <img class="img-fluid rounded-circle mb-2 img-thumbnail"
+                                             src="{{ $doctor->logo && file_exists(public_path('uploads/'.$doctor->logo)) ? asset('uploads/'.$doctor->logo) : asset('img/noavatar.png') }}"
+                                             alt="">
                                     </div>
                                     <div class="row justify-content-center">
                                         @include('_partials.stars', ['id' => $doctor->id.'-doctor'])
-                                    </div></div>
+                                    </div>
+                                </div>
 
                                 <div class="col">
-                                        <p class="text-secondary h3 m-0 mb-md-2 font-weight-bold">{{ $doctor->fullName ?? 'Бобров Василий Елисеевич' }}</p>
+                                    <p class="text-secondary h3 m-0 mb-md-2 font-weight-bold">{{ $doctor->fullName ?? 'Бобров Василий Елисеевич' }}</p>
 
                                     <p class="text-secondary font-weight-light h6 my-3"><em>
                                             @if(isset($doctor))
@@ -32,12 +36,16 @@
                                     <p class="text-secondary font-weight-light m-0 mb-md-2">
                                         Приём от
                                         @if($doctor->discount)
-                                            <span class="text-doc2 font-weight-bold"><del>{{ $doctor->price ?? '1400' }} сом</del></span>
-                                            <span>{{ round($doctor->price - $doctor->price * $doctor->discount / 100) }} сом</span>
+                                            <span class="text-doc2 font-weight-bold"><del>{{ $doctor->price ?? '1400' }}
+                                                    сом</del></span>
+                                            <span>{{ round($doctor->price - $doctor->price * $doctor->discount / 100) }}
+                                                сом</span>
                                         @else
-                                            <span class="text-doc2 font-weight-bold">{{ $doctor->price ?? '1400' }} сом</span>
+                                            <span class="text-doc2 font-weight-bold">{{ $doctor->price ?? '1400' }}
+                                                сом</span>
                                         @endif
-                                        <i class="fas fa-exclamation-circle"  data-toggle="tooltip" data-placement="top" title="Скидка указана за первое посещение врача"></i>
+                                        <i class="fas fa-exclamation-circle" data-toggle="tooltip" data-placement="top"
+                                           title="Скидка указана за первое посещение врача"></i>
                                     </p>
 
 
@@ -48,14 +56,14 @@
                     <form class="text-secondary" action="{{route('record.store')}}" method="POST">
                         @csrf
                         @if($doctor->specs->count() != 0)
-                        <div class="form-group">
-                            <label for="recipient-name" class="col-form-label">Специальность: </label>
-                            <select class="form-control" name="spec_id">
-                                @foreach($doctor->specs as $spec)
-                                    <option value="{{$spec->id}}">{{ $spec->name }}</option>
-                                @endforeach
-                            </select>
-                        </div>
+                            <div class="form-group">
+                                <label for="recipient-name" class="col-form-label">Специальность: </label>
+                                <select class="form-control" name="spec_id">
+                                    @foreach($doctor->specs as $spec)
+                                        <option value="{{$spec->id}}">{{ $spec->name }}</option>
+                                    @endforeach
+                                </select>
+                            </div>
                         @endif
                         @if($doctor->clinics->count() != 0)
                             <div class="form-group">
@@ -69,9 +77,12 @@
                         @endif
                         <div class="form-group">
                             <label for="recipient-name" class="col-form-label">Введите ваше ФИО:</label>
-                            <input type="text" name="name" class="form-control" id="recipient-name" placeholder="Ваше имя" value="{{ Auth::check() ? Auth::user()->fullName : '' }}" required {{ Auth::check() ? 'disabled' : '' }}>
+                            <input type="text" name="name" class="form-control" id="recipient-name"
+                                   placeholder="Ваше имя" value="{{ Auth::check() ? Auth::user()->fullName : '' }}"
+                                   required {{ Auth::check() ? 'disabled' : '' }}>
                             @auth
-                                <input type="hidden" name="name" class="form-control" value="{{ Auth::user()->name }}" required>
+                                <input type="hidden" name="name" class="form-control" value="{{ Auth::user()->name }}"
+                                       required>
                             @endauth
                         </div>
 

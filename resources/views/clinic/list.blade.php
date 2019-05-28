@@ -102,6 +102,49 @@
                 // от 0 (весь мир) до 19.
                 zoom: 13
             });
+
+            var events = ['mouseenter', 'mouseleave'];
+
+
+
+            @foreach($clinics as $clinic)
+                var clinicPlacemark{{ $clinic->id }} = new ymaps.Placemark([{{ $clinic->latitude ?? 42.865388923088396 }}, {{ $clinic->longtitude ?? 74.60104350048829 }}], {
+                        balloonContent: '<p class="font-weight-bold mb-1">{{ $clinic->clinic_name }}</p>'+
+                        '<p class=" mb-1">Адрес: {{ $clinic->address }}</p>',
+                        hintContent: '<p class="font-weight-bold mb-1">{{ $clinic->clinic_name }}</p>',
+                        myID: 'placemark-clinic-{{ $clinic->id }}'
+                    }, {
+                        preset: 'islands#icon',
+                        iconColor: '#0095b6'
+                    });
+
+                clinicPlacemark{{ $clinic->id }}.events
+                    .add('mouseenter', function (e) {
+                        // Ссылку на объект, вызвавший событие,
+                        // можно получить из поля 'target'.
+                        e.get('target').options.set('iconColor', '#ff0000');
+                    })
+                    .add('mouseleave', function (e) {
+                        e.get('target').options.unset('iconColor', '#0095b6');
+                    });
+
+                myMap.geoObjects.add(clinicPlacemark{{ $clinic->id }});
+            @endforeach
+            @foreach($clinics as $clinic)
+                var targetElement{{ $clinic->id }} = document.getElementById('clinic-card-{{ $clinic->id }}'),
+                    divListeners{{ $clinic->id }} = ymaps.domEvent.manager.group(targetElement{{ $clinic->id }})
+                        .add(events, function (event) {
+                            if ("mouseenter" === event.get('type')) {
+                                clinicPlacemark{{ $clinic->id }}.options.set('iconColor', '#ff0000');
+                                clinicPlacemark{{ $clinic->id }}.balloon.open();
+                            } else if ("mouseleave" === event.get('type')) {
+                                clinicPlacemark{{ $clinic->id }}.options.set('iconColor', '#0095b6');
+                                clinicPlacemark{{ $clinic->id }}.balloon.close();
+                            }
+                        });
+            @endforeach
+
+            myMap.setBounds(myMap.geoObjects.getBounds());
         }
     </script>
 @endpush
