@@ -2,7 +2,7 @@
 
 @section('content')
 
-    <section>
+    <section class="mt-5">
         <div class="container py-5">
             <div class="row">
                 <div class="col">
@@ -20,7 +20,7 @@
                     @include('_partials.filters.question-filter')
                 </div>
                 <div class="col pt-3">
-                    @includeWhen(!empty($questions), 'question.list', ['questions' => $questions])
+                    @each('question.card', $questions, 'question', 'question.empty')
                 </div>
             </div>
 

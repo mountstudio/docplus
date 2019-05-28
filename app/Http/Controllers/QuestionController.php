@@ -71,10 +71,11 @@ class QuestionController extends Controller
     public function show(Question $question)
     {
         Question::updateQuestionViews($question);
+        $questions = Question::where('active', 1)->where('id', '!=', $question->id)->get();
 
         return view('question.show', [
             'question' => $question,
-            'questions' => Question::all(),
+            'questions' => $questions->count() > 5 ? $questions->random(5) : $questions,
         ]);
     }
 

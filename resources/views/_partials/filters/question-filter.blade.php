@@ -8,7 +8,7 @@
             <div class="form-check">
                 <input class="form-check-input" name="catsChecked[]" type="checkbox" id="defaultCheck{{ $cat->id }}" {{ in_array($cat->id, $catsChecked) ? 'checked' : '' }} value="{{ $cat->id }}">
                 <label class="form-check-label" for="defaultCheck{{ $cat->id }}">
-                    {{ $cat->name }} <span class="small text-muted">({{ $cat->questions->count() }})</span>
+                    {{ $cat->name }} <span class="small text-muted">({{ $cat->questions->where('active', 1)->count() }})</span>
                 </label>
             </div>
         @endforeach

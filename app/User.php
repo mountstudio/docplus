@@ -14,6 +14,7 @@ class User extends Authenticatable
 
     public static $USER_ROLE = 'ROLE_USER';
     public static $ADMIN_ROLE = 'ROLE_ADMIN';
+    public static $OPERATOR_ROLE = 'ROLE_OPERATOR';
     public static $DOC_ROLE = 'ROLE_DOCTOR';
     public static $CLINIC_ROLE = 'ROLE_CLINIC';
 

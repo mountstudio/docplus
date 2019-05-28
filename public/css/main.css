@@ -80,6 +80,10 @@ small.required {
     font-size: 2em !important;
 }
 
+.text-capitalize-first::first-letter {
+    text-transform: uppercase !important;
+}
+
 .img-card-doctors_clinics {
     width: 142px;
     height: auto;

@@ -1,51 +1,51 @@
 @extends('layouts.app')
 
 @section('content')
-
     <div class="container-fluid">
         <div class="row h-100">
             <div class="col-lg-5 col-md-6 bg-purple-dark p-5 h-100 row m-0">
-                <div class="col-12 my-5 pt-5 ">
-                    <a href="{{ route('homepage') }}">
-                        <img src="{{ asset('img/doc_logo.png') }}" style="width: 120px; height: auto;" alt="">
-                    </a>
-                </div>
-                <form class="col-12 align-self-center text-white" action="{{ route('login') }}" method="post">
+                <form class="col-12 align-self-center text-white py-5 mt-5" action="{{ route('login') }}" method="post">
                     @csrf
 
                     <div class="form-group my-4">
 
                         <div class="input-group mb-3">
                             <div class="input-group-prepend">
-                                <span class="input-group-text bg-white text-muted" id="basic-addon1"><i
-                                            class="fas fa-envelope"></i></span>
-                            </div>
-                            <input type="text" name="email" class="form-control" placeholder="Электронная почта"
-                                   aria-label="Username" aria-describedby="basic-addon1">
-                        </div>
-                        @if ($errors->has('email'))
-                            <span class="invalid-feedback" role="alert">
-                                    <strong>{{ $errors->first('email') }}</strong>
+                                <span class="input-group-text bg-white text-muted" id="basic-addon1">
+                                    <i class="fas fa-envelope"></i>
                                 </span>
-                        @endif
+                            </div>
+                            <input type="text" name="email"
+                                   class="form-control {{ $errors->has('email') ? 'is-invalid' : '' }}"
+                                   placeholder="Электронная почта"
+                                   aria-label="Username" aria-describedby="basic-addon1">
+                            @if ($errors->has('email'))
+                                <span class="invalid-feedback" role="alert">
+                                    <i class="fas fa-exclamation-circle  text-red-light"></i>&nbsp;<strong class="text-white text-capitalize-first">{{ __($errors->first('email')) }}</strong>
+                                </span>
+                            @endif
+                        </div>
+
 
                         <div class="input-group mb-3">
                             <div class="input-group-prepend">
-                                <span class="input-group-text bg-white text-muted" id="basic-addon4"><i
-                                            class="fas fa-key"></i></span>
+                                <span class="input-group-text bg-white text-muted" id="basic-addon4">
+                                    <i class="fas fa-key"></i>
+                                </span>
                             </div>
-                            <input type="password" name="password" class="form-control" placeholder="Пароль"
+                            <input type="password" name="password" class="form-control {{ $errors->has('password') ? 'is-invalid' : '' }}" placeholder="Пароль"
                                    area-label="Password" area-describedby="basic-addon5">
                         </div>
                         @if ($errors->has('password'))
                             <span class="invalid-feedback" role="alert">
-                                <strong>{{ $errors->first('password') }}</strong>
+                                <strong>{{ __($errors->first('password')) }}</strong>
                             </span>
                         @endif
 
                         <div class="form-group">
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
+                                <input class="form-check-input" type="checkbox" name="remember"
+                                       id="remember" {{ old('remember') ? 'checked' : '' }}>
 
                                 <label class="form-check-label" for="remember">
                                     {{ __('Запомнить меня') }}
@@ -54,10 +54,7 @@
                         </div>
 
                         <div class="form-group mt-5 ">
-
-
                             <input type="submit" value="Войти" class="btn btn-primary"/>
-
                         </div>
                     </div>
                 </form>
@@ -66,7 +63,8 @@
                  style="background-image: url({{ asset('img/welcome-doctor.png') }}); background-size: cover; background-repeat: no-repeat; background-position: center right;">
                 <div class="backdrop"></div>
                 <div class="col" style="position: relative; z-index: 10;">
-                    <h1 class="mb-5">Добро пожаловать на <img src="{{ asset('img/doc_logo.png') }}" style="width: 100px; height: auto;" alt=""></h1>
+                    <h1 class="mb-5">Добро пожаловать на <img src="{{ asset('img/doc_logo.png') }}"
+                                                              style="width: 100px; height: auto;" alt=""></h1>
                     <h2 class="">Преимущества</h2>
                     <ul class="nav flex-column">
                         <li class="nav-item"><i class="fas fa-check"></i>&nbsp;Бесплатная регистрация</li>
