@@ -1,5 +1,5 @@
 
-<nav class="navbar navbar-expand-xl  py-0 pl-0 fixed-top px-0" style="background: rgba(0,0,0,.4)">
+<nav class="navbar navbar-expand-xl  py-0 pl-0 position-absolute px-0" style="z-index: 999; background: rgba(0,0,0,.4)">
     <div class="container-fluid px-0">
         <div class="col-12 col-sm-12 col-xl-3 py-2 pl-0 d-flex">
 

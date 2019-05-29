@@ -49,7 +49,9 @@
                 @endforeach
             </div>
             <div class="col-12 col-md-4 d-none d-md-block">
-                <div id="map" class="sticky-top border shadow-sm" style="width: auto; height: 400px;"></div>
+                <div class="pt-5 mt-4 h-100">
+                    <div id="map" class="sticky-top" style="width: auto; height: 400px;"></div>
+                </div>
             </div>
         </div>
 
@@ -129,6 +131,9 @@
                     })
                     .add('mouseleave', function (e) {
                         e.get('target').options.unset('iconColor', '#0095b6');
+                    })
+                    .add('balloonclose', function (e) {
+                        e.get('target').options.set('iconColor', '#0095b6');
                     });
 
                 myMap.geoObjects.add(doctorPlacemark{{ $doctor->id }});
