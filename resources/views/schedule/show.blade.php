@@ -9,7 +9,7 @@
                         <a href="{{ route('schedule.accept',$schedule) }}" class="btn btn-primary">accept</a>
                     @endisset
                 @else
-                    <button type="submit" data-id="{{ $schedule->id }}" class="btn btn-sm btn-primary" data-toggle="modal" data-target="#doctorrecordModal">{{ \Carbon\Carbon::make($schedule->time_of_record)->format('H:i') }}</button>
+                    <button type="submit" data-id="{{ $schedule->id }}" class="btn btn-sm btn-primary" data-toggle="modal" data-target="#doctorrecordModal-{{$doctor->id}}">{{ \Carbon\Carbon::make($schedule->time_of_record)->format('H:i') }}</button>
                 @endif
             </div>
         @endforeach
@@ -20,7 +20,7 @@
 @push('scripts')
     <script>
 
-        $('#doctorrecordModal').on('show.bs.modal', (e) => {
+        $('#doctorrecordModal-{{$doctor->id}}').on('show.bs.modal', (e) => {
             let btn = $(e.relatedTarget);
             let id = btn.data('id');
             let input = $('#schedule_id');

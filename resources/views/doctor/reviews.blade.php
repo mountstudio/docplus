@@ -5,7 +5,7 @@
 
             <div class="col-3">
                 <a href="{{ route('doctor.show', $feedback->doctors->first()->id) }}">
-                    <img class="img-fluid" src="{{ asset('uploads/'.$feedback->doctors->first()->logo) }}" alt="">
+                    <img class="img-fluid rounded-circle mb-2 img-thumbnail" src="{{ asset('uploads/'.$feedback->doctors->first()->logo) }}" alt="">
                 </a>
             </div>
 
