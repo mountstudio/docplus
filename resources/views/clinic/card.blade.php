@@ -80,7 +80,7 @@
         <div class="row">
             <div class="col-12 text-center">
                 <button type="button" data-toggle="modal" data-target="#clinicrecordModal-{{$clinic->id}}"
-                        class="btn btn-lg btn-info bg-doc text-light font-weight-bold mb-4 shadow text-uppercase h4 py-1"
+                        class="btn btn-lg btn-info bg-doc text-light font-weight-bold shadow text-uppercase h4 py-1"
                         style="border-radius: 50px;">
                     Записаться
                 </button>

@@ -78,7 +78,7 @@
             </div>
             <div class="container py-4  mb-5">
                 <div class="row justify-content-center">
-                    <div class="col-12">
+                    <div class="col-9">
                         @foreach($clinic->doctors as $doctor)
                             @include('doctor.card')
                         @endforeach
@@ -98,7 +98,7 @@
         <div class="container py-4 mb-5">
             <div class="row justify-content-center">
                     @foreach($branches as $branch)
-                    <div class="col-3 text-center">
+                    <div class="col-2 text-center">
 
                         <a href="{{ route('clinic.show', $branch->id) }}">
                             <p class="h4 text-secondary font-weight-bold">{{$branch->clinic_name}}</p>

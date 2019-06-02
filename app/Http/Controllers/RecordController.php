@@ -68,7 +68,7 @@ class RecordController extends Controller
             {
                 $record->doctor_clinic_id = $request->doctor_clinic_id;
             }
-
+            $doctor = Doctor::find($request->doctor_id);
             $doctor->user->notify(new NewRecordNotification($record, null));
         }
         if(!$schedule && $request->clinic_id)

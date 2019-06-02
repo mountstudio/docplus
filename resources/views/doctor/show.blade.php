@@ -160,6 +160,7 @@
 
         </div>
         <div class="container d-none d-md-block py-4" id="feedbacks">
+
             <!-- Отзыв -->
             @foreach($feedbacks as $feedback)
                 @include('doctor.feedback')
@@ -235,8 +236,8 @@
             </div>
         </div>
         <div class="container py-4">
-            <div class="row">
-                <div class="col">
+            <div class="row justify-content-center">
+                <div class="col-9">
                     @foreach($doctor->clinics as $clinic)
                         @include('clinic.card')
                     @endforeach

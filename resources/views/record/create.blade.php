@@ -8,7 +8,7 @@
                 <label for="doctor_id">Выберите врача</label>
                 <select id="doctor_id" name="doctor_id" class="form-control">
                     @foreach($doctors as $doctor)
-                        <option value="{{ $doctor->id }}">{{ $doctor->name }}</option>
+                        <option value="{{ $doctor->id }}">{{ $doctor->fullName }}</option>
                     @endforeach
                 </select>
             </div>
