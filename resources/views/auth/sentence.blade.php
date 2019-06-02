@@ -1,8 +1,14 @@
 @extends('layouts.app')
 
+@push('metatags')
+    <meta name="keywords" content="врачи, клиники, услуги, диагностика">
+    <meta name="description" content="Docplus.kg - сборник врачей, клиник, услуг и диагностик">
+    <title>Docplus.kg - подача заявки</title>
+@endpush
+
 @section('content')
 
-    <div class="container mt-5">
+    <div class="container">
         <div class="row justify-content-center py-5">
             <div class="col-10 col-md-5 border border-5 bg-light border-primary">
 
