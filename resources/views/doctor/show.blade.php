@@ -1,5 +1,11 @@
 @extends('layouts.app')
 
+@push('metatags')
+    <meta name="keywords" content="{{ $doctor->keywords }}">
+    <meta name="description" content="{{ $doctor->description }}">
+    <title>Docplus.kg - {{ $doctor->title }}</title>
+@endpush
+
 @section('content')
 
     <div class="container py-5">
