@@ -71,11 +71,11 @@
                     <i class="fas fa-exclamation-circle" data-toggle="tooltip" data-placement="top"
                        title="Скидка указана за первое посещение врача"></i>
                 </p>
-                <p class="text-dark font-weight-light m-0 mb-md-2">
+                <p class="text-dark font-weight-light m-0 mb-5">
                     Телефон для записи: <br>
                     <span class="font-weight-bold h5">+996 (777) 777-777</span>
                 </p>
-                <a href="#feedbacks" class="text-dark pt-md-5 d-md-block d-none"><u>Отзывы о враче</u></a>
+                <a href="#feedbacks" class="text-dark"><u>Отзывы о враче</u></a>
                 <p class="text-dark font-weight-light small m-0">На прошлой неделе записалось {{ $doctor->records->count() }} человек(-а)</p>
 
             </div>
@@ -237,7 +237,7 @@
         </div>
         <div class="container py-4">
             <div class="row justify-content-center">
-                <div class="col-9">
+                <div class="col-lg-9 col-12">
                     @foreach($doctor->clinics as $clinic)
                         @include('clinic.card')
                     @endforeach
