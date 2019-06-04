@@ -18,3 +18,6 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 Route::get('/services', 'ServiceController@apiIndex');
+Route::get('/doctor/{id}/educations', 'Api\DoctorController@getEducation')->name('doctor.get.educations');
+Route::get('/doctor/{id}/experiences', 'Api\DoctorController@getExperience')->name('doctor.get.experience');
+Route::get('/doctor/{id}/qualifications', 'Api\DoctorController@getQualifications')->name('doctor.get.qualifications');

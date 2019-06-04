@@ -1,5 +1,11 @@
 @extends('layouts.app')
 
+@push('metatags')
+    <meta name="keywords" content="врачи, клиники, услуги, диагностика">
+    <meta name="description" content="Docplus.kg - сборник врачей, клиник, услуг и диагностик">
+    <title>Docplus.kg</title>
+@endpush
+
 @section('content')
     <div class="container-fluid py-5 position-relative" style="background-image: url('{{ asset('img/coracao.jpg') }}'); background-size: cover; background-position: center;">
         <div class="backdrop"></div>

@@ -1,5 +1,11 @@
 @extends('layouts.app')
 
+@push('metatags')
+    <meta name="keywords" content="{{ $clinic->keywords }}">
+    <meta name="description" content="{{ $clinic->description }}">
+    <title>Docplus.kg - {{ $clinic->title }}</title>
+@endpush
+
 @section('content')
 
     @include('clinic.info')
