@@ -31,7 +31,7 @@
 </div>
 @push('scripts')
     <script>
-        var doctorId = '{!! $doctor->id !!}';
+        var doctorId = '{!! $doctor->id ?? '' !!}';
     </script>
     <script src="{{ asset('js/form-fields-doctor-education.js') }}"></script>
     <script src="{{ asset('js/form-fields-doctor-experience.js') }}"></script>
