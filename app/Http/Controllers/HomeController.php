@@ -37,7 +37,6 @@ class HomeController extends Controller
 
     public function uploadTiny(Request $request)
     {
-        dd($request->all());
         $newName = null;
         if ($request->hasFile('file')) {
             $newName = uniqid().'.jpg';
