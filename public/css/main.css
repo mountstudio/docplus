@@ -38,6 +38,10 @@ small.required {
     font-size: 60% !important;
 }
 
+.smallest.active {
+    font-size: 65% !important;
+}
+
 .diagnostic-icon {
     background: url('../img/healt_care_icons_set.png') no-repeat -178px 0;
     width: 20px;
