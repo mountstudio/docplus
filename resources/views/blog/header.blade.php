@@ -2,8 +2,8 @@
      style="background-position: center center; background-size: cover; {{ $blog->image && file_exists(public_path('uploads/'.$blog->image)) ? 'background-image: url('. asset('uploads/'.$blog->image) .')' : '' }}"
 >
     <div class="back">
-        <a href="{{ url()->previous() }}">
-            <i class="fas text-white fa-2x fa-arrow-circle-left"></i>
+        <a href="{{ url()->previous() }}" class="text-white d-flex align-items-center" style="text-decoration: none;">
+            <i class="fas text-white fa-2x fa-arrow-circle-left"></i>&nbsp;Назад
         </a>
     </div>
     <div class="backdrop"></div>

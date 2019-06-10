@@ -201,29 +201,31 @@
 </nav>
 
 <nav class="d-xl-none navbar fixed-bottom navbar-expand-lg px-0 py-0">
-    <div class="container-fluid bg-doc p-0">
-        <div class="col-3 p-0 border-left border-right border-teal-light">
-            <a href="{{ route('doctor.index') }}" class="nav-link text-light text-center px-0">
-                <div class="doctor-icon p-0 mx-auto"></div>
-                <p class="font-weight-light smallest p-0 m-0">Врачи</p>
+    <div class="container-fluid bg-white p-0">
+        <div class="col-3 p-0 {{ Request::is('*doctor*') ? 'border-bottom border-doc border-2 border-dark' : '' }}">
+            <a href="{{ route('doctor.index') }}" class="nav-link text-center px-0">
+                {{--<div class="doctor-icon p-0 mx-auto"></div>--}}
+                <img src="{{ asset('svg/387561.svg') }}" style="width: 20px; height: 20px;" alt="">
+                <p class="{{ Request::is('*doctor*') ? 'font-weight-bold' : 'font-weight-light' }} smallest p-0 m-0">Врачи</p>
             </a>
         </div>
-        <div class="col-3 p-0 border-left border-right border-teal-light">
-            <a href="{{ route('clinic.index') }}" class="nav-link text-light text-center px-0">
-                <div class="clinic-icon p-0 mx-auto"></div>
-                <p class="font-weight-light smallest p-0 m-0">Клиники</p>
+        <div class="col-3 p-0 {{ Request::is('*clinic*') ? 'border-bottom border-doc border-2 border-dark' : '' }}">
+            <a href="{{ route('clinic.index') }}" class="nav-link  text-center px-0">
+                {{--<div class="clinic-icon p-0 mx-auto"></div>--}}
+                <img src="{{ asset('svg/1546074.svg') }}" class="text-white" style="width: 20px; height: 20px;" alt="">
+                <p class="{{ Request::is('*clinic*') ? 'font-weight-bold' : 'font-weight-light' }} smallest p-0 m-0">Клиники</p>
             </a>
         </div>
-        <div class="col-3 p-0 border-left border-right border-teal-light">
-            <a href="{{ route('service.index') }}" class="nav-link text-light text-center px-0">
+        <div class="col-3 p-0 {{ Request::is('*service*') ? 'border-bottom border-doc border-2 border-dark' : '' }}">
+            <a href="{{ route('service.index') }}" class="nav-link  text-center px-0">
                 <div class="service-icon p-0 mx-auto"></div>
-                <p class="font-weight-light smallest p-0 m-0">Услуги</p>
+                <p class="{{ Request::is('*service*') ? 'font-weight-bold' : 'font-weight-light' }} smallest p-0 m-0">Услуги</p>
             </a>
         </div>
-        <div class="col-3 p-0 border-left border-right border-teal-light">
-            <a href="{{ route('service.diagnostics') }}" class="nav-link text-light text-center px-0">
+        <div class="col-3 p-0 {{ Request::is('*diagnostic*') ? 'border-bottom border-doc border-2 border-dark' : '' }}">
+            <a href="{{ route('service.diagnostics') }}" class="nav-link  text-center px-0">
                 <div class="diagnostic-icon p-0 mx-auto"></div>
-                <p class="font-weight-light smallest p-0 m-0">Диагностика</p>
+                <p class="{{ Request::is('*diagnostic*') ? 'font-weight-bold' : 'font-weight-light' }} smallest p-0 m-0">Диагностика</p>
             </a>
         </div>
     </div>
