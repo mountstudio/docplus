@@ -49,7 +49,7 @@
                     <a href="{{ route('service.diagnostics') }}" class="nav-link text-light font-weight-bold">Диагностика ({{ \App\Service::getDiagnosticsHasDoctorsAndClinics()->count() }})</a>
                 </li>
                 <li class="nav-item">
-                    <a href="{{ route('question.index') }}" class="nav-link text-light font-weight-bold">Вопрос врачу</a>
+                    <a href="{{ route('blog.index') }}" class="nav-link text-light font-weight-bold">Блог</a>
                 </li>
             </ul>
             <ul class="navbar-nav text-center bg-doc d-block d-lg-none">
@@ -65,6 +65,9 @@
                 </li>
                 <li class="nav-item border-right">
                     <a href="{{ route('service.diagnostics') }}" class="nav-link text-light font-weight-bold">Диагностика ({{ \App\Service::getDiagnosticsHasDoctorsAndClinics()->count() }})</a>
+                </li>
+                <li class="nav-item">
+                    <a href="{{ route('blog.index') }}" class="nav-link text-light font-weight-bold">Блог</a>
                 </li>
                 <li class="nav-item">
                     <a href="{{ route('question.index') }}" class="nav-link text-light font-weight-bold">Вопрос врачу</a>

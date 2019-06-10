@@ -127,6 +127,23 @@ small.required {
     background-color: #0000005c;
 }
 
+.back {
+    position: absolute;
+    left: 50px;
+    top: 150px;
+    z-index: 9;
+    transition: .5s;
+}
+
+.back:hover {
+    -webkit-transform: translateY(5px);
+    -moz-transform: translateY(5px);
+    -ms-transform: translateY(5px);
+    -o-transform: translateY(5px);
+    transform: translateY(5px);
+
+}
+
 .bg-doc {
     background-color: #5bb1b7 !important;
 }
