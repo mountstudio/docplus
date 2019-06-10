@@ -206,28 +206,28 @@
             <a href="{{ route('doctor.index') }}" class="nav-link text-center px-0 py-1">
                 {{--<div class="doctor-icon p-0 mx-auto"></div>--}}
                 <img src="{{ asset('svg/387561.svg') }}" style="width: 20px; height: 20px;" alt="">
-                <p class="{{ Request::is('*doctor*') ? 'font-weight-bold' : 'font-weight-light' }} smallest p-0 m-0">Врачи</p>
+                <p class="{{ Request::is('*doctor*') ? 'font-weight-bold smaller' : 'font-weight-light smallest-1' }} p-0 m-0">Врачи</p>
             </a>
         </div>
         <div class="col-3 p-0 {{ Request::is('*clinic*') ? 'border-top border-doc border-3 border-dark' : '' }}">
             <a href="{{ route('clinic.index') }}" class="nav-link  text-center px-0 py-1">
                 {{--<div class="clinic-icon p-0 mx-auto"></div>--}}
                 <img src="{{ asset('svg/1546113.svg') }}" style="width: 20px; height: 20px;" alt="">
-                <p class="{{ Request::is('*clinic*') ? 'font-weight-bold' : 'font-weight-light' }} smallest p-0 m-0">Клиники</p>
+                <p class="{{ Request::is('*clinic*') ? 'font-weight-bold smaller' : 'font-weight-light smallest-1' }} p-0 m-0">Клиники</p>
             </a>
         </div>
         <div class="col-3 p-0 {{ Request::is('*service*') ? 'border-top border-doc border-3 border-dark' : '' }}">
             <a href="{{ route('service.index') }}" class="nav-link  text-center px-0 py-1">
                 {{--<div class="service-icon p-0 mx-auto"></div>--}}
                 <img src="{{ asset('svg/1546104.svg') }}" style="width: 20px; height: 20px;" alt="">
-                <p class="{{ Request::is('*service*') ? 'font-weight-bold' : 'font-weight-light' }} smallest p-0 m-0">Услуги</p>
+                <p class="{{ Request::is('*service*') ? 'font-weight-bold smaller' : 'font-weight-light smallest-1' }} p-0 m-0">Услуги</p>
             </a>
         </div>
         <div class="col-3 p-0 {{ Request::is('*diagnostic*') ? 'border-top border-doc border-3 border-dark' : '' }}">
             <a href="{{ route('service.diagnostics') }}" class="nav-link  text-center px-0 py-1">
                 {{--<div class="diagnostic-icon p-0 mx-auto"></div>--}}
                 <img src="{{ asset('svg/1863349.svg') }}" style="width: 20px; height: 20px;" alt="">
-                <p class="{{ Request::is('*diagnostic*') ? 'font-weight-bold' : 'font-weight-light' }} smallest p-0 m-0">Диагностика</p>
+                <p class="{{ Request::is('*diagnostic*') ? 'font-weight-bold smaller' : 'font-weight-light smallest-1' }} p-0 m-0">Диагностика</p>
             </a>
         </div>
     </div>

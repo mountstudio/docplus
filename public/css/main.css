@@ -30,7 +30,15 @@ small.required {
     color: #f00;
 }
 
-.smallest {
+.smaller {
+    font-size: 70% !important;
+}
+
+.smallest-1 {
+    font-size: 65% !important;
+}
+
+.smallest-2 {
     font-size: 60% !important;
 }
 
