@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Blog;
 use App\Http\Requests\CreateBlogRequest;
+use App\Http\Requests\UpdateBlogRequest;
 use Illuminate\Http\Request;
 
 class BlogController extends Controller
@@ -78,7 +79,7 @@ class BlogController extends Controller
      * @param  \App\Blog  $blog
      * @return \Illuminate\Http\Response
      */
-    public function update(CreateBlogRequest $request, Blog $blog)
+    public function update(UpdateBlogRequest $request, Blog $blog)
     {
         $validated = $request->validated();
 

@@ -29,6 +29,12 @@
                 </div>
 
                 <div class="form-group">
+                    <label class="col-12">Мини-описание статьи
+                        <textarea class="form-control" name="excerpt" id="excerpt" cols="30" rows="4"></textarea>
+                    </label>
+                </div>
+
+                <div class="form-group">
                     <label class="col-12">Контент
                         <textarea class="form-control" name="content" id="content" cols="30" rows="10"></textarea>
                     </label>

@@ -1,7 +1,5 @@
-<?php
-/**
- * Created by PhpStorm.
- * User: Tilek
- * Date: 03.06.2019
- * Time: 23:29
- */
+<div class="container bg-white">
+    <div class="row">
+        {!! $blog->content !!}
+    </div>
+</div>

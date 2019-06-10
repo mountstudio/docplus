@@ -2,9 +2,11 @@
 
 namespace App\Providers;
 
+use App\Blog;
 use App\Doctor;
 use App\Clinic;
 use App\Feedback;
+use App\Observers\BlogObserver;
 use App\Observers\ClinicObserver;
 use App\Observers\DoctorObserver;
 use App\Observers\FeedbackObserver;
@@ -32,6 +34,7 @@ class AppServiceProvider extends ServiceProvider
         Clinic::observe(ClinicObserver::class);
         Feedback::observe(FeedbackObserver::class);
         Question::observe(QuestionObserver::class);
+        Blog::observe(BlogObserver::class);
 
         Blade::if('admin', function () {
             return Auth::check() && Auth::user()->role === 'ROLE_ADMIN';
