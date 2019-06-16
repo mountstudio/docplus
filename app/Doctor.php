@@ -97,6 +97,7 @@ class Doctor extends Model
         return Schedule::all()
             ->where('doctor_id', $doctor->id)
             ->where('clinic_id', $id)
+            ->where('date_of_record','>=', date('Y-m-d'))
             ->groupBy('date_of_record');
     }
 

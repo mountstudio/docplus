@@ -30,8 +30,16 @@ small.required {
     color: #f00;
 }
 
+.smaller {
+    font-size: 70% !important;
+}
+
 .smallest {
     font-size: 60% !important;
+}
+
+.smallest.active {
+    font-size: 65% !important;
 }
 
 .diagnostic-icon {
@@ -118,6 +126,12 @@ small.required {
     border-radius: 50px !important;
 }
 
+.shadow-top {
+    -webkit-box-shadow: 0px -3px 5px 0px rgba(0,0,0,0.16);
+    -moz-box-shadow: 0px -3px 5px 0px rgba(0,0,0,0.16);
+    box-shadow: 0px -3px 5px 0px rgba(0,0,0,0.16);
+}
+
 .backdrop {
     position: absolute;
     width: 100%;
@@ -125,6 +139,23 @@ small.required {
     left: 0;
     top: 0;
     background-color: #0000005c;
+}
+
+.back {
+    position: absolute;
+    left: 50px;
+    top: 150px;
+    z-index: 9;
+    transition: .5s;
+}
+
+.back:hover {
+    -webkit-transform: translateY(5px);
+    -moz-transform: translateY(5px);
+    -ms-transform: translateY(5px);
+    -o-transform: translateY(5px);
+    transform: translateY(5px);
+
 }
 
 .bg-doc {

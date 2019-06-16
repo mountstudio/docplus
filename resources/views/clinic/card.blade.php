@@ -31,7 +31,7 @@
         </div>
     </div>
 
-    <div class="border-top w-100 d-md-none d-block my-4"></div>
+    <hr class="d-lg-none d-block " align="center" width="500" size="2" color="#ff0000" />
     <div class="col-12 col-md">
         <div class="row">
             <div class="col-auto">

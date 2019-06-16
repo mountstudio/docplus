@@ -71,17 +71,19 @@
                     @if($doctor->discount)
                         <span class="text-doc2 font-weight-bold"><del>{{ $doctor->price ?? '1400' }} сом</del></span>
                         <span>{{ round($doctor->price - $doctor->price * $doctor->discount / 100) }} сом</span>
+                        <i class="fas fa-exclamation-circle" data-toggle="tooltip" data-placement="top"
+                           title="Скидка за первое посещение врача, действует только при записи с сервиса Doc+"></i>
+                        <img src="{{ asset('img/doc_logo.png') }}" style="width: 30px; height: auto;" alt="">
                     @else
                         <span class="text-doc2 font-weight-bold">{{ $doctor->price ?? '1400' }} сом</span>
                     @endif
-                    <i class="fas fa-exclamation-circle" data-toggle="tooltip" data-placement="top"
-                       title="Скидка указана за первое посещение врача"></i>
+
                 </p>
-                <p class="text-dark font-weight-light m-0 mb-md-2">
+                <p class="text-dark font-weight-light m-0 mb-5">
                     Телефон для записи: <br>
                     <span class="font-weight-bold h5">+996 (777) 777-777</span>
                 </p>
-                <a href="#feedbacks" class="text-dark pt-md-5 d-md-block d-none"><u>Отзывы о враче</u></a>
+                <a href="#feedbacks" class="text-dark"><u>Отзывы о враче</u></a>
                 <p class="text-dark font-weight-light small m-0">На прошлой неделе записалось {{ $doctor->records->count() }} человек(-а)</p>
 
             </div>
@@ -185,7 +187,7 @@
         <div class="container py-4">
             <ul class="nav nav-tabs" id="myTab" role="tablist">
                 <li class="nav-item">
-                    <a class="nav-link" id="" data-toggle="tab" href="#info" role="tab" aria-controls=""
+                    <a class="nav-link active" id="" data-toggle="tab" href="#info" role="tab" aria-controls=""
                        aria-selected="true">Информация</a>
                 </li>
                 {{--<li class="nav-item">--}}
@@ -198,7 +200,7 @@
                 </li>
             </ul>
             <div class="tab-content" id="myTabContent">
-                <div class="tab-pane fade" id="info" role="tabpanel" aria-labelledby="">
+                <div class="tab-pane fade active show" id="info" role="tabpanel" aria-labelledby="">
                     <div class="row justify-content-center mt-5">
                         <div class="col-12 col-md-8 position-relative">
                             @if($doctor->description)
@@ -243,7 +245,7 @@
         </div>
         <div class="container py-4">
             <div class="row justify-content-center">
-                <div class="col-9">
+                <div class="col-lg-9 col-12">
                     @foreach($doctor->clinics as $clinic)
                         @include('clinic.card')
                     @endforeach
@@ -253,6 +255,7 @@
     @endif
 
     @include('_partials.modals.doctor_record_modal')
+    @include('_partials.modals.doctor_feedback')
 @endsection
 
 @push('styles')

@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="container py-5">
-        <div class="row">
+        <div class="row py-5">
             <h1>Уведомления</h1>
         </div>
         <div class="row">
@@ -17,8 +17,10 @@
                                                 - {{ $notifications[$key]->count() }} )</p>
                                         </div>
                                         <div class="col">
-                                            <a href="{{ route('profile', ['show' => $notifications[$key]->first()->type]) }}"
-                                               class="btn btn-primary">Перейти</a>
+                                            <a class="btn btn-primary" href="{{ route('notification.read', $notifications[$key]->first()) }}">
+                                                Отметить как просмотренное</a>
+                                            <a href="{{ route('doctor.profile', ['show' => $notifications[$key]->first()->type]) }}"
+                                               class="btn btn-primary">Перейти в профиль</a>
                                         </div>
                                     </div>
                                 </div>
@@ -35,8 +37,10 @@
                                                 - {{ $notifications[$key]->count() }} )</p>
                                         </div>
                                         <div class="col">
-                                            <a href="{{ route('profile', ['show' => $notifications[$key]->first()->type]) }}"
-                                               class="btn btn-primary">Перейти</a>
+                                            <a class="btn btn-primary" href="{{ route('notification.read', $notifications[$key]->first()) }}">
+                                                Отметить как просмотренное</a>
+                                            <a href="{{ route('doctor.profile', ['show' => $notifications[$key]->first()->type]) }}"
+                                               class="btn btn-primary">Перейти в профиль</a>
                                         </div>
                                     </div>
                                 </div>
@@ -52,7 +56,8 @@
                                             <p>{{ $notifications[$key]->first()->data['message'] }}</p>
                                         </div>
                                         <div class="col">
-                                            <a class="btn btn-primary" href="{{ route('notification.read', $notifications[$key]->first()) }}">Отметить как просмотренное</a>
+                                            <a class="btn btn-primary" href="{{ route('notification.read', $notifications[$key]->first()) }}">
+                                                Отметить как просмотренное</a>
                                         </div>
                                     </div>
                                 </div>

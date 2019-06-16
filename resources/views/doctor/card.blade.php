@@ -33,25 +33,29 @@
                         </em></p>
                     <p class="text-secondary font-weight-light">Профессиональный рейтинг - <span class="font-weight-bold h5">{{ $doctor->prof_rating }} </span><i class="fas fa-exclamation-circle"  data-toggle="tooltip" data-placement="top" title="Профессиональный рейтинг основан на трех критериях: Стаж, категория, степень."></i></p>
 
+                    @isset($service)
+                        <p class="m-0 text-dark font-weight-bold">Услуга: {{ $service->name }}</p>
+                    @endisset
+
                     <p class="text-secondary font-weight-light m-0 mb-md-2">
                         Приём от
                         @if($doctor->discount)
                             <span class="text-doc2 font-weight-bold"><del>{{ $doctor->price ?? '1400' }}</del></span>
                             <span>{{ round($doctor->price - $doctor->price * $doctor->discount / 100) }} сом</span>
+                            <i class="fas fa-exclamation-circle"  data-toggle="tooltip" data-placement="top" title="Скидка за первое посещение врача, действует только при записи с сервиса Doc+"></i>
+                            <img src="{{ asset('img/doc_logo.png') }}" style="width: 30px; height: auto;" alt="">
                         @else
                             <span class="text-doc2 font-weight-bold">{{ $doctor->price ?? '1400' }} сом</span>
                         @endif
-                        <i class="fas fa-exclamation-circle"  data-toggle="tooltip" data-placement="top" title="Скидка указана за первое посещение врача"></i>
+
                     </p>
 
 
                 </div>
             </div>
         </div>
-
-
-<div class="border-top w-100 d-md-none d-block my-4"></div>
-            <div class="col-12 col-md">
+    <hr class="d-lg-none d-block " align="center" width="500" size="2" color="#ff0000" />
+            <div class="col-12 col-lg">
                 <div class="row">
                     <div class="col-auto">
                         <p class="text-secondary small">

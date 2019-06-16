@@ -49,7 +49,7 @@
                     <a href="{{ route('service.diagnostics') }}" class="nav-link text-light font-weight-bold">Диагностика ({{ \App\Service::getDiagnosticsHasDoctorsAndClinics()->count() }})</a>
                 </li>
                 <li class="nav-item">
-                    <a href="{{ route('question.index') }}" class="nav-link text-light font-weight-bold">Вопрос врачу</a>
+                    <a href="{{ route('blog.index') }}" class="nav-link text-light font-weight-bold">Блог</a>
                 </li>
             </ul>
             <ul class="navbar-nav text-center bg-doc d-block d-lg-none">
@@ -65,6 +65,9 @@
                 </li>
                 <li class="nav-item border-right">
                     <a href="{{ route('service.diagnostics') }}" class="nav-link text-light font-weight-bold">Диагностика ({{ \App\Service::getDiagnosticsHasDoctorsAndClinics()->count() }})</a>
+                </li>
+                <li class="nav-item">
+                    <a href="{{ route('blog.index') }}" class="nav-link text-light font-weight-bold">Блог</a>
                 </li>
                 <li class="nav-item">
                     <a href="{{ route('question.index') }}" class="nav-link text-light font-weight-bold">Вопрос врачу</a>
@@ -164,7 +167,12 @@
                             @admin
                                 <a class="dropdown-item text-dark" href="{{ route('options') }}">Админка</a>
                             @endadmin
-                            <a class="dropdown-item text-dark" href="/profile">Личный кабинет</a>
+                            @if(Auth::user()->role === 'ROLE_DOCTOR')
+                                <a class="dropdown-item text-dark" href="{{ asset('doctor.profile') }}">Личный кабинет</a>
+                                @else
+                                <a class="dropdown-item text-dark" href="/profile">Личный кабинет</a>
+                                @endif
+
                             <a class="dropdown-item text-dark" href="{{ route('logout') }}"
                                onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
@@ -197,30 +205,34 @@
     </div>
 </nav>
 
-<nav class="d-xl-none navbar fixed-bottom navbar-expand-lg px-0 py-0">
-    <div class="container-fluid bg-doc p-0">
-        <div class="col-3 p-0 border-left border-right border-teal-light">
-            <a href="{{ route('doctor.index') }}" class="nav-link text-light text-center px-0">
-                <div class="doctor-icon p-0 mx-auto"></div>
-                <p class="font-weight-light smallest p-0 m-0">Врачи</p>
+<nav class="d-xl-none navbar fixed-bottom navbar-expand-lg px-0 py-0 shadow-top" >
+    <div class="container-fluid bg-white p-0">
+        <div class="col-3 p-0 {{ Request::is('*doctor*') ? 'border-top border-doc border-3 border-dark' : '' }}">
+            <a href="{{ route('doctor.index') }}" class="nav-link text-center px-0 py-1">
+                {{--<div class="doctor-icon p-0 mx-auto"></div>--}}
+                <img src="{{ asset('svg/387561.svg') }}" style="width: 20px; height: 20px;" alt="">
+                <p class="{{ Request::is('*doctor*') ? 'font-weight-bold active' : 'font-weight-light' }} smallest p-0 m-0">Врачи</p>
             </a>
         </div>
-        <div class="col-3 p-0 border-left border-right border-teal-light">
-            <a href="{{ route('clinic.index') }}" class="nav-link text-light text-center px-0">
-                <div class="clinic-icon p-0 mx-auto"></div>
-                <p class="font-weight-light smallest p-0 m-0">Клиники</p>
+        <div class="col-3 p-0 {{ Request::is('*clinic*') ? 'border-top border-doc border-3 border-dark' : '' }}">
+            <a href="{{ route('clinic.index') }}" class="nav-link  text-center px-0 py-1">
+                {{--<div class="clinic-icon p-0 mx-auto"></div>--}}
+                <img src="{{ asset('svg/1546113.svg') }}" style="width: 20px; height: 20px;" alt="">
+                <p class="{{ Request::is('*clinic*') ? 'font-weight-bold active' : 'font-weight-light' }} smallest p-0 m-0">Клиники</p>
             </a>
         </div>
-        <div class="col-3 p-0 border-left border-right border-teal-light">
-            <a href="{{ route('service.index') }}" class="nav-link text-light text-center px-0">
-                <div class="service-icon p-0 mx-auto"></div>
-                <p class="font-weight-light smallest p-0 m-0">Услуги</p>
+        <div class="col-3 p-0 {{ Request::is('*service*') ? 'border-top border-doc border-3 border-dark' : '' }}">
+            <a href="{{ route('service.index') }}" class="nav-link  text-center px-0 py-1">
+                {{--<div class="service-icon p-0 mx-auto"></div>--}}
+                <img src="{{ asset('svg/1546104.svg') }}" style="width: 20px; height: 20px;" alt="">
+                <p class="{{ Request::is('*service*') ? 'font-weight-bold active' : 'font-weight-light' }} smallest p-0 m-0">Услуги</p>
             </a>
         </div>
-        <div class="col-3 p-0 border-left border-right border-teal-light">
-            <a href="{{ route('service.diagnostics') }}" class="nav-link text-light text-center px-0">
-                <div class="diagnostic-icon p-0 mx-auto"></div>
-                <p class="font-weight-light smallest p-0 m-0">Диагностика</p>
+        <div class="col-3 p-0 {{ Request::is('*diagnostic*') ? 'border-top border-doc border-3 border-dark' : '' }}">
+            <a href="{{ route('service.diagnostics') }}" class="nav-link  text-center px-0 py-1">
+                {{--<div class="diagnostic-icon p-0 mx-auto"></div>--}}
+                <img src="{{ asset('svg/1863349.svg') }}" style="width: 20px; height: 20px;" alt="">
+                <p class="{{ Request::is('*diagnostic*') ? 'font-weight-bold active' : 'font-weight-light' }} smallest p-0 m-0">Диагностика</p>
             </a>
         </div>
     </div>

@@ -37,7 +37,7 @@
 
 @section('content')
 
-    <div class="container">
+    <div class="container py-5">
         <div class="row justify-content-center">
 
             <div class="col-12 col-md-6 py-5">
@@ -97,7 +97,7 @@
                                 </div>
                                 <div class="col">
                                     @foreach($doctors as $doctor)
-                                        @include('doctor.card')
+                                        @include('doctor.card', ['service' => $service])
                                     @endforeach
                                 </div>
                                 <div class="col-12 col-md-4 d-none d-md-block">

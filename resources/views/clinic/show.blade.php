@@ -84,7 +84,7 @@
             </div>
             <div class="container py-4  mb-5">
                 <div class="row justify-content-center">
-                    <div class="col-9">
+                    <div class="col-md-9 col-12">
                         @foreach($clinic->doctors as $doctor)
                             @include('doctor.card')
                         @endforeach

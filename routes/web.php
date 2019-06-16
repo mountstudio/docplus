@@ -89,9 +89,14 @@ Route::resource('record', 'RecordController');
 Route::resource('feedback', 'FeedbackController');
 Route::resource('question', 'QuestionController');
 Route::resource('level', 'LevelController');
+
+Route::resource('blog', 'BlogController');
+
 Route::get('/activation/question/{question}', 'QuestionController@activate')->name('question.activate');
 Route::resource('answer', 'AnswerController');
 Route::get('/profile', 'UserController@profile')->name('profile');
+Route::get('/doctor.profile', 'DoctorController@profile')->name('doctor.profile');
+Route::get('/doctor.schedule.create', 'DoctorController@schedulecreate')->name('doctor.schedule.create');
 
 Route::get('/search', 'MainController@search')->name('search');
 Route::get('/like/{type}/{id}', 'LikeController@like')->name('like');
@@ -99,3 +104,5 @@ Route::get('/activation/feedback/{feedback}', 'FeedbackController@activation')->
 Route::get('/getchildren/{id}', 'DoctorController@getChildren')->name('getchildren');
 Route::get('/getclinic/{id}', 'DoctorController@getClinic')->name('getclinic');
 Route::get('/clinic.doctor/{id}/{spec}', 'SpecController@clinic')->name('clinic.doctor');
+
+Route::post('/image-upload-tiny', 'HomeController@uploadTiny');
