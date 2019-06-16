@@ -62,10 +62,15 @@ class DoctorController extends Controller
 
     public function show(Doctor $doctor)
     {
-        $schedules = Schedule::all()->where('doctor_id', $doctor->id)
-            ->where('date_of_record', '>=', date('Y-m-d'))
-            ->groupBy('clinic_id');
-
+        if(count($doctor->clinics)){
+            $schedules = Schedule::all()->where('doctor_id', $doctor->id)
+                ->where('date_of_record', '>=', date('Y-m-d'))
+                ->groupBy('clinic_id');
+        } else {
+            $schedules = Schedule::all()->where('doctor_id', $doctor->id)
+                ->where('date_of_record', '>=', date('Y-m-d'))
+                ->groupBy('date_of_record');
+        }
         $feedbacks = $doctor->feedbacks->where('is_active', true);
 
         return view('doctor.show', [
@@ -144,10 +149,17 @@ class DoctorController extends Controller
 
         $doctor = Doctor::where('user_id', Auth::user()->id)->first();
 
+        if(count($doctor->clinics)){
         $schedules = Schedule::all()->where('doctor_id', $doctor->id)
             ->where('date_of_record', '>=', date('Y-m-d'))
             ->groupBy('clinic_id');
-
+        }
+        else
+            {
+                $schedules = Schedule::all()->where('doctor_id', $doctor->id)
+                    ->where('date_of_record', '>=', date('Y-m-d'))
+                    ->groupBy('date_of_record');
+        }
         $records = Record::all()
             ->where('doctor_id', Auth::user()->doctor->id)
             ->groupBy(function ($d) {

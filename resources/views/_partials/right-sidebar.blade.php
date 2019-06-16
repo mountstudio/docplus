@@ -11,6 +11,7 @@
     <div class="col-12 border ">
         <div class="pt-3">
             @if(count($schedules))
+                @if(count($doctor->clinics))
                     <ul class="nav nav-tabs mb-2" id="myTab" role="tablist">
                         @foreach($schedules->keys() as $key)
                             <li class="nav-item">
@@ -24,6 +25,9 @@
                             <div class="tab-pane fade {{ $loop->first ? 'show active' : '' }}" id="schedules-{{ $loop->index }}" role="tabpanel" aria-labelledby="">@include('schedule.list', ['schedules' => \App\Doctor::getclinicSchedule($doctor, $key), 'clinic' => \App\Clinic::find($key)])</div>
                         @endforeach
                     </div>
+                @else
+                    @include('schedule.list')
+                    @endif
 
             {{--@include('schedule.list')--}}
                 @else

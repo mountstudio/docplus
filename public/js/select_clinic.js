@@ -43,6 +43,6 @@ function appendCategories(clinics) {
     else {
         hiddenSelect.addClass('d-none');
         childSelect.removeAttr('name');
-        parentSelect.attr('name', 'clinic_id');
+        // parentSelect.attr('name', 'clinic_id');
     }
 }

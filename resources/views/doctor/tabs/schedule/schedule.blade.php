@@ -8,6 +8,7 @@
                 <p class="text-center text-secondary font-weight-bold pt-3">
                     Ваше активное расписание
                 </p>
+             @if(count($doctor->clinics))
                 <ul class="nav nav-tabs mb-2" id="myTab" role="tablist">
                     @foreach($schedules->keys() as $key)
                         <li class="nav-item">
@@ -22,6 +23,9 @@
                     @endforeach
                 </div>
 
+                @else
+                    @include('doctor.tabs.schedule.list')
+                 @endif
                 {{--@include('schedule.list')--}}
             @else
                 <p class="text-center h4 text-secondary font-weight-bold py-3">

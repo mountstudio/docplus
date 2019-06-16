@@ -20,8 +20,7 @@
                                     {{--@endforeach--}}
                                 {{--</select>--}}
                             {{--</div>--}}
-
-                            <input type="text" name="doctor_id" id="doctor_id" value="{{ $doctor->id }}" hidden>
+                            <input type="hidden" name="doctor_id" id="doctor_id" value="{{ $doctor->id }}">
 
                             <div class="form-group col-12">
                                 <label for="start_date">Дата расписания</label>

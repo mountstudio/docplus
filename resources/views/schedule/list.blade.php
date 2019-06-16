@@ -14,6 +14,6 @@
     @endforeach
 </div>
 
-<p class="mt-3 text-secondary">Адресc : {{$clinic->address}}</p>
-{{--<p class="font-weight-bold text-primary pt-3 pb-3 h5">{{$doctor->price}} сом</p>--}}
-<p class="text-secondary">Телефон для записи: {{$clinic->phones}}</p>
+
+<p class="mt-3 text-secondary">Адресc : {{ $clinic->address ?? $doctor->address}}</p>
+<p class="text-secondary">Телефон для записи: {{$clinic->phones ?? $doctor->phones}}</p>
