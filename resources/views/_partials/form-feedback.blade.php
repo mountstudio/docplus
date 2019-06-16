@@ -1,7 +1,7 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-12 px-6 my-5 text-center">
-            <button type="button" class="btn btn-outline-info" data-toggle="modal" data-target="#exampleModal" >
+            <button type="button" class="btn btn-outline-info" data-toggle="modal" data-target="#doctorfeedback" >
                 Оставить Отзыв
             </button>
         </div>
@@ -9,7 +9,7 @@
 </div>
 
 
-<div class="modal fade" id="exampleModal" tabindex="-1" role="form" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="doctorfeedback" tabindex="-1" role="form" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content">
             <div class="modal-header">
@@ -59,7 +59,7 @@
                             <label for="recipient-name" class="col-form-label">Введите ваш телефон:</label>
                             <input type="tel" name="phone_number" class="form-control" id="regexp-mask" >
                         </div>
-                        <p class=" h6">*на указанный вами номер будет отправлено SMS с кодом подтверждения</p>
+                        {{--<p class=" h6">*на указанный вами номер будет отправлено SMS с кодом подтверждения</p>--}}
                         <div class="row">
                             <div class="col-12 col-md-8">
                                 <p>Doc+ не публикует отзывы, которые содержат оскорбления и ненормативную лексику</p>
@@ -67,7 +67,7 @@
                             </div>
                             <input type="hidden" name="doctor_id" value="{{ $doctor->id }}">
                             <div class="col-12 col-md-4 text-center">
-                                <button type="submit" class="btn btn-outline-success my-4">Send message</button>
+                                <button type="submit" class="btn btn-outline-success my-4">Отправить</button>
                             </div>
                         </div>
 

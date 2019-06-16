@@ -10,7 +10,7 @@
             </div>
 
             <div class="col-12 col-lg-9">
-                <a href="{{ route('clinic.show', $feedback->doctors->first()->id) }}"><h5 class="text-dark font-weight-bold">{{ $feedback->doctors->first()->fullName }}</h5></a>
+                <a href="{{ route('doctor.show', $feedback->doctors->first()->id) }}"><h5 class="text-dark font-weight-bold">{{ $feedback->doctors->first()->fullName }}</h5></a>
                 <p class="text-secondary">{{ $feedback->comment }} <br>
 
                 </p>

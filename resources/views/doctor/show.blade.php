@@ -75,7 +75,7 @@
                         <span class="text-doc2 font-weight-bold">{{ $doctor->price ?? '1400' }} сом</span>
                     @endif
                     <i class="fas fa-exclamation-circle" data-toggle="tooltip" data-placement="top"
-                       title="Скидка указана за первое посещение врача"></i>
+                       title="Скидка за первое посещение врача, действует только при записи с сервиса Doc+"></i>
                 </p>
                 <p class="text-dark font-weight-light m-0 mb-5">
                     Телефон для записи: <br>

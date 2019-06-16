@@ -1,7 +1,7 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-12 px-6 my-5 text-center">
-            <button type="button" class="btn btn-outline-info" data-toggle="modal" data-target="#exampleModal" >
+            <button type="button" class="btn btn-outline-info" data-toggle="modal" data-target="#clinicfeedback" >
                 Оставить Отзыв
             </button>
         </div>
@@ -9,7 +9,7 @@
 </div>
 
 
-<div class="modal fade" id="exampleModal" tabindex="-1" role="form" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="clinicfeedback" tabindex="-1" role="form" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content">
             <div class="modal-header">
