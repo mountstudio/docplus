@@ -185,7 +185,7 @@
         <div class="container py-4">
             <ul class="nav nav-tabs" id="myTab" role="tablist">
                 <li class="nav-item">
-                    <a class="nav-link" id="" data-toggle="tab" href="#info" role="tab" aria-controls=""
+                    <a class="nav-link active" id="" data-toggle="tab" href="#info" role="tab" aria-controls=""
                        aria-selected="true">Информация</a>
                 </li>
                 {{--<li class="nav-item">--}}
@@ -198,7 +198,7 @@
                 </li>
             </ul>
             <div class="tab-content" id="myTabContent">
-                <div class="tab-pane fade" id="info" role="tabpanel" aria-labelledby="">
+                <div class="tab-pane fade active show" id="info" role="tabpanel" aria-labelledby="">
                     <div class="row justify-content-center mt-5">
                         <div class="col-12 col-md-8 position-relative">
                             @if($doctor->description)

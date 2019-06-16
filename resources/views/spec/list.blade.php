@@ -1,4 +1,4 @@
-<div class="col-12 pb-4 pb-md-0">
+<div class="col-md-12 pb-4 pb-md-0">
     <h3 class="text-secondary text-center font-weight-bold">СПЕЦИАЛЬНОСТИ ВРАЧЕЙ</h3>
     <br>
 
