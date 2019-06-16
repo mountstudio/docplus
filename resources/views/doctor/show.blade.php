@@ -71,11 +71,13 @@
                     @if($doctor->discount)
                         <span class="text-doc2 font-weight-bold"><del>{{ $doctor->price ?? '1400' }} сом</del></span>
                         <span>{{ round($doctor->price - $doctor->price * $doctor->discount / 100) }} сом</span>
+                        <i class="fas fa-exclamation-circle" data-toggle="tooltip" data-placement="top"
+                           title="Скидка за первое посещение врача, действует только при записи с сервиса Doc+"></i>
+                        <img src="{{ asset('img/doc_logo.png') }}" style="width: 30px; height: auto;" alt="">
                     @else
                         <span class="text-doc2 font-weight-bold">{{ $doctor->price ?? '1400' }} сом</span>
                     @endif
-                    <i class="fas fa-exclamation-circle" data-toggle="tooltip" data-placement="top"
-                       title="Скидка за первое посещение врача, действует только при записи с сервиса Doc+"></i>
+
                 </p>
                 <p class="text-dark font-weight-light m-0 mb-5">
                     Телефон для записи: <br>
