@@ -1,5 +1,11 @@
 @extends('layouts.app')
 
+@push('metatags')
+    <meta name="keywords" content="врачи, клиники, услуги, диагностика">
+    <meta name="description" content="Docplus.kg - сборник врачей, клиник, услуг и диагностик">
+    <title>Docplus.kg - Вход</title>
+@endpush
+
 @section('content')
     <div class="container-fluid">
         <div class="row h-100">
