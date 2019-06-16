@@ -7,13 +7,16 @@ use App\Helpers\ImageSaver;
 use App\Level;
 use App\Notifications\NewEditNotification;
 use App\Pic;
+use App\Record;
 use App\Schedule;
 use App\Service;
 use App\Spec;
 use App\Doctor;
 use App\User;
 use App\Clinic;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use PhpParser\Comment\Doc;
 
 class DoctorController extends Controller
@@ -59,8 +62,9 @@ class DoctorController extends Controller
 
     public function show(Doctor $doctor)
     {
-                    $schedules = Schedule::all()->where('doctor_id', $doctor->id)
-                        ->groupBy('clinic_id');
+        $schedules = Schedule::all()->where('doctor_id', $doctor->id)
+            ->where('date_of_record', '>=', date('Y-m-d'))
+            ->groupBy('clinic_id');
 
         $feedbacks = $doctor->feedbacks->where('is_active', true);
 
@@ -134,4 +138,33 @@ class DoctorController extends Controller
 
         return response()->json(['clinics' => $clinics]);
     }
+
+
+    public function profile(Request $request){
+
+        $doctor = Doctor::where('user_id', Auth::user()->id)->first();
+
+        $schedules = Schedule::all()->where('doctor_id', $doctor->id)
+            ->where('date_of_record', '>=', date('Y-m-d'))
+            ->groupBy('clinic_id');
+
+        $records = Record::all()
+            ->where('doctor_id', Auth::user()->doctor->id)
+            ->groupBy(function ($d) {
+                return Carbon::parse($d->created_at)->format('M Y');
+            });
+
+
+        return view('doctor.profile', [
+            'show' => $request->show,
+            'doctor' => $doctor,
+            'records' => $records,
+            'schedules' => $schedules
+        ]);
+        }
+
+        public function schedulecreate()
+        {
+            return view('doctor.tabs.create_schedule.blade.php');
+        }
 }

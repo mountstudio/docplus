@@ -36,7 +36,7 @@
                                                     - {{ $notifications[$key]->count() }} )</p>
                                             </div>
                                             <div class="col">
-                                                <a href="{{ route('profile', ['show' => $notifications[$key]->first()->type]) }}"
+                                                <a href="{{ route('doctor.profile', ['show' => 'story_doctor_feedback']) }}"
                                                    class="btn btn-primary">Перейти</a>
                                             </div>
                                         </div>

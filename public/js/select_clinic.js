@@ -1,4 +1,4 @@
-    var parentSelect = $('#doctor_id');
+var parentSelect = $('#doctor_id');
 var childSelect = $('#clinic_id');
 
 $.ajax({

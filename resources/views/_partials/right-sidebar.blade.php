@@ -8,21 +8,6 @@
         </div>
     </div>
 
-        {{--<div class="col-12  border border-bottom-0 bg-danger">--}}
-            {{--<div class="text-center text-light">--}}
-                {{--<br>--}}
-                {{--<h4 class="mb-0">Расписание приема врача</h4>--}}
-                {{--<br>--}}
-            {{--</div>--}}
-        {{--</div>--}}
-        {{--<div class="col-12 border ">--}}
-            {{--<div class="pt-3">--}}
-                {{--<p class="text-center text-secondary font-weight-bold pt-3">--}}
-                    {{--У врача нет расписания--}}
-                {{--</p>--}}
-            {{--</div>--}}
-        {{--</div>--}}
-    {{--@endif--}}
     <div class="col-12 border ">
         <div class="pt-3">
             @if(count($schedules))
