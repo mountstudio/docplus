@@ -253,6 +253,7 @@
     @endif
 
     @include('_partials.modals.doctor_record_modal')
+    @include('_partials.modals.doctor_feedback')
 @endsection
 
 @push('styles')
