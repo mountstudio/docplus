@@ -95,6 +95,8 @@ Route::resource('blog', 'BlogController');
 Route::get('/activation/question/{question}', 'QuestionController@activate')->name('question.activate');
 Route::resource('answer', 'AnswerController');
 Route::get('/profile', 'UserController@profile')->name('profile');
+Route::get('/doctor.profile', 'DoctorController@profile')->name('doctor.profile');
+Route::get('/doctor.schedule.create', 'DoctorController@schedulecreate')->name('doctor.schedule.create');
 
 Route::get('/search', 'MainController@search')->name('search');
 Route::get('/like/{type}/{id}', 'LikeController@like')->name('like');

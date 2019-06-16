@@ -8,7 +8,8 @@
                 <div class="card-body">
                     <div class="row align-items-center">
                         <div class="col-10">
-                            <p>Пользователь {{ $feedback->name }} оставил отзыв {{ $feedback->comment }}.</p>
+                            <p>Пользователь {{ $feedback->name }} оставил отзыв:</p>
+                            <p><strong> {{ $feedback->comment }}.</strong></p>
                             <p>{{$feedback->created_at}}</p>
                         </div>
                     </div>

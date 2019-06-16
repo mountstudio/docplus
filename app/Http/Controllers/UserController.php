@@ -206,5 +206,7 @@ class UserController extends Controller
         } else {
             Auth::user()->unreadNotifications->where('id', $notification->id)->markAsRead();
         }
+
+        return back();
     }
 }

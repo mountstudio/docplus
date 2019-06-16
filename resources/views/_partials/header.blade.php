@@ -167,7 +167,12 @@
                             @admin
                                 <a class="dropdown-item text-dark" href="{{ route('options') }}">Админка</a>
                             @endadmin
-                            <a class="dropdown-item text-dark" href="/profile">Личный кабинет</a>
+                            @if(Auth::user()->role === 'ROLE_DOCTOR')
+                                <a class="dropdown-item text-dark" href="{{ asset('doctor.profile') }}">Личный кабинет</a>
+                                @else
+                                <a class="dropdown-item text-dark" href="/profile">Личный кабинет</a>
+                                @endif
+
                             <a class="dropdown-item text-dark" href="{{ route('logout') }}"
                                onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
