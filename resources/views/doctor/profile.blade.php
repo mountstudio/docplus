@@ -7,7 +7,7 @@
                 <div class="col-12 col-md-3 pr-md-5 pr-0">
                     <div class="row align-items-start">
                         <div class="col">
-                            <img class="w-100 rounded-circle" src="{{ asset('uploads/'.$doctor->logo) }}" alt="">
+                            <img class="w-100 rounded-circle" src="{{ $doctor->logo && file_exists(public_path('uploads/'.$doctor->logo)) ? asset('uploads/'.$doctor->logo) : asset('img/noavatar.png') }}" alt="">
                             <p class="text-secondary h4 m-0 mt-md-5 mb-md-2 text-center">{{$doctor->fullName}}</p>
                             <p class="text-secondary h5 m-0 mt-md-5 mb-md-2 text-center">{{$doctor->specs->implode('name', ', ') }}</p>
                         </div>
