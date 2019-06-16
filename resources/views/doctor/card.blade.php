@@ -33,6 +33,10 @@
                         </em></p>
                     <p class="text-secondary font-weight-light">Профессиональный рейтинг - <span class="font-weight-bold h5">{{ $doctor->prof_rating }} </span><i class="fas fa-exclamation-circle"  data-toggle="tooltip" data-placement="top" title="Профессиональный рейтинг основан на трех критериях: Стаж, категория, степень."></i></p>
 
+                    @isset($service)
+                        <p class="m-0 text-dark font-weight-bold">Услуга: {{ $service->name }}</p>
+                    @endisset
+
                     <p class="text-secondary font-weight-light m-0 mb-md-2">
                         Приём от
                         @if($doctor->discount)

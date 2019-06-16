@@ -97,7 +97,7 @@
                                 </div>
                                 <div class="col">
                                     @foreach($doctors as $doctor)
-                                        @include('doctor.card')
+                                        @include('doctor.card', ['service' => $service])
                                     @endforeach
                                 </div>
                                 <div class="col-12 col-md-4 d-none d-md-block">
