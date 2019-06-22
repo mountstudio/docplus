@@ -17,7 +17,7 @@
                     <div class="py-5">
                         <ul class="nav nav-tabs" id="myTab" role="tablist">
                             <li class="nav-item">
-                                <a class="nav-link" id="" data-toggle="tab" href="#edit-doctor" role="tab" aria-controls="" aria-selected="true">Изменить данные</a>
+                                <a class="nav-link active show" id="" data-toggle="tab" href="#edit-doctor" role="tab" aria-controls="" aria-selected="true">Изменить данные</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" id="" data-toggle="tab" href="#story-doctor" role="tab" aria-controls="" aria-selected="true">История</a>
@@ -32,7 +32,7 @@
                     </div>
                     <div class="row">
                         <div class="tab-content col-12" id="myTabContent">
-                            <div class="tab-pane fade" id="edit-doctor" role="tabpanel" aria-labelledby="">@include('doctor.tabs.edit')</div>
+                            <div class="tab-pane fade show active" id="edit-doctor" role="tabpanel" aria-labelledby="">@include('doctor.tabs.edit')</div>
                             <div class="tab-pane fade" id="story-doctor" role="tabpanel" aria-labelledby="">
                                 @include('doctor.tabs.story_pick')
                             </div>

@@ -3,8 +3,10 @@
 @section('content')
 
     <div class="container py-5">
-        @include('question.buttons.back_to_all')
-        <div class="row py-5 justify-content-center">
+        <div class="row pt-5">
+            @include('question.buttons.back_to_all')
+        </div>
+        <div class="row pt-3 justify-content-center">
             <div class="col-12 col-lg-10 border rounded shadow p-5 bg-info text-white position-relative">
                 <div class="backdrop index-1"></div>
                 <form action="{{ route('question.store') }}" method="post" class="position-relative index-5" enctype="multipart/form-data">

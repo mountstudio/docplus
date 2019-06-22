@@ -20,6 +20,7 @@
                     <a class="nav-link text-secondary" href="/service">УСЛУГИ</a>
                     <a class="nav-link text-secondary" href="/diagnostic">ДИАГНОСТИКА</a>
                     <a class="nav-link text-secondary" href="{{ route('blog.index') }}">БЛОГ</a>
+                    <a class="nav-link text-secondary" href="{{ route('question.index') }}">Вопросы врачам</a>
                 </nav>
             </div>
             <div class="col-md-3 col-lg-4 col-12 my-3 pb-5 pb-md-0">

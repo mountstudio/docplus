@@ -1,6 +1,6 @@
 <ul class="nav nav-tabs" id="myTab" role="tablist">
     <li class="nav-item">
-        <a class="nav-link" id="" data-toggle="tab" href="#story_doctor_record" role="tab" aria-controls="" aria-selected="true">История записей</a>
+        <a class="nav-link active show" id="" data-toggle="tab" href="#story_doctor_record" role="tab" aria-controls="" aria-selected="true">История записей</a>
     </li>
     <li class="nav-item">
         <a class="nav-link" id="" data-toggle="tab" href="#story_doctor_feedback" role="tab" aria-controls="" aria-selected="true">История отзывов</a>

@@ -3,8 +3,10 @@
 @section('content')
 
     <div class="container pt-5 pb-3">
-        @include('question.buttons.back_to_all')
-        <div class="row">
+        <div class="row pt-5">
+            @include('question.buttons.back_to_all')
+        </div>
+        <div class="row pt-3">
             <div class="col p-4 shadow-sm border">
                 <div class="row align-items-center">
                     <div class="col">
